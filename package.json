@@ -34,7 +34,7 @@
       "react-app/jest"
     ]
   },
-  "proxy": "http://localhost:1337",
+  "proxy": "https://quiet-headland-46767.herokuapp.com",
   "browserslist": {
     "production": [
       ">0.2%",

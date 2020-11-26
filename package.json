@@ -34,7 +34,6 @@
       "react-app/jest"
     ]
   },
-  "proxy": "https://quiet-headland-46767.herokuapp.com",
   "browserslist": {
     "production": [
       ">0.2%",

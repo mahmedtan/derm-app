@@ -1,6 +1,6 @@
 import React from "react";
 
-import { Box, Grid, Heading, ResponsiveContext, Sidebar } from "grommet";
+import { Grid, ResponsiveContext } from "grommet";
 
 const columns = {
   small: ["auto"],

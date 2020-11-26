@@ -1,11 +1,4 @@
-import {
-  Header,
-  Button,
-  Anchor,
-  Box,
-  ResponsiveContext,
-  Heading,
-} from "grommet";
+import { Header, Button, Box, ResponsiveContext, Heading } from "grommet";
 import { toggleUI } from "../reducers/uiThemeReducer";
 import SnackBar from "./Snackbar";
 

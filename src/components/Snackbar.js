@@ -1,13 +1,5 @@
 import { useState } from "react";
-import {
-  Layer,
-  Button,
-  Heading,
-  Box,
-  Text,
-  Anchor,
-  Collapsible,
-} from "grommet";
+import { Layer, Button, Heading, Box } from "grommet";
 import { Menu, Close } from "grommet-icons";
 import { Link } from "react-router-dom";
 

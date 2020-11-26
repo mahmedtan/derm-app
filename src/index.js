@@ -1,7 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import "normalize.css";
-import ScrollToTop from "./components/Utils/ScrollToTop";
 
 import App from "./components/App";
 import { BrowserRouter as Router } from "react-router-dom";

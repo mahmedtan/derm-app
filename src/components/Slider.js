@@ -46,6 +46,7 @@ const ResponsiveSlider = () => {
   const settings = {
     slidesToScroll: size === "small" ? 1 : 3,
     speed: 1200,
+    arrows: false,
     autoplay: true,
     dots: true,
   };

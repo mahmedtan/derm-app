@@ -6,6 +6,7 @@ const NavFooter = () => {
       direction="row-responsive"
       flex={false}
       justify="between"
+      border="top"
       gap="medium"
       fill="horizontal"
       pad="medium"

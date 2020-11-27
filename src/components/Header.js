@@ -14,7 +14,7 @@ const NavHeader = () => {
       <Header
         direction="row"
         align="center"
-        border
+        border="bottom"
         flex="grow"
         fill="horizontal"
         focusIndicator={false}

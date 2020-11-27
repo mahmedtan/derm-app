@@ -1,9 +1,12 @@
 import { Heading, Box, Avatar, Text } from "grommet";
+import { useEffect } from "react";
 import ReactMarkdown from "react-markdown";
 import gfm from "remark-gfm";
 import Loading from "../components/Loading";
 
 const Blog = ({ blog }) => {
+  useEffect(() => window.scrollTo(0, 0), [blog]);
+
   if (!blog) {
     return <Loading />;
   }
@@ -22,7 +25,7 @@ const Blog = ({ blog }) => {
         <Box direction="row" flex align="center" justify="start" gap="medium">
           <Avatar
             src={blog.author.picture.formats.thumbnail.url}
-            elevation="brand"
+            elevation="medium"
           />
           <Text color="brand">
             <strong>{blog.author.name}</strong>

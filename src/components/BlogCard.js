@@ -7,7 +7,7 @@ const BlogCard = ({ blog }) => {
   return (
     <Box margin={{ vertical: "large" }}>
       <Linker to={`/blogs/${blog.slug}`}>
-        <Box elevation="brand" height="medium">
+        <Box elevation="medium" height="medium">
           <Image
             fit="cover"
             src={blog.coverImage.formats.large.url}
@@ -24,7 +24,7 @@ const BlogCard = ({ blog }) => {
         <Box direction="row" flex align="center" justify="start" gap="medium">
           <Avatar
             src={author.picture.formats.thumbnail.url}
-            elevation="brand"
+            elevation="medium"
           />
           <Text color="brand">
             <strong>{author.name}</strong>

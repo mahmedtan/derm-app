@@ -4,7 +4,11 @@ const initialState = null;
 const blogReducer = (state = initialState, action) => {
   switch (action.type) {
     case "INIT_BLOGS":
-      return action.data;
+      return action.data.sort(
+        (a, b) =>
+          new Date(b.createdAt).getMilliseconds() -
+          new Date(a.createdAt).getMilliseconds()
+      );
     default:
       return state;
   }

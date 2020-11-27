@@ -1,4 +1,4 @@
-import { Image, Box, Heading, Stack, Card } from "grommet";
+import { Image, Box, Heading, Stack } from "grommet";
 import React from "react";
 
 const SliderImage = ({ imgSrc, title }) => {

@@ -4,13 +4,11 @@ import {
   Form,
   FormField,
   Heading,
-  MaskedInput,
-  Text,
   TextInput,
   Card,
 } from "grommet";
 import { useState } from "react";
-import { MailOption, Mail, User, Notification } from "grommet-icons";
+import { MailOption, User } from "grommet-icons";
 
 const Newsletter = () => {
   const [value, setValue] = useState({});

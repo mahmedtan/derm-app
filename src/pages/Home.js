@@ -1,5 +1,4 @@
 import { Box, Text } from "grommet";
-import { useState } from "react";
 import Newsletter from "../components/Newsletter";
 import ResponsiveGrid from "../components/ResponsiveGrid";
 import Slider from "../components/Slider";

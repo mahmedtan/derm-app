@@ -14,11 +14,12 @@ const NavHeader = () => {
       <Header
         direction="row"
         align="center"
-        border="bottom"
+        elevation="small"
         flex="grow"
         fill="horizontal"
         focusIndicator={false}
         hoverIndicator={true}
+        height="xxsmall"
         responsive={true}
         as="header"
       >
@@ -43,7 +44,6 @@ const NavHeader = () => {
               <Box flex={true} direction="row" justify="center" align="center">
                 <Link to="/">
                   <Button
-                    margin="small"
                     hoverIndicator={true}
                     focusIndicator={false}
                     icon={<Home />}
@@ -53,7 +53,6 @@ const NavHeader = () => {
 
                 <Link to="/blogs">
                   <Button
-                    margin="small"
                     hoverIndicator={true}
                     focusIndicator={false}
                     a11yTitle="Blogs"
@@ -62,7 +61,6 @@ const NavHeader = () => {
                 </Link>
                 <Link to="/contact-us">
                   <Button
-                    margin="small"
                     hoverIndicator={true}
                     focusIndicator={false}
                     a11yTitle="Contact us"
@@ -82,7 +80,6 @@ const NavHeader = () => {
           }
         </ResponsiveContext.Consumer>
         <Button
-          margin="small"
           focusIndicator={false}
           icon={uiTheme === "light" ? <Moon /> : <Sun />}
           onClick={() => dispatch(toggleUI())}

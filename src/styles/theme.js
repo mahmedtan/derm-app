@@ -63,8 +63,8 @@ export var theme = deepFreeze({
       "neutral-5": undefined,
       "status-error": undefined,
       brand: {
-        light: "#deaf8e",
-        dark: "#8e6243",
+        dark: "#fff",
+        light: "#694F5D",
       },
       background: {
         dark: "#263040",
@@ -220,10 +220,6 @@ export var theme = deepFreeze({
       shadowSize: "medium",
     },
     elevation: {
-      // Elevation values were derived from this Figma file.
-      // https://www.figma.com/file/eZYR3dtWdb9U90QvJ7p3T9/HPE-Color-Styles?node-id=405%3A25
-      // Naming in Figma file is strong/default/weak vs. Grommet t-shirt sizing.
-      // As defined here, default is currently mapping to medium.
       light: {
         small: "0px 2px 4px #0000001F;",
         medium: "0px 6px 12px #0000003D;",
@@ -292,9 +288,9 @@ export var theme = deepFreeze({
         color: "brand",
       },
       border: undefined,
-      color: "text-strong",
+      color: "background",
       font: {
-        weight: 700,
+        weight: 500,
       },
       padding: {
         horizontal: "12px",
@@ -308,7 +304,7 @@ export var theme = deepFreeze({
       },
       color: "text",
       font: {
-        weight: 700,
+        weight: 500,
       },
       padding: {
         horizontal: "10px",

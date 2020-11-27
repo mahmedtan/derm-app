@@ -1,4 +1,4 @@
-import { Heading, Box, Avatar, Text, Markdown, Image } from "grommet";
+import { Heading, Box, Avatar, Text, Image } from "grommet";
 import { useEffect } from "react";
 import ReactMarkdown from "react-markdown";
 

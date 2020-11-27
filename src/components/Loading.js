@@ -1,6 +1,6 @@
 import React from "react";
-import { Coffee } from "grommet-icons";
 import { Box, Heading, Main } from "grommet";
+import Spinner from "./Spinner";
 
 export default function Loading() {
   return (
@@ -9,13 +9,10 @@ export default function Loading() {
         direction="column"
         justify="center"
         align="center"
-        margin="large"
-        pad="xlarge"
+        margin={{ top: "xlarge" }}
+        pad={{ top: "xlarge" }}
       >
-        <Heading>Loading</Heading>
-        <Box animation="pulse">
-          <Coffee size="xlarge" />
-        </Box>
+        <Spinner />
       </Box>
     </Main>
   );

@@ -1,11 +1,12 @@
 import { Grommet } from "grommet";
-import theme from "../styles/theme.json";
+import { theme } from "../styles/theme.js";
 import Header from "./Header";
 import Footer from "./Footer";
 import { Route, Switch, useRouteMatch } from "react-router-dom";
 import Home from "../pages/Home";
 import Blogs from "../pages/Blogs";
 import NotFound from "../pages/404";
+import { hpe } from "grommet-theme-hpe";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 import Blog from "../pages/Blog";

@@ -1,7 +1,7 @@
-import { Heading, Box, Avatar, Text } from "grommet";
+import { Heading, Box, Avatar, Text, Markdown, Image } from "grommet";
 import { useEffect } from "react";
 import ReactMarkdown from "react-markdown";
-import gfm from "remark-gfm";
+
 import Loading from "../components/Loading";
 
 const Blog = ({ blog }) => {
@@ -22,7 +22,15 @@ const Blog = ({ blog }) => {
         width="large"
       >
         <Heading>{blog.title}</Heading>
-        <Box direction="row" flex align="center" justify="start" gap="medium">
+        <Image src={blog.coverImage.url} />
+        <Box
+          direction="row"
+          flex
+          align="center"
+          margin="small"
+          justify="start"
+          gap="medium"
+        >
           <Avatar
             src={blog.author.picture.formats.thumbnail.url}
             elevation="medium"
@@ -31,7 +39,9 @@ const Blog = ({ blog }) => {
             <strong>{blog.author.name}</strong>
           </Text>
         </Box>
-        <ReactMarkdown plugins={[gfm]} children={blog.content} />
+        <Box>
+          <ReactMarkdown children={blog.content}></ReactMarkdown>
+        </Box>
       </Box>
     </Box>
   );

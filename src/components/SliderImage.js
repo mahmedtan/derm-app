@@ -1,25 +1,34 @@
 import { Image, Box, Heading, Stack } from "grommet";
-import React from "react";
+import React, { useContext } from "react";
 
-const SliderImage = ({ imgSrc, title }) => {
+const SliderImage = ({ imgSrc, title, size }) => {
   return (
-    <Stack anchor="bottom">
+    <Stack anchor="center">
       <Box
         align="center"
         overflow="hidden"
         height="medium"
-        round="medium"
-        margin="large"
+        round={size !== "small" ? "xsmall" : "small"}
+        margin={{
+          vertical: "large",
+          horizontal:
+            size === "small" || size === "xsmall" ? "medium" : "small",
+        }}
         elevation="medium"
       >
         <Image src={imgSrc} fit="cover" />
       </Box>
-      <Box align="center">
-        <Heading
-          style={{ textShadow: "2px 2px 10px black" }}
-          level={2}
-          color="white"
-        >
+      <Box
+        elevation="large"
+        align="center"
+        background={{
+          color: "light-6",
+          opacity: "strong",
+        }}
+        pad={{ horizontal: "medium" }}
+        overflow="hidden"
+      >
+        <Heading level={2} color="black">
           {title}
         </Heading>
       </Box>

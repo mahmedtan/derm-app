@@ -10,3 +10,7 @@ a {
   font-weight: 700;
   text-emphasis: bold;
 }
+.slick-prev:before,
+.slick-next:before {
+  color: gray !important;
+}

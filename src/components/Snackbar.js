@@ -13,6 +13,7 @@ const Snackbar = () => {
           full="vertical"
           position="right"
           modal
+          background="background-front"
           onClickOutside={() => setShow(false)}
         >
           <Box

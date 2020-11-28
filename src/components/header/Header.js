@@ -10,7 +10,6 @@ import {
   Sun,
   Money,
   Services,
-  Schedule,
   Gem,
 } from "grommet-icons";
 import { Link } from "react-router-dom";

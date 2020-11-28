@@ -1,6 +1,5 @@
 import { Sidebar, Box, Image, Heading, Card, Anchor } from "grommet";
 import { Facebook, Instagram, Tumblr, Twitter } from "grommet-icons";
-import { Link } from "react-router-dom";
 import brochure from "./brochure-sidebar.png";
 const SidebarMain = () => {
   return (
@@ -26,9 +25,9 @@ const SidebarMain = () => {
           <Anchor target="_blank" href="https://www.facebook.com">
             <Facebook color="text" size="large" />
           </Anchor>
-          <Link target="_blank" href="https://www.twitter.com">
+          <Anchor target="_blank" href="https://www.twitter.com">
             <Instagram color="text" size="large" />
-          </Link>
+          </Anchor>
           <Anchor target="_blank" href="https://www.snapchat.com">
             <Tumblr color="text" size="large" />
           </Anchor>

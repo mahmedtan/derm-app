@@ -26,7 +26,7 @@ const BlogCard = ({ blog }) => {
             src={author.picture.formats.thumbnail.url}
             elevation="medium"
           />
-          <Text color="brand">
+          <Text>
             <strong>{author.name}</strong>
           </Text>
         </Box>

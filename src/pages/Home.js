@@ -1,6 +1,6 @@
 import { Box, Text } from "grommet";
 import Newsletter from "../components/newsletter/Newsletter";
-import ResponsiveGrid from "../components/utils/ResponsiveGrid";
+import ResponsiveGrid from "./ResponsiveGrid";
 import SidebarHome from "../components/sidebar/SidebarHome";
 import Slider from "../components/slider/Slider";
 const Home = () => {

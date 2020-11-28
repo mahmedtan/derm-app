@@ -1,5 +1,5 @@
 import React from "react";
-import ResponsiveGrid from "../components/utils/ResponsiveGrid";
+import ResponsiveGrid from "./ResponsiveGrid";
 import { Box, Heading } from "grommet";
 import BlogCard from "../components/blog/BlogCard";
 import Loading from "./Loading";

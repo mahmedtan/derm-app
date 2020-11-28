@@ -35,7 +35,7 @@ const Blog = ({ blog }) => {
             src={blog.author.picture.formats.thumbnail.url}
             elevation="medium"
           />
-          <Text color="brand">
+          <Text>
             <strong>{blog.author.name}</strong>
           </Text>
         </Box>

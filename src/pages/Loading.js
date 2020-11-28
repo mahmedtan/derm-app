@@ -1,6 +1,6 @@
 import React from "react";
 import { Box, Main } from "grommet";
-import Spinner from "./Spinner";
+import Spinner from "../components/loading/Spinner";
 
 export default function Loading() {
   return (

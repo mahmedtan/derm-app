@@ -1,5 +1,5 @@
 import { Image, Box, Heading, Stack } from "grommet";
-import React, { useContext } from "react";
+import React from "react";
 
 const SliderImage = ({ imgSrc, title, size }) => {
   return (
@@ -8,7 +8,7 @@ const SliderImage = ({ imgSrc, title, size }) => {
         align="center"
         overflow="hidden"
         height="medium"
-        round={size !== "small" ? "xsmall" : "small"}
+        round={size === "small" ? "medium" : "small"}
         margin={{
           vertical: "large",
           horizontal:
@@ -28,7 +28,7 @@ const SliderImage = ({ imgSrc, title, size }) => {
         pad={{ horizontal: "medium" }}
         overflow="hidden"
       >
-        <Heading level={2} color="black">
+        <Heading level={3} color="black">
           {title}
         </Heading>
       </Box>

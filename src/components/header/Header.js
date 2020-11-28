@@ -1,10 +1,21 @@
-import { Header, Button, Box, ResponsiveContext, Heading } from "grommet";
-import { toggleUI } from "../reducers/uiThemeReducer";
+import { Header, Button, Box, ResponsiveContext } from "grommet";
+import { toggleUI } from "../../reducers/uiThemeReducer";
 import SnackBar from "./Snackbar";
 
-import { Article, Group, Home, Moon, Sun } from "grommet-icons";
+import {
+  Article,
+  Group,
+  Home,
+  Moon,
+  Sun,
+  Money,
+  Services,
+  Schedule,
+  Gem,
+} from "grommet-icons";
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
+import NavButton from "./NavButton";
 
 const NavHeader = () => {
   const dispatch = useDispatch();
@@ -14,12 +25,13 @@ const NavHeader = () => {
       <Header
         direction="row"
         align="center"
-        elevation="small"
+        elevation="xsmall"
         flex="grow"
         fill="horizontal"
         focusIndicator={false}
         hoverIndicator={true}
-        height="xxsmall"
+        background="brand"
+        height="4rem"
         responsive={true}
         as="header"
       >
@@ -30,9 +42,7 @@ const NavHeader = () => {
           margin={{ left: "small" }}
         >
           <Link to="/" style={{ textDecoration: "none" }}>
-            <Heading level={3} color="brand">
-              Lorem, ipsum dolor.
-            </Heading>
+            <Button label="Lorem, ipsum dolor."></Button>
           </Link>
         </Box>
 
@@ -42,39 +52,27 @@ const NavHeader = () => {
               <SnackBar />
             ) : (
               <Box flex={true} direction="row" justify="center" align="center">
-                <Link to="/">
-                  <Button
-                    hoverIndicator={true}
-                    focusIndicator={false}
-                    icon={<Home />}
-                    a11yTitle="Home"
-                  />
-                </Link>
-
-                <Link to="/blogs">
-                  <Button
-                    hoverIndicator={true}
-                    focusIndicator={false}
-                    a11yTitle="Blogs"
-                    icon={<Article />}
-                  />
-                </Link>
-                <Link to="/contact-us">
-                  <Button
-                    hoverIndicator={true}
-                    focusIndicator={false}
-                    a11yTitle="Contact us"
-                    icon={<Group />}
-                  />
-                </Link>
+                <NavButton to="/" label="Home" icon={<Home />} />
+                <NavButton
+                  to="/services"
+                  label="Services"
+                  icon={<Services />}
+                />
+                <NavButton to="/specials" label="Specials" icon={<Gem />} />
+                <NavButton to="/blogs" label="Blogs" icon={<Article />} />
+                <NavButton to="/finance" label="Finance" icon={<Money />} />
+                <NavButton
+                  to="/contact-us"
+                  label="Contact us"
+                  icon={<Group />}
+                />
 
                 <Button
                   primary
-                  label="Sign up"
+                  color="background"
+                  label="Book an appointment"
                   margin={{ left: "large" }}
-                  elevation="large"
                 />
-                <Button secondary label="Log in" margin={{ left: "small" }} />
               </Box>
             )
           }

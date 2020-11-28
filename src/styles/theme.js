@@ -63,8 +63,8 @@ export var theme = deepFreeze({
       "neutral-5": undefined,
       "status-error": undefined,
       brand: {
-        dark: "#fff",
-        light: "#694F5D",
+        dark: "#694F5D",
+        light: "rgb(252,242,241)",
       },
       background: {
         dark: "#263040",
@@ -288,9 +288,9 @@ export var theme = deepFreeze({
         color: "brand",
       },
       border: undefined,
-      color: "background",
+      color: "text",
       font: {
-        weight: 500,
+        weight: 600,
       },
       padding: {
         horizontal: "12px",

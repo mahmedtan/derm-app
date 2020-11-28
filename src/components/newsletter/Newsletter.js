@@ -17,7 +17,7 @@ const Newsletter = () => {
     <Box
       elevation="small"
       round="medium"
-      background="background-contrast"
+      background="brand"
       direction="row-responsive"
       justify="around"
       overflow="hidden"
@@ -26,7 +26,12 @@ const Newsletter = () => {
       <Box pad="large" align="center" alignContent="center" elevation="large">
         <Heading level={2}>Get the news delivered to your inbox!</Heading>
       </Box>
-      <Card pad="medium" background="background" round="none" elevation="none">
+      <Card
+        pad="medium"
+        background="background-front"
+        round="none"
+        elevation="none"
+      >
         <Form value={value} onChange={(nextValue) => setValue(nextValue)}>
           <Box pad="small" width="large">
             <FormField name="name" htmlFor="user-name" label="Full Name:">

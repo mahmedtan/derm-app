@@ -1,8 +1,8 @@
 import React from "react";
-import ResponsiveGrid from "../components/ResponsiveGrid";
+import ResponsiveGrid from "../components/utils/ResponsiveGrid";
 import { Box, Heading } from "grommet";
-import BlogCard from "../components/BlogCard";
-import Loading from "../components/Loading";
+import BlogCard from "../components/blog/BlogCard";
+import Loading from "./Loading";
 
 export default function Blogs({ blogs }) {
   if (!blogs) {

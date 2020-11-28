@@ -4,9 +4,9 @@ import { Grid, ResponsiveContext } from "grommet";
 
 const columns = {
   small: ["auto"],
-  medium: ["large", "small"],
-  large: ["large", "small"],
-  xlarge: ["large", "small"],
+  medium: ["large", "medium"],
+  large: ["large", "medium"],
+  xlarge: ["large", "medium"],
 };
 
 const rows = {

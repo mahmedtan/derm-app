@@ -2,7 +2,7 @@ import { Heading, Box, Avatar, Text, Image } from "grommet";
 import { useEffect } from "react";
 import ReactMarkdown from "react-markdown";
 
-import Loading from "../components/Loading";
+import Loading from "./Loading";
 
 const Blog = ({ blog }) => {
   useEffect(() => window.scrollTo(0, 0), [blog]);

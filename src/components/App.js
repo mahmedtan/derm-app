@@ -1,7 +1,7 @@
 import { Grommet } from "grommet";
 import { theme } from "../styles/theme.js";
-import Header from "./Header";
-import Footer from "./Footer";
+import Header from "./header/Header";
+import Footer from "./footer/Footer";
 import { Route, Switch, useRouteMatch } from "react-router-dom";
 import Home from "../pages/Home";
 import Blogs from "../pages/Blogs";

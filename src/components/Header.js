@@ -1,8 +1,8 @@
 import { Header, ResponsiveContext } from "grommet";
-import SnackBar from "./Snackbar";
+import SnackBar from "./Header/Snackbar";
 
 import { useSelector } from "react-redux";
-import Navbar from "./Navbar";
+import Navbar from "./Header/Navbar";
 
 const NavHeader = () => {
   const uiTheme = useSelector(({ uiTheme }) => uiTheme);

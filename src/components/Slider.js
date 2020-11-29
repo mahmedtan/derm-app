@@ -2,7 +2,7 @@ import { ResponsiveContext, Box } from "grommet";
 import { useContext } from "react";
 import Slider from "react-slick";
 
-import SliderImage from "./SliderImage";
+import SliderImage from "./Slider/SliderImage";
 const data = [
   {
     title: "Botox",

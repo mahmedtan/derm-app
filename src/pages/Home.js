@@ -2,7 +2,7 @@ import { Box, Text } from "grommet";
 import Newsletter from "../components/Newsletter";
 import ResponsiveGrid from "./ResponsiveGrid";
 import SidebarHome from "../components/SidebarHome";
-import Slider from "../components/Slider/Slider";
+import Slider from "../components/Slider";
 const Home = () => {
   return (
     <Box animation="fadeIn" overflow="hidden" align="center">

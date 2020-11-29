@@ -1,4 +1,4 @@
-import { Sidebar, Box, Image, Heading, Card, Anchor } from "grommet";
+import { Sidebar, Box, Heading, Anchor } from "grommet";
 import { Facebook, Instagram, Tumblr, Twitter } from "grommet-icons";
 const SidebarMain = () => {
   return (

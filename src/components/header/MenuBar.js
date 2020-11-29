@@ -1,5 +1,6 @@
 import React from "react";
 import { Anchor, Box, Button } from "grommet";
+import { Link } from "react-router-dom";
 import {
   Article,
   FacebookOption,
@@ -23,14 +24,27 @@ const MenuBar = () => {
       <Button>
         <Box gap="small" direction="row">
           <Phone />
-          <Anchor href="tel:214-625-2777" label="214-625-2777" />
+          <Anchor href="tel:214-625-2777" label="Call now" />
         </Box>
       </Button>
-      <Box direction="row" gap="medium" margin={{ horizontal: "xsmall" }}>
-        <Article />
-        <FacebookOption />
-        <Twitter />
-        <Youtube />
+      <Box
+        direction="row"
+        margin={{ horizontal: "xsmall" }}
+        align="center"
+        alignContent="center"
+      >
+        <Link to="/blogs">
+          <Button icon={<Article />} />
+        </Link>
+        <Link to="/blogs">
+          <Button icon={<FacebookOption />} />
+        </Link>
+        <Link to="/blogs">
+          <Button icon={<Twitter />} />
+        </Link>
+        <Link to="/blogs">
+          <Button icon={<Youtube />} />
+        </Link>
       </Box>
     </Box>
   );

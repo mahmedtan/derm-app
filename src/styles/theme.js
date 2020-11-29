@@ -63,7 +63,7 @@ export var theme = deepFreeze({
       "neutral-5": undefined,
       "status-error": undefined,
       brand: {
-        dark: "rgb(252,242,241)",
+        dark: "#C493AD",
         light: "#694F5D",
       },
       background: {

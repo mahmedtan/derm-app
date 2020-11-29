@@ -49,9 +49,14 @@ const Snackbar = ({ uiTheme }) => {
                 onClick={() => setShow(false)}
               />
 
-              <Link to="/services" onClick={() => setShow(false)}>
+              <Link to="/services/derm" onClick={() => setShow(false)}>
                 <Button>
-                  <Heading level="2">Services</Heading>
+                  <Heading level="2">Derm</Heading>
+                </Button>
+              </Link>
+              <Link to="/services/aesthetics" onClick={() => setShow(false)}>
+                <Button>
+                  <Heading level="2">Aesthetics</Heading>
                 </Button>
               </Link>
               <Link to="/specials" onClick={() => setShow(false)}>
@@ -59,9 +64,9 @@ const Snackbar = ({ uiTheme }) => {
                   <Heading level="2">Specials</Heading>
                 </Button>
               </Link>
-              <Link to="/blogs" onClick={() => setShow(false)}>
+              <Link to="/services" onClick={() => setShow(false)}>
                 <Button>
-                  <Heading level="2">Blogs</Heading>
+                  <Heading level="2">Services</Heading>
                 </Button>
               </Link>
               <Link to="/finance" onClick={() => setShow(false)}>
@@ -74,10 +79,6 @@ const Snackbar = ({ uiTheme }) => {
                   <Heading level="2">Contact us</Heading>
                 </Button>
               </Link>
-              <Box gap="medium" width="medium" pad="xlarge">
-                <Button primary label="Sign up" />
-                <Button secondary label="Log in" />
-              </Box>
             </Box>
           </Layer>
         )}

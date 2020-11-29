@@ -11,8 +11,7 @@ const NotFound = () => {
           justify="center"
           align="center"
           alignContent="center"
-          margin="large"
-          pad="large"
+          height="large"
         >
           <Heading level={2}>Page Not Found</Heading>
           <Link to="/">

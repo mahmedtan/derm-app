@@ -1,8 +1,8 @@
 import { Box, Text } from "grommet";
-import Newsletter from "../components/newsletter/Newsletter";
+import Newsletter from "../components/Newsletter/Newsletter";
 import ResponsiveGrid from "./ResponsiveGrid";
-import SidebarHome from "../components/sidebar/SidebarHome";
-import Slider from "../components/slider/Slider";
+import SidebarHome from "../components/Sidebar/SidebarHome";
+import Slider from "../components/Slider/Slider";
 const Home = () => {
   return (
     <Box animation="fadeIn" overflow="hidden" align="center">

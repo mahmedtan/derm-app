@@ -16,8 +16,8 @@ const Newsletter = () => {
   return (
     <Box
       elevation="small"
-      round="medium"
-      background="brand"
+      round="small"
+      background="background-back"
       direction="row-responsive"
       justify="around"
       overflow="hidden"

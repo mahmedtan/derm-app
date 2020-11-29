@@ -1,7 +1,6 @@
 import React from "react";
-import ResponsiveGrid from "./ResponsiveGrid";
 import { Box, Heading } from "grommet";
-import BlogCard from "../components/blog/BlogCard";
+import BlogCard from "../components/Blog/BlogCard";
 import Loading from "./Loading";
 
 export default function Blogs({ blogs }) {
@@ -9,19 +8,14 @@ export default function Blogs({ blogs }) {
     return <Loading />;
   }
   return (
-    <Box animation="fadeIn">
+    <Box animation="fadeIn" margin="large" align="center" gap="medium">
       <Heading level={1} alignSelf="center">
         Latest Blogs
       </Heading>
-      <ResponsiveGrid>
-        <Box gridArea="banner">{}</Box>
-        <Box gridArea="content">
-          {blogs.map((blog) => (
-            <BlogCard key={blog.id} blog={blog} />
-          ))}
-        </Box>
-        <Box gridArea="sidebar" margin="small"></Box>
-      </ResponsiveGrid>
+
+      {blogs.map((blog) => (
+        <BlogCard key={blog.title} blog={blog} />
+      ))}
     </Box>
   );
 }

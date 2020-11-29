@@ -45,7 +45,7 @@ const ResponsiveSlider = () => {
 
   const settings = {
     slidesToScroll: size === "small" ? 1 : 3,
-    speed: 1200,
+    speed: 4000,
     arrows: size !== "small",
     autoplay: true,
     dots: true,
@@ -53,7 +53,11 @@ const ResponsiveSlider = () => {
 
   return (
     <Box width="xlarge" pad="large">
-      <Slider slidesToShow={getNumOfItemsToShow(size)} {...settings}>
+      <Slider
+        slidesToShow={getNumOfItemsToShow(size)}
+        className="passive"
+        {...settings}
+      >
         {data.map((item) => (
           <SliderImage key={item.title} {...item} size={size} />
         ))}

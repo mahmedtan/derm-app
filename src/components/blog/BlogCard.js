@@ -3,31 +3,23 @@ import { Heading, Text, Box, Image, Avatar } from "grommet";
 import Linker from "../Linker";
 
 const BlogCard = ({ blog }) => {
-  const { title, author } = blog;
   return (
-    <Box margin={{ vertical: "large" }}>
+    <Box width="large" margin={{ bottom: "xlarge" }}>
       <Linker to={`/blogs/${blog.slug}`}>
         <Box elevation="medium" height="medium">
-          <Image
-            fit="cover"
-            src={blog.coverImage.formats.large.url}
-            a11yTitle="bridge"
-          />
+          <Image fit="cover" src={blog.mainImage} a11yTitle="bridge" />
         </Box>
       </Linker>
       <Box>
         <Linker to={`/blogs/${blog.slug}`}>
-          <Heading level={2} color="text">
-            {title}
+          <Heading level={3} color="text">
+            {blog.title}
           </Heading>
         </Linker>
         <Box direction="row" flex align="center" justify="start" gap="medium">
-          <Avatar
-            src={author.picture.formats.thumbnail.url}
-            elevation="medium"
-          />
+          <Avatar src={blog.author.image} elevation="medium" />
           <Text>
-            <strong>{author.name}</strong>
+            <strong>{blog.author.name}</strong>
           </Text>
         </Box>
       </Box>

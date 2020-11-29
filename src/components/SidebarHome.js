@@ -1,6 +1,5 @@
 import { Sidebar, Box, Image, Heading, Card, Anchor } from "grommet";
 import { Facebook, Instagram, Tumblr, Twitter } from "grommet-icons";
-import brochure from "./brochure-sidebar.png";
 const SidebarMain = () => {
   return (
     <Sidebar
@@ -37,9 +36,6 @@ const SidebarMain = () => {
         <Heading alignSelf="center" level="3">
           Promotions
         </Heading>
-        <Card align="center" margin="small">
-          <Image src={brochure} fit="cover" />
-        </Card>
       </Box>
     </Sidebar>
   );

@@ -1,6 +1,6 @@
 import React from "react";
 import { Box, Heading } from "grommet";
-import BlogCard from "../components/Blog/BlogCard";
+import BlogCard from "../components/BlogCard";
 import Loading from "./Loading";
 
 export default function Blogs({ blogs }) {

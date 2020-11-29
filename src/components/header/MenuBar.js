@@ -1,10 +1,8 @@
 import React from "react";
-import { Anchor, Box, Button, Text } from "grommet";
+import { Anchor, Box, Button } from "grommet";
 import {
   Article,
-  Facebook,
   FacebookOption,
-  Instagram,
   Phone,
   Twitter,
   Youtube,

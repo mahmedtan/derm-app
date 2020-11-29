@@ -3,7 +3,6 @@ import SnackBar from "./Snackbar";
 
 import { useSelector } from "react-redux";
 import Navbar from "./Navbar";
-import MenuBar from "./MenuBar";
 
 const NavHeader = () => {
   const uiTheme = useSelector(({ uiTheme }) => uiTheme);

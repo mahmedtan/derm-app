@@ -1,6 +1,6 @@
 import React from "react";
-import { Button, Box, Stack, Heading } from "grommet";
-import { Group, Moon, Sun } from "grommet-icons";
+import { Button, Box, Stack } from "grommet";
+import { Moon, Sun } from "grommet-icons";
 import { toggleUI } from "../../reducers/uiThemeReducer";
 import { Link } from "react-router-dom";
 import NavButton from "./NavButton";

@@ -1,6 +1,6 @@
 import { Grommet } from "grommet";
 import { theme } from "../styles/theme.js";
-import { Route, Switch, useRouteMatch } from "react-router-dom";
+import { Route, Switch } from "react-router-dom";
 import Home from "../pages/Home";
 import Blogs from "../pages/Blogs";
 import NotFound from "../pages/404";

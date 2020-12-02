@@ -27,7 +27,9 @@ const Snackbar = ({ uiTheme }) => {
           onClick={() => dispatch(toggleUI())}
         />
         <Link to="/">
-          <Button size="large">Lorem ipsum dolor.</Button>
+          <Button size="large" color="brand">
+            Lorem ipsum dolor.
+          </Button>
         </Link>
         <Button icon={<Menu />} onClick={() => setShow(true)} />
         {show && (

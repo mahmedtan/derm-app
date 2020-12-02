@@ -45,14 +45,16 @@ const ResponsiveSlider = () => {
 
   const settings = {
     slidesToScroll: size === "small" ? 1 : 3,
-    speed: 3000,
+    speed: 2000,
+    swipeToSlide: true,
+    pauseOnHover: true,
     arrows: size !== "small",
     autoplay: true,
     dots: true,
   };
 
   return (
-    <Box width="xlarge" pad="large">
+    <Box width="xlarge" pad={{ horizontal: "medium" }}>
       <Slider
         slidesToShow={getNumOfItemsToShow(size)}
         className="passive"

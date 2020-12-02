@@ -6,7 +6,7 @@ const BlogCard = ({ blog }) => {
   return (
     <Box width="large" margin={{ bottom: "xlarge" }}>
       <Linker to={`/blogs/${blog.slug}`}>
-        <Box elevation="medium" height="medium">
+        <Box elevation="medium" height="medium" overflow="hidden" round="small">
           <Image fit="cover" src={blog.mainImage} a11yTitle="bridge" />
         </Box>
       </Linker>

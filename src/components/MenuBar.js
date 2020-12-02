@@ -23,8 +23,8 @@ const MenuBar = () => {
     >
       <Button>
         <Box gap="small" direction="row">
-          <Phone />
-          <Anchor href="tel:214-625-2777" label="Call now" />
+          <Phone color="brand" />
+          <Anchor href="tel:214-625-2777" label="Call now" color="brand" />
         </Box>
       </Button>
       <Box

@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { Box, Heading } from "grommet";
 import BlogCard from "../components/BlogCard";
 import Loading from "./Loading";

@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, Button, Heading, Text, Image } from "grommet";
+import { Box, Button, Heading, Image } from "grommet";
 import sapiens from "./sapiens-v2.png";
 
 const Pamphlet = () => {
@@ -34,6 +34,7 @@ const Pamphlet = () => {
             secondary
             size="large"
             color="#0f1f25"
+            href="tel:214-625-2777"
             style={{ color: "#0f1f25" }}
           />
         </Box>

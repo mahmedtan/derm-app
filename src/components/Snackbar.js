@@ -24,7 +24,9 @@ const Snackbar = ({ uiTheme }) => {
         <Button
           focusIndicator={false}
           icon={uiTheme === "light" ? <Moon /> : <Sun />}
-          onClick={() => dispatch(toggleUI())}
+          onClick={() => {
+            dispatch(toggleUI());
+          }}
         />
         <Link to="/">
           <Button size="large" color="brand">

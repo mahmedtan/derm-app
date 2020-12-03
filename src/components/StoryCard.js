@@ -34,7 +34,7 @@ const StoryCard = ({ image, title, description }) => {
         <Text textAlign={size === "small" ? "center" : "start"}>
           {description}
         </Text>
-        <Button secondary>Learn More</Button>
+        <Button primary>Learn More</Button>
       </Box>
     </Box>
   );

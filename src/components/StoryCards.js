@@ -7,7 +7,13 @@ const StoryCards = () => {
   const description =
     "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Debitis nam possimus aspernatur. Maxime, corporis cumque vel, rerum earum ducimus, hic deleniti voluptate in temporibus ea illum provident odit eaque similique?";
   return (
-    <Box width="100vw" gap="large" pad="large" align="start">
+    <Box
+      width="100vw"
+      gap="large"
+      pad="large"
+      align="start"
+      background="background-contrast"
+    >
       <StoryCard
         image="https://images.unsplash.com/photo-1606757870492-9fc7cf1e736d?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=2735&q=80"
         title="Derm"

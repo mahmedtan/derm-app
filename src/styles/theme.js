@@ -242,10 +242,10 @@ export var theme = deepFreeze({
   },
   accordion: {
     panel: {
-      border: {
-        side: "horizontal",
-        color: "text",
-      },
+      // border: {
+      //   side: "horizontal",
+      //   color: "text",
+      // },
     },
     heading: {
       margin: {
@@ -260,7 +260,7 @@ export var theme = deepFreeze({
     },
     border: undefined,
     icons: {
-      color: "text",
+      color: "brand",
     },
   },
   anchor: {

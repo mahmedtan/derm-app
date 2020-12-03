@@ -1,10 +1,8 @@
-import { Button, Heading } from "grommet";
+import { Heading } from "grommet";
 import React, { useEffect, useState } from "react";
 import { Box } from "grommet";
 import RecentBlogCard from "./RecentBlogCard";
 import Loading from "../pages/Loading";
-import { Down } from "grommet-icons";
-import { Link } from "react-router-dom";
 
 const RecentBlogs = ({ blogs }) => {
   const [recentBlogs, setRecentBlogs] = useState(null);
@@ -14,7 +12,6 @@ const RecentBlogs = ({ blogs }) => {
   }, [blogs]);
 
   if (!(blogs && recentBlogs)) {
-    console.log("🤯");
     return <Loading />;
   }
 

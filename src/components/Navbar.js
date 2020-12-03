@@ -20,7 +20,7 @@ const Navbar = ({ uiTheme }) => {
           direction="row"
           justify="center"
           align="center"
-          gap="xlarge"
+          gap="large"
         >
           <Box direction="row" gap="small">
             <NavButton to="/services/derm" label="Derm" />
@@ -29,7 +29,7 @@ const Navbar = ({ uiTheme }) => {
           </Box>
 
           <Link to="/">
-            <Button size="large" color="brand" margin={{ horizontal: "small" }}>
+            <Button color="brand" size="large">
               Lorem ipsum dolor sit.
             </Button>
           </Link>
@@ -45,7 +45,9 @@ const Navbar = ({ uiTheme }) => {
             <Button
               focusIndicator={false}
               icon={uiTheme === "light" ? <Moon /> : <Sun />}
-              onClick={() => dispatch(toggleUI())}
+              onClick={() => {
+                dispatch(toggleUI());
+              }}
               alignSelf="center"
             />
           </Box>

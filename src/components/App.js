@@ -9,6 +9,7 @@ import { useEffect } from "react";
 import Blog from "../pages/Blog";
 import { initializeBlogs } from "../reducers/blogReducer";
 import Layout from "./Layout.js";
+import LayoutWithSidebar from "./LayoutWithSidebar.js";
 
 function App() {
   const uiTheme = useSelector(({ uiTheme }) => uiTheme);
@@ -27,6 +28,9 @@ function App() {
         </Route>
         <Route path="/blogs">
           <Blogs blogs={blogs} />
+        </Route>
+        <Route path="/services">
+          <LayoutWithSidebar />
         </Route>
         <Route exact path="/">
           <Layout>

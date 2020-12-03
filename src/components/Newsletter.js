@@ -6,59 +6,52 @@ import {
   Heading,
   TextInput,
   Card,
+  Text,
+  ResponsiveContext,
 } from "grommet";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { MailOption, User } from "grommet-icons";
 
 const Newsletter = () => {
   const [value, setValue] = useState({});
+  const size = useContext(ResponsiveContext);
 
   return (
     <Box
-      elevation="small"
-      round="small"
-      background="background-back"
+      fill="horizontal"
       direction="row-responsive"
-      justify="around"
-      overflow="hidden"
-      width="large"
+      justify="center"
+      align="center"
+      pad={size === "small" ? "large" : "none"}
+      gap="large"
     >
-      <Box pad="large" align="center" alignContent="center" elevation="large">
-        <Heading level={2}>Get the news delivered to your inbox!</Heading>
-      </Box>
-      <Card
-        pad="medium"
-        background="background-front"
-        round="none"
-        elevation="none"
-      >
-        <Form value={value} onChange={(nextValue) => setValue(nextValue)}>
-          <Box pad="small" width="large">
-            <FormField name="name" htmlFor="user-name" label="Full Name:">
-              <TextInput
-                id="user-name"
-                reverse
-                placeholder="John Doe"
-                icon={<User />}
-              />
-            </FormField>
-            <FormField name="name" htmlFor="email" label="Email Address:">
-              <TextInput
-                id="email"
-                reverse
-                placeholder="john@example.com"
-                icon={<MailOption />}
-              />
-            </FormField>
-            <Button
-              type="submit"
-              label="Subscribe"
-              margin={{ top: "medium" }}
-              primary
+      <Heading level={3}>Get the news delivered to your inbox!</Heading>
+
+      <Form value={value} onChange={(nextValue) => setValue(nextValue)}>
+        <Box direction="row-responsive" align="center" gap="large">
+          <Box direction="row-responsive" align="center" gap="small">
+            <Text weight="bold">Name:</Text>
+            <TextInput
+              id="user-name"
+              reverse
+              placeholder="John Doe"
+              icon={<User />}
             />
           </Box>
-        </Form>
-      </Card>
+
+          <Box direction="row-responsive" align="center" gap="small">
+            <Text weight="bold">Email:</Text>
+            <TextInput
+              id="email"
+              reverse
+              placeholder="john@example.com"
+              icon={<MailOption />}
+            />
+          </Box>
+
+          <Button type="submit" label="Subscribe" color="pink" primary />
+        </Box>
+      </Form>
     </Box>
   );
 };

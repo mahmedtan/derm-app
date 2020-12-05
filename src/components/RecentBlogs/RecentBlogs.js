@@ -2,7 +2,7 @@ import { Heading } from "grommet";
 import React, { useEffect, useState } from "react";
 import { Box } from "grommet";
 import RecentBlogCard from "./RecentBlogCard";
-import Loading from "../pages/Loading";
+import Loading from "../../pages/Loading";
 
 const RecentBlogs = ({ blogs }) => {
   const [recentBlogs, setRecentBlogs] = useState(null);

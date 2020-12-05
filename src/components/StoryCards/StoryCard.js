@@ -1,7 +1,8 @@
 import React, { useContext } from "react";
 import { Box, Button, Image, Text, ResponsiveContext } from "grommet";
+import { Link } from "react-router-dom";
 
-const StoryCard = ({ image, title, description }) => {
+const StoryCard = ({ image, name, description, services }) => {
   const size = useContext(ResponsiveContext);
 
   return (
@@ -29,12 +30,14 @@ const StoryCard = ({ image, title, description }) => {
         align={size === "small" ? "center" : "start"}
       >
         <Box style={{ fontFamily: "sans-serif", fontSize: "1.5rem" }}>
-          <strong>{title}</strong>
+          <strong>{name}</strong>
         </Box>
         <Text textAlign={size === "small" ? "center" : "start"}>
           {description}
         </Text>
-        <Button primary>Learn More</Button>
+        <Link to={`/services/${services[0].slug}`}>
+          <Button primary>Learn More</Button>
+        </Link>
       </Box>
     </Box>
   );

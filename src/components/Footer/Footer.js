@@ -3,10 +3,12 @@ const NavFooter = () => {
   return (
     <Footer
       align="center"
+      as="footer"
       direction="row-responsive"
       flex={false}
       justify="between"
       border="top"
+      height="xsmall"
       gap="medium"
       fill="horizontal"
       pad="medium"

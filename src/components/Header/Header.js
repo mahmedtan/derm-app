@@ -10,6 +10,7 @@ const NavHeader = () => {
     <Header
       direction="row"
       justify="between"
+      elevation="xsmall"
       fill="horizontal"
       focusIndicator={false}
       hoverIndicator={true}

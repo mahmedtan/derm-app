@@ -1,17 +1,14 @@
-import { Heading, Box, Avatar, Text, Image, ResponsiveContext } from "grommet";
-import { useContext, useEffect, useState } from "react";
+import { Heading, Box, Avatar, Text, Image } from "grommet";
+import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import BlockContent from "@sanity/block-content-to-react";
-import { getFullBlog } from "../services/blogs";
-import PageNotFound from "./404";
-import getYouTubeId from "get-youtube-id";
-import YouTube from "react-youtube";
+import { getFullBlog } from "../../services/blogs";
+import PageNotFound from "../Extras/404";
+import BlockContentMain from "../../components/Utils/BlockContentMain";
 
-import Loading from "./Loading";
-import Layout from "../components/Layout";
+import Loading from "../Loading";
+import Layout from "../../components/Utils/Layout";
 
 const Blog = () => {
-  const size = useContext(ResponsiveContext);
   const { slug } = useParams();
   const [blog, setBlog] = useState(null);
   useEffect(() => {
@@ -23,20 +20,6 @@ const Blog = () => {
   if (!blog) {
     return <Loading />;
   }
-  const serializers = {
-    types: {
-      youtube: ({ node }) => {
-        const { url } = node;
-        const id = getYouTubeId(url);
-        return (
-          <YouTube
-            videoId={id}
-            opts={size === "small" && { width: "330", height: "200" }}
-          />
-        );
-      },
-    },
-  };
 
   return (
     <Layout>
@@ -57,12 +40,7 @@ const Blog = () => {
               <strong>{blog.author.name}</strong>
             </Text>
           </Box>
-          <BlockContent
-            blocks={blog.body}
-            projectId="zegc2wrv"
-            dataset="production"
-            serializers={serializers}
-          />
+          <BlockContentMain body={blog.body} />
         </Box>
       </Box>
     </Layout>

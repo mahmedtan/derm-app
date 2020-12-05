@@ -1,15 +1,17 @@
 import { Grommet } from "grommet";
-import { theme } from "../styles/theme.js";
+import { theme } from "../../styles/theme.js";
 import { Route, Switch } from "react-router-dom";
-import Home from "../pages/Home";
-import Blogs from "../pages/Blogs";
-import NotFound from "../pages/404";
+import Home from "../../pages/Home";
+import Blogs from "../../pages/Blogs/Blogs";
+import NotFound from "../../pages/Extras/404";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
-import Blog from "../pages/Blog";
-import { initializeBlogs } from "../reducers/blogReducer";
-import Layout from "./Layout.js";
-import LayoutWithSidebar from "./LayoutWithSidebar.js";
+import Blog from "../../pages/Blogs/Blog";
+import { initializeBlogs } from "../../reducers/blogReducer";
+import Layout from "../Utils/Layout.js";
+import Services from "../../pages/Services/Services.js";
+import { initServiceTypes } from "../../reducers/serviceTypeReducer.js";
+import { initServices } from "../../reducers/serviceReducer.js";
 
 function App() {
   const uiTheme = useSelector(({ uiTheme }) => uiTheme);
@@ -18,6 +20,8 @@ function App() {
 
   useEffect(() => {
     dispatch(initializeBlogs());
+    dispatch(initServices());
+    dispatch(initServiceTypes());
   }, [dispatch]);
 
   return (
@@ -30,7 +34,7 @@ function App() {
           <Blogs blogs={blogs} />
         </Route>
         <Route path="/services">
-          <LayoutWithSidebar />
+          <Services />
         </Route>
         <Route exact path="/">
           <Layout>

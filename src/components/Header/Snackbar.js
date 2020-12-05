@@ -3,7 +3,7 @@ import { Layer, Button, Heading, Box } from "grommet";
 import { Menu, Close, Moon, Sun } from "grommet-icons";
 import { Link } from "react-router-dom";
 import { useDispatch } from "react-redux";
-import { toggleUI } from "../reducers/uiThemeReducer";
+import { toggleUI } from "../../reducers/uiThemeReducer";
 import MenuBar from "./MenuBar";
 
 const Snackbar = ({ uiTheme }) => {

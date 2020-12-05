@@ -1,0 +1,57 @@
+import React, { useContext } from "react";
+import Header from "../../components/Header/Header";
+import { Box, Button, ResponsiveContext, Stack } from "grommet";
+import { Switch, Route, Redirect, useRouteMatch } from "react-router-dom";
+import Service from "./Service";
+import { useSelector } from "react-redux";
+import Loading from "../Loading";
+import SidebarServices from "../../components/Sidebars/SidebarServices";
+
+const Services = () => {
+  const size = useContext(ResponsiveContext);
+  const [services, serviceTypes] = useSelector(({ services, serviceTypes }) => [
+    services,
+    serviceTypes,
+  ]);
+  const match = useRouteMatch("/services/:slug");
+  const service =
+    match && services
+      ? services.find((service) => service.slug === match.params.slug)
+      : undefined;
+
+  if (!serviceTypes) return <Loading />;
+
+  return (
+    <Box>
+      <Header />
+      <Box direction="row-responsive" justify="end">
+        <Box
+          width="100%"
+          height="88vh"
+          justify="end"
+          align="center"
+          overflow="auto"
+        >
+          <Switch>
+            <Route path="/services/:slug">
+              <Service
+                service={service}
+                services={services}
+                serviceTypes={serviceTypes}
+                size={size}
+              />
+            </Route>
+            <Route path="/services">
+              <Redirect to={`/services/${serviceTypes[0].services[0].slug}`} />
+            </Route>
+          </Switch>
+        </Box>
+        {size !== "small" && size !== "xsmall" ? (
+          <SidebarServices serviceTypes={serviceTypes} />
+        ) : null}
+      </Box>
+    </Box>
+  );
+};
+
+export default Services;

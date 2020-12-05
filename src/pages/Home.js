@@ -1,15 +1,15 @@
 import { Box, Button } from "grommet";
-import Newsletter from "../components/Newsletter";
+import Newsletter from "../components/Utils/Newsletter";
 
-import Slider from "../components/Slider";
+import Slider from "../components/Slider/Slider";
 
-import Pamphlet from "../components/Pamphlet";
-import StoryCards from "../components/StoryCards";
-import RecentBlogs from "../components/RecentBlogs";
+import Pamphlet from "../components/Pamphlet/Pamphlet";
+import StoryCards from "../components/StoryCards/StoryCards";
+import RecentBlogs from "../components/RecentBlogs/RecentBlogs";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { LinkNext } from "grommet-icons";
-import Comments from "../components/Comments";
+import Comments from "../components/Comments/Comments";
 
 const Home = () => {
   const blogs = useSelector((state) => state.blogs);

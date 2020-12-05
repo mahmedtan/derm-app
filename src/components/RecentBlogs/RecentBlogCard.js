@@ -1,6 +1,6 @@
 import React from "react";
 import { Heading, Text, Box, Image, Avatar } from "grommet";
-import Linker from "./Linker";
+import Linker from "../Utils/Linker";
 
 const RecentBlogCard = (blog) => {
   return (

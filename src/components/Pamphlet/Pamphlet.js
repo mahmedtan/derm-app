@@ -1,6 +1,7 @@
 import React from "react";
 import { Box, Button, Heading, Image } from "grommet";
 import sapiens from "./sapiens-v2.png";
+import { Link } from "react-router-dom";
 
 const Pamphlet = () => {
   return (
@@ -22,13 +23,16 @@ const Pamphlet = () => {
           Get a free consultation on your first visit
         </Heading>
         <Box gap="small" direction="row" align="center" justify="center">
-          <Button
-            label="Book now"
-            primary
-            color="#0f1f25"
-            size="large"
-            style={{ color: "#edddd7" }}
-          />
+          <Link to="/book-now">
+            <Button
+              label="Book now"
+              primary
+              color="#0f1f25"
+              size="large"
+              style={{ color: "#edddd7" }}
+            />
+          </Link>
+
           <Button
             label="Call now"
             secondary

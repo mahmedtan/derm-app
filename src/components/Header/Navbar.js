@@ -1,17 +1,14 @@
 import React from "react";
 import { Button, Box, Stack } from "grommet";
-import { Moon, Sun } from "grommet-icons";
-import { toggleUI } from "../../reducers/uiThemeReducer";
 import { Link } from "react-router-dom";
 import NavButton from "./NavButton";
-import { useDispatch } from "react-redux";
 import MenuBar from "./MenuBar";
-const Navbar = ({ uiTheme }) => {
-  const dispatch = useDispatch();
+import AutheticationBtn from "../Authentication.js/AutheticationBtn";
 
+const Navbar = ({ uiTheme }) => {
   return (
     <Box width="full" height="full">
-      <MenuBar />
+      <MenuBar uiTheme={uiTheme} />
 
       <Stack anchor="right">
         <Box
@@ -27,31 +24,18 @@ const Navbar = ({ uiTheme }) => {
             <NavButton to="/services/aesthetics" label="Aesthetics" />
             <NavButton to="/specials" label="Specials" />
           </Box>
-
           <Link to="/">
             <Button color="brand" size="large">
               Lorem ipsum dolor sit.
             </Button>
           </Link>
-
           <Box direction="row" gap="small">
             <NavButton to="/services" label="Services" />
             <NavButton to="/finance" label="Finance" />
             <NavButton to="/services" label="Contact us" />
           </Box>
         </Box>
-        <Box direction="row" margin={{ horizontal: "medium" }} gap="large">
-          <Box direction="row">
-            <Button
-              focusIndicator={false}
-              icon={uiTheme === "light" ? <Moon /> : <Sun />}
-              onClick={() => {
-                dispatch(toggleUI());
-              }}
-              alignSelf="center"
-            />
-          </Box>
-        </Box>
+        <AutheticationBtn />
       </Stack>
     </Box>
   );

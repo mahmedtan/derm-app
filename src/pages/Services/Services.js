@@ -1,10 +1,10 @@
 import React, { useContext } from "react";
 import Header from "../../components/Header/Header";
-import { Box, Button, ResponsiveContext, Stack } from "grommet";
+import { Box, ResponsiveContext } from "grommet";
 import { Switch, Route, Redirect, useRouteMatch } from "react-router-dom";
 import Service from "./Service";
 import { useSelector } from "react-redux";
-import Loading from "../Loading";
+import Loading from "../Extras/Loading";
 import SidebarServices from "../../components/Sidebars/SidebarServices";
 
 const Services = () => {

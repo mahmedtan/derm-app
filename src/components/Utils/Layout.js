@@ -1,14 +1,15 @@
 import React from "react";
 import Header from "../Header/Header";
 import Footer from "../Footer/Footer";
+import { Box } from "grommet";
 
 const Layout = ({ children }) => {
   return (
-    <div>
+    <Box>
       <Header />
       {children}
       <Footer />
-    </div>
+    </Box>
   );
 };
 

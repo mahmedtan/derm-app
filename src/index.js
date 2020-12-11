@@ -14,18 +14,39 @@ import uiThemeReducer from "./reducers/uiThemeReducer";
 import serviceTypesReducer from "./reducers/serviceTypeReducer";
 import serviceReducer from "./reducers/serviceReducer";
 import selectItemReducer from "./reducers/selectedItemReducer";
+import indexReducer from "./reducers/indexReducer";
+import procedureReducer from "./reducers/procedureReducer";
+import consultationReducer from "./reducers/consultationReducer";
+import imageReducer from "./reducers/imageReducer";
+import "react-datetime/css/react-datetime.css";
+import dateReducer from "./reducers/dateReducer";
+import formValuesReducer from "./reducers/formValuesReducer";
+import Auth0ProviderWithHistory from "./auth/auth0-provider-with-history";
+import dotenv from "dotenv";
+dotenv.config();
+
 const reducer = combineReducers({
   blogs: blogReducer,
   uiTheme: uiThemeReducer,
   serviceTypes: serviceTypesReducer,
   services: serviceReducer,
   selectedItem: selectItemReducer,
+  activeIndex: indexReducer,
+  procedures: procedureReducer,
+  consultations: consultationReducer,
+  images: imageReducer,
+  date: dateReducer,
+  formValues: formValuesReducer,
 });
+
 const store = createStore(reducer, applyMiddleware(thunk));
+
 ReactDOM.render(
   <Provider store={store}>
     <Router>
-      <App />
+      <Auth0ProviderWithHistory>
+        <App />
+      </Auth0ProviderWithHistory>
     </Router>
   </Provider>,
   document.getElementById("root")

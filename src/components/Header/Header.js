@@ -12,8 +12,6 @@ const NavHeader = () => {
       justify="between"
       elevation="xsmall"
       fill="horizontal"
-      focusIndicator={false}
-      hoverIndicator={true}
       height="6rem"
       as="header"
     >

@@ -6,10 +6,15 @@ import {
   FacebookOption,
   Phone,
   Twitter,
+  User,
   Youtube,
 } from "grommet-icons";
+import { Moon, Sun } from "grommet-icons";
+import { toggleUI } from "../../reducers/uiThemeReducer";
+import { useDispatch } from "react-redux";
 
-const MenuBar = () => {
+const MenuBar = ({ uiTheme }) => {
+  const dispatch = useDispatch();
   return (
     <Box
       direction="row"
@@ -19,14 +24,18 @@ const MenuBar = () => {
       fill="horizontal"
       height="2.5rem"
       justify="between"
-      pad={{ horizontal: "small" }}
+      pad={{ horizontal: "medium" }}
     >
-      <Button>
-        <Box gap="small" direction="row">
-          <Phone color="brand" />
-          <Anchor href="tel:214-625-2777" label="Call now" color="brand" />
-        </Box>
-      </Button>
+      <Box direction="row">
+        <Button href="tel:214-625-2777" icon={<Phone />} />
+        <Button
+          icon={uiTheme === "light" ? <Moon /> : <Sun />}
+          onClick={() => {
+            dispatch(toggleUI());
+          }}
+        />
+      </Box>
+
       <Box
         direction="row"
         margin={{ horizontal: "xsmall" }}

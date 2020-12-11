@@ -2,7 +2,7 @@ import { ResponsiveContext, Box } from "grommet";
 import { useContext, useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import Slider from "react-slick";
-import Loading from "../../pages/Loading";
+import Loading from "../../pages/Extras/Loading";
 
 import SliderImage from "./SliderImage";
 

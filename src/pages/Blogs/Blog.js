@@ -5,7 +5,7 @@ import { getFullBlog } from "../../services/blogs";
 import PageNotFound from "../Extras/404";
 import BlockContentMain from "../../components/Utils/BlockContentMain";
 
-import Loading from "../Loading";
+import Loading from "../Extras/Loading";
 import Layout from "../../components/Utils/Layout";
 
 const Blog = () => {

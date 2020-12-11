@@ -2,7 +2,7 @@ import { Box } from "grommet";
 import React, { useContext, useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import StoryCard from "./StoryCard";
-import Loading from "../../pages/Loading";
+import Loading from "../../pages/Extras/Loading";
 
 const StoryCards = () => {
   const serviceTypes = useSelector(({ serviceTypes }) => serviceTypes);

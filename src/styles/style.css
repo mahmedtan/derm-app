@@ -11,3 +11,7 @@ a {
 .slick-next:before {
   color: gray !important;
 }
+
+div:focus {
+  outline: none;
+}

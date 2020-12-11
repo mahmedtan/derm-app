@@ -18,7 +18,11 @@ const Profile = () => {
   return (
     isAuthenticated && (
       <Layout>
-        <Box align="center">
+        <Box
+          align="center"
+          background="background-back"
+          height={{ min: "90vh" }}
+        >
           <Heading textAlign="center" level="2">
             Welcome {forms[0] && forms[0].firstName + " " + forms[0].lastName}
           </Heading>

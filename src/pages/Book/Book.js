@@ -51,6 +51,7 @@ const Book = () => {
 
         <Box>
           <Form
+            validate="blur"
             value={formValues}
             onChange={(nextValue) => dispatch(changeValues(nextValue))}
             onSubmit={({ value }) => {

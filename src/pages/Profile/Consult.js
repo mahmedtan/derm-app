@@ -3,7 +3,8 @@ import React from "react";
 import DisplayCard from "../../components/Utils/DisplayCard";
 
 const Consultations = ({ consultations, title }) => {
-  if (!consultations) return null;
+  if (!consultations.length) return null;
+
   return (
     <Box gap="large" align="center">
       <Text textAlign="center" size="xlarge">

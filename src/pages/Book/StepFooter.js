@@ -6,7 +6,16 @@ import { useDispatch, useSelector } from "react-redux";
 
 const StepFooter = () => {
   const activeIndex = useSelector(({ activeIndex }) => activeIndex);
+  const { formValues } = useSelector(({ formValues }) => ({ formValues }));
 
+  const { firstName, lastName, emailAddress, phoneNumber } = formValues;
+  const stepOneVal =
+    Object.keys(formValues)
+      .filter((x) => formValues[x])
+      .filter((x) => x.length > 15).length > 0;
+  const validate =
+    activeIndex === 1 &&
+    !(firstName && lastName && emailAddress && phoneNumber);
   const dispatch = useDispatch();
   return (
     <Box fill="horizontal" direction="row" gap="large" justify="end">
@@ -16,6 +25,7 @@ const StepFooter = () => {
         <Button
           primary
           size="large"
+          disabled={!stepOneVal || validate}
           label="Next"
           onClick={(e) => {
             e.preventDefault();

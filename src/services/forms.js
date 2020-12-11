@@ -70,7 +70,7 @@ const uploadImages = async (images) => {
 
 export const getForm = async (sub) => {
   const response = await client.fetch(
-    '*[_type=="form" && sub ==$sub]{...,procedures[]->,consultations[]->,"images":images[].asset->url}',
+    '*[_type=="form" && sub ==$sub] | order(_createdAt desc) {...,procedures[]->,consultations[]->,"images":images[].asset->url}',
     {
       sub,
     }

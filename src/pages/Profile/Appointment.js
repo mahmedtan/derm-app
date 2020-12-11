@@ -41,15 +41,22 @@ const Appointment = ({ form, deleteForm }) => {
       <Consultations title="Consultations" consultations={form.consultations} />
       <Consultations title="Procedures" consultations={form.procedures} />
 
-      <Text size="xlarge">Images</Text>
-      <Box gap="large" direction="row-responsive">
-        {form.images &&
-          form.images.map((url) => (
-            <Box key={url} width="small" border round overflow="hidden">
-              <Image src={url} />
-            </Box>
-          ))}
-      </Box>
+      {form.images.length > 0 && (
+        <Box gap="medium">
+          <Text size="xlarge" alignSelf="center">
+            Images
+          </Text>
+          <Box gap="large" direction="row-responsive">
+            {form.images &&
+              form.images.map((url) => (
+                <Box key={url} width="small" border round overflow="hidden">
+                  <Image src={url} />
+                </Box>
+              ))}
+          </Box>
+        </Box>
+      )}
+
       <Button primary disabled={open} onClick={() => setOpen(true)}>
         Cancel Appointment
       </Button>

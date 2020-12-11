@@ -6,12 +6,14 @@ import { Link } from "react-router-dom";
 import Layout from "../../components/Utils/Layout";
 import Spinner from "../../components/Utils/Spinner";
 import { submitForm } from "../../services/forms";
-import Loading from "../Extras/Loading";
 
 const Confirmation = () => {
   const [submitted, setSubmitted] = useState(false);
+
   const { user } = useAuth0();
+
   const dispatch = useDispatch();
+
   const { formValues, images, procedures, consultations, date } = useSelector(
     ({ formValues, images, procedures, consultations, date }) => ({
       formValues,
@@ -21,6 +23,11 @@ const Confirmation = () => {
       date,
     })
   );
+
+  const [fullName, setFullName] = useState(
+    formValues.firstName + " " + formValues.lastName
+  );
+
   useEffect(() => {
     if (!submitted) {
       if (formValues && images && procedures && consultations && date && user) {
@@ -32,16 +39,29 @@ const Confirmation = () => {
           date,
           user
         ).then((res) => {
-          dispatch({ type: "RESET_FORM" });
-          dispatch({ type: "RESET_INDEX" });
-          dispatch({ type: "RESET_IMAGES" });
-          dispatch({ type: "RESET_DATE" });
           console.log(res);
           setSubmitted(true);
         });
       }
     }
-  }, [formValues, images, procedures, consultations, date, user]);
+  }, [
+    formValues,
+    images,
+    procedures,
+    consultations,
+    date,
+    user,
+    dispatch,
+    submitted,
+  ]);
+  useEffect(() => {
+    if (submitted) {
+      dispatch({ type: "RESET_FORM" });
+      dispatch({ type: "RESET_INDEX" });
+      dispatch({ type: "RESET_IMAGES" });
+      dispatch({ type: "RESET_DATE" });
+    }
+  }, [submitted, dispatch]);
 
   if (!submitted)
     return (
@@ -66,7 +86,7 @@ const Confirmation = () => {
         <Card align="center">
           <Box pad="medium">
             <Heading level="3" margin="none">
-              Dear {formValues.firstName} {formValues.lastName},
+              Dear {fullName},
             </Heading>
             <Paragraph size="large">
               Your appointment has been booked for {new Date(date).toString()}

@@ -5,7 +5,6 @@ const client = sanityClient({
   ignoreBrowserTokenWarning: true,
   token:
     "sky5AUm67nF6fOTl1iK6CAcuwRunjkFQSQXcMuDwP5pB2RTTy95oh99UuNE4hPFVZsoFt7vWMS9foS3RFfnmi4MSpajtYn7qliXK2qdh9ufssvE2i9EM2q796Vd9gHxLLIhXfkVGINhkbtPzflOYvcTJoHrWpZZVyPGntrY50wH1ZS4l046O",
-  useCdn: true, // `false` if you want to ensure fresh data
 });
 
 export const submitForm = async (

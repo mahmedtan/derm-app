@@ -12,7 +12,7 @@ const Appointments = ({ forms }) => {
   };
 
   return (
-    <Box pad="large" align="center">
+    <Box pad="large" align="center" gap="large">
       <Heading level="3" textAlign="center">
         Appointments
       </Heading>

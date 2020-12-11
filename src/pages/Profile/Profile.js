@@ -19,8 +19,8 @@ const Profile = () => {
     isAuthenticated && (
       <Layout>
         <Box align="center">
-          <Heading textAlign="center">
-            Welcome {forms[0] && forms[0].firstName + forms[0].lastName}
+          <Heading textAlign="center" level="2">
+            Welcome {forms[0] && forms[0].firstName + " " + forms[0].lastName}
           </Heading>
 
           {!user.email_verified && <VerifyBanner user={user} />}

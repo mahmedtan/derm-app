@@ -36,6 +36,7 @@ const Confirmation = () => {
           dispatch({ type: "RESET_INDEX" });
           dispatch({ type: "RESET_IMAGES" });
           dispatch({ type: "RESET_DATE" });
+          console.log(res);
           setSubmitted(true);
         });
       }

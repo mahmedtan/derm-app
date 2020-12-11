@@ -4,8 +4,9 @@ import Consultations from "./Consult";
 
 const Appointment = ({ form, deleteForm }) => {
   const [open, setOpen] = useState(false);
+
   return (
-    <Card width="large" pad="medium" align="center" gap="large">
+    <Box pad="medium" align="center" gap="large">
       <Text size="xlarge">Personal Information</Text>
       <Box fill direction="row-responsive" justify="around" gap="large">
         <Box gap="large" margin={{ horizontal: "large" }}>
@@ -66,7 +67,7 @@ const Appointment = ({ form, deleteForm }) => {
           </Box>
         </Box>
       )}
-    </Card>
+    </Box>
   );
 };
 

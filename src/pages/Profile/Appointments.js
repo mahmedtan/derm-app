@@ -10,6 +10,9 @@ const Appointments = ({ forms }) => {
   const deleteForm = (id) => {
     removeForm(id).then((res) => history.push("/profile"));
   };
+  const deleteAndRescheduleForm = (id) => {
+    removeForm(id).then((res) => history.push("/book-now"));
+  };
 
   return (
     <Box pad="large" align="center" gap="large">
@@ -22,6 +25,7 @@ const Appointments = ({ forms }) => {
               key={form._id}
               form={form}
               deleteForm={deleteForm}
+              deleteAndReschedule={deleteAndRescheduleForm}
             />
           ))
         : "You have no appointments scheduled"}

@@ -16,7 +16,7 @@ const SidebarServices = ({ serviceTypes }) => {
     >
       <SidebarAccordian serviceTypes={serviceTypes} />
 
-      <Box align="center" gap="small">
+      <Box align="center" gap="small" margin="small">
         <Link to="/book-now">
           <Button
             label="Book Now"

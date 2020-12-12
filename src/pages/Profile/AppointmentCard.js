@@ -3,12 +3,16 @@ import { FormDown, FormUp } from "grommet-icons";
 import { useState } from "react";
 import Appointment from "./Appointment";
 
-const AppointmentCard = ({ form, deleteForm }) => {
+const AppointmentCard = ({ form, deleteForm, deleteAndReschedule }) => {
   const [open, setOpen] = useState(false);
   return (
     <Card width="large" pad="small">
       {open ? (
-        <Appointment form={form} deleteForm={deleteForm} />
+        <Appointment
+          form={form}
+          deleteForm={deleteForm}
+          deleteAndReschedule={deleteAndReschedule}
+        />
       ) : (
         <Box pad="medium" align="center" gap="large">
           <Text size="xlarge">Personal Information</Text>

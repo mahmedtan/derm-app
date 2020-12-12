@@ -2,32 +2,26 @@ import { useState } from "react";
 import { Layer, Button, Heading, Box } from "grommet";
 import { Menu, Close, Moon, Sun, User } from "grommet-icons";
 import { Link } from "react-router-dom";
-import { useDispatch } from "react-redux";
-import { toggleUI } from "../../reducers/uiThemeReducer";
+
 import MenuBar from "./MenuBar";
 import AuthenticationBtn from "../Authentication/AuthenticationBtn";
-import LogoutBtn from "../Authentication/LogoutBtn";
-import { useAuth0 } from "@auth0/auth0-react";
+import AuthenticationSnackbar from "../Authentication/AuthenticationSnackbar";
 
 const Snackbar = ({ uiTheme }) => {
   const [show, setShow] = useState(false);
-  const dispatch = useDispatch();
-  const { isAuthenticated } = useAuth0();
 
   return (
     <Box>
-      <MenuBar />
+      <MenuBar uiTheme={uiTheme} />
       <Box
         direction="row"
-        gap="medium"
+        gap="large"
         align="center"
         height="3.5rem"
-        justify="around"
+        justify="center"
         width="xlarge"
       >
-        <Link to="/profile">
-          <Button icon={<User />} />
-        </Link>
+        <AuthenticationSnackbar />
         <Link to="/">
           <Button size="large" color="brand">
             Lorem ipsum dolor.
@@ -42,49 +36,52 @@ const Snackbar = ({ uiTheme }) => {
           >
             <Box
               fill="vertical"
-              pad="medium"
+              pad="large"
               align="center"
               overflow="hidden"
               animation="fadeIn"
+              justify="between"
             >
               <Button
                 icon={<Close />}
                 alignSelf="end"
                 onClick={() => setShow(false)}
               />
-
-              <Link to="/services/derm" onClick={() => setShow(false)}>
-                <Button>
-                  <Heading level="2">Derm</Heading>
-                </Button>
-              </Link>
-              <Link to="/services/aesthetics" onClick={() => setShow(false)}>
-                <Button>
-                  <Heading level="2">Aesthetics</Heading>
-                </Button>
-              </Link>
-              <Link to="/specials" onClick={() => setShow(false)}>
-                <Button>
-                  <Heading level="2">Specials</Heading>
-                </Button>
-              </Link>
-              <Link to="/services" onClick={() => setShow(false)}>
-                <Button>
-                  <Heading level="2">Services</Heading>
-                </Button>
-              </Link>
-              <Link to="/finance" onClick={() => setShow(false)}>
-                <Button>
-                  <Heading level="2">Finance</Heading>
-                </Button>
-              </Link>
-              <Link to="/contact-us" onClick={() => setShow(false)}>
-                <Button>
-                  <Heading level="2">Contact us</Heading>
-                </Button>
-              </Link>
-
-              <AuthenticationBtn />
+              <Box align="center">
+                <Link to="/services/derm" onClick={() => setShow(false)}>
+                  <Button>
+                    <Heading level="3">Derm</Heading>
+                  </Button>
+                </Link>
+                <Link to="/services/aesthetics" onClick={() => setShow(false)}>
+                  <Button>
+                    <Heading level="3">Aesthetics</Heading>
+                  </Button>
+                </Link>
+                <Link to="/specials" onClick={() => setShow(false)}>
+                  <Button>
+                    <Heading level="3">Specials</Heading>
+                  </Button>
+                </Link>
+                <Link to="/services" onClick={() => setShow(false)}>
+                  <Button>
+                    <Heading level="3">Services</Heading>
+                  </Button>
+                </Link>
+                <Link to="/finance" onClick={() => setShow(false)}>
+                  <Button>
+                    <Heading level="3">Finance</Heading>
+                  </Button>
+                </Link>
+                <Link to="/contact-us" onClick={() => setShow(false)}>
+                  <Button>
+                    <Heading level="3">Contact us</Heading>
+                  </Button>
+                </Link>
+              </Box>
+              <Box margin="large">
+                <AuthenticationBtn />
+              </Box>
             </Box>
           </Layer>
         )}

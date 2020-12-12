@@ -24,9 +24,8 @@ const Confirmation = () => {
     })
   );
 
-  const [fullName, setFullName] = useState(
-    formValues.firstName + " " + formValues.lastName
-  );
+  const [fullName] = useState(formValues.firstName + " " + formValues.lastName);
+  const submittedDate = useState(new Date(date).toLocaleString());
 
   useEffect(() => {
     if (!submitted) {
@@ -89,7 +88,7 @@ const Confirmation = () => {
               Dear {fullName},
             </Heading>
             <Paragraph size="large">
-              Your appointment has been booked for {new Date(date).toString()}
+              Your appointment has been booked for {submittedDate}
             </Paragraph>
             <Link to="/profile">
               <Button primary label="Go to profile" />

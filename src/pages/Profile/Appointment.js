@@ -1,8 +1,8 @@
-import { Card, Box, Text, Image, Button } from "grommet";
+import { Card, Box, Text, Image, Button, Paragraph } from "grommet";
 import React, { useState } from "react";
 import Consultations from "./Consult";
 
-const Appointment = ({ form, deleteForm }) => {
+const Appointment = ({ form, deleteForm, deleteAndReschedule }) => {
   const [open, setOpen] = useState(false);
 
   return (
@@ -56,17 +56,32 @@ const Appointment = ({ form, deleteForm }) => {
           </Box>
         </Box>
       )}
+      {form.remarks && (
+        <Box>
+          <Text size="xlarge" alignSelf="center">
+            Additional Notes
+          </Text>
+          <Paragraph>{form.remarks}</Paragraph>
+        </Box>
+      )}
 
       <Button primary disabled={open} onClick={() => setOpen(true)}>
         Cancel Appointment
       </Button>
       {open && (
-        <Box gap="small">
-          <Text>Are you about the cancelation of the appointment!!</Text>
+        <Box gap="small" width="medium">
+          <Text textAlign="center">
+            Are you sure about this!! Lorem ipsum dolor sit amet, consectetur
+            adipisicing elit. Eveniet, culpa.
+          </Text>
           <Box direction="row" gap="medium" justify="center">
-            <Button label="Cancel" onClick={() => setOpen(false)} primary />
             <Button
-              label="Ok"
+              label="Cancel & Reschedule"
+              onClick={() => deleteAndReschedule(form._id)}
+              primary
+            />
+            <Button
+              label="Just Cancel"
               primary
               color="status-critical"
               onClick={() => deleteForm(form._id)}

@@ -20,7 +20,7 @@ const AutheticationBtn = () => {
       <LogoutBtn size={btnSize} />
     </Box>
   ) : (
-    <Box direction="row" gap="xsmall" margin={{ horizontal: "large" }}>
+    <Box direction="row" gap="small" margin={{ horizontal: "large" }}>
       <SignupBtn size={btnSize} />
       <LoginBtn size={btnSize} />
     </Box>

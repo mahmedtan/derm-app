@@ -14,13 +14,8 @@ const StepHeader = () => {
   const activeIndex = useSelector(({ activeIndex }) => activeIndex);
 
   return (
-    <Box
-      direction="row"
-      fill="horizontal"
-      align="center"
-      justify={size === "small" ? "center" : "between"}
-    >
-      {size !== "small" &&
+    <Box gap="large" align="start">
+      {size === "small" &&
         (activeIndex !== 0 ? (
           <Button
             icon={<FormPrevious />}
@@ -36,9 +31,32 @@ const StepHeader = () => {
             />
           </Link>
         ))}
-      <Text textAlign="center" weight="normal">{`Step ${activeIndex + 1} of ${
-        Steps.length
-      }`}</Text>
+      <Box
+        direction="row"
+        fill="horizontal"
+        align="center"
+        justify={size === "small" ? "center" : "between"}
+      >
+        {size !== "small" &&
+          (activeIndex !== 0 ? (
+            <Button
+              icon={<FormPrevious />}
+              label="Back"
+              onClick={() => dispatch(decrementIndex())}
+            />
+          ) : (
+            <Link to="/services">
+              <Button
+                icon={<FormPrevious />}
+                size="small"
+                label="Back to Services"
+              />
+            </Link>
+          ))}
+        <Text textAlign="center" weight="normal">{`Step ${activeIndex + 1} of ${
+          Steps.length
+        }`}</Text>
+      </Box>
     </Box>
   );
 };

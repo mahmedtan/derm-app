@@ -18,7 +18,6 @@ import indexReducer from "./reducers/indexReducer";
 import procedureReducer from "./reducers/procedureReducer";
 import consultationReducer from "./reducers/consultationReducer";
 import imageReducer from "./reducers/imageReducer";
-import "react-datetime/css/react-datetime.css";
 import dateReducer from "./reducers/dateReducer";
 import formValuesReducer from "./reducers/formValuesReducer";
 import Auth0ProviderWithHistory from "./auth/auth0-provider-with-history";

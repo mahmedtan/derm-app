@@ -1,11 +1,9 @@
-let initialState = new Date(new Date().setHours(9)).setMinutes(0);
-
-const reducer = (state = initialState, action) => {
+const reducer = (state = null, action) => {
   switch (action.type) {
     case "CHANGE_DATE":
       return action.date;
     case "RESET_DATE":
-      return initialState;
+      return null;
     default:
       return state;
   }

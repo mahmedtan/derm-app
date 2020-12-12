@@ -1,37 +1,66 @@
 import React, { useEffect, useState } from "react";
-import { Box, FormField } from "grommet";
-import Datetime from "react-datetime";
-import { getAvailableSlots } from "../../../services/slots";
+import { Box, Text, Button } from "grommet";
+import { getAvailableDates, getAvailableTimes } from "../../../services/slots";
 import Loading from "../../Extras/Loading";
 import { useDispatch, useSelector } from "react-redux";
 import { changeDate } from "../../../reducers/dateReducer";
+import "react-datepicker/dist/react-datepicker.css";
 
+import Datepicker from "react-datepicker";
 const StepFour = () => {
   const dispatch = useDispatch();
 
   const date = useSelector(({ date }) => date);
-  const [slots, setSlots] = useState(null);
-  useEffect(() => getAvailableSlots().then((slots) => setSlots(slots)), []);
+  const [availableTimes, setAvailableTimes] = useState(null);
+  const [dates, setDates] = useState(null);
+  const [times, setTimes] = useState(null);
 
-  if (!slots) return <Loading />;
-  const validate = (current) => {
-    return slots.filter((item) => item.date() === current.date()).length > 0;
+  useEffect(() => {
+    getAvailableDates().then((dates) => setDates(dates));
+    getAvailableTimes().then((times) => setTimes(times));
+  }, []);
+
+  useEffect(() => {
+    if (times)
+      setAvailableTimes(
+        times.find((time) => time.dayOfTheWeek === new Date(date).getDay())
+          .slots
+      );
+  }, [date]);
+
+  if (!(dates && times)) return <Loading />;
+
+  const filterDate = (current) => {
+    return dates.find((item) => {
+      return new Date(item).getDate() === new Date(current).getDate();
+    });
   };
+  const filterTime = (time) => {
+    if (availableTimes)
+      return (
+        availableTimes.filter((item) => {
+          return (
+            Date.parse(`01/01/2011 ${time.toLocaleTimeString()}`) ===
+            Date.parse(`01/01/2011 ${item}:00`)
+          );
+        }).length > 0
+      );
+  };
+  // const setHours = (...args) => new Date().setHours(...args);
+  // const setMinutes = (...args) => new Date().setMinutes(...args);
 
   return (
-    <Box elevation="large" width="medium">
-      <Datetime
+    <Box>
+      <Datepicker
         id="datepicker"
         name="bookedDate"
-        value={date}
+        selected={date}
         onChange={(val) => dispatch(changeDate(val))}
-        isValidDate={validate}
-        open={true}
-        input={false}
-        timeConstraints={{
-          hours: { min: 9, max: 17, step: 1 },
-          minutes: { step: 15 },
-        }}
+        inline
+        timeIntervals={15}
+        showTimeSelect
+        filterTime={filterTime}
+        filterDate={filterDate}
       />
     </Box>
   );

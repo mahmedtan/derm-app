@@ -6,26 +6,44 @@ import { useDispatch, useSelector } from "react-redux";
 
 const StepFooter = () => {
   const activeIndex = useSelector(({ activeIndex }) => activeIndex);
-  const { formValues } = useSelector(({ formValues }) => ({ formValues }));
+  const { formValues, date } = useSelector(({ formValues, date }) => ({
+    formValues,
+    date,
+  }));
 
   const { firstName, lastName, emailAddress, phoneNumber } = formValues;
   const stepOneVal =
     Object.keys(formValues)
       .filter((x) => formValues[x])
       .filter((x) => x.length > 15).length > 0;
-  const validate =
+  const stepTwoVal =
     activeIndex === 1 &&
-    !(firstName && lastName && emailAddress && phoneNumber);
+    !(
+      firstName &&
+      lastName &&
+      emailAddress &&
+      phoneNumber &&
+      new RegExp("^\\(?([0-9]{3})\\) ?[-.●]?([0-9]{3})[-.●]?([0-9]{4})$").test(
+        phoneNumber
+      )
+    );
+  const stepFourValidation = activeIndex === 3 && !date;
   const dispatch = useDispatch();
   return (
     <Box fill="horizontal" direction="row" gap="large" justify="end">
       {activeIndex === Steps.length - 1 ? (
-        <Button primary label="Confirm Submission" size="large" type="submit" />
+        <Button
+          primary
+          label="Confirm Submission"
+          disabled={stepFourValidation}
+          size="large"
+          type="submit"
+        />
       ) : (
         <Button
           primary
           size="large"
-          disabled={!stepOneVal || validate}
+          disabled={!stepOneVal || stepTwoVal}
           label="Next"
           onClick={(e) => {
             e.preventDefault();

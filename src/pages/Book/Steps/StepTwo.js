@@ -17,6 +17,14 @@ const emailValidation = [
     status: "error",
   },
 ];
+const phoneNumberValidation = [
+  {
+    regexp: new RegExp("^\\(?([0-9]{3})\\) ?[-.●]?([0-9]{3})[-.●]?([0-9]{4})$"),
+    message: "Enter a valid phone number",
+    status: "error",
+  },
+];
+
 const emailMask = [
   {
     regexp: /^[\w\-_.]+$/,
@@ -79,6 +87,7 @@ const StepTwo = () => {
         label="Phone number"
         htmlFor="phoneNumber-input"
         name="phoneNumber"
+        validate={phoneNumberValidation}
         required
       >
         <MaskedInput

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Box, Text, Button } from "grommet";
+import { Box, Text, Button, Card } from "grommet";
 import { getAvailableDates, getAvailableTimes } from "../../../services/slots";
 import Loading from "../../Extras/Loading";
 import { useDispatch, useSelector } from "react-redux";
@@ -46,22 +46,27 @@ const StepFour = () => {
         }).length > 0
       );
   };
-  // const setHours = (...args) => new Date().setHours(...args);
-  // const setMinutes = (...args) => new Date().setMinutes(...args);
 
   return (
-    <Box>
-      <Datepicker
-        id="datepicker"
-        name="bookedDate"
-        selected={date}
-        onChange={(val) => dispatch(changeDate(val))}
-        inline
-        timeIntervals={15}
-        showTimeSelect
-        filterTime={filterTime}
-        filterDate={filterDate}
-      />
+    <Datepicker
+      id="datepicker"
+      name="bookedDate"
+      selected={date}
+      onChange={(val) => dispatch(changeDate(val))}
+      inline
+      timeIntervals={15}
+      showTimeSelect
+      filterTime={filterTime}
+      filterDate={filterDate}
+      calendarContainer={Container}
+    />
+  );
+};
+
+const Container = ({ children }) => {
+  return (
+    <Box pad="xsmall">
+      <Card direction="row">{children}</Card>
     </Box>
   );
 };

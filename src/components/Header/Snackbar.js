@@ -1,14 +1,18 @@
 import { useState } from "react";
 import { Layer, Button, Heading, Box } from "grommet";
-import { Menu, Close, Moon, Sun } from "grommet-icons";
+import { Menu, Close, Moon, Sun, User } from "grommet-icons";
 import { Link } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { toggleUI } from "../../reducers/uiThemeReducer";
 import MenuBar from "./MenuBar";
+import AuthenticationBtn from "../Authentication/AuthenticationBtn";
+import LogoutBtn from "../Authentication/LogoutBtn";
+import { useAuth0 } from "@auth0/auth0-react";
 
 const Snackbar = ({ uiTheme }) => {
   const [show, setShow] = useState(false);
   const dispatch = useDispatch();
+  const { isAuthenticated } = useAuth0();
 
   return (
     <Box>
@@ -21,13 +25,9 @@ const Snackbar = ({ uiTheme }) => {
         justify="around"
         width="xlarge"
       >
-        <Button
-          focusIndicator={false}
-          icon={uiTheme === "light" ? <Moon /> : <Sun />}
-          onClick={() => {
-            dispatch(toggleUI());
-          }}
-        />
+        <Link to="/profile">
+          <Button icon={<User />} />
+        </Link>
         <Link to="/">
           <Button size="large" color="brand">
             Lorem ipsum dolor.
@@ -83,6 +83,8 @@ const Snackbar = ({ uiTheme }) => {
                   <Heading level="2">Contact us</Heading>
                 </Button>
               </Link>
+
+              <AuthenticationBtn />
             </Box>
           </Layer>
         )}

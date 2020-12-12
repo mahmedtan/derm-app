@@ -3,7 +3,7 @@ import { Button, Box, Stack } from "grommet";
 import { Link } from "react-router-dom";
 import NavButton from "./NavButton";
 import MenuBar from "./MenuBar";
-import AutheticationBtn from "../Authentication.js/AutheticationBtn";
+import AuthenticationBtn from "../Authentication/AuthenticationBtn";
 
 const Navbar = ({ uiTheme }) => {
   return (
@@ -35,7 +35,7 @@ const Navbar = ({ uiTheme }) => {
             <NavButton to="/services" label="Contact us" />
           </Box>
         </Box>
-        <AutheticationBtn />
+        <AuthenticationBtn />
       </Stack>
     </Box>
   );

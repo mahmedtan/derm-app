@@ -12,22 +12,23 @@ const StepFooter = () => {
   }));
 
   const { firstName, lastName, emailAddress, phoneNumber } = formValues;
-  const stepOneVal =
-    Object.keys(formValues)
+
+  const stepOneValidation =
+    !Object.keys(formValues)
       .filter((x) => formValues[x])
       .filter((x) => x.length > 15).length > 0;
-  const stepTwoVal =
+
+  const phoneNumberVal = new RegExp(
+    "^\\(?([0-9]{3})\\) ?[-.●]?([0-9]{3})[-.●]?([0-9]{4})$"
+  ).test(phoneNumber);
+
+  const stepTwoValidation =
     activeIndex === 1 &&
-    !(
-      firstName &&
-      lastName &&
-      emailAddress &&
-      phoneNumber &&
-      new RegExp("^\\(?([0-9]{3})\\) ?[-.●]?([0-9]{3})[-.●]?([0-9]{4})$").test(
-        phoneNumber
-      )
-    );
-  const stepFourValidation = activeIndex === 3 && !date;
+    !(firstName && lastName && emailAddress && phoneNumber && phoneNumberVal);
+
+  const stepFourValidation =
+    activeIndex === 3 && !(date && new Date(date).getHours());
+
   const dispatch = useDispatch();
   return (
     <Box fill="horizontal" direction="row" gap="large" justify="end">
@@ -43,7 +44,7 @@ const StepFooter = () => {
         <Button
           primary
           size="large"
-          disabled={!stepOneVal || stepTwoVal}
+          disabled={stepOneValidation || stepTwoValidation}
           label="Next"
           onClick={(e) => {
             e.preventDefault();

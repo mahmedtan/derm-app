@@ -1,13 +1,13 @@
 import { Box, Text } from "grommet";
 import React from "react";
-import DisplayCard from "../../components/Utils/DisplayCard";
+import DisplayCard from "../../../components/Utils/DisplayCard";
 
 const Consultations = ({ consultations, title }) => {
   if (!consultations.length) return null;
 
   return (
     <Box gap="large" align="center">
-      <Text textAlign="center" size="xlarge">
+      <Text textAlign="center" size="xlarge" margin="medium">
         {title}
       </Text>
       <Box gap="large" direction="row-responsive">

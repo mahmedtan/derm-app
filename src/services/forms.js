@@ -3,8 +3,7 @@ const client = sanityClient({
   projectId: "zegc2wrv",
   dataset: "production",
   ignoreBrowserTokenWarning: true,
-  token:
-    "sky5AUm67nF6fOTl1iK6CAcuwRunjkFQSQXcMuDwP5pB2RTTy95oh99UuNE4hPFVZsoFt7vWMS9foS3RFfnmi4MSpajtYn7qliXK2qdh9ufssvE2i9EM2q796Vd9gHxLLIhXfkVGINhkbtPzflOYvcTJoHrWpZZVyPGntrY50wH1ZS4l046O",
+  token: process.env.REACT_APP_CMS_TOKEN,
 });
 
 export const submitForm = async (

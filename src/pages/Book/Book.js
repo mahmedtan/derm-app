@@ -1,12 +1,11 @@
 import { Box, Heading, Form, Text, ResponsiveContext } from "grommet";
-import React, { useContext, useEffect } from "react";
+import React, { useContext, useEffect, useRef } from "react";
 import StepFooter from "./StepFooter";
 import { useHistory } from "react-router-dom";
 import Steps from "./Steps/Steps";
 import { useDispatch, useSelector } from "react-redux";
 import StepHeader from "./StepHeader";
-import { initProcedures } from "../../reducers/procedureReducer";
-import { initConsultations } from "../../reducers/consultationReducer";
+
 import Loading from "../Extras/Loading";
 import { changeValues } from "../../reducers/formValuesReducer";
 
@@ -23,11 +22,6 @@ const Book = () => {
       consultations,
     })
   );
-
-  useEffect(() => {
-    dispatch(initConsultations());
-    dispatch(initProcedures());
-  }, []);
 
   if (!(procedures && consultations)) {
     return <Loading />;
@@ -55,7 +49,7 @@ const Book = () => {
             value={formValues}
             onChange={(nextValue) => dispatch(changeValues(nextValue))}
             onSubmit={({ value }) => {
-              history.push("/confirmation");
+              history.push("/processing");
             }}
           >
             <Box gap="medium">

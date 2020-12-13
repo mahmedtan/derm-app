@@ -4,14 +4,19 @@ import { StatusWarning } from "grommet-icons";
 const VerifyBanner = ({ user }) => {
   return (
     <Box
-      width="large"
       background="status-warning"
-      direction="row"
+      direction="row-responsive"
       gap="large"
+      align="center"
+      justify="center"
       round="medium"
       pad="medium"
+      margin="large"
     >
-      <StatusWarning size="large" />
+      <Box alignSelf="center">
+        <StatusWarning size="large" />
+      </Box>
+
       <Text size="large">
         We've sent an confirmation email to {user.email}. Please check your
         inbox to verify your account

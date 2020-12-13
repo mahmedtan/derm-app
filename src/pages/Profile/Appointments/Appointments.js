@@ -1,7 +1,7 @@
 import { Box, Card, Heading, Text } from "grommet";
 import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
-import { removeForm } from "../../services/forms";
+import { removeForm } from "../../../services/forms";
 import Appointment from "./Appointment";
 import AppointmentCard from "./AppointmentCard";
 
@@ -15,20 +15,22 @@ const Appointments = ({ forms }) => {
   };
 
   return (
-    <Box pad="large" align="center" gap="large">
+    <Box align="center" gap="large">
       <Heading level="3" textAlign="center" margin="none">
         Appointments
       </Heading>
-      {forms.length
-        ? forms.map((form) => (
-            <AppointmentCard
-              key={form._id}
-              form={form}
-              deleteForm={deleteForm}
-              deleteAndReschedule={deleteAndRescheduleForm}
-            />
-          ))
-        : "You have no appointments scheduled"}
+      <Box>
+        {forms.length
+          ? forms.map((form) => (
+              <AppointmentCard
+                key={form._id}
+                form={form}
+                deleteForm={deleteForm}
+                deleteAndReschedule={deleteAndRescheduleForm}
+              />
+            ))
+          : "You have no appointments scheduled"}
+      </Box>
     </Box>
   );
 };

@@ -12,6 +12,7 @@ const NavHeader = () => {
       justify="between"
       elevation="xsmall"
       fill="horizontal"
+      id="derm-app-header"
       height="6rem"
       as="header"
     >

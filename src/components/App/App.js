@@ -17,6 +17,10 @@ import Profile from "../../pages/Profile/Profile.js";
 import { useAuth0 } from "@auth0/auth0-react";
 import Loading from "../../pages/Extras/Loading.js";
 import ProtectedRoute from "../../auth/protected-route";
+import Processing from "../../pages/Book/Processing.js";
+
+import { initProcedures } from "../../reducers/procedureReducer";
+import { initConsultations } from "../../reducers/consultationReducer";
 import Confirmation from "../../pages/Book/Confirmation.js";
 
 function App() {
@@ -29,6 +33,8 @@ function App() {
     dispatch(initializeBlogs());
     dispatch(initServices());
     dispatch(initServiceTypes());
+    dispatch(initConsultations());
+    dispatch(initProcedures());
   }, [dispatch]);
   if (isLoading) return <Loading />;
 
@@ -42,16 +48,13 @@ function App() {
           <Blogs blogs={blogs} />
         </Route>
         <ProtectedRoute path="/profile" component={Profile} />
+        <ProtectedRoute path="/processing" component={Processing} />
         <ProtectedRoute path="/confirmation" component={Confirmation} />
 
         <Route path="/services">
           <Services />
         </Route>
-        <Route path="/book-now">
-          <Layout>
-            <Book />
-          </Layout>
-        </Route>
+        <ProtectedRoute path="/book-now" component={Book} />
         <Route exact path="/">
           <Layout>
             <Home />

@@ -63,10 +63,12 @@ const StepFour = () => {
   );
 };
 
-const Container = ({ children }) => {
+const Container = ({ children, className }) => {
   return (
     <Box pad="xsmall">
-      <Card direction="row">{children}</Card>
+      <Card direction="row" className={className} background="light-1">
+        {children}
+      </Card>
     </Box>
   );
 };

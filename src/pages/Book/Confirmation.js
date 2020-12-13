@@ -1,76 +1,27 @@
-import { useAuth0 } from "@auth0/auth0-react";
-import { Box, Button, Card, Heading, Paragraph } from "grommet";
+import { Box, Heading, Card, Paragraph, Button } from "grommet";
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import Layout from "../../components/Utils/Layout";
-import Spinner from "../../components/Utils/Spinner";
-import { submitForm } from "../../services/forms";
+import NotFound from "../Extras/404";
 
 const Confirmation = () => {
-  const [submitted, setSubmitted] = useState(false);
-
-  const { user } = useAuth0();
-
-  const dispatch = useDispatch();
-
-  const { formValues, images, procedures, consultations, date } = useSelector(
-    ({ formValues, images, procedures, consultations, date }) => ({
-      formValues,
-      images,
-      procedures,
-      consultations,
-      date,
-    })
-  );
-
-  const [fullName] = useState(formValues.firstName + " " + formValues.lastName);
-  const submittedDate = useState(new Date(date).toLocaleString());
-
+  const [fullName, setFullName] = useState(null);
+  const [submittedDate, setSubmittedDate] = useState(null);
+  const [error, setError] = useState(false);
   useEffect(() => {
-    if (!submitted) {
-      if (formValues && images && procedures && consultations && date && user) {
-        submitForm(
-          formValues,
-          images,
-          procedures,
-          consultations,
-          date,
-          user
-        ).then((res) => {
-          console.log(res);
-          setSubmitted(true);
-        });
-      }
-    }
-  }, [
-    formValues,
-    images,
-    procedures,
-    consultations,
-    date,
-    user,
-    dispatch,
-    submitted,
-  ]);
-  useEffect(() => {
-    if (submitted) {
-      dispatch({ type: "RESET_FORM" });
-      dispatch({ type: "RESET_INDEX" });
-      dispatch({ type: "RESET_IMAGES" });
-      dispatch({ type: "RESET_DATE" });
-    }
-  }, [submitted, dispatch]);
-
-  if (!submitted)
+    if (
+      window.sessionStorage.getItem("fullName") &&
+      window.sessionStorage.getItem("submittedDate")
+    ) {
+      setFullName(window.sessionStorage.getItem("fullName"));
+      setSubmittedDate(window.sessionStorage.getItem("submittedDate"));
+    } else setError(true);
+  }, []);
+  if (error)
     return (
       <Layout>
-        <Box align="center" justify="center" height={{ min: "100vh" }}>
-          <Heading textAlign="center">Processing your application</Heading>
-          <Box height="medium">
-            <Spinner />
-          </Box>
-        </Box>
+        <NotFound />
       </Layout>
     );
   return (

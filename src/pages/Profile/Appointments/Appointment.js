@@ -6,34 +6,61 @@ const Appointment = ({ form, deleteForm, deleteAndReschedule }) => {
   const [open, setOpen] = useState(false);
 
   return (
-    <Box pad="medium" align="center" gap="large">
-      <Text size="xlarge">Personal Information</Text>
-      <Box fill direction="row-responsive" justify="around" gap="large">
-        <Box gap="large" margin={{ horizontal: "large" }}>
+    <Box
+      align="center"
+      gap="medium"
+      margin="medium"
+      animation="fadeIn"
+      width="large"
+    >
+      <Text size="xlarge" weight="normal" margin="medium" alignSelf="center">
+        Personal Information
+      </Text>
+      <Box
+        pad={{ horizontal: "xlarge" }}
+        direction="row-responsive"
+        justify="between"
+        gap="large"
+        fill
+        align="center"
+      >
+        <Box gap="large">
           <Box>
-            <Text weight="bold">First Name</Text>
+            <Text weight="bold" size="large">
+              First Name
+            </Text>
             {form.firstName}
           </Box>
           <Box>
-            <Text weight="bold">Email Address</Text>
+            <Text weight="bold" size="large">
+              Email Address
+            </Text>
             {form.emailAddress}
           </Box>
           <Box>
-            <Text weight="bold">Booked For</Text>
+            <Text weight="bold" size="large">
+              Booked For
+            </Text>
             {new Date(form.bookedFor).toLocaleString()}
           </Box>
         </Box>
-        <Box gap="large" margin={{ horizontal: "large" }}>
+        <Box gap="large">
           <Box>
-            <Text weight="bold">Last Name</Text>
+            <Text weight="bold" size="large">
+              Last Name
+            </Text>
             {form.lastName}
           </Box>
           <Box>
-            <Text weight="bold">Phone Number</Text>
+            <Text weight="bold" size="large">
+              Phone Number
+            </Text>
             {form.phoneNumber}
           </Box>
           <Box>
-            <Text weight="bold">Submitted at</Text>
+            <Text weight="bold" size="large">
+              Submitted at
+            </Text>
             {new Date(form.submitted).toLocaleString()}
           </Box>
         </Box>
@@ -43,7 +70,12 @@ const Appointment = ({ form, deleteForm, deleteAndReschedule }) => {
 
       {form.images.length > 0 && (
         <Box gap="medium">
-          <Text size="xlarge" alignSelf="center">
+          <Text
+            size="xlarge"
+            weight="normal"
+            margin="medium"
+            alignSelf="center"
+          >
             Images
           </Text>
           <Box gap="large" direction="row-responsive">
@@ -58,8 +90,13 @@ const Appointment = ({ form, deleteForm, deleteAndReschedule }) => {
       )}
       {form.remarks && (
         <Box>
-          <Text size="xlarge" alignSelf="center">
-            Additional Notes
+          <Text
+            size="xlarge"
+            weight="normal"
+            margin="medium"
+            alignSelf="center"
+          >
+            Notes
           </Text>
           <Paragraph>{form.remarks}</Paragraph>
         </Box>
@@ -69,7 +106,7 @@ const Appointment = ({ form, deleteForm, deleteAndReschedule }) => {
         Cancel Appointment
       </Button>
       {open && (
-        <Box gap="small" width="medium">
+        <Box gap="small">
           <Text textAlign="center">
             Are you sure about this!! Lorem ipsum dolor sit amet, consectetur
             adipisicing elit. Eveniet, culpa.

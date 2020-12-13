@@ -419,7 +419,7 @@ export var theme = deepFreeze({
       },
     },
     border: {
-      radius: "4px",
+      radius: "25px",
     },
     color: "text-strong",
     padding: {

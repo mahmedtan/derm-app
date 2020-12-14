@@ -2,7 +2,6 @@ import { Box, Card, Heading, Text } from "grommet";
 import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
 import { removeForm } from "../../../services/forms";
-import Appointment from "./Appointment";
 import AppointmentCard from "./AppointmentCard";
 
 const Appointments = ({ forms }) => {

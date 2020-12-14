@@ -25,7 +25,7 @@ const PatientDetails = ({ setFullName }) => {
   }, [details]);
 
   return (
-    <Box align="center">
+    <Box align="center" pad={{ horizontal: "large" }}>
       <Heading
         level="3"
         textAlign="center"

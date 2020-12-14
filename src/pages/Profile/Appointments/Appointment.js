@@ -102,9 +102,13 @@ const Appointment = ({ form, deleteForm, deleteAndReschedule }) => {
         </Box>
       )}
 
-      <Button primary disabled={open} onClick={() => setOpen(true)}>
-        Cancel Appointment
-      </Button>
+      {form.cancelled ? (
+        <Button secondary disabled label="cancelled" />
+      ) : (
+        <Button primary disabled={open} onClick={() => setOpen(true)}>
+          Cancel Appointment
+        </Button>
+      )}
       {open && (
         <Box gap="small">
           <Text textAlign="center">

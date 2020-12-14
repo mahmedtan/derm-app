@@ -5,7 +5,7 @@ import EditProfile from "./EditProfile";
 const PatientNew = ({ sub, setChange }) => {
   const [message, setMessage] = useState(null);
   return (
-    <Box align="center">
+    <Box align="center" width="medium">
       <Paragraph>You have no previous Information stored </Paragraph>
       <Box width="medium">
         <EditProfile

@@ -69,7 +69,7 @@ const uploadImages = async (images) => {
 
 export const getForm = async (sub) => {
   const response = await client.fetch(
-    '*[_type=="form" && sub ==$sub] | order(_createdAt desc) {...,procedures[]->,consultations[]->,"images":images[].asset->url}',
+    '*[_type=="form" && sub ==$sub] | order(_createdAt desc) {...,procedures[]->,consultations[]->,"images":images[].asset->url, cancelled}',
     {
       sub,
     }
@@ -78,6 +78,6 @@ export const getForm = async (sub) => {
 };
 
 export const removeForm = async (_id) => {
-  const response = await client.delete(_id);
+  const response = await client.patch(_id).set({ cancelled: true }).commit();
   return response;
 };

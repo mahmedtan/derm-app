@@ -117,6 +117,7 @@ export const EditProfile = ({
     setOpen(false);
     updatePatientDetails({
       ...value,
+      fullName: fullName || value.fullName,
       sub,
       id: _id || uuidv4(),
       patientId: patientId || uuidv4().substring(0, 8),
@@ -149,21 +150,24 @@ export const EditProfile = ({
           onChange={(nextValue) => onChange(nextValue)}
           onSubmit={({ value, touched }) => onSubmit({ value, touched })}
         >
-          <FormField
-            label="Full Name"
-            htmlFor="fullName-input-persona"
-            name="fullName"
-            validate={(value) =>
-              value.length < 3 && "Name must at least contain 3 letters "
-            }
-            required
-          >
-            <TextInput
-              id="fullName-input-personal"
+          {!fullName && (
+            <FormField
+              label="Full Name"
+              htmlFor="fullName-input-persona"
               name="fullName"
-              placeholder="Jane Smith"
-            />
-          </FormField>
+              validate={(value) =>
+                value.length < 3 && "Name must at least contain 3 letters "
+              }
+              required
+            >
+              <TextInput
+                id="fullName-input-personal"
+                name="fullName"
+                placeholder="Jane Smith"
+              />
+            </FormField>
+          )}
+
           <FormField
             label="Phone number"
             htmlFor="phoneNumber-input-personal"

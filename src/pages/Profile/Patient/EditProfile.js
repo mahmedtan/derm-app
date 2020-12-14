@@ -122,7 +122,7 @@ export const EditProfile = ({
       id: _id || uuidv4(),
       patientId: patientId || uuidv4().substring(0, 8),
     }).then((res, error) => {
-      setMessage("Your Profile's been updated");
+      setMessage("Your Profile has been updated");
       console.log(res);
       setChange();
     });

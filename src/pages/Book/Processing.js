@@ -1,4 +1,5 @@
 import { useAuth0 } from "@auth0/auth0-react";
+import Axios from "axios";
 import { Box, Heading, Paragraph, Text } from "grommet";
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
@@ -40,8 +41,12 @@ const Processing = () => {
         );
         submitForm(formValues, images, procedures, consultations, date, user)
           .then((res) => {
-            console.log(res);
-            setSubmitted(true);
+            console.log("Form Submitted", res);
+            Axios.post("/api/mail", { formValues, date }).then((mail) => {
+              console.log("Mail sent", mail);
+
+              setSubmitted(true);
+            });
           })
           .catch((err) => {
             console.log(err);

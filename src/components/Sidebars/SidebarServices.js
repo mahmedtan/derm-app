@@ -1,7 +1,7 @@
 import React from "react";
 import SidebarAccordian from "./SidebarAccordian";
 import { Box, Button } from "grommet";
-import { LinkNext } from "grommet-icons";
+import { LinkNext, Phone } from "grommet-icons";
 import { Link } from "react-router-dom";
 
 const SidebarServices = ({ serviceTypes }) => {
@@ -30,7 +30,7 @@ const SidebarServices = ({ serviceTypes }) => {
 
         <Button
           label=" Call Now "
-          icon={<LinkNext />}
+          icon={<Phone color="brand" />}
           reverse
           secondary
           size="medium"

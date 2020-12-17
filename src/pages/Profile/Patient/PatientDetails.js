@@ -23,6 +23,7 @@ const PatientDetails = ({ setFullName }) => {
   useEffect(() => {
     details && details.fullName && setFullName(details.fullName);
   }, [details]);
+  if (!details) return <Loading />;
 
   return (
     <Box align="center" pad={{ horizontal: "large" }}>
@@ -41,10 +42,7 @@ const PatientDetails = ({ setFullName }) => {
         }}
         animation="zoomOut"
       >
-        {!details ? (
-          <Loading />
-        ) : Object.keys(details).length === 0 &&
-          details.constructor === Object ? (
+        {Object.keys(details).length === 0 && details.constructor === Object ? (
           <PatientNew
             sub={sub}
             setChange={() => {

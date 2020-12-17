@@ -1,36 +1,12 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Box, Heading } from "grommet";
 import Comment from "./Comment";
 import Slider from "react-slick";
+import { getComments } from "../../services/comments";
+import Spinner from "../Utils/Spinner";
 
 const Comments = () => {
-  const reviews = [
-    {
-      patientName: "Elisa Rone",
-      remarks:
-        "  Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid porro sit eius cumque reprehenderit rem repellat veritatis a sed, inventore ab magnam cupiditate corrupti nihil quae harum. Possimus, magni ratione?",
-    },
-    {
-      patientName: "Jane elis",
-      remarks:
-        "  Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid porro sit eius cumque reprehenderit rem repellat veritatis a sed, inventore ab magnam cupiditate corrupti nihil quae harum. Possimus, magni ratione?",
-    },
-    {
-      patientName: "Captain Hook",
-      remarks:
-        "  Lorem ipsum dolor sit amet consectetiquid porro sit eius cumque reprehenderit rem repellat veritatis a sed, inventore ab magnam cupiditate corrupti nihil quae harum. Possimus, magni ratione?",
-    },
-    {
-      patientName: "Ryzen core",
-      remarks:
-        "  Lorem g elit. Aliquid porro sit eius cumque reprehenderit rem repellat veritatis a sed, inventore ab magnam cupiditate corrupti nihil quae harum. Possimus, magni ratione?",
-    },
-    {
-      patientName: "James Moriarty",
-      remarks:
-        "  Lorem ipsum dolor sit. Aliquid porro sit eius cumque reprehendeitatis a sed, inventore ab magnam cupiditate corrupti nihil quae harum. Possimus, magni ratione?",
-    },
-  ];
+  const [remarks, setRemarks] = useState(null);
 
   const settings = {
     slidesToScroll: 1,
@@ -42,13 +18,17 @@ const Comments = () => {
     autoplay: true,
     dots: false,
   };
+  useEffect(() => {
+    getComments().then((res) => res && setRemarks(res));
+  }, []);
 
+  if (!remarks) return <Spinner />;
   return (
     <Box fill="horizontal" pad="large" background="background-contrast">
       <Heading alignSelf="center">Reviews</Heading>
       <Slider slidesToShow={1} {...settings}>
-        {reviews.map((item) => (
-          <Comment key={item.patientName} {...item} />
+        {remarks.map((item) => (
+          <Comment key={item._id} {...item} />
         ))}
       </Slider>
     </Box>

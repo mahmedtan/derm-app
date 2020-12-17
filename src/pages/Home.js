@@ -10,7 +10,6 @@ import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { LinkNext } from "grommet-icons";
 import Comments from "../components/Comments/Comments";
-import { useEffect, useState } from "react";
 
 const Home = () => {
   const blogs = useSelector((state) => state.blogs);

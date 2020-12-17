@@ -11,9 +11,12 @@ import {
 } from "grommet";
 import { useContext, useState } from "react";
 import { MailOption, User } from "grommet-icons";
-
+import Axios from "axios";
 const Newsletter = () => {
-  const [value, setValue] = useState({});
+  const [value, setValue] = useState({
+    fullName: "",
+    emailAddress: "",
+  });
   const size = useContext(ResponsiveContext);
 
   return (
@@ -22,27 +25,46 @@ const Newsletter = () => {
       direction="row-responsive"
       justify="center"
       align="center"
-      pad={size === "small" ? "large" : "none"}
       gap="large"
+      pad={size === "small" ? "large" : "medium"}
     >
-      <Heading level={3}>Get the news delivered to your inbox!</Heading>
+      <Text textAlign="center" size="xlarge">
+        Get the news delivered to your inbox!
+      </Text>
 
-      <Form value={value} onChange={(nextValue) => setValue(nextValue)}>
+      <Form
+        value={value}
+        onChange={(nextValue) => setValue(nextValue)}
+        onSubmit={({ value }) => {
+          if (value.fullName && value.emailAddress)
+            Axios.post("/api/newsletter", value).then((res) => {
+              console.log("Name Added", res);
+              setValue({
+                fullName: "",
+                emailAddress: "",
+              });
+            });
+        }}
+      >
         <Box direction="row-responsive" align="center" gap="large">
           <Box direction="row-responsive" align="center" gap="small">
-            <Text weight="bold">Name:</Text>
-            <TextInput
-              id="user-name"
-              reverse
-              placeholder="John Doe"
-              icon={<User />}
-            />
+            <Text>Full Name:</Text>
+            <Box>
+              <TextInput
+                id="first-name"
+                name="fullName"
+                reverse
+                placeholder="John Doe"
+                icon={<User />}
+              />
+            </Box>
           </Box>
 
           <Box direction="row-responsive" align="center" gap="small">
-            <Text weight="bold">Email:</Text>
+            <Text>Email:</Text>
             <TextInput
               id="email"
+              name="emailAddress"
               reverse
               placeholder="john@example.com"
               icon={<MailOption />}

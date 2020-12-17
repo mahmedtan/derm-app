@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useAuth0 } from "@auth0/auth0-react";
-import { Box, Heading } from "grommet";
+import { Box, Button, Heading } from "grommet";
 import Layout from "../../components/Utils/Layout";
 import VerifyBanner from "./VerifyBanner";
 import { getForm, removeForm } from "../../services/forms";
@@ -60,6 +60,7 @@ const Profile = () => {
               setFullName(fullName);
             }}
           />
+
           <Appointments forms={forms} />
         </Box>
       </Layout>

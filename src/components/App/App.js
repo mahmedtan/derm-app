@@ -22,6 +22,8 @@ import Processing from "../../pages/Book/Processing.js";
 import { initProcedures } from "../../reducers/procedureReducer";
 import { initConsultations } from "../../reducers/consultationReducer";
 import Confirmation from "../../pages/Book/Confirmation.js";
+import ContactUs from "../../pages/ContactUs/ContactUs.js";
+import Specials from "../../pages/Specials/Specials.js";
 
 function App() {
   const uiTheme = useSelector(({ uiTheme }) => uiTheme);
@@ -44,17 +46,32 @@ function App() {
         <Route path="/blogs/:slug">
           <Blog />
         </Route>
+
         <Route path="/blogs">
           <Blogs blogs={blogs} />
         </Route>
+
         <ProtectedRoute path="/profile" component={Profile} />
+
         <ProtectedRoute path="/processing" component={Processing} />
+
         <ProtectedRoute path="/confirmation" component={Confirmation} />
+
+        <ProtectedRoute path="/book-now" component={Book} />
 
         <Route path="/services">
           <Services />
         </Route>
-        <ProtectedRoute path="/book-now" component={Book} />
+        <Route path="/contact-us">
+          <Layout>
+            <ContactUs />
+          </Layout>
+        </Route>
+        <Route path="/specials">
+          <Layout>
+            <Specials />
+          </Layout>
+        </Route>
         <Route exact path="/">
           <Layout>
             <Home />

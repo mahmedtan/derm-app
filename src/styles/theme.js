@@ -392,7 +392,7 @@ export var theme = deepFreeze({
     size: {
       small: {
         border: {
-          radius: "4px",
+          radius: "25px",
         },
         pad: {
           vertical: "4px",
@@ -401,7 +401,7 @@ export var theme = deepFreeze({
       },
       medium: {
         border: {
-          radius: "4px",
+          radius: "25px",
         },
         pad: {
           vertical: "4px",
@@ -410,7 +410,7 @@ export var theme = deepFreeze({
       },
       large: {
         border: {
-          radius: "6px",
+          radius: "25px",
         },
         pad: {
           vertical: "6px",

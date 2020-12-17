@@ -17,7 +17,17 @@ module.exports = async (req, res) => {
         emailAddress,
         subject: "Appointment Confirmation",
         fullName: `${firstName} ${lastName}`,
-        date: new Date(date).toLocaleString("en-US"),
+        date:
+          new Date(date).toLocaleDateString("en-US", {
+            weekday: "long",
+            year: "numeric",
+            month: "long",
+            day: "numeric",
+          }) +
+          " " +
+          new Date(date).toLocaleTimeString("en-US", {
+            timeStyle: "short",
+          }),
       },
     };
     const response = await sg.send(message);
@@ -26,11 +36,4 @@ module.exports = async (req, res) => {
     console.log(error);
     res.status(404).json(error);
   }
-};
-
-var options = {
-  weekday: "long",
-  year: "numeric",
-  month: "long",
-  day: "numeric",
 };

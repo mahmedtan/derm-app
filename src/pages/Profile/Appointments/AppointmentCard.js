@@ -41,7 +41,16 @@ const AppointmentCard = ({ form, deleteForm, deleteAndReschedule }) => {
                 <Text weight="bold" size="large">
                   Booked For
                 </Text>
-                {new Date(form.bookedFor).toLocaleString()}
+                {new Date(form.bookedFor).toLocaleDateString("en-US", {
+                  weekday: "long",
+                  year: "numeric",
+                  month: "long",
+                  day: "numeric",
+                }) +
+                  " " +
+                  new Date(form.bookedFor).toLocaleTimeString("en-US", {
+                    timeStyle: "short",
+                  })}
               </Box>
             </Box>
             <Box gap="large">
@@ -53,9 +62,9 @@ const AppointmentCard = ({ form, deleteForm, deleteAndReschedule }) => {
               </Box>
               <Box>
                 <Text weight="bold" size="large">
-                  Submitted at
+                  Phone Number{" "}
                 </Text>
-                {new Date(form.submitted).toLocaleString()}
+                {form.phoneNumber}
               </Box>
             </Box>
           </Box>

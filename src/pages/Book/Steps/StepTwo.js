@@ -25,22 +25,6 @@ const phoneNumberValidation = [
   },
 ];
 
-const emailMask = [
-  {
-    regexp: /^[\w\-_.]+$/,
-    placeholder: "jane.smith",
-  },
-  { fixed: "@" },
-  {
-    regexp: /^[\w]+$/,
-    placeholder: "hpe",
-  },
-  { fixed: "." },
-  {
-    regexp: /^[\w]+$/,
-    placeholder: "com",
-  },
-];
 const phoneMask = [
   { fixed: "(" },
   {
@@ -105,12 +89,7 @@ const StepTwo = () => {
         name="emailAddress"
         validate={emailValidation}
       >
-        <MaskedInput
-          type="email"
-          mask={emailMask}
-          id="emailAddress-input"
-          name="emailAddress"
-        />
+        <MaskedInput type="email" id="emailAddress-input" name="emailAddress" />
       </FormField>
       <Box>
         <FormField htmlFor="optionalCheckboxes">

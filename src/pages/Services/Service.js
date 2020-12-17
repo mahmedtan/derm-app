@@ -9,6 +9,7 @@ import PageNotFound from "../Extras/404";
 import SidebarAccordian from "../../components/Sidebars/SidebarAccordian";
 import { LinkNext } from "grommet-icons";
 import { Link } from "react-router-dom";
+import FaceVisual from "../../components/FaceVisual/FaceVisual";
 
 const Service = ({ service, services, serviceTypes, size }) => {
   const dispatch = useDispatch();
@@ -25,10 +26,12 @@ const Service = ({ service, services, serviceTypes, size }) => {
       <Box
         width="large"
         flex="grow"
+        gap="large"
         pad={{ horizontal: "large", vertical: "large" }}
       >
         <BlockContentMain body={service.body} />
 
+        {service.serviceType.slug === "injectables" && <FaceVisual />}
         {(size === "small" || size === "xsmall") && (
           <Box>
             <Box align="center" gap="small">

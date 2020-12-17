@@ -10,7 +10,7 @@ const NavHeader = () => {
     <Header
       direction="row"
       justify="between"
-      elevation="xsmall"
+      elevation="small"
       fill="horizontal"
       id="derm-app-header"
       height="6rem"

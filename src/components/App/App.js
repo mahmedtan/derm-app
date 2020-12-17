@@ -24,6 +24,7 @@ import { initConsultations } from "../../reducers/consultationReducer";
 import Confirmation from "../../pages/Book/Confirmation.js";
 import ContactUs from "../../pages/ContactUs/ContactUs.js";
 import Specials from "../../pages/Specials/Specials.js";
+import Finance from "../../pages/Finance.js";
 
 function App() {
   const uiTheme = useSelector(({ uiTheme }) => uiTheme);
@@ -61,6 +62,11 @@ function App() {
 
         <Route path="/services">
           <Services />
+        </Route>
+        <Route path="/finance">
+          <Layout>
+            <Finance />
+          </Layout>
         </Route>
         <Route path="/contact-us">
           <Layout>

@@ -41,7 +41,15 @@ const Appointment = ({ form, deleteForm, deleteAndReschedule }) => {
             <Text weight="bold" size="large">
               Booked For
             </Text>
-            {new Date(form.bookedFor).toLocaleString()}
+            {new Date(form.bookedFor).toLocaleDateString("en-US", {
+              year: "numeric",
+              month: "long",
+              day: "numeric",
+            }) +
+              " " +
+              new Date(form.bookedFor).toLocaleTimeString("en-US", {
+                timeStyle: "short",
+              })}
           </Box>
         </Box>
         <Box gap="large">
@@ -61,7 +69,15 @@ const Appointment = ({ form, deleteForm, deleteAndReschedule }) => {
             <Text weight="bold" size="large">
               Submitted at
             </Text>
-            {new Date(form.submitted).toLocaleString()}
+            {new Date(form.submitted).toLocaleDateString("en-US", {
+              year: "numeric",
+              month: "long",
+              day: "numeric",
+            }) +
+              " " +
+              new Date(form.submitted).toLocaleTimeString("en-US", {
+                timeStyle: "short",
+              })}
           </Box>
         </Box>
       </Box>

@@ -104,7 +104,12 @@ const Processing = () => {
     );
   if (!submitted)
     return (
-      <Box align="center" justify="center" height={{ min: "100vh" }}>
+      <Box
+        align="center"
+        justify="center"
+        height={{ min: "100vh" }}
+        pad="large"
+      >
         <Heading textAlign="center">Processing your application</Heading>
         <Box height="medium">
           <Spinner />

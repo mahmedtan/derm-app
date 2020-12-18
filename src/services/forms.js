@@ -3,6 +3,8 @@ const client = sanityClient({
   projectId: "zegc2wrv",
   dataset: "production",
   ignoreBrowserTokenWarning: true,
+  useCdn: true,
+
   token: process.env.REACT_APP_CMS_TOKEN,
 });
 

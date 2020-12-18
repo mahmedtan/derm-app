@@ -8,6 +8,7 @@
     "@nivo/scatterplot": "^0.67.0",
     "@sanity/block-content-to-react": "^2.0.7",
     "@sanity/client": "^2.0.9",
+    "@sanity/export": "^2.1.0",
     "@sendgrid/contact-importer": "^7.4.0",
     "@sendgrid/mail": "^7.4.0",
     "@testing-library/jest-dom": "^5.11.6",

@@ -17,7 +17,7 @@ const AutheticationBtn = () => {
       direction="row"
       gap="small"
       height={size === "small" ? "60px" : "fill"}
-      margin={{ horizontal: "large" }}
+      margin={{ horizontal: "small" }}
     >
       <Link to="/profile">
         <Box elevation="small" round="large">
@@ -32,7 +32,7 @@ const AutheticationBtn = () => {
     <Box
       direction="row"
       gap="small"
-      margin={{ horizontal: "large" }}
+      margin={{ horizontal: "medium" }}
       align="center"
     >
       <SignupBtn size={btnSize} />

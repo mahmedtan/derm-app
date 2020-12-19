@@ -15,3 +15,7 @@ a {
 div:focus {
   outline: none;
 }
+
+body {
+  -webkit-overflow-scrolling: "touch";
+}

@@ -11,6 +11,18 @@ export const getAboutUs = async () => {
   );
   return res;
 };
+export const getContactUs = async () => {
+  const res = await client.fetch(
+    `*[_type=="extra"  && pageType=="contact-us"]{body,title, "avatar":avatar.asset->url}[0]`
+  );
+  return res;
+};
+export const getFinancing = async () => {
+  const res = await client.fetch(
+    `*[_type=="extra"  && pageType=="financing"]{body,title, "avatar":avatar.asset->url}[0]`
+  );
+  return res;
+};
 export const getSpecials = async () => {
   const res = await client.fetch(
     `*[_type=="extra"  && pageType=="specials"][0]{title, body,"posters": posters[].asset->url,"avatar":avatar.asset->url}`

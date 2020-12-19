@@ -265,7 +265,7 @@ export var theme = deepFreeze({
   },
   anchor: {
     color: "text",
-    textDecoration: "underline",
+    textDecoration: "none",
     fontWeight: 500,
     hover: {
       textDecoration: "underline",

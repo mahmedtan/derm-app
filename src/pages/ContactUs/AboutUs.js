@@ -1,27 +1,23 @@
-import { Box, Heading, Image, Stack } from "grommet";
-import React from "react";
-import Spinner from "../../components/Utils/Spinner";
-import BlockContentMain from "../../components/Utils/BlockContentMain";
+import { Box, Form, FormField } from "grommet";
+import React, { useEffect, useState } from "react";
+import { getAboutUs } from "../../services/extras";
+import AboutUsPart from "./AboutUsPart";
+import CommentForm from "./CommentForm";
 
-const AboutUs = ({ aboutUs }) => {
-  if (!aboutUs) return <Spinner />;
+const AboutUs = () => {
+  const [aboutUs, setAboutUs] = useState(null);
+  useEffect(() => {}, [getAboutUs().then((res) => setAboutUs(res))]);
+
   return (
-    <Box align="center" gap="medium" animation="fadeIn">
-      <Box
-        overflow="hidden"
-        width="small"
-        height="small"
-        style={{ borderRadius: 100 }}
-        elevation="medium"
-      >
-        <Image src={aboutUs.avatar} fit="cover" />
+    <Box fill>
+      <Box direction="row-responsive" gap="xlarge" justify="center" pad="large">
+        <Box width="large" pad={{ horizontal: "large" }}>
+          <AboutUsPart aboutUs={aboutUs} />
+        </Box>
+        <Box align="center" margin={{ top: "medium" }}>
+          <CommentForm />
+        </Box>
       </Box>
-
-      <Heading style={{ fontFamily: "Dancing Script" }}>
-        {aboutUs.title}
-      </Heading>
-
-      <BlockContentMain body={aboutUs.body} />
     </Box>
   );
 };

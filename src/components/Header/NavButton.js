@@ -1,19 +1,14 @@
 import React from "react";
-import { Button } from "grommet";
+import { Anchor, Button, Text } from "grommet";
 import { Link } from "react-router-dom";
 
 const NavButton = ({ to, label }) => {
   return (
-    <Link to={to}>
-      <Button
-        data-tip
-        data-for={label}
-        hoverIndicator={true}
-        focusIndicator={false}
-        label={label}
-      ></Button>
+    <Link to={to} component={Anchor}>
+      {label}
     </Link>
   );
 };
+const Label = (label) => <Text>{label}</Text>;
 
 export default NavButton;

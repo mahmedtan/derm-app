@@ -24,7 +24,7 @@ const Comments = () => {
 
   if (!remarks) return <Spinner />;
   return (
-    <Box fill="horizontal" pad="large" background="background-contrast">
+    <Box fill="horizontal" pad="large" background="#F3E8E2">
       <Heading alignSelf="center">Reviews</Heading>
       <Slider slidesToShow={1} {...settings}>
         {remarks.map((item) => (

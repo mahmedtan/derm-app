@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import {
   Article,
   FacebookOption,
+  Instagram,
   Phone,
   Twitter,
   User,
@@ -18,7 +19,7 @@ const MenuBar = ({ uiTheme }) => {
   return (
     <Box
       direction="row"
-      background="background-contrast"
+      background="#F1E4E7"
       gap="xlarge"
       align="center"
       fill="horizontal"
@@ -26,7 +27,23 @@ const MenuBar = ({ uiTheme }) => {
       justify="between"
       pad={{ horizontal: "medium" }}
     >
-      <Box direction="row">
+      <Box
+        direction="row"
+        margin={{ horizontal: "small" }}
+        align="center"
+        alignContent="center"
+      >
+        <Link to="/blogs">
+          <Button icon={<Instagram />} />
+        </Link>
+        <Link to="/blogs">
+          <Button icon={<FacebookOption />} />
+        </Link>
+        <Link to="/blogs">
+          <Button icon={<Article />} />
+        </Link>
+      </Box>
+      <Box direction="row" margin={{ horizontal: "small" }}>
         <Button href="tel:214-625-2777" icon={<Phone />} />
         <Button
           icon={uiTheme === "light" ? <Moon /> : <Sun />}
@@ -34,26 +51,6 @@ const MenuBar = ({ uiTheme }) => {
             dispatch(toggleUI());
           }}
         />
-      </Box>
-
-      <Box
-        direction="row"
-        margin={{ horizontal: "xsmall" }}
-        align="center"
-        alignContent="center"
-      >
-        <Link to="/blogs">
-          <Button icon={<Article />} />
-        </Link>
-        <Link to="/blogs">
-          <Button icon={<FacebookOption />} />
-        </Link>
-        <Link to="/blogs">
-          <Button icon={<Twitter />} />
-        </Link>
-        <Link to="/blogs">
-          <Button icon={<Youtube />} />
-        </Link>
       </Box>
     </Box>
   );

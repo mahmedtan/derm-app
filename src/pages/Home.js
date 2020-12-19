@@ -20,7 +20,7 @@ const Home = () => {
         <Slider />
         <Link to="/services">
           <Button
-            label="Learn About Our Services"
+            label="Schedule your visit"
             icon={<LinkNext />}
             reverse
             primary

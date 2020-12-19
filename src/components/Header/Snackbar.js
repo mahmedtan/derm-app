@@ -34,52 +34,83 @@ const Snackbar = ({ uiTheme }) => {
             background="background-front"
             onClickOutside={() => setShow(false)}
           >
-            <Box
-              fill="vertical"
-              pad="large"
-              align="center"
-              overflow="hidden"
-              animation="fadeIn"
-              justify="between"
-            >
+            <Box pad="large" gap="xlarge">
               <Button
                 icon={<Close />}
                 alignSelf="end"
                 onClick={() => setShow(false)}
               />
-              <Box align="center">
-                <Link to="/services/derm" onClick={() => setShow(false)}>
-                  <Button>
-                    <Heading level="3">Derm</Heading>
-                  </Button>
-                </Link>
-                <Link to="/services/aesthetics" onClick={() => setShow(false)}>
-                  <Button>
-                    <Heading level="3">Aesthetics</Heading>
-                  </Button>
-                </Link>
-                <Link to="/specials" onClick={() => setShow(false)}>
-                  <Button>
-                    <Heading level="3">Specials</Heading>
-                  </Button>
-                </Link>
-                <Link to="/services" onClick={() => setShow(false)}>
-                  <Button>
-                    <Heading level="3">Services</Heading>
-                  </Button>
-                </Link>
-                <Link to="/finance" onClick={() => setShow(false)}>
-                  <Button>
-                    <Heading level="3">Finance</Heading>
-                  </Button>
-                </Link>
-                <Link to="/contact-us" onClick={() => setShow(false)}>
-                  <Button>
-                    <Heading level="3">Contact us</Heading>
-                  </Button>
-                </Link>
+              <Box
+                fill="vertical"
+                pad="small"
+                align="center"
+                overflow="auto"
+                animation="fadeIn"
+                gap="large"
+              >
+                <Box align="center" gap="large">
+                  <Link to="/book-us" onClick={() => setShow(false)}>
+                    <Button>
+                      <Heading level="3" margin="none">
+                        Book now
+                      </Heading>
+                    </Button>
+                  </Link>
+                  <Link to="/services/derm" onClick={() => setShow(false)}>
+                    <Button>
+                      <Heading level="3" margin="none">
+                        Derm
+                      </Heading>
+                    </Button>
+                  </Link>
+                  <Link
+                    to="/services/aesthetics"
+                    onClick={() => setShow(false)}
+                  >
+                    <Button>
+                      <Heading level="3" margin="none">
+                        Aesthetics
+                      </Heading>
+                    </Button>
+                  </Link>
+                  <Link to="/specials" onClick={() => setShow(false)}>
+                    <Button>
+                      <Heading level="3" margin="none">
+                        Specials
+                      </Heading>
+                    </Button>
+                  </Link>
+                  <Link to="/services" onClick={() => setShow(false)}>
+                    <Button>
+                      <Heading level="3" margin="none">
+                        Services
+                      </Heading>
+                    </Button>
+                  </Link>
+                  <Link to="/finance" onClick={() => setShow(false)}>
+                    <Button>
+                      <Heading level="3" margin="none">
+                        Finance
+                      </Heading>
+                    </Button>
+                  </Link>
+                  <Link to="/contact-us" onClick={() => setShow(false)}>
+                    <Button>
+                      <Heading level="3" margin="none">
+                        Contact us
+                      </Heading>
+                    </Button>
+                  </Link>
+                  <Link to="/About-us" onClick={() => setShow(false)}>
+                    <Button>
+                      <Heading level="3" margin="none">
+                        About us
+                      </Heading>
+                    </Button>
+                  </Link>
+                </Box>
               </Box>
-              <Box margin="large">
+              <Box alignSelf="center">
                 <AuthenticationBtn />
               </Box>
             </Box>

@@ -13,14 +13,28 @@ const AutheticationBtn = () => {
   const btnSize = size === "small" ? "large" : "medium";
 
   return isAuthenticated ? (
-    <Box direction="row" gap="xsmall" margin={{ horizontal: "large" }}>
+    <Box
+      direction="row"
+      gap="small"
+      height={size === "small" && "60px"}
+      margin={{ horizontal: "large" }}
+    >
       <Link to="/profile">
-        <Button label="Profile" size={btnSize} />
+        <Box elevation="small" round>
+          <Button label="Profile" size={btnSize} />
+        </Box>
       </Link>
-      <LogoutBtn size={btnSize} />
+      <Box Box elevation="small" round>
+        <LogoutBtn size={btnSize} />
+      </Box>
     </Box>
   ) : (
-    <Box direction="row" gap="small" margin={{ horizontal: "large" }}>
+    <Box
+      direction="row"
+      gap="small"
+      margin={{ horizontal: "large" }}
+      align="center"
+    >
       <SignupBtn size={btnSize} />
       <LoginBtn size={btnSize} />
     </Box>

@@ -9,7 +9,6 @@ const LogoutBtn = ({ size }) => {
       label="Logout"
       primary
       size={size}
-      style={{ borderRadius: 25 }}
       onClick={() => logout({ returnTo: window.location.origin })}
     />
   );

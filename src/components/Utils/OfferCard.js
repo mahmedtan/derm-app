@@ -5,7 +5,6 @@ import {
   Paragraph,
   ResponsiveContext,
   CheckBox,
-  FormField,
 } from "grommet";
 import React, { useContext, useEffect, useState } from "react";
 import { useSelector } from "react-redux";
@@ -37,7 +36,10 @@ const OfferCard = ({ title, price, time, description, _id, type, item }) => {
         </Text>
       </Box>
 
-      <Paragraph>{description}</Paragraph>
+      <Box height="xsmall" overflow="hidden">
+        <Paragraph>{description}</Paragraph>
+      </Box>
+
       <Box direction="row" align="center" justify="between">
         <Text weight="bold">{`$${price}`}</Text>
 

@@ -26,7 +26,12 @@ const AppointmentCard = ({ form, deleteForm, deleteAndReschedule }) => {
             margin="medium"
             alignSelf="center"
           >
-            Personal Information
+            Booking for{" "}
+            {new Date(form.bookedFor).toLocaleDateString("en-US", {
+              year: "numeric",
+              month: "long",
+              day: "numeric",
+            })}
           </Text>
           <Box direction="row-responsive" justify="around" gap="xlarge">
             <Box gap="large">

@@ -16,15 +16,15 @@ const AutheticationBtn = () => {
     <Box
       direction="row"
       gap="small"
-      height={size === "small" && "60px"}
+      height={size === "small" ? "60px" : "fill"}
       margin={{ horizontal: "large" }}
     >
       <Link to="/profile">
-        <Box elevation="small" round>
+        <Box elevation="small" round="large">
           <Button label="Profile" size={btnSize} />
         </Box>
       </Link>
-      <Box Box elevation="small" round>
+      <Box>
         <LogoutBtn size={btnSize} />
       </Box>
     </Box>

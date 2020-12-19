@@ -26,6 +26,7 @@ import AboutUs from "../../pages/ContactUs/AboutUs.js";
 import Specials from "../../pages/Specials/Specials.js";
 import Finance from "../../pages/Financing.js";
 import ContactUs from "../../pages/ContactUs/ContactUs.js";
+import ServicesMain from "../../pages/Services/ServicesMain/ServicesMain.js";
 
 function App() {
   const uiTheme = useSelector(({ uiTheme }) => uiTheme);
@@ -61,8 +62,13 @@ function App() {
 
         <ProtectedRoute path="/book-now" component={Book} />
 
-        <Route path="/services">
+        <Route path="/services/:slug">
           <Services />
+        </Route>
+        <Route path="/services">
+          <Layout>
+            <ServicesMain />
+          </Layout>
         </Route>
         <Route path="/finance">
           <Layout>

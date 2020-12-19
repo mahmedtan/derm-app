@@ -14,7 +14,12 @@ const Appointment = ({ form, deleteForm, deleteAndReschedule }) => {
       width="large"
     >
       <Text size="xlarge" weight="normal" margin="medium" alignSelf="center">
-        Personal Information
+        Booking for{" "}
+        {new Date(form.bookedFor).toLocaleDateString("en-US", {
+          year: "numeric",
+          month: "long",
+          day: "numeric",
+        })}
       </Text>
       <Box
         pad={{ horizontal: "xlarge" }}

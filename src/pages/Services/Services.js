@@ -41,9 +41,6 @@ const Services = () => {
                 size={size}
               />
             </Route>
-            <Route path="/services">
-              <Redirect to={`/services/${serviceTypes[0].services[0].slug}`} />
-            </Route>
           </Switch>
         </Box>
         {size !== "small" && size !== "xsmall" ? (

@@ -24,7 +24,7 @@ const Newsletter = () => {
 
   return (
     <Box
-      background="#8E677A"
+      background="background"
       fill="horizontal"
       direction="row-responsive"
       justify="center"
@@ -32,7 +32,7 @@ const Newsletter = () => {
       gap="large"
       pad={size === "small" ? "large" : "medium"}
     >
-      <Text textAlign="center" size="xlarge" color="white" weight="bold">
+      <Text textAlign="center" size="xlarge" weight="bold">
         Stay connected!
       </Text>
 
@@ -53,9 +53,9 @@ const Newsletter = () => {
         <Box direction="row-responsive" align="center" gap="large">
           <Box gap="medium" direction="row-responsive">
             <Box direction="row-responsive" align="center" gap="small">
-              <Text color="white">Full Name:</Text>
+              <Text>Full Name:</Text>
               <Box>
-                <StyleTextInput
+                <TextInput
                   id="first-name"
                   name="fullName"
                   reverse
@@ -65,10 +65,9 @@ const Newsletter = () => {
             </Box>
 
             <Box direction="row-responsive" align="center" gap="small">
-              <Text color="white">Email:</Text>
-              <StyleTextInput
+              <Text>Email:</Text>
+              <TextInput
                 id="email"
-                // className={styles.input}
                 name="emailAddress"
                 reverse
                 placeholder="john@example.com"
@@ -76,7 +75,7 @@ const Newsletter = () => {
             </Box>
           </Box>
 
-          <Button type="submit" color="white" primary>
+          <Button type="submit" color="#F1E4E7" primary>
             <Text color="black">Subscribe</Text>
           </Button>
         </Box>
@@ -85,8 +84,4 @@ const Newsletter = () => {
   );
 };
 
-const StyleTextInput = styled(TextInput)`
-  background: white;
-  color: black;
-`;
 export default Newsletter;

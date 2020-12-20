@@ -23,6 +23,7 @@ const reducer = (
 };
 
 export const changeValues = (data) => {
+  window.sessionStorage.setItem("formValues", JSON.stringify(data));
   return {
     type: "ON_CHANGE",
     data,

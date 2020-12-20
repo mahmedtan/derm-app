@@ -31,15 +31,20 @@ export const submitForm = async (
     lastName,
     bookedFor: new Date(date),
     emailAddress,
-    phoneNumber,
     sub: user.sub,
+    images: images,
+    phoneNumber,
     remarks,
-    images: images && (await uploadImages(images)),
     procedures: getProcedures(ids, procedures),
     consultations: getConsultations(ids, consultations),
     submitted: new Date(),
   };
-  return await client.create(doc);
+  const response = await client.create(doc);
+  return {
+    response,
+    procsDone: getProcedures(ids, procedures),
+    consultsDone: getConsultations(ids, consultations),
+  };
 };
 
 const getProcedures = (ids, procedures) => {
@@ -55,7 +60,8 @@ const getConsultations = (ids, consultations) => {
     .filter((item) => consultationIds.find((i) => i === item))
     .map((item) => ({ _type: "reference", _key: item, _ref: item }));
 };
-const uploadImages = async (images) => {
+
+export const uploadImages = async (images) => {
   const response = await Promise.all(
     images.map((image) => client.assets.upload("image", image))
   );
@@ -76,6 +82,7 @@ export const getForm = async (sub) => {
       sub,
     }
   );
+
   return response;
 };
 

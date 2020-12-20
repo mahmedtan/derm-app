@@ -31,9 +31,11 @@ const StepFour = () => {
   if (!(dates && times)) return <Loading />;
 
   const filterDate = (current) => {
-    return dates.find((item) => {
+    const date = dates.find((item) => {
       return new Date(item).getDate() === new Date(current).getDate();
     });
+
+    return date && new Date(date).getDate() >= new Date().getDate();
   };
   const filterTime = (time) => {
     if (availableTimes)

@@ -1,5 +1,13 @@
-import { Box, Heading, Form, Text, ResponsiveContext } from "grommet";
+import {
+  Box,
+  Heading,
+  Form,
+  Text,
+  ResponsiveContext,
+  Paragraph,
+} from "grommet";
 import React, { useContext, useEffect, useRef } from "react";
+
 import StepFooter from "./StepFooter";
 import { useHistory } from "react-router-dom";
 import Steps from "./Steps/Steps";
@@ -8,24 +16,53 @@ import StepHeader from "./StepHeader";
 
 import Loading from "../Extras/Loading";
 import { changeValues } from "../../reducers/formValuesReducer";
+import { uploadImages } from "../../services/forms";
+import { useState } from "react";
+import Spinner from "../../components/Utils/Spinner";
 
 const Book = () => {
   const size = useContext(ResponsiveContext);
   const dispatch = useDispatch();
   const history = useHistory();
+  const [loading, setLoading] = useState(false);
 
-  const { activeIndex, procedures, consultations, formValues } = useSelector(
-    ({ procedures, consultations, activeIndex, formValues }) => ({
+  const {
+    activeIndex,
+    procedures,
+    consultations,
+    formValues,
+    images,
+  } = useSelector(
+    ({ procedures, consultations, activeIndex, formValues, images }) => ({
       activeIndex,
       formValues,
       procedures,
       consultations,
+      images,
     })
   );
 
-  if (!(procedures && consultations)) {
+  if (!(procedures && consultations && images)) {
     return <Loading />;
   }
+  if (loading)
+    return (
+      <Box
+        align="center"
+        justify="center"
+        height={{ min: "100vh" }}
+        pad="large"
+      >
+        <Heading textAlign="center">Processing your application</Heading>
+        <Box height="medium">
+          <Spinner />
+        </Box>
+        <Paragraph>
+          This might take a minute or two depending on the number of images
+          you've uploaded. Meanwhile, Please do not refresh or close this page.
+        </Paragraph>
+      </Box>
+    );
 
   return (
     <Box align="center" height={{ min: "100vh" }}>
@@ -49,7 +86,16 @@ const Book = () => {
             value={formValues}
             onChange={(nextValue) => dispatch(changeValues(nextValue))}
             onSubmit={({ value }) => {
-              history.push("/processing");
+              setLoading(true);
+              images
+                ? uploadImages(images).then((res) => {
+                    window.sessionStorage.setItem(
+                      "images",
+                      JSON.stringify(res)
+                    );
+                    history.push("/processing");
+                  })
+                : history.push("/processing");
             }}
           >
             <Box gap="medium">

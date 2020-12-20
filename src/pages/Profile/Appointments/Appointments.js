@@ -20,8 +20,9 @@ const Appointments = ({ forms }) => {
       </Heading>
       <Box>
         {forms.length
-          ? forms.map((form) => (
+          ? forms.map((form, index) => (
               <AppointmentCard
+                first={index === 0}
                 key={form._id}
                 form={form}
                 deleteForm={deleteForm}

@@ -17,7 +17,7 @@ const AutheticationBtn = () => {
       direction="row"
       gap="small"
       height={size === "small" ? "60px" : "fill"}
-      margin={{ horizontal: "small" }}
+      margin={{ horizontal: "medium" }}
     >
       <Link to="/profile">
         <Box elevation="small" round="large">

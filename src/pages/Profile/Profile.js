@@ -46,13 +46,18 @@ const Profile = () => {
           gap="large"
           pad={{ bottom: "large" }}
         >
-          <Heading
-            textAlign="center"
-            level="2"
-            margin={{ top: "large", bottom: "none" }}
-          >
-            Welcome {fullName}
-          </Heading>
+          <Box align="center">
+            <Heading
+              textAlign="center"
+              level="2"
+              margin={{ top: "large", bottom: "none" }}
+            >
+              Welcome
+            </Heading>
+            <Heading level="3" margin={{ top: "small" }}>
+              {fullName}
+            </Heading>
+          </Box>
 
           {!user.email_verified && <VerifyBanner user={user} />}
           <PatientDetails

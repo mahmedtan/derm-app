@@ -3,7 +3,7 @@ import { FormDown, FormUp } from "grommet-icons";
 import { useState } from "react";
 import Appointment from "./Appointment";
 
-const AppointmentCard = ({ form, deleteForm, deleteAndReschedule }) => {
+const AppointmentCard = ({ form, deleteForm, deleteAndReschedule, first }) => {
   const [open, setOpen] = useState(false);
   return (
     <Card
@@ -35,12 +35,14 @@ const AppointmentCard = ({ form, deleteForm, deleteAndReschedule }) => {
           </Text>
           <Box direction="row-responsive" justify="around" gap="xlarge">
             <Box gap="large">
-              <Box>
-                <Text weight="bold" size="large">
-                  First Name
-                </Text>
-                {form.firstName}
-              </Box>
+              {first && (
+                <Box>
+                  <Text weight="bold" size="large">
+                    First Name
+                  </Text>
+                  {form.firstName}
+                </Box>
+              )}
 
               <Box>
                 <Text weight="bold" size="large">
@@ -59,12 +61,14 @@ const AppointmentCard = ({ form, deleteForm, deleteAndReschedule }) => {
               </Box>
             </Box>
             <Box gap="large">
-              <Box>
-                <Text weight="bold" size="large">
-                  Last Name
-                </Text>
-                {form.lastName}
-              </Box>
+              {first && (
+                <Box>
+                  <Text weight="bold" size="large">
+                    Last Name
+                  </Text>
+                  {form.lastName}
+                </Box>
+              )}
               <Box>
                 <Text weight="bold" size="large">
                   Phone Number{" "}

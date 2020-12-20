@@ -3,6 +3,8 @@ import Steps from "./Steps/Steps";
 import React from "react";
 import { incrementIndex } from "../../reducers/indexReducer";
 import { useDispatch, useSelector } from "react-redux";
+import { useState } from "react";
+import Loading from "../Extras/Loading";
 
 const StepFooter = () => {
   const activeIndex = useSelector(({ activeIndex }) => activeIndex);

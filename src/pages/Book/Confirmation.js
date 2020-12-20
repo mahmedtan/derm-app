@@ -1,14 +1,15 @@
 import { Box, Heading, Card, Paragraph, Button } from "grommet";
 import React, { useEffect, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import Layout from "../../components/Utils/Layout";
 import NotFound from "../Extras/404";
+import Loading from "../Extras/Loading";
 
 const Confirmation = () => {
   const [fullName, setFullName] = useState(null);
   const [submittedDate, setSubmittedDate] = useState(null);
   const [error, setError] = useState(false);
+
   useEffect(() => {
     if (
       window.sessionStorage.getItem("fullName") &&
@@ -24,6 +25,7 @@ const Confirmation = () => {
         <NotFound />
       </Layout>
     );
+
   return (
     <Layout>
       <Box
@@ -39,7 +41,16 @@ const Confirmation = () => {
               Dear {fullName},
             </Heading>
             <Paragraph size="large">
-              Your appointment has been booked for {submittedDate}
+              Your appointment has been booked for{" "}
+              {new Date(submittedDate).toLocaleDateString("en-US", {
+                year: "numeric",
+                month: "long",
+                day: "numeric",
+              }) +
+                " " +
+                new Date(submittedDate).toLocaleTimeString("en-US", {
+                  timeStyle: "short",
+                })}
             </Paragraph>
             <Link to="/profile">
               <Button primary label="Go to profile" />

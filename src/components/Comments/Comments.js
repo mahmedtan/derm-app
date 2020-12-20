@@ -12,7 +12,7 @@ const Comments = () => {
     slidesToScroll: 1,
     speed: 1000,
     arrows: false,
-    autoplaySpeed: 4000,
+    autoplaySpeed: 3000,
     pauseOnHover: true,
     fade: true,
     autoplay: true,
@@ -24,7 +24,7 @@ const Comments = () => {
 
   if (!remarks) return <Spinner />;
   return (
-    <Box fill="horizontal" pad="large" background="#F3E8E2">
+    <Box fill="horizontal" pad="large" background="background-back">
       <Heading alignSelf="center">Reviews</Heading>
       <Slider slidesToShow={1} {...settings}>
         {remarks.map((item) => (

@@ -7,43 +7,46 @@ import { useHistory } from "react-router-dom";
 import Layout from "../../components/Utils/Layout";
 import Spinner from "../../components/Utils/Spinner";
 import { submitForm } from "../../services/forms";
+import NotFound from "../Extras/404";
+import Loading from "../Extras/Loading";
 
 const Processing = () => {
   const [submitted, setSubmitted] = useState(false);
+
   const [error, setError] = useState(false);
 
-  const { user } = useAuth0();
-
   const dispatch = useDispatch();
+
   const history = useHistory();
 
-  const { formValues, images, procedures, consultations, date } = useSelector(
-    ({ formValues, images, procedures, consultations, date }) => ({
+  const { formValues, procedures, consultations, date } = useSelector(
+    ({ formValues, procedures, consultations, date }) => ({
       formValues,
-      images,
       procedures,
       consultations,
       date,
     })
   );
+  const { user } = useAuth0();
 
   useEffect(() => {
     if (!submitted) {
-      if (formValues && images && procedures && consultations && date && user) {
-        console.log(
-          "Processing",
-          formValues,
-          images,
-          procedures,
-          consultations,
-          date,
-          user
-        );
+      if (formValues && procedures && consultations && date && user) {
+        const images =
+          window.sessionStorage.getItem("images") &&
+          JSON.parse(window.sessionStorage.getItem("images"));
+
         submitForm(formValues, images, procedures, consultations, date, user)
-          .then((res) => {
-            console.log("Form Submitted", res);
-            Axios.post("/api/mail", { formValues, date }).then((mail) => {
-              console.log("Mail sent", mail);
+          .then((response) => {
+            console.log("Form Submitted", response);
+
+            Axios.post("/api/mail", {
+              formValues,
+              date,
+              procedures,
+              consultations,
+            }).then((res) => {
+              console.log("Mail sent", res);
 
               setSubmitted(true);
             });
@@ -61,26 +64,15 @@ const Processing = () => {
       if (formValues.emailAddress === "")
         setError("Looks like you're on the wrong page");
     }
-  }, [
-    formValues,
-    images,
-    procedures,
-    consultations,
-    date,
-    user,
-    dispatch,
-    submitted,
-  ]);
+  }, [formValues, procedures, consultations, date, dispatch, submitted]);
   useEffect(() => {
     if (submitted) {
+      window.sessionStorage.clear();
       window.sessionStorage.setItem(
         "fullName",
         formValues.firstName + " " + formValues.lastName
       );
-      window.sessionStorage.setItem(
-        "submittedDate",
-        new Date(date).toLocaleString()
-      );
+      window.sessionStorage.setItem("submittedDate", date);
 
       dispatch({ type: "RESET_FORM" });
       dispatch({ type: "RESET_INDEX" });
@@ -94,32 +86,10 @@ const Processing = () => {
   if (error)
     return (
       <Layout>
-        <Box align="center" justify="center" height={{ min: "100vh" }}>
-          <Heading textAlign="center">Error</Heading>
-          <Box height="medium">
-            <Text>{error}</Text>
-          </Box>
-        </Box>
+        <NotFound />
       </Layout>
     );
-  if (!submitted)
-    return (
-      <Box
-        align="center"
-        justify="center"
-        height={{ min: "100vh" }}
-        pad="large"
-      >
-        <Heading textAlign="center">Processing your application</Heading>
-        <Box height="medium">
-          <Spinner />
-        </Box>
-        <Paragraph>
-          This might take a minute or two depending on the number of images
-          you've uploaded. Meanwhile, Please do not refresh or close this page.
-        </Paragraph>
-      </Box>
-    );
+  if (!submitted) return <Loading />;
   return "Yes";
 };
 

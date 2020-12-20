@@ -31,9 +31,9 @@ const Home = () => {
       </Box>
       <Pamphlet />
       <StoryCards />
-
-      <RecentBlogs blogs={blogs} />
       <Comments />
+      <RecentBlogs blogs={blogs} />
+
       <Newsletter />
     </Box>
   );

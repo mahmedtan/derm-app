@@ -49,7 +49,7 @@ const Snackbar = ({ uiTheme }) => {
                 gap="large"
               >
                 <Box align="center" gap="large">
-                  <Link to="/book-us" onClick={() => setShow(false)}>
+                  <Link to="/book-now" onClick={() => setShow(false)}>
                     <Button>
                       <Heading level="3" margin="none">
                         Book now

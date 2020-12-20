@@ -27,9 +27,9 @@ const Pamphlet = () => {
             <Button
               label="Book now"
               primary
-              color="white"
+              color="#0f1f25"
               size="large"
-              style={{ color: "black" }}
+              style={{ color: "white" }}
             />
           </Link>
 

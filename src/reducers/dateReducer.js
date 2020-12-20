@@ -9,6 +9,7 @@ const reducer = (state = null, action) => {
   }
 };
 export const changeDate = (date) => {
+  window.sessionStorage.setItem("date", date);
   return {
     type: "CHANGE_DATE",
     date,

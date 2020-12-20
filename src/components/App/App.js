@@ -27,6 +27,8 @@ import Specials from "../../pages/Specials/Specials.js";
 import Finance from "../../pages/Financing.js";
 import ContactUs from "../../pages/ContactUs/ContactUs.js";
 import ServicesMain from "../../pages/Services/ServicesMain/ServicesMain.js";
+import { changeValues } from "../../reducers/formValuesReducer.js";
+import { changeDate } from "../../reducers/dateReducer.js";
 
 function App() {
   const uiTheme = useSelector(({ uiTheme }) => uiTheme);
@@ -40,7 +42,15 @@ function App() {
     dispatch(initServiceTypes());
     dispatch(initConsultations());
     dispatch(initProcedures());
+
+    const formValues = window.sessionStorage.getItem("formValues");
+    const date = window.sessionStorage.getItem("date");
+    if (formValues && date) {
+      dispatch(changeValues(JSON.parse(formValues)));
+      dispatch(changeDate(new Date(date)));
+    }
   }, [dispatch]);
+
   if (isLoading) return <Loading />;
 
   return (
@@ -60,7 +70,7 @@ function App() {
 
         <ProtectedRoute path="/confirmation" component={Confirmation} />
 
-        <ProtectedRoute path="/book-now" component={Book} />
+        <Route path="/book-now" component={Book} />
 
         <Route path="/services/:slug">
           <Services />

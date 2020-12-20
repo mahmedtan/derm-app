@@ -20,8 +20,9 @@ const Navbar = ({ uiTheme }) => {
           gap="large"
         >
           <Box direction="row" gap="medium">
-            <NavButton to="/contact-us" label="Contact us" />
-            <NavButton to="/services/alopea" label="Derm" />
+            <NavButton to="/about-us" label="About us" />
+
+            <NavButton to="/services/alopea" label="Dermatology" />
             <NavButton to="/services/botox" label="Aesthetics" />
             <NavButton to="/specials" label="Specials" />
           </Box>
@@ -33,8 +34,8 @@ const Navbar = ({ uiTheme }) => {
           <Box direction="row" gap="medium">
             <NavButton to="/services" label="Services" />
             <NavButton to="/finance" label="Finance" />
-            <NavButton to="/about-us" label="About us" />
-            <NavButton to="/book-now" label="Book now" />
+            <NavButton to="/contact-us" label="Contact us" />
+            <NavButton to="/book-now" label="Book Now" />
           </Box>
         </Box>
         <AuthenticationBtn />

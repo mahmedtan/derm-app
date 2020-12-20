@@ -1,5 +1,5 @@
-import React from "react";
-import { Anchor, Box, Button } from "grommet";
+import React, { useContext } from "react";
+import { Anchor, Box, Button, ResponsiveContext } from "grommet";
 import { Link } from "react-router-dom";
 import {
   Article,
@@ -15,11 +15,12 @@ import { toggleUI } from "../../reducers/uiThemeReducer";
 import { useDispatch } from "react-redux";
 
 const MenuBar = ({ uiTheme }) => {
+  const size = useContext(ResponsiveContext);
   const dispatch = useDispatch();
   return (
     <Box
       direction="row"
-      background="#F1E4E7"
+      background="#E5DCE0"
       gap="xlarge"
       align="center"
       fill="horizontal"

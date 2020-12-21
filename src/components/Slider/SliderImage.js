@@ -24,13 +24,13 @@ const SliderImage = ({ image, name, size, slug }) => {
           elevation="large"
           align="center"
           background={{
-            color: "light-6",
-            opacity: "strong",
+            color: "light-3",
+            opacity: "60%",
           }}
           pad={{ horizontal: "medium" }}
           overflow="hidden"
         >
-          <Heading level={3} color="black">
+          <Heading level={3} color="dark-1">
             {name}
           </Heading>
         </Box>

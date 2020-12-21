@@ -1,4 +1,4 @@
-import { Box, Button } from "grommet";
+import { Box, Button, ResponsiveContext } from "grommet";
 import Newsletter from "../components/Utils/Newsletter";
 
 import Slider from "../components/Slider/Slider";
@@ -10,13 +10,21 @@ import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { LinkNext } from "grommet-icons";
 import Comments from "../components/Comments/Comments";
+import { useContext } from "react";
 
 const Home = () => {
   const blogs = useSelector((state) => state.blogs);
+  const size = useContext(ResponsiveContext);
 
   return (
     <Box animation="fadeIn" overflow="hidden" align="center" fill>
-      <Box width="100vw" height="88vh" align="center" justify="evenly">
+      <Box
+        align="center"
+        justify="start"
+        gap={size === "small" ? "xlarge" : "large"}
+        height="85vh"
+        margin={{ vertical: size === "small" ? "large" : "small" }}
+      >
         <Slider />
         <Link to="/services">
           <Button

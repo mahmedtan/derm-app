@@ -19,7 +19,7 @@ const StepHeader = () => {
         {size === "small" &&
           (activeIndex !== 0 ? (
             <Button
-              alignSelf="center"
+              secondary
               icon={<FormPrevious />}
               label="Back"
               onClick={() => dispatch(decrementIndex())}
@@ -27,6 +27,7 @@ const StepHeader = () => {
           ) : (
             <Link to="/services">
               <Button
+                secondary
                 icon={<FormPrevious />}
                 size="small"
                 label="Back to Services"

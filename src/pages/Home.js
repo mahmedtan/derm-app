@@ -31,6 +31,7 @@ const Home = () => {
             label="Schedule Your Visit"
             icon={<LinkNext />}
             reverse
+            margin={{ vertical: size === "small" ? "medium" : "none" }}
             primary
             size="large"
             style={{ borderRadius: "25px" }}

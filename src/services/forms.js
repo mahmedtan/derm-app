@@ -29,7 +29,8 @@ export const submitForm = async (
   if (offers && offers.length) {
     console.log(
       await Axios.post("/api/newsletter", {
-        fullName: firstName + " " + lastName,
+        firstName,
+        lastName,
         emailAddress,
       })
     );

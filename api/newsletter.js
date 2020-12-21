@@ -1,7 +1,7 @@
 const axios = require("axios");
 
 module.exports = async (req, res) => {
-  const { fullName, emailAddress } = req.body;
+  const { fullName, emailAddress, firstName, lastName } = req.body;
 
   var config = {
     headers: {
@@ -17,7 +17,8 @@ module.exports = async (req, res) => {
         contacts: [
           {
             email: emailAddress,
-            first_name: fullName,
+            first_name: firstName || fullName,
+            lastName,
           },
         ],
       },

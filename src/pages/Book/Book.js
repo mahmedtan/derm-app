@@ -65,7 +65,7 @@ const Book = () => {
     );
 
   return (
-    <Box align="center" height={{ min: "100vh" }}>
+    <Box align="center" height={{ min: "100vh" }} margin={{ bottom: "xlarge" }}>
       <Box
         align="center"
         width="large"
@@ -100,7 +100,10 @@ const Book = () => {
           >
             <Box
               gap="small"
-              margin={{ bottom: "xlarge", top: size === "small" && "large" }}
+              margin={{
+                bottom: "xlarge",
+                top: size === "small" ? "large" : "none",
+              }}
             >
               {Steps[activeIndex].item}
               <StepFooter />

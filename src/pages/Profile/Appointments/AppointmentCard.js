@@ -33,7 +33,12 @@ const AppointmentCard = ({ form, deleteForm, deleteAndReschedule, first }) => {
               day: "numeric",
             })}
           </Text>
-          <Box direction="row-responsive" justify="around" gap="xlarge">
+          <Box
+            direction="row-responsive"
+            justify="center"
+            gap="large"
+            pad={{ horizontal: "large" }}
+          >
             <Box gap="large">
               {first && (
                 <Box>
@@ -43,7 +48,22 @@ const AppointmentCard = ({ form, deleteForm, deleteAndReschedule, first }) => {
                   {form.firstName}
                 </Box>
               )}
-
+              {first && (
+                <Box>
+                  <Text weight="bold" size="large">
+                    Last Name
+                  </Text>
+                  {form.lastName}
+                </Box>
+              )}
+            </Box>
+            <Box gap="large" direction={first ? "column" : "row-responsive"}>
+              <Box>
+                <Text weight="bold" size="large">
+                  Phone Number{" "}
+                </Text>
+                {form.phoneNumber}
+              </Box>
               <Box>
                 <Text weight="bold" size="large">
                   Booked For
@@ -58,22 +78,6 @@ const AppointmentCard = ({ form, deleteForm, deleteAndReschedule, first }) => {
                   new Date(form.bookedFor).toLocaleTimeString("en-US", {
                     timeStyle: "short",
                   })}
-              </Box>
-            </Box>
-            <Box gap="large">
-              {first && (
-                <Box>
-                  <Text weight="bold" size="large">
-                    Last Name
-                  </Text>
-                  {form.lastName}
-                </Box>
-              )}
-              <Box>
-                <Text weight="bold" size="large">
-                  Phone Number{" "}
-                </Text>
-                {form.phoneNumber}
               </Box>
             </Box>
           </Box>

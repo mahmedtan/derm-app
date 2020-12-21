@@ -20,18 +20,12 @@ const StepHeader = () => {
           (activeIndex !== 0 ? (
             <Button
               secondary
-              icon={<FormPrevious />}
               label="Back"
               onClick={() => dispatch(decrementIndex())}
             />
           ) : (
             <Link to="/services">
-              <Button
-                secondary
-                icon={<FormPrevious />}
-                size="small"
-                label="Back to Services"
-              />
+              <Button secondary size="small" label="Back to Services" />
             </Link>
           ))}
       </Box>

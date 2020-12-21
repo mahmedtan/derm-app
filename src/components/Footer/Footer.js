@@ -21,6 +21,7 @@ const NavFooter = () => {
       gap={size === "small" ? "large" : "small"}
       pad={size === "small" ? "large" : "medium"}
       background={{ color: "background-front" }}
+      margin={{ bottom: size === "small" ? "xlarge" : "none" }}
     >
       <Box
         direction="row-responsive"
@@ -95,7 +96,9 @@ const NavFooter = () => {
         </Box>
       </Box>
 
-      <Box>©{new Date().getFullYear()}, CHIC Derm & Aesthetics</Box>
+      <Box margin={{ bottom: size === "small" ? "xlarge" : "none" }}>
+        ©{new Date().getFullYear()}, CHIC Derm & Aesthetics
+      </Box>
     </Footer>
   );
 };

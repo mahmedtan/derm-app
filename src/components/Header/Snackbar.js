@@ -20,7 +20,8 @@ const Snackbar = ({ uiTheme }) => {
         gap="large"
         align="center"
         height="3.5rem"
-        justify="evenly"
+        justify="around"
+        pad={{ horizontal: "large" }}
         width="xlarge"
       >
         <Link to="/book-now">

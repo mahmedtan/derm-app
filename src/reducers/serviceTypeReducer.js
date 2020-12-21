@@ -2,7 +2,7 @@ import { getAllServiceTypes } from "../services/services";
 const reducer = (state = null, action) => {
   switch (action.type) {
     case "INIT_TYPES":
-      return action.data.serviceTypes;
+      return action.data.serviceTypes.sort((a, b) => a.order - b.order);
     default:
       return state;
   }

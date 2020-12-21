@@ -16,7 +16,7 @@ const ServicesMain = () => {
 
   return (
     <Box pad="large" align="center" gap="xlarge">
-      <Heading margin="none">Services we provide</Heading>
+      <Heading margin="none">Services</Heading>
 
       <Box
         gap={size === "small" ? "xlarge" : "large"}

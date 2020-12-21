@@ -3,8 +3,6 @@ import Steps from "./Steps/Steps";
 import React from "react";
 import { incrementIndex } from "../../reducers/indexReducer";
 import { useDispatch, useSelector } from "react-redux";
-import { useState } from "react";
-import Loading from "../Extras/Loading";
 
 const StepFooter = () => {
   const activeIndex = useSelector(({ activeIndex }) => activeIndex);
@@ -24,36 +22,39 @@ const StepFooter = () => {
     "^\\(?([0-9]{3})\\) ?[-.●]?([0-9]{3})[-.●]?([0-9]{4})$"
   ).test(phoneNumber);
 
-  const stepTwoValidation =
-    activeIndex === 1 &&
+  const stepFourValidation =
+    activeIndex === 3 &&
     !(firstName && lastName && emailAddress && phoneNumber && phoneNumberVal);
 
-  const stepFourValidation =
-    activeIndex === 3 && !(date && new Date(date).getHours());
+  const stepThreeValidation =
+    activeIndex === 2 && !(date && new Date(date).getHours());
 
   const dispatch = useDispatch();
   return (
-    <Box fill="horizontal" direction="row" gap="large" justify="end">
-      {activeIndex === Steps.length - 1 ? (
-        <Button
-          primary
-          label="Confirm Submission"
-          disabled={stepFourValidation}
-          size="large"
-          type="submit"
-        />
-      ) : (
-        <Button
-          primary
-          size="large"
-          disabled={stepOneValidation || stepTwoValidation}
-          label="Next"
-          onClick={(e) => {
-            e.preventDefault();
-            dispatch(incrementIndex());
-          }}
-        />
-      )}
+    <Box align="center">
+      <Box align="center" width="medium" justify="center">
+        {activeIndex === Steps.length - 1 ? (
+          <Button
+            primary
+            label="Confirm Submission"
+            disabled={stepFourValidation}
+            size="large"
+            fill
+            type="submit"
+          />
+        ) : (
+          <Button
+            primary
+            disabled={stepOneValidation || stepThreeValidation}
+            label="Next"
+            fill
+            onClick={(e) => {
+              e.preventDefault();
+              dispatch(incrementIndex());
+            }}
+          />
+        )}
+      </Box>
     </Box>
   );
 };

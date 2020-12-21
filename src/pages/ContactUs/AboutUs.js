@@ -10,12 +10,19 @@ const AboutUs = () => {
 
   return (
     <Box fill>
-      <Box direction="row-responsive" gap="xlarge" justify="center" pad="large">
-        <Box width="large" pad={{ horizontal: "large" }}>
+      <Box
+        direction="row-responsive"
+        gap="xlarge"
+        justify="center"
+        pad="large"
+        align="center"
+      >
+        <Box width="large" pad={{ horizontal: "large" }} align="center">
           <AboutUsPart aboutUs={aboutUs} />
-        </Box>
-        <Box align="center" margin={{ top: "medium" }}>
-          <CommentForm />
+
+          <Box width="medium" align="center">
+            <CommentForm />
+          </Box>
         </Box>
       </Box>
     </Box>

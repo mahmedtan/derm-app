@@ -1,9 +1,13 @@
 import React from "react";
-import { Button, Box, Stack } from "grommet";
+import { Button, Box, Stack, Image } from "grommet";
 import { Link } from "react-router-dom";
 import NavButton from "./NavButton";
 import MenuBar from "./MenuBar";
 import AuthenticationBtn from "../Authentication/AuthenticationBtn";
+import Logo1 from "./40.png";
+import Logo2 from "./41.png";
+import Logo3 from "./logo3.png";
+import Logo4 from "./Chic.png";
 
 const Navbar = ({ uiTheme }) => {
   return (
@@ -22,14 +26,14 @@ const Navbar = ({ uiTheme }) => {
           <Box direction="row" gap="medium">
             <NavButton to="/about-us" label="About us" />
 
-            <NavButton to="/services/alopea" label="Dermatology" />
+            <NavButton to="/services/dermatology" label="Dermatology" />
             <NavButton to="/services/botox" label="Aesthetics" />
             <NavButton to="/specials" label="Specials" />
           </Box>
           <Link to="/">
-            <Button color="brand" size="large">
-              Lorem ipsum dolor sit.
-            </Button>
+            <Box overflow="hidden" height="xxsmall" width="9rem">
+              <Image src={Logo4} fit="cover" />
+            </Box>
           </Link>
           <Box direction="row" gap="medium">
             <NavButton to="/services" label="Services" />

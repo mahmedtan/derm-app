@@ -1,5 +1,5 @@
-import React, { useEffect } from "react";
-import { Box, Heading, Card, Button } from "grommet";
+import React, { useContext, useEffect } from "react";
+import { Box, Heading, Card, Button, ResponsiveContext } from "grommet";
 import Loading from "../Extras/Loading";
 import BlockContentMain from "../../components/Utils/BlockContentMain";
 import { useDispatch, useSelector } from "react-redux";
@@ -21,14 +21,19 @@ const Service = ({ service, services, serviceTypes, size }) => {
   if (!service) return <Loading />;
 
   return (
-    <Box align="center" margin={{ vertical: "medium" }} fill>
-      <Heading level="2">{service.name}</Heading>
+    <Box align="center" margin={{ vertical: "small" }} fill>
       <Box
         width="large"
         flex="grow"
         gap="large"
-        pad={{ horizontal: "large", vertical: "large" }}
+        pad={{
+          horizontal: size === "small" ? "xlarge" : "4rem",
+          vertical: "large",
+        }}
       >
+        <Heading level="2" margin="none">
+          {service.name}
+        </Heading>
         <BlockContentMain body={service.body} />
 
         {service.serviceType.slug === "injectables" && <FaceVisual />}

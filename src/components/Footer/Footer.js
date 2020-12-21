@@ -1,4 +1,12 @@
-import { Footer, Text, Box, Image, Anchor, ResponsiveContext } from "grommet";
+import {
+  Footer,
+  Text,
+  Box,
+  Image,
+  Anchor,
+  ResponsiveContext,
+  Heading,
+} from "grommet";
 import { Article, Facebook, Instagram } from "grommet-icons";
 import { useContext } from "react";
 import { Link } from "react-router-dom";
@@ -8,53 +16,86 @@ const NavFooter = () => {
   return (
     <Footer
       as="footer"
-      justify="between"
-      direction="row-responsive"
       border="top"
-      gap="medium"
-      align="center"
-      fill="horizontal"
+      direction="column"
+      gap={size === "small" ? "large" : "small"}
       pad={size === "small" ? "large" : "medium"}
-      gap="large"
       background={{ color: "background-front" }}
     >
       <Box
+        direction="row-responsive"
+        gap="large"
         align="center"
-        gap={size === "small" ? "large" : "medium"}
-        width="medium"
+        fill="horizontal"
+        justify="center"
       >
-        <Box gap="medium">
-          <Text>
-            Phone Number:{" "}
-            <Anchor href="tel:(123) 456-7890">(123) 456-7890</Anchor>
+        <Box width="medium" align="center" justify="start">
+          <Text size="large" margin={{ bottom: "small" }}>
+            Navigation
           </Text>
-          <Text>
-            Email:{" "}
-            <Anchor href="mailto:contact@mydermpa.com">
-              contact@mydermpa.com
-            </Anchor>
-          </Text>
-        </Box>
-
-        <Box direction="row" gap="medium" align="center">
-          <Facebook />
-          <Instagram />
-          <Article />
-        </Box>
-      </Box>
-
-      <Box align="center" gap="medium" width="medium">
-        <Text>CHIC Derm & Aesthetics</Text>
-        <Text>5717 Legacy Drive Plano, TX</Text>
-        <Text>75024</Text>
-      </Box>
-      <Box width="medium">
-        <Anchor href="https://goo.gl/maps/dRm6nvWnxMp8s2GG6" target="_blank">
-          <Box height="small" round overflow="hidden" elevation="small" border>
-            <Image src={Map} />
+          <Box align="center">
+            <Link to="/" component={Anchor}>
+              Home
+            </Link>
+            <Link to="/services" component={Anchor}>
+              Services
+            </Link>
+            <Link to="/specials" component={Anchor}>
+              Specials
+            </Link>
+            <Link to="/finance" component={Anchor}>
+              Finance
+            </Link>
+            <Link to="/book-now" component={Anchor}>
+              Book Now
+            </Link>
           </Box>
-        </Anchor>
+        </Box>
+        <Box align="center" width="medium" justify="start">
+          <Box align="center" margin={{ bottom: "small" }}>
+            <Text size="large">CHIC</Text>
+            <Text size="large">Derm & Aesthetics</Text>
+          </Box>
+
+          <Text>5717 Legacy Drive Plano</Text>
+          <Text>TX, 75024</Text>
+          <Box align="center" gap={size === "small" ? "large" : "medium"}>
+            <Box>
+              <Text textAlign="center">
+                Ph: <Anchor href="tel:(123) 456-7890">(123) 456-7890</Anchor>
+              </Text>
+              <Text>
+                Email:{" "}
+                <Anchor href="mailto:contact@mydermpa.com">
+                  contact@mydermpa.com
+                </Anchor>
+              </Text>
+            </Box>
+
+            <Box direction="row" gap="medium" align="center">
+              <Facebook />
+              <Instagram />
+              <Article />
+            </Box>
+          </Box>
+        </Box>
+        <Box width="medium" align="center">
+          <Anchor href="https://goo.gl/maps/dRm6nvWnxMp8s2GG6" target="_blank">
+            <Box
+              height="15rem"
+              width="15rem"
+              round="small"
+              overflow="hidden"
+              elevation="small"
+              border
+            >
+              <Image src={Map} fit="cover" />
+            </Box>
+          </Anchor>
+        </Box>
       </Box>
+
+      <Box>©{new Date().getFullYear()}, CHIC Derm & Aesthetics</Box>
     </Footer>
   );
 };

@@ -6,7 +6,7 @@ import BlockContentMain from "../../components/Utils/BlockContentMain";
 const AboutUs = ({ aboutUs }) => {
   if (!aboutUs) return <Spinner />;
   return (
-    <Box align="center" gap="medium" animation="fadeIn">
+    <Box align="center" gap="large" animation="fadeIn">
       <Box
         overflow="hidden"
         width="small"
@@ -17,11 +17,13 @@ const AboutUs = ({ aboutUs }) => {
         <Image src={aboutUs.avatar} fit="cover" />
       </Box>
 
-      <Heading style={{ fontFamily: "Dancing Script" }}>
-        {aboutUs.title}
-      </Heading>
+      <Box align="center" gap="small">
+        <Heading style={{ fontFamily: "Harmattan" }} margin="none">
+          {aboutUs.title}
+        </Heading>
 
-      <BlockContentMain body={aboutUs.body} />
+        <BlockContentMain body={aboutUs.body} />
+      </Box>
     </Box>
   );
 };

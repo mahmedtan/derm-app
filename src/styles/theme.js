@@ -484,7 +484,7 @@ export var theme = deepFreeze({
         return (
           "\n      box-shadow: none;\n      border-color: unset;\n      background-color: " +
           (checked || indeterminate
-            ? theme.global.colors.green[theme.dark ? "dark" : "light"]
+            ? "#8E677A"
             : theme.global.colors.background[theme.dark ? "dark" : "light"]) +
           ";\n      " +
           ((checked || indeterminate) && "border: none;") +
@@ -497,7 +497,7 @@ export var theme = deepFreeze({
         var theme = _ref3.theme;
         return (
           "stroke-width: 2px;\n      stroke: " +
-          theme.global.colors["text-strong"][theme.dark ? "dark" : "light"]
+          theme.global.colors["background"][theme.dark ? "dark" : "light"]
         );
       },
     },

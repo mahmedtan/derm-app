@@ -1,11 +1,9 @@
 import { useAuth0 } from "@auth0/auth0-react";
 import Axios from "axios";
-import { Box, Heading, Paragraph, Text } from "grommet";
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
 import Layout from "../../components/Utils/Layout";
-import Spinner from "../../components/Utils/Spinner";
 import { submitForm } from "../../services/forms";
 import NotFound from "../Extras/404";
 import Loading from "../Extras/Loading";

@@ -41,9 +41,11 @@ const ResponsiveSlider = () => {
   return (
     <Box width="xlarge" pad={{ horizontal: "medium" }}>
       <Slider slidesToShow={getNumOfItemsToShow(size)} {...settings}>
-        {services.map((service) => (
-          <SliderImage key={service.slug} {...service} size={size} />
-        ))}
+        {services
+          .sort((a, b) => a.order - b.order)
+          .map((service) => (
+            <SliderImage key={service.slug} {...service} size={size} />
+          ))}
       </Slider>
     </Box>
   );

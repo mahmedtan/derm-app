@@ -1,78 +1,107 @@
-import React, { useEffect, useState } from "react";
-import { Box, Text, Button, Card } from "grommet";
-import { getAvailableDates, getAvailableTimes } from "../../../services/slots";
-import Loading from "../../Extras/Loading";
-import { useDispatch, useSelector } from "react-redux";
-import { changeDate } from "../../../reducers/dateReducer";
-import "react-datepicker/dist/react-datepicker.css";
+import React, { useEffect } from "react";
+import { Box, CheckBoxGroup, FormField, MaskedInput, TextInput } from "grommet";
+const emailValidation = [
+  {
+    regexp: new RegExp("[^@ \\t\\r\\n]+@"),
+    message: "Enter a valid email address.",
+    status: "error",
+  },
+  {
+    regexp: new RegExp("[^@ \\t\\r\\n]+@[^@ \\t\\r\\n]+\\.[^@ \\t\\r\\n]+"),
+    message: "Enter a valid email address.",
+    status: "error",
+  },
+  {
+    regexp: new RegExp("[^@ \\t\\r\\n]+@[^@ \\t\\r\\n]+\\.[^@ \\t\\r\\n]+"),
+    message: "Enter a valid email address.",
+    status: "error",
+  },
+];
+const phoneNumberValidation = [
+  {
+    regexp: new RegExp("^\\(?([0-9]{3})\\) ?[-.●]?([0-9]{3})[-.●]?([0-9]{4})$"),
+    message: "Enter a valid phone number",
+    status: "error",
+  },
+];
 
-import Datepicker from "react-datepicker";
-const StepFour = () => {
-  const dispatch = useDispatch();
-
-  const date = useSelector(({ date }) => date);
-  const [availableTimes, setAvailableTimes] = useState(null);
-  const [dates, setDates] = useState(null);
-  const [times, setTimes] = useState(null);
-
-  useEffect(() => {
-    getAvailableDates().then((dates) => setDates(dates));
-    getAvailableTimes().then((times) => setTimes(times));
-  }, []);
-
-  useEffect(() => {
-    if (times)
-      setAvailableTimes(
-        times.find((time) => time.dayOfTheWeek === new Date(date).getDay())
-          .slots
-      );
-  }, [date]);
-
-  if (!(dates && times)) return <Loading />;
-
-  const filterDate = (current) => {
-    const date = dates.find((item) => {
-      return new Date(item).getDate() === new Date(current).getDate();
-    });
-
-    return date && new Date(date).getDate() >= new Date().getDate();
-  };
-  const filterTime = (time) => {
-    if (availableTimes)
-      return (
-        availableTimes.filter((item) => {
-          return (
-            Date.parse(`01/01/2011 ${time.toLocaleTimeString()}`) ===
-            Date.parse(`01/01/2011 ${item}:00`)
-          );
-        }).length > 0
-      );
-  };
-
+const phoneMask = [
+  { fixed: "(" },
+  {
+    length: 3,
+    regexp: /^[0-9]{1,3}$/,
+    placeholder: "xxx",
+  },
+  { fixed: ")" },
+  { fixed: " " },
+  {
+    length: 3,
+    regexp: /^[0-9]{1,3}$/,
+    placeholder: "xxx",
+  },
+  { fixed: "-" },
+  {
+    length: 4,
+    regexp: /^[0-9]{1,4}$/,
+    placeholder: "xxxx",
+  },
+];
+const StepTwo = () => {
   return (
-    <Datepicker
-      id="datepicker"
-      name="bookedDate"
-      selected={date}
-      onChange={(val) => dispatch(changeDate(val))}
-      inline
-      timeIntervals={15}
-      showTimeSelect
-      filterTime={filterTime}
-      filterDate={filterDate}
-      calendarContainer={Container}
-    />
-  );
-};
-
-const Container = ({ children, className }) => {
-  return (
-    <Box pad="xsmall">
-      <Card direction="row" className={className} background="light-1">
-        {children}
-      </Card>
+    <Box animation="fadeIn">
+      <Box direction="row-responsive" gap="small" width="medium">
+        <FormField
+          required
+          label="First name"
+          htmlFor="firstName-input"
+          name="firstName"
+        >
+          <TextInput placeholder="Jane" id="firstName-input" name="firstName" />
+        </FormField>
+        <FormField
+          label="Last name"
+          htmlFor="lastName-input"
+          name="lastName"
+          required
+        >
+          <TextInput placeholder="Smith" id="lastName-input" name="lastName" />
+        </FormField>
+      </Box>
+      <FormField
+        label="Phone number"
+        htmlFor="phoneNumber-input"
+        name="phoneNumber"
+        validate={phoneNumberValidation}
+        required
+      >
+        <MaskedInput
+          placeholder="(xxx) xxx-xxxx"
+          type="tel"
+          mask={phoneMask}
+          id="phoneNumber-input"
+          name="phoneNumber"
+        />
+      </FormField>
+      <FormField
+        required
+        label="Email address"
+        htmlFor="emailAddress-input"
+        name="emailAddress"
+        validate={emailValidation}
+      >
+        <MaskedInput type="email" id="emailAddress-input" name="emailAddress" />
+      </FormField>
+      <Box>
+        <FormField htmlFor="optionalCheckboxes">
+          <CheckBoxGroup
+            id="optionalCheckboxes"
+            name="offers"
+            options={["Sign me up for offers"]}
+          />
+        </FormField>
+      </Box>
     </Box>
   );
 };
 
-export default StepFour;
+export default StepTwo;

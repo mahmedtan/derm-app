@@ -31,8 +31,8 @@ const CommentForm = () => {
       background={`url(${Background})`}
       animation="slideDown"
     >
-      <Heading margin="none" level="2">
-        Leave a comment
+      <Heading margin="none" level="3">
+        Leave a review!
       </Heading>
       <Form
         value={formValues}

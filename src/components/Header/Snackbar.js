@@ -1,7 +1,9 @@
 import { useState } from "react";
-import { Layer, Button, Heading, Box } from "grommet";
+import { Layer, Button, Heading, Box, Image } from "grommet";
 import { Menu, Close, Moon, Sun, User } from "grommet-icons";
 import { Link } from "react-router-dom";
+
+import Logo4 from "./Chic.png";
 
 import MenuBar from "./MenuBar";
 import AuthenticationBtn from "../Authentication/AuthenticationBtn";
@@ -21,11 +23,13 @@ const Snackbar = ({ uiTheme }) => {
         justify="center"
         width="xlarge"
       >
-        <AuthenticationSnackbar />
+        <Link to="/book-now">
+          <Button primary label="Book" />
+        </Link>
         <Link to="/">
-          <Button size="large" color="brand">
-            Lorem ipsum dolor.
-          </Button>
+          <Box overflow="hidden" height="xxsmall" width="9rem">
+            <Image src={Logo4} fit="cover" />
+          </Box>
         </Link>
         <Button icon={<Menu />} onClick={() => setShow(true)} />
         {show && (

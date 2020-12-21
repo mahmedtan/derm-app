@@ -18,7 +18,12 @@ const StepOne = () => {
   }
 
   return (
-    <Box align="center" gap="medium" animation="fadeIn">
+    <Box
+      align="center"
+      gap="medium"
+      animation="fadeIn"
+      margin={{ bottom: "medium" }}
+    >
       <Text size="xlarge">Consultations</Text>
       <Box gap="large" direction="row-responsive">
         <Box gap="large">
@@ -32,7 +37,9 @@ const StepOne = () => {
           ))}
         </Box>
       </Box>
-      <Text size="xlarge">Procedures</Text>
+      <Text size="xlarge" margin={{ top: "medium" }}>
+        Procedures
+      </Text>
       <Box gap="large" direction="row-responsive">
         <Box gap="large">
           {procedures.slice(0, procedures.length / 2 + 1).map((item) => (

@@ -18,9 +18,9 @@ const Pamphlet = () => {
       <Box width="large" align="center">
         <Image src={sapiens} fit="cover" />
       </Box>
-      <Box width="medium" align="start" pad="small">
-        <Heading color="#0f1f25">
-          Schedule your Free Cosmetic Evaluation.
+      <Box width="large" align="center" pad="small">
+        <Heading color="#0f1f25" textAlign="center">
+          Schedule your free Cosmetic Evaluation.
         </Heading>
         <Box gap="small" direction="row" align="center" justify="center">
           <Link to="/book-now">

@@ -20,7 +20,7 @@ const Home = () => {
         <Slider />
         <Link to="/services">
           <Button
-            label="Schedule your visit"
+            label="Schedule Your Visit"
             icon={<LinkNext />}
             reverse
             primary
@@ -30,11 +30,11 @@ const Home = () => {
         </Link>
       </Box>
       <Pamphlet />
+
+      <Newsletter />
       <StoryCards />
       <Comments />
       <RecentBlogs blogs={blogs} />
-
-      <Newsletter />
     </Box>
   );
 };

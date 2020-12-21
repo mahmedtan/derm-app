@@ -98,7 +98,10 @@ const Book = () => {
                 : history.push("/processing");
             }}
           >
-            <Box gap="medium">
+            <Box
+              gap="small"
+              margin={{ bottom: "xlarge", top: size === "small" && "large" }}
+            >
               {Steps[activeIndex].item}
               <StepFooter />
             </Box>

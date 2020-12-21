@@ -1,4 +1,5 @@
 import sanityClient from "@sanity/client";
+import Axios from "axios";
 const client = sanityClient({
   projectId: "zegc2wrv",
   dataset: "production",
@@ -15,6 +16,7 @@ export const submitForm = async (
     lastName,
     phoneNumber,
     remarks,
+    offers,
     ...procsNConsults
   },
   images,
@@ -24,7 +26,14 @@ export const submitForm = async (
   user
 ) => {
   const ids = Object.keys(procsNConsults).filter((x) => procsNConsults[x]);
-
+  if (offers && offers.length) {
+    console.log(
+      await Axios.post("/api/newsletter", {
+        fullName: firstName + " " + lastName,
+        emailAddress,
+      })
+    );
+  }
   const doc = {
     _type: "form",
     firstName,

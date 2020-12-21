@@ -18,9 +18,11 @@ const StoryCards = () => {
       align="start"
       background="background-contrast"
     >
-      {serviceTypes.map((serviceType) => (
-        <StoryCard key={serviceType.slug} {...serviceType} />
-      ))}
+      {serviceTypes
+        .sort((a, b) => a.order - b.order)
+        .map((serviceType) => (
+          <StoryCard key={serviceType.slug} {...serviceType} />
+        ))}
     </Box>
   );
 };

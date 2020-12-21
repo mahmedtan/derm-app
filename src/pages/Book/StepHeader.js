@@ -14,23 +14,27 @@ const StepHeader = () => {
   const activeIndex = useSelector(({ activeIndex }) => activeIndex);
 
   return (
-    <Box gap="large" align="start">
-      {size === "small" &&
-        (activeIndex !== 0 ? (
-          <Button
-            icon={<FormPrevious />}
-            label="Back"
-            onClick={() => dispatch(decrementIndex())}
-          />
-        ) : (
-          <Link to="/services">
+    <Box gap="large" align="start" justify="center">
+      <Box fill align="center">
+        {size === "small" &&
+          (activeIndex !== 0 ? (
             <Button
+              alignSelf="center"
               icon={<FormPrevious />}
-              size="small"
-              label="Back to Services"
+              label="Back"
+              onClick={() => dispatch(decrementIndex())}
             />
-          </Link>
-        ))}
+          ) : (
+            <Link to="/services">
+              <Button
+                icon={<FormPrevious />}
+                size="small"
+                label="Back to Services"
+              />
+            </Link>
+          ))}
+      </Box>
+
       <Box
         direction="row"
         fill="horizontal"

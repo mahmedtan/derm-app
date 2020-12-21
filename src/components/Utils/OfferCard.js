@@ -25,7 +25,7 @@ const OfferCard = ({ title, price, time, description, _id, type, item }) => {
     <Card
       pad={size === "small" ? "large" : "medium"}
       justify="center"
-      border={selected && { color: "status-ok", size: "small" }}
+      border={selected && { color: "#8E677A", size: "small" }}
       elevation={selected ? "large" : "small"}
       round={size === "small" ? "medium" : "small"}
     >
@@ -43,7 +43,7 @@ const OfferCard = ({ title, price, time, description, _id, type, item }) => {
       <Box direction="row" align="center" justify="between">
         <Text weight="bold">{`$${price}`}</Text>
 
-        <CheckBox id={_id} name={_id} type={type} />
+        <CheckBox id={_id} name={_id} type={type} color="#8E677A" />
       </Box>
     </Card>
   );

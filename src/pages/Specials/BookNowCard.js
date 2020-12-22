@@ -8,13 +8,12 @@ const BookNowCard = () => {
       fill="horizontal"
       direction="row-responsive"
       justify="center"
-      background="background"
-      background="#963D5A"
+      background="#E5DCE0"
       border="top"
       gap="large"
       pad="medium"
     >
-      <Heading level="3" margin="none" color="light-1">
+      <Heading level="3" margin="none">
         Get a free consultation on your first visit
       </Heading>
       <Box direction="row" align="center" gap="small">
@@ -22,8 +21,8 @@ const BookNowCard = () => {
           label="Book now"
           primary
           size="large"
-          color="light-1"
-          style={{ color: "#963D5A" }}
+          color="dark-1"
+          style={{ color: "white" }}
           href="/book-now"
         />
 
@@ -31,8 +30,8 @@ const BookNowCard = () => {
           label="Call now"
           secondary
           size="large"
-          color="light-1"
-          style={{ color: "white" }}
+          color="dark-1"
+          style={{ color: "black" }}
           href="tel:214-625-2777"
         />
       </Box>

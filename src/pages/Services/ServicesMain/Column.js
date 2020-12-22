@@ -4,6 +4,7 @@ import Item from "./Item";
 
 const Column = ({ services }) => {
   const size = useContext(ResponsiveContext);
+
   return (
     <Box gap={size === "small" ? "xlarge" : "large"}>
       {services.map((servType) => (

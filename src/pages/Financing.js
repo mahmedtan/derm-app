@@ -18,7 +18,7 @@ const Finance = () => {
         width="large"
         fill
         pad={{ horizontal: "large", vertical: "small" }}
-        background={{ color: "background-front", opacity: "strong" }}
+        background={{ color: "#DCC1BC", opacity: "strong" }}
         border="horizontal"
       >
         <Heading>{financing.title}</Heading>

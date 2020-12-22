@@ -30,6 +30,7 @@ const ResponsiveSlider = () => {
     speed: 2500,
     autoplaySpeed: 5000,
     swipe: true,
+    swipeToScroll: true,
     pauseOnHover: true,
     arrows: size !== "small",
     autoplay: true,

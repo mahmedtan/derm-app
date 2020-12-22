@@ -23,15 +23,14 @@ const Pamphlet = () => {
           Schedule your free Cosmetic Evaluation.
         </Heading>
         <Box gap="small" direction="row" align="center" justify="center">
-          <Link to="/book-now">
-            <Button
-              label="Book now"
-              primary
-              color="#0f1f25"
-              size="large"
-              style={{ color: "white" }}
-            />
-          </Link>
+          <Button
+            label="Book now"
+            primary
+            color="#0f1f25"
+            size="large"
+            style={{ color: "white" }}
+            href="/book-now"
+          />
 
           <Button
             label="Call now"

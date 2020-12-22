@@ -19,9 +19,9 @@ const NavFooter = () => {
       border="top"
       direction="column"
       gap={size === "small" ? "large" : "small"}
-      pad={size === "small" ? "large" : "medium"}
+      pad={size === "small" ? "xlarge" : "medium"}
       background={{ color: "background-front" }}
-      margin={{ bottom: size === "small" ? "xlarge" : "none" }}
+      // margin={{ bottom: size === "small" ? "20rem" : "none" }}
     >
       <Box
         direction="row-responsive"

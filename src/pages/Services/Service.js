@@ -27,11 +27,15 @@ const Service = ({ service, services, serviceTypes, size }) => {
         flex="grow"
         gap="large"
         pad={{
-          horizontal: size === "small" ? "xlarge" : "4rem",
+          horizontal: size === "small" ? "large" : "4rem",
           vertical: "large",
         }}
       >
-        <Heading level="2" margin="none">
+        <Heading
+          level="2"
+          margin="none"
+          textAlign={size === "small" ? "center" : "start"}
+        >
           {service.name}
         </Heading>
         <BlockContentMain body={service.body} />

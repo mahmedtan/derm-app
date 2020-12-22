@@ -6,6 +6,7 @@ import {
   Button,
   Paragraph,
   ResponsiveContext,
+  CheckBox,
 } from "grommet";
 import React, { useContext, useState } from "react";
 import Consultations from "./Consult";
@@ -14,6 +15,7 @@ const Appointment = ({ form, deleteForm, deleteAndReschedule }) => {
   const [open, setOpen] = useState(false);
   const size = useContext(ResponsiveContext);
   const alignTitle = size === "small" ? "start" : "end";
+  const [checkBoxCancel, setCheckBoxCancel] = useState(false);
 
   return (
     <Box
@@ -151,21 +153,27 @@ const Appointment = ({ form, deleteForm, deleteAndReschedule }) => {
       )}
       {open && (
         <Box gap="small">
-          <Text textAlign="center">
-            Are you sure about this!! Lorem ipsum dolor sit amet, consectetur
-            adipisicing elit. Eveniet, culpa.
-          </Text>
+          <CheckBox
+            checked={checkBoxCancel}
+            onChange={(e) => setCheckBoxCancel(e.target.checked)}
+            label="We know your time is valuable, and ours is too. We ask that you give
+            us at least 24 hours notice if you need to cancel or reschedule an
+            appointment."
+          />
+
           <Box direction="row" gap="medium" justify="center">
             <Button
               label="Cancel & Reschedule"
               onClick={() => deleteAndReschedule(form._id)}
               primary
+              disabled={!checkBoxCancel}
             />
             <Button
               label="Just Cancel"
               primary
               color="status-critical"
               onClick={() => deleteForm(form._id)}
+              disabled={!checkBoxCancel}
             />
           </Box>
         </Box>

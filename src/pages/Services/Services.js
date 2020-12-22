@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import Header from "../../components/Header/Header";
 import { Box, ResponsiveContext } from "grommet";
-import { Switch, Route, Redirect, useRouteMatch } from "react-router-dom";
+import { Switch, Route, useRouteMatch } from "react-router-dom";
 import Service from "./Service";
 import { useSelector } from "react-redux";
 import Loading from "../Extras/Loading";

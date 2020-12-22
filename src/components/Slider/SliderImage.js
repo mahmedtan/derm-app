@@ -1,11 +1,11 @@
-import { Image, Box, Heading, Stack } from "grommet";
+import { Image, Box, Heading, Stack, Text } from "grommet";
 import React from "react";
 import { Link } from "react-router-dom";
 
 const SliderImage = ({ image, name, size, slug }) => {
   return (
     <Link to={`/services/${slug}`}>
-      <Stack anchor="center">
+      <Stack anchor="bottom">
         <Box
           align="center"
           overflow="hidden"
@@ -25,14 +25,15 @@ const SliderImage = ({ image, name, size, slug }) => {
           align="center"
           background={{
             color: "light-3",
-            opacity: "60%",
+            opacity: "10%",
           }}
-          pad={{ horizontal: "medium" }}
+          margin={{ vertical: "large" }}
+          pad={{ horizontal: "medium", vertical: "medium" }}
           overflow="hidden"
         >
-          <Heading level={3} color="dark-1">
+          <Text size="xxlarge" color="dark-1">
             {name}
-          </Heading>
+          </Text>
         </Box>
       </Stack>
     </Link>

@@ -19,13 +19,14 @@ const StepHeader = () => {
         {size === "small" &&
           (activeIndex !== 0 ? (
             <Button
-              secondary
               label="Back"
               onClick={() => dispatch(decrementIndex())}
+              style={{ boxShadow: "2px 2px 10px -5px black" }}
             />
           ) : (
             <Link to="/services">
-              <Button secondary size="small" label="Back to Services" />
+              <Button          style={{ boxShadow: "2px 2px 10px -5px black" }}
+ size="small" label="Back to Services" />
             </Link>
           ))}
       </Box>

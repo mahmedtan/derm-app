@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useAuth0 } from "@auth0/auth0-react";
-import { Box, Button, Heading } from "grommet";
+import { Box, Button, Heading, Text } from "grommet";
 import Layout from "../../components/Utils/Layout";
 import VerifyBanner from "./VerifyBanner";
 import { getForm, removeForm } from "../../services/forms";
@@ -54,9 +54,9 @@ const Profile = () => {
             >
               Welcome
             </Heading>
-            <Heading level="3" margin={{ top: "small" }}>
+            <Text size="xlarge" margin={{ top: "small" }}>
               {fullName}
-            </Heading>
+            </Text>
           </Box>
 
           {!user.email_verified && <VerifyBanner user={user} />}

@@ -5,24 +5,24 @@ import StepThree from "./StepThree";
 
 export default [
   {
-    title: "Select services",
-    description: "Select your desired service",
+    title: "Services",
+    description: "Make a selection",
     item: <StepOne />,
   },
   {
     title: "Upload photos",
-    description: "Upload/Capture photos of your condition",
+    description: "optional",
     item: <StepTwo />,
   },
   {
     title: "Appointment",
-    description: "Please select your date and time of visit",
+    description: "Select your date and time of visit",
     item: <StepThree />,
   },
 
   {
     title: "Details",
-    description: "Please select the item/items you want to talk about",
+    description: "Fill out the following",
     item: <StepFour />,
   },
 ];

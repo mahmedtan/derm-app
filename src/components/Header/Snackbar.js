@@ -64,7 +64,7 @@ const Snackbar = ({ uiTheme }) => {
                   <Link to="/services/derm" onClick={() => setShow(false)}>
                     <Button>
                       <Heading level="3" margin="none">
-                        Derm
+                        Dermatology
                       </Heading>
                     </Button>
                   </Link>
@@ -99,13 +99,13 @@ const Snackbar = ({ uiTheme }) => {
                       </Heading>
                     </Button>
                   </Link>
-                  <Link to="/contact-us" onClick={() => setShow(false)}>
+                  {/* <Link to="/contact-us" onClick={() => setShow(false)}>
                     <Button>
                       <Heading level="3" margin="none">
                         Contact us
                       </Heading>
                     </Button>
-                  </Link>
+                  </Link> */}
                   <Link to="/About-us" onClick={() => setShow(false)}>
                     <Button>
                       <Heading level="3" margin="none">

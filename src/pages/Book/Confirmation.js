@@ -34,13 +34,13 @@ const Confirmation = () => {
         height={{ min: "100vh" }}
         margin="large"
       >
-        <Heading>Confirmation</Heading>
+        <Heading>You are all set!</Heading>
         <Card align="center">
-          <Box pad="medium">
+          <Box pad="medium" align="center" gap="medium">
             <Heading level="3" margin="none">
-              Dear {fullName},
+              Dear {fullName}
             </Heading>
-            <Paragraph size="large">
+            <Paragraph size="large" textAlign="center">
               Your appointment has been booked for{" "}
               {new Date(submittedDate).toLocaleDateString("en-US", {
                 year: "numeric",

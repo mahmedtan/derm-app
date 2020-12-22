@@ -60,13 +60,13 @@ const AppointmentCard = ({ form, deleteForm, deleteAndReschedule, first }) => {
             <Box gap="large" direction={first ? "column" : "row-responsive"}>
               <Box>
                 <Text weight="bold" size="large">
-                  Phone Number{" "}
+                  Phone{" "}
                 </Text>
                 {form.phoneNumber}
               </Box>
               <Box>
                 <Text weight="bold" size="large">
-                  Booked For
+                  Date & time
                 </Text>
                 {new Date(form.bookedFor).toLocaleDateString("en-US", {
                   weekday: "long",

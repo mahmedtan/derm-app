@@ -27,14 +27,6 @@ const PatientDetails = ({ setFullName }) => {
 
   return (
     <Box align="center" pad={{ horizontal: "large" }}>
-      <Heading
-        level="3"
-        textAlign="center"
-        margin={{ bottom: "large", top: "none" }}
-        color="text"
-      >
-        Profile
-      </Heading>
       <Card
         pad={{
           vertical: size === "small" ? "medium" : "large",

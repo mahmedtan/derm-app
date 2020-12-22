@@ -5,8 +5,9 @@ import Loading from "../../Extras/Loading";
 import { useDispatch, useSelector } from "react-redux";
 import { changeDate } from "../../../reducers/dateReducer";
 import "react-datepicker/dist/react-datepicker.css";
-
 import Datepicker from "react-datepicker";
+import moment from "moment";
+
 const StepFour = () => {
   const dispatch = useDispatch();
 
@@ -62,6 +63,9 @@ const StepFour = () => {
         filterTime={filterTime}
         filterDate={filterDate}
         calendarContainer={Container}
+        timeClassName={(time) =>
+          (time.getHours() < 9 || time.getHours() > 18) && "text-hide"
+        }
       />
     </Box>
   );

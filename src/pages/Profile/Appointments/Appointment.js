@@ -13,6 +13,7 @@ import Consultations from "./Consult";
 const Appointment = ({ form, deleteForm, deleteAndReschedule }) => {
   const [open, setOpen] = useState(false);
   const size = useContext(ResponsiveContext);
+  const alignTitle = size === "small" ? "start" : "end";
 
   return (
     <Box
@@ -31,7 +32,6 @@ const Appointment = ({ form, deleteForm, deleteAndReschedule }) => {
       >
         Booking for{" "}
         {new Date(form.bookedFor).toLocaleDateString("en-US", {
-          year: "numeric",
           month: "long",
           day: "numeric",
         })}
@@ -43,14 +43,14 @@ const Appointment = ({ form, deleteForm, deleteAndReschedule }) => {
         pad={{ horizontal: "xlarge" }}
       >
         <Box gap="medium">
-          <Box gap="small" direction="row-responsive" justify="center">
-            <Box width="10rem">
+          <Box gap="medium" direction="row-responsive" justify="center">
+            <Box width="small" align={alignTitle}>
               <Text weight="bold" size="large">
                 First Name
               </Text>
               {form.firstName}
             </Box>
-            <Box width="10rem">
+            <Box width="small">
               <Text weight="bold" size="large">
                 Last Name
               </Text>
@@ -58,14 +58,14 @@ const Appointment = ({ form, deleteForm, deleteAndReschedule }) => {
             </Box>
           </Box>
 
-          <Box gap="small" direction="row-responsive" justify="center">
-            <Box width="10rem">
+          <Box gap="medium" direction="row-responsive" justify="center">
+            <Box width="small" align={alignTitle}>
               <Text weight="bold" size="large">
                 Email Address
               </Text>
               {form.emailAddress}
             </Box>
-            <Box width="10rem">
+            <Box width="small">
               <Text weight="bold" size="large">
                 Date & Time
               </Text>
@@ -80,14 +80,14 @@ const Appointment = ({ form, deleteForm, deleteAndReschedule }) => {
                 })}
             </Box>
           </Box>
-          <Box gap="small" direction="row-responsive" justify="center">
-            <Box width="10rem">
+          <Box gap="medium" direction="row-responsive" justify="center">
+            <Box width="small" align={alignTitle}>
               <Text weight="bold" size="large">
                 Phone Number
               </Text>
               {form.phoneNumber}
             </Box>
-            <Box width="10rem">
+            <Box width="small">
               <Text weight="bold" size="large">
                 Submitted at
               </Text>

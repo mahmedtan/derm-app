@@ -31,3 +31,7 @@ body {
   overflow: hidden;
   -webkit-backface-visibility: hidden;
 }
+
+.text-hide {
+  display: none;
+}

@@ -49,7 +49,7 @@ const Snackbar = ({ uiTheme }) => {
                 fill="vertical"
                 pad="small"
                 align="center"
-                overflow="auto"
+                overflow="hidden"
                 animation="fadeIn"
                 gap="large"
               >

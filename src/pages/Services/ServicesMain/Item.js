@@ -15,6 +15,9 @@ const Item = ({ servType }) => {
       justify="center"
       elevation="small"
       onMouseEnter={() => setShown(true)}
+      onClick={() => {
+        setShown(true);
+      }}
       onMouseLeave={() => {
         setShown(false);
       }}

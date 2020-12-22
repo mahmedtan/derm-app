@@ -39,7 +39,7 @@ const Snackbar = ({ uiTheme }) => {
             background="background-front"
             onClickOutside={() => setShow(false)}
           >
-            <Box pad="large" gap="xlarge">
+            <Box pad="large" gap="large">
               <Button
                 icon={<Close />}
                 alignSelf="end"
@@ -61,7 +61,10 @@ const Snackbar = ({ uiTheme }) => {
                       </Heading>
                     </Button>
                   </Link>
-                  <Link to="/services/derm" onClick={() => setShow(false)}>
+                  <Link
+                    to="/services/dermatology"
+                    onClick={() => setShow(false)}
+                  >
                     <Button>
                       <Heading level="3" margin="none">
                         Dermatology

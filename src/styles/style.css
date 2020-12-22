@@ -15,21 +15,11 @@ a {
 div:focus {
   outline: none;
 }
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  -webkit-user-drag: none;
-  position: relative;
-  -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
-  -webkit-overflow-scrolling: touch;
-}
 
 html,
 body {
   height: 100%;
   overflow: hidden;
-  -webkit-backface-visibility: hidden;
 }
 
 .text-hide {

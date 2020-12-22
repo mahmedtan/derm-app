@@ -35,7 +35,11 @@ const StoryCard = ({ image, name, description, services }) => {
         <Text textAlign={size === "small" ? "center" : "start"}>
           {description}
         </Text>
-        <Link to={`/services/${services[0].slug}`}>
+        <Link
+          to={`/services/${
+            services.sort((a, b) => a.orderAccordian - b.orderAccordian)[0].slug
+          }`}
+        >
           <Button primary>Learn More</Button>
         </Link>
       </Box>

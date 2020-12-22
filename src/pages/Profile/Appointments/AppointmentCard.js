@@ -1,15 +1,16 @@
-import { Card, Box, Text, Button } from "grommet";
+import { Card, Box, Text, Button, ResponsiveContext } from "grommet";
 import { FormDown, FormUp } from "grommet-icons";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import Appointment from "./Appointment";
 
 const AppointmentCard = ({ form, deleteForm, deleteAndReschedule, first }) => {
   const [open, setOpen] = useState(false);
+  const size = useContext(ResponsiveContext);
   return (
     <Card
       align="center"
       margin={{ horizontal: "large", bottom: "large" }}
-      gap="large"
+      gap="medium"
       pad="medium"
     >
       {open ? (
@@ -19,12 +20,16 @@ const AppointmentCard = ({ form, deleteForm, deleteAndReschedule, first }) => {
           deleteAndReschedule={deleteAndReschedule}
         />
       ) : (
-        <Box align="center" animation="fadeIn" width="large">
+        <Box
+          align={size === "small" ? "start" : "center"}
+          animation="fadeIn"
+          width="large"
+        >
           <Text
             size="xlarge"
             weight="normal"
             margin="medium"
-            alignSelf="center"
+            textAlign="center"
           >
             Booking for{" "}
             {new Date(form.bookedFor).toLocaleDateString("en-US", {
@@ -33,15 +38,10 @@ const AppointmentCard = ({ form, deleteForm, deleteAndReschedule, first }) => {
               day: "numeric",
             })}
           </Text>
-          <Box
-            direction="row-responsive"
-            justify="center"
-            gap="large"
-            pad={{ horizontal: "large" }}
-          >
-            <Box gap="large">
+          <Box gap="medium" pad={{ horizontal: "xlarge" }}>
+            <Box gap="small" direction="row-responsive" justify="center">
               {first && (
-                <Box>
+                <Box width="10rem">
                   <Text weight="bold" size="large">
                     First Name
                   </Text>
@@ -49,7 +49,7 @@ const AppointmentCard = ({ form, deleteForm, deleteAndReschedule, first }) => {
                 </Box>
               )}
               {first && (
-                <Box>
+                <Box width="10rem">
                   <Text weight="bold" size="large">
                     Last Name
                   </Text>
@@ -57,26 +57,27 @@ const AppointmentCard = ({ form, deleteForm, deleteAndReschedule, first }) => {
                 </Box>
               )}
             </Box>
-            <Box gap="large" direction={first ? "column" : "row-responsive"}>
-              <Box>
+            <Box gap="small" direction="row-responsive" justify="center">
+              <Box width="10rem">
                 <Text weight="bold" size="large">
                   Phone{" "}
                 </Text>
                 {form.phoneNumber}
               </Box>
-              <Box>
+
+              <Box width="10rem">
                 <Text weight="bold" size="large">
-                  Date & time
+                  Date & Time
                 </Text>
                 {new Date(form.bookedFor).toLocaleDateString("en-US", {
-                  weekday: "long",
                   year: "numeric",
-                  month: "long",
+                  month: "numeric",
                   day: "numeric",
                 }) +
                   " " +
                   new Date(form.bookedFor).toLocaleTimeString("en-US", {
-                    timeStyle: "short",
+                    hour: "2-digit",
+                    minute: "2-digit",
                   })}
               </Box>
             </Box>

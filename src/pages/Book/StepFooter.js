@@ -32,7 +32,7 @@ const StepFooter = () => {
   const dispatch = useDispatch();
   return (
     <Box align="center">
-      <Box align="center" width="medium" justify="center">
+      <Box align="center" width="20rem" justify="center">
         {activeIndex === Steps.length - 1 ? (
           <Button
             primary

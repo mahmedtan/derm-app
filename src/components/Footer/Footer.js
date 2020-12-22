@@ -30,28 +30,30 @@ const NavFooter = () => {
         fill="horizontal"
         justify="center"
       >
-        <Box width="medium" align="center" justify="start">
-          <Text size="large" margin={{ bottom: "small" }}>
-            Navigation
-          </Text>
-          <Box align="center">
-            <Link to="/" component={Anchor}>
-              Home
-            </Link>
-            <Link to="/services" component={Anchor}>
-              Services
-            </Link>
-            <Link to="/specials" component={Anchor}>
-              Specials
-            </Link>
-            <Link to="/finance" component={Anchor}>
-              Finance
-            </Link>
-            <Link to="/book-now" component={Anchor}>
-              Book Now
-            </Link>
+        {size !== "small" && (
+          <Box width="medium" align="center" justify="start">
+            <Text size="large" margin={{ bottom: "small" }}>
+              Navigation
+            </Text>
+            <Box align="center">
+              <Link to="/" component={Anchor}>
+                Home
+              </Link>
+              <Link to="/services" component={Anchor}>
+                Services
+              </Link>
+              <Link to="/specials" component={Anchor}>
+                Specials
+              </Link>
+              <Link to="/finance" component={Anchor}>
+                Finance
+              </Link>
+              <Link to="/book-now" component={Anchor}>
+                Book Now
+              </Link>
+            </Box>
           </Box>
-        </Box>
+        )}
         <Box align="center" width="medium" justify="start">
           <Box align="center" margin={{ bottom: "small" }}>
             <Text size="large">CHIC</Text>

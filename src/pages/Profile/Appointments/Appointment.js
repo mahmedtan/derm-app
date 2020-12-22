@@ -1,9 +1,18 @@
-import { Card, Box, Text, Image, Button, Paragraph } from "grommet";
-import React, { useState } from "react";
+import {
+  Card,
+  Box,
+  Text,
+  Image,
+  Button,
+  Paragraph,
+  ResponsiveContext,
+} from "grommet";
+import React, { useContext, useState } from "react";
 import Consultations from "./Consult";
 
 const Appointment = ({ form, deleteForm, deleteAndReschedule }) => {
   const [open, setOpen] = useState(false);
+  const size = useContext(ResponsiveContext);
 
   return (
     <Box
@@ -13,7 +22,13 @@ const Appointment = ({ form, deleteForm, deleteAndReschedule }) => {
       animation="fadeIn"
       width="large"
     >
-      <Text size="xlarge" weight="normal" margin="medium" alignSelf="center">
+      <Text
+        size="xlarge"
+        weight="normal"
+        margin="medium"
+        alignSelf="center"
+        textAlign="center"
+      >
         Booking for{" "}
         {new Date(form.bookedFor).toLocaleDateString("en-US", {
           year: "numeric",
@@ -21,71 +36,75 @@ const Appointment = ({ form, deleteForm, deleteAndReschedule }) => {
           day: "numeric",
         })}
       </Text>
+
       <Box
-        pad={{ horizontal: "xlarge" }}
-        direction="row-responsive"
-        justify="between"
-        gap="large"
+        align={size === "small" ? "start" : "center"}
         fill
-        align="center"
+        pad={{ horizontal: "xlarge" }}
       >
-        <Box gap="large">
-          <Box>
-            <Text weight="bold" size="large">
-              First Name
-            </Text>
-            {form.firstName}
+        <Box gap="medium">
+          <Box gap="small" direction="row-responsive" justify="center">
+            <Box width="10rem">
+              <Text weight="bold" size="large">
+                First Name
+              </Text>
+              {form.firstName}
+            </Box>
+            <Box width="10rem">
+              <Text weight="bold" size="large">
+                Last Name
+              </Text>
+              {form.lastName}
+            </Box>
           </Box>
-          <Box>
-            <Text weight="bold" size="large">
-              Email Address
-            </Text>
-            {form.emailAddress}
+
+          <Box gap="small" direction="row-responsive" justify="center">
+            <Box width="10rem">
+              <Text weight="bold" size="large">
+                Email Address
+              </Text>
+              {form.emailAddress}
+            </Box>
+            <Box width="10rem">
+              <Text weight="bold" size="large">
+                Date & Time
+              </Text>
+              {new Date(form.bookedFor).toLocaleDateString("en-US", {
+                year: "numeric",
+                month: "short",
+                day: "numeric",
+              }) +
+                " " +
+                new Date(form.bookedFor).toLocaleTimeString("en-US", {
+                  timeStyle: "short",
+                })}
+            </Box>
           </Box>
-          <Box>
-            <Text weight="bold" size="large">
-              Booked For
-            </Text>
-            {new Date(form.bookedFor).toLocaleDateString("en-US", {
-              year: "numeric",
-              month: "long",
-              day: "numeric",
-            }) +
-              " " +
-              new Date(form.bookedFor).toLocaleTimeString("en-US", {
-                timeStyle: "short",
-              })}
-          </Box>
-        </Box>
-        <Box gap="large">
-          <Box>
-            <Text weight="bold" size="large">
-              Last Name
-            </Text>
-            {form.lastName}
-          </Box>
-          <Box>
-            <Text weight="bold" size="large">
-              Phone Number
-            </Text>
-            {form.phoneNumber}
-          </Box>
-          <Box>
-            <Text weight="bold" size="large">
-              Submitted at
-            </Text>
-            {new Date(form.submitted).toLocaleDateString("en-US", {
-              year: "numeric",
-              month: "long",
-              day: "numeric",
-            }) +
-              " " +
-              new Date(form.submitted).toLocaleTimeString("en-US", {
-                timeStyle: "short",
-              })}
+          <Box gap="small" direction="row-responsive" justify="center">
+            <Box width="10rem">
+              <Text weight="bold" size="large">
+                Phone Number
+              </Text>
+              {form.phoneNumber}
+            </Box>
+            <Box width="10rem">
+              <Text weight="bold" size="large">
+                Submitted at
+              </Text>
+              {new Date(form.submitted).toLocaleDateString("en-US", {
+                year: "numeric",
+                month: "short",
+                day: "numeric",
+              }) +
+                " " +
+                new Date(form.submitted).toLocaleTimeString("en-US", {
+                  timeStyle: "short",
+                })}
+            </Box>
           </Box>
         </Box>
       </Box>
+
       <Consultations title="Consultations" consultations={form.consultations} />
       <Consultations title="Procedures" consultations={form.procedures} />
 

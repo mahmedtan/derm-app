@@ -4,7 +4,7 @@ import { StatusWarning } from "grommet-icons";
 const VerifyBanner = ({ user }) => {
   return (
     <Box
-      background="status-warning"
+      background="background-contrast"
       direction="row-responsive"
       gap="large"
       align="center"

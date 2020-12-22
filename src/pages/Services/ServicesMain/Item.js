@@ -9,7 +9,11 @@ const Item = ({ servType }) => {
     <Box
       width="20rem"
       height="20rem"
-      background={shown ? "#dbced1" : "#F1E4E7"}
+      background={
+        shown
+          ? { color: servType.backgroundColor, opacity: "strong" }
+          : servType.backgroundColor
+      }
       align="center"
       round="small"
       justify="center"
@@ -24,15 +28,17 @@ const Item = ({ servType }) => {
     >
       {shown ? (
         <Box gap="medium" animation="zoomOut" overflow="hidden">
-          {servType.services.map((service) => (
-            <Link
-              to={`/services/${service.slug}`}
-              key={service._id}
-              component={Anchor}
-            >
-              <Text size="xlarge">{service.name}</Text>
-            </Link>
-          ))}
+          {servType.services
+            .sort((a, b) => a.orderAccordian - b.orderAccordian)
+            .map((service) => (
+              <Link
+                to={`/services/${service.slug}`}
+                key={service._id}
+                component={Anchor}
+              >
+                <Text size="large">{service.name}</Text>
+              </Link>
+            ))}
         </Box>
       ) : (
         <Box animation="zoomIn">

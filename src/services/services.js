@@ -7,7 +7,7 @@ const client = sanityClient({
 
 export const getAllServiceTypes = async () => {
   const serviceTypes = await client.fetch(
-    '*[_type=="serviceType"] | order(name) {description,"image":image.asset->url,name,"slug":slug.current,"services":*[_type=="service" && references(^._id)]{"slug":slug.current,name,_id},order }'
+    '*[_type=="serviceType"] | order(name) {backgroundColor,description,"image":image.asset->url,name,"slug":slug.current,"services":*[_type=="service" && references(^._id)]{"slug":slug.current,name,_id, orderAccordian},order }'
   );
   return serviceTypes;
 };

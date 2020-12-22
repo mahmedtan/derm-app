@@ -62,7 +62,7 @@ const Snackbar = ({ uiTheme }) => {
                     </Button>
                   </Link>
                   <Link
-                    to="/services/dermatology"
+                    to="/services/medical-derm"
                     onClick={() => setShow(false)}
                   >
                     <Button>

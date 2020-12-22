@@ -98,7 +98,7 @@ const NavFooter = () => {
         </Box>
       </Box>
 
-      <Box margin={{ bottom: size === "small" ? "xlarge" : "none" }}>
+      <Box margin={{ bottom: size === "small" ? "8rem" : "none" }}>
         ©{new Date().getFullYear()}, CHIC Derm & Aesthetics
       </Box>
     </Footer>

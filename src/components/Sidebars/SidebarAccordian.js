@@ -26,24 +26,26 @@ const SidebarAccordian = ({ serviceTypes }) => {
     >
       {serviceTypes.map(({ name, services, slug }) => (
         <AccordionPanel label={<Text size="xlarge">{name}</Text>} key={slug}>
-          {services.map((service) => {
-            return (
-              <Anchor href={`/services/${service.slug}`} key={service._id}>
-                <Button>
-                  <Text
-                    weight={
-                      service.slug === selectedItem.serviceSlug
-                        ? "bold"
-                        : "normal"
-                    }
-                    size="large"
-                  >
-                    {service.name}
-                  </Text>
-                </Button>
-              </Anchor>
-            );
-          })}
+          {services
+            .sort((a, b) => a.orderAccordian - b.orderAccordian)
+            .map((service) => {
+              return (
+                <Anchor href={`/services/${service.slug}`} key={service._id}>
+                  <Button>
+                    <Text
+                      weight={
+                        service.slug === selectedItem.serviceSlug
+                          ? "bold"
+                          : "normal"
+                      }
+                      size="large"
+                    >
+                      {service.name}
+                    </Text>
+                  </Button>
+                </Anchor>
+              );
+            })}
         </AccordionPanel>
       ))}
     </Accordion>

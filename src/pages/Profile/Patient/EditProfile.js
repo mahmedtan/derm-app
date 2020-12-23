@@ -200,6 +200,7 @@ export const EditProfile = ({
 
           <Box
             align={size !== "small" ? "start" : undefined}
+            justify="center"
             margin={{ top: "medium", bottom: "small" }}
             direction="row"
             gap="small"

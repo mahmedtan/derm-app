@@ -76,7 +76,7 @@ const Snackbar = ({ uiTheme }) => {
                     </Button>
                   </Link>
                   <Link
-                    to="/services/aesthetics"
+                    to="/services/procedures-injectables"
                     onClick={() => setShow(false)}
                   >
                     <Button>

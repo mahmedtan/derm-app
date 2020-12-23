@@ -27,11 +27,12 @@ const CommentForm = () => {
   return (
     <Card
       gap="small"
-      pad="large"
+      pad="medium"
+      width="large"
       background={`url(${Background})`}
       animation="slideDown"
     >
-      <Heading margin="none" level="3">
+      <Heading margin="none" level="3" textAlign="center">
         Leave a review!
       </Heading>
       <Form
@@ -71,9 +72,13 @@ const CommentForm = () => {
             rows="4"
           />
         </FormField>
+
         <Button
           primary
           label="Submit"
+          fill
+          background="brand-tertiary"
+          style={{ color: "black" }}
           type="submit"
           disabled={
             !(formValues.patientName.length > 2 && formValues.remarks.length)

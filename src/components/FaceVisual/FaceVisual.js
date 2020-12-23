@@ -244,13 +244,13 @@ const FaceVisual = () => {
         }) => {
           return (
             <Box
-              background="background"
-              pad="small"
+              background={{ color: "background", opacity: "60%" }}
+              pad="xsmall"
               elevation="large"
-              round="small"
+              round="xsmall"
             >
               {availableProcedures.map((item) => (
-                <Text size={size} weight="bold" key={item.name}>
+                <Text size={size} weight="normal" key={item.name}>
                   {item.name}
                 </Text>
               ))}

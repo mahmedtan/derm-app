@@ -1,5 +1,5 @@
 import React, { useContext, useEffect } from "react";
-import { Box, Heading, Card, Button, ResponsiveContext } from "grommet";
+import { Box, Heading, Card, Button, ResponsiveContext, Text } from "grommet";
 import Loading from "../Extras/Loading";
 import BlockContentMain from "../../components/Utils/BlockContentMain";
 import { useDispatch, useSelector } from "react-redux";
@@ -38,9 +38,12 @@ const Service = ({ service, services, serviceTypes, size }) => {
         >
           {service.name}
         </Heading>
+        <Text size="xlarge" textAlign="center" margin="none">
+          Lorem ipsum dolor sit amet.
+        </Text>
+        {service.slug === "procedures-injectables" && <FaceVisual />}
         <BlockContentMain body={service.body} />
 
-        {service.serviceType.slug === "injectables" && <FaceVisual />}
         {(size === "small" || size === "xsmall") && (
           <Box>
             <Box align="center" gap="small">

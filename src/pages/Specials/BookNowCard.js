@@ -14,7 +14,7 @@ const BookNowCard = () => {
       pad="medium"
     >
       <Heading level="3" margin="none">
-        Get a free consultation on your first visit
+        Ready to schedule?
       </Heading>
       <Box direction="row" align="center" gap="small">
         <Button

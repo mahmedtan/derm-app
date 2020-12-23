@@ -31,7 +31,7 @@ const SliderImage = ({ image, name, size, slug }) => {
           pad={{ horizontal: "medium", vertical: "medium" }}
           overflow="hidden"
         >
-          <Text size="xxlarge" color="dark-1">
+          <Text size="xxlarge" color="dark-1" textAlign="center">
             {name}
           </Text>
         </Box>

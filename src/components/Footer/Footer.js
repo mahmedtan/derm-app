@@ -56,8 +56,12 @@ const NavFooter = () => {
         )}
         <Box align="center" width="medium" justify="start">
           <Box align="center" margin={{ bottom: "small" }}>
-            <Text size="large">CHIC</Text>
-            <Text size="large">Derm & Aesthetics</Text>
+            <Text size="large" weight="bold">
+              CHIC
+            </Text>
+            <Text size="large" weight="bold">
+              Derm & Aesthetics
+            </Text>
           </Box>
 
           <Text>5717 Legacy Drive Plano</Text>
@@ -86,7 +90,7 @@ const NavFooter = () => {
           <Anchor href="https://goo.gl/maps/dRm6nvWnxMp8s2GG6" target="_blank">
             <Box
               height="15rem"
-              width="15rem"
+              width="20rem"
               round="small"
               overflow="hidden"
               elevation="small"

@@ -10,7 +10,7 @@ const Pamphlet = () => {
       width="100vw"
       pad="large"
       id="pamphlet"
-      background="#edddd7"
+      background="brand-tertiary"
       justify="evenly"
       align="center"
       direction="row-responsive"

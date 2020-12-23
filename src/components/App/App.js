@@ -1,4 +1,4 @@
-import { Grommet } from "grommet";
+import { Grommet, Main } from "grommet";
 import { theme } from "../../styles/theme.js";
 import { Route, Switch } from "react-router-dom";
 import Home from "../../pages/Home";
@@ -48,6 +48,12 @@ function App() {
     if (formValues && date) {
       dispatch(changeValues(JSON.parse(formValues)));
       dispatch(changeDate(new Date(date)));
+    }
+    if (window.sessionStorage.getItem("uiTheme")) {
+      dispatch({
+        type: "SET_THEME",
+        uiTheme: window.localStorage.getItem("uiTheme"),
+      });
     }
   }, [dispatch]);
 

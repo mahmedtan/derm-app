@@ -1,4 +1,4 @@
-import { Box, Button, ResponsiveContext } from "grommet";
+import { Box, Button, ResponsiveContext, Main } from "grommet";
 import Newsletter from "../components/Utils/Newsletter";
 
 import Slider from "../components/Slider/Slider";
@@ -17,7 +17,7 @@ const Home = () => {
   const size = useContext(ResponsiveContext);
 
   return (
-    <Box animation="fadeIn" overflow="hidden" align="center" fill>
+    <Main animation="fadeIn" overflow="hidden" align="center" fill>
       <Box
         align="center"
         justify="start"
@@ -44,7 +44,7 @@ const Home = () => {
       <StoryCards />
       <Comments />
       <RecentBlogs blogs={blogs} />
-    </Box>
+    </Main>
   );
 };
 

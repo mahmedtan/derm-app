@@ -4,10 +4,9 @@ import { Link } from "react-router-dom";
 import NavButton from "./NavButton";
 import MenuBar from "./MenuBar";
 import AuthenticationBtn from "../Authentication/AuthenticationBtn";
-import Logo1 from "./40.png";
-import Logo2 from "./41.png";
-import Logo3 from "./logo3.png";
-import Logo4 from "./Chic.png";
+
+import LightLogo from "./logo-light.png";
+import DarkLogo from "./logo-dark.png";
 
 const Navbar = ({ uiTheme }) => {
   return (
@@ -32,7 +31,10 @@ const Navbar = ({ uiTheme }) => {
           </Box>
           <Link to="/">
             <Box overflow="hidden" height="xxsmall" width="9rem">
-              <Image src={Logo4} fit="cover" />
+              <Image
+                src={uiTheme === "light" ? LightLogo : DarkLogo}
+                fit="cover"
+              />
             </Box>
           </Link>
           <Box direction="row" gap="medium">

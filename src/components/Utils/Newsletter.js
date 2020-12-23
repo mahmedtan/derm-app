@@ -75,7 +75,7 @@ const Newsletter = () => {
             </Box>
           </Box>
 
-          <Button type="submit" color="#edddd7" primary>
+          <Button type="submit" color="brand-tertiary" primary>
             <Text color="black">Subscribe</Text>
           </Button>
         </Box>

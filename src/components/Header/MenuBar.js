@@ -20,7 +20,7 @@ const MenuBar = ({ uiTheme }) => {
   return (
     <Box
       direction="row"
-      background="#E5DCE0"
+      background="brand-secondary"
       gap="xlarge"
       align="center"
       fill="horizontal"

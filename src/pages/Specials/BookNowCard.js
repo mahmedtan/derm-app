@@ -8,7 +8,7 @@ const BookNowCard = () => {
       fill="horizontal"
       direction="row-responsive"
       justify="center"
-      background="#E5DCE0"
+      background="brand-secondary"
       border="top"
       gap="large"
       pad="medium"

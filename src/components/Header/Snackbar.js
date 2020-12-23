@@ -3,7 +3,8 @@ import { Layer, Button, Heading, Box, Image } from "grommet";
 import { Menu, Close, Moon, Sun, User } from "grommet-icons";
 import { Link } from "react-router-dom";
 
-import Logo4 from "./Chic.png";
+import LightLogo from "./logo-light.png";
+import DarkLogo from "./logo-dark.png";
 
 import MenuBar from "./MenuBar";
 import AuthenticationBtn from "../Authentication/AuthenticationBtn";
@@ -29,7 +30,10 @@ const Snackbar = ({ uiTheme }) => {
         </Link>
         <Link to="/">
           <Box overflow="hidden" height="xxsmall" width="9rem">
-            <Image src={Logo4} fit="cover" />
+            <Image
+              src={uiTheme === "light" ? LightLogo : DarkLogo}
+              fit="cover"
+            />
           </Box>
         </Link>
         <Button icon={<Menu />} onClick={() => setShow(true)} />

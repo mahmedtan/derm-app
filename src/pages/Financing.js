@@ -1,4 +1,4 @@
-import { Box, Heading, Button } from "grommet";
+import { Box, Heading, Button, Main } from "grommet";
 import React, { useEffect, useState } from "react";
 import BlockContentMain from "../components/Utils/BlockContentMain";
 import { getFinancing } from "../services/extras";
@@ -12,7 +12,7 @@ const Finance = () => {
   }, []);
   if (!financing) return <Loading />;
   return (
-    <Box height={{ min: "90vh" }} align="center" pad={{ top: "large" }}>
+    <Main height={{ min: "90vh" }} align="center" pad={{ top: "large" }}>
       <Box
         align="center"
         width="large"
@@ -33,7 +33,7 @@ const Finance = () => {
           size="large"
         />
       </Box>
-    </Box>
+    </Main>
   );
 };
 

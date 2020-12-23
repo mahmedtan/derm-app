@@ -1,201 +1,213 @@
 import React, { useContext } from "react";
 import { ResponsiveScatterPlot } from "@nivo/scatterplot";
 import { Box, Button, ResponsiveContext, Text } from "grommet";
-import BackgroundFace from "./background-face.jpg";
+import BackgroundFace from "./background-face.jpeg";
 import { Link } from "react-router-dom";
 
 const FaceVisual = () => {
   const size = useContext(ResponsiveContext);
+
   const smallData = [
     {
       data: [
         {
-          x: 23,
+          x: 25,
           y: 65,
           availableProcedures: [
             {
-              name: "Botox",
-              url: "/services/botox",
-            },
-            {
-              name: "Acne",
-              url: "/services/acne",
-            },
-          ],
-        },
-
-        {
-          x: 50,
-          y: 83,
-          availableProcedures: [
-            {
-              name: "Botox",
-              url: "/services/botox",
-            },
-            {
               name: "Fillers",
-              url: "/services/fillers",
-            },
-          ],
-        },
-        {
-          x: 85,
-          y: 88,
-          availableProcedures: [
-            {
-              name: "Eczema",
-              url: "/services/eczema",
             },
             {
-              name: "Fillers",
-              url: "/services/fillers",
-            },
-          ],
-        },
-        {
-          x: 31,
-          y: 20,
-          availableProcedures: [
-            {
-              name: "Botox",
-              url: "/services/botox",
-            },
-            {
-              name: "Fillers",
-              url: "/services/fillers",
-            },
-          ],
-        },
-        {
-          x: 28,
-          y: 45,
-          availableProcedures: [
-            {
-              name: "Sclerotherapy",
-              url: "/services/sclerotherapy",
-            },
-            {
-              name: "Botox",
-              url: "/services/botox",
-            },
-          ],
-        },
-        {
-          x: 63,
-          y: 38,
-          availableProcedures: [
-            {
-              name: "PRP",
-              url: "/services/prp",
-            },
-            {
-              name: "Microneedling",
-              url: "/services/microneedling",
-            },
-          ],
-        },
-      ],
-    },
-  ];
-  const data = [
-    {
-      data: [
-        {
-          x: 35,
-          y: 65,
-          availableProcedures: [
-            {
-              name: "Botox",
-              url: "/services/botox",
-            },
-            {
-              name: "Acne",
-              url: "/services/acne",
+              name: "PDO Threads",
             },
           ],
         },
 
         {
           x: 49.5,
-          y: 83,
+          y: 92,
           availableProcedures: [
             {
               name: "Botox",
-              url: "/services/botox",
             },
             {
-              name: "Fillers",
-              url: "/services/fillers",
+              name: "Laser",
+            },
+            {
+              name: "Microneedling",
             },
           ],
         },
         {
-          x: 69,
-          y: 88,
+          x: 89,
+          y: 92,
           availableProcedures: [
             {
-              name: "Eczema",
-              url: "/services/eczema",
-            },
-            {
-              name: "Fillers",
-              url: "/services/fillers",
+              name: "PRP for Hair Loss",
             },
           ],
         },
         {
-          x: 39,
-          y: 20,
+          x: 42,
+          y: 7,
           availableProcedures: [
             {
               name: "Botox",
-              url: "/services/botox",
             },
             {
-              name: "Fillers",
-              url: "/services/fillers",
+              name: "PRP",
+            },
+            {
+              name: "Radiofrequency",
             },
           ],
         },
         {
-          x: 38,
+          x: 30,
           y: 45,
           availableProcedures: [
             {
-              name: "Sclerotherapy",
-              url: "/services/sclerotherapy",
+              name: "PRP",
+            },
+            {
+              name: "Fillers",
+            },
+            {
+              name: "Chemical Peels",
+            },
+          ],
+        },
+        {
+          x: 59,
+          y: 43,
+          availableProcedures: [
+            {
+              name: "Botox",
+            },
+            {
+              name: "Fillers",
+            },
+            {
+              name: "PDO Threads",
+            },
+          ],
+        },
+        {
+          x: 85,
+          y: 78,
+          availableProcedures: [
+            {
+              name: "Fillers",
             },
             {
               name: "Botox",
-              url: "/services/botox",
+            },
+            {
+              name: "Microneedling",
+            },
+          ],
+        },
+      ],
+    },
+  ];
+
+  const data = [
+    {
+      data: [
+        {
+          x: 32,
+          y: 65,
+          availableProcedures: [
+            {
+              name: "Fillers",
+            },
+            {
+              name: "PDO Threads",
+            },
+          ],
+        },
+
+        {
+          x: 49.5,
+          y: 92,
+          availableProcedures: [
+            {
+              name: "Botox",
+            },
+            {
+              name: "Laser",
+            },
+            {
+              name: "Microneedling",
             },
           ],
         },
         {
-          x: 58,
-          y: 38,
+          x: 78,
+          y: 95,
           availableProcedures: [
             {
-              name: "PRP",
-              url: "/services/prp",
-            },
-            {
-              name: "Microneedling",
-              url: "/services/microneedling",
+              name: "PRP for Hair Loss",
             },
           ],
         },
         {
-          x: 65,
-          y: 72,
+          x: 42,
+          y: 8,
+          availableProcedures: [
+            {
+              name: "Botox",
+            },
+            {
+              name: "PRP",
+            },
+            {
+              name: "Radiofrequency",
+            },
+          ],
+        },
+        {
+          x: 35,
+          y: 45,
           availableProcedures: [
             {
               name: "PRP",
-              url: "/services/prp",
+            },
+            {
+              name: "Fillers",
+            },
+            {
+              name: "Chemical Peels",
+            },
+          ],
+        },
+        {
+          x: 56,
+          y: 43,
+          availableProcedures: [
+            {
+              name: "Botox",
+            },
+            {
+              name: "Fillers",
+            },
+            {
+              name: "PDO Threads",
+            },
+          ],
+        },
+        {
+          x: 76,
+          y: 78,
+          availableProcedures: [
+            {
+              name: "Fillers",
+            },
+            {
+              name: "Botox",
             },
             {
               name: "Microneedling",
-              url: "/services/microneedling",
             },
           ],
         },
@@ -205,7 +217,7 @@ const FaceVisual = () => {
 
   return (
     <Box
-      height="medium"
+      height={size === "small" ? "20rem" : "28rem"}
       width="large"
       background={`url(${BackgroundFace})`}
       elevation="large"
@@ -217,10 +229,13 @@ const FaceVisual = () => {
         yScale={{ type: "linear", min: 0, max: 100 }}
         colors={{ scheme: "red_purple" }}
         blendMode="mixed"
-        nodeSize={18}
+        nodeSize={size === "small" ? 15 : 18}
         enableGridX={false}
         enableGridY={false}
         axisTop={null}
+        axisBottom={null}
+        axisLeft={null}
+        axisRight={null}
         useMesh={false}
         tooltip={({
           node: {
@@ -228,9 +243,14 @@ const FaceVisual = () => {
           },
         }) => {
           return (
-            <Box background="background" pad="medium" elevation="large" round>
+            <Box
+              background="background"
+              pad="small"
+              elevation="large"
+              round="small"
+            >
               {availableProcedures.map((item) => (
-                <Text size="large" weight="bold" key={item.url}>
+                <Text size={size} weight="bold" key={item.name}>
                   {item.name}
                 </Text>
               ))}

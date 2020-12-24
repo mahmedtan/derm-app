@@ -23,7 +23,7 @@ const Blog = () => {
 
   return (
     <Layout>
-      <Box align="center" margin={{ horizontal: "large" }}>
+      <Box align="center" margin={{ horizontal: "large", bottom: "large" }}>
         <Box width="large" gap="medium">
           <Heading>{blog.title}</Heading>
           <Image src={blog.mainImage} fit="contain" />

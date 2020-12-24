@@ -10,17 +10,24 @@ const Consultations = ({ consultations, title }) => {
       <Text textAlign="center" size="xlarge" margin="medium">
         {title}
       </Text>
-      <Box gap="large" direction="row-responsive">
+      <Box
+        gap="large"
+        direction="row-responsive"
+        align="center"
+        justify="center"
+      >
         <Box gap="large">
           {consultations.slice(0, consultations.length / 2 + 1).map((item) => (
             <DisplayCard {...item} key={item._id} item={item} />
           ))}
         </Box>
-        <Box gap="large">
-          {consultations.slice(consultations.length / 2 + 1).map((item) => (
-            <DisplayCard {...item} key={item._id} item={item} />
-          ))}
-        </Box>
+        {consultations.slice(consultations.length / 2 + 1).length > 0 && (
+          <Box gap="large">
+            {consultations.slice(consultations.length / 2 + 1).map((item) => (
+              <DisplayCard {...item} key={item._id} item={item} />
+            ))}
+          </Box>
+        )}
       </Box>
     </Box>
   );

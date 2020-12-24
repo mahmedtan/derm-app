@@ -13,6 +13,7 @@ import Consultations from "./Consult";
 
 const Appointment = ({ form, deleteForm, deleteAndReschedule }) => {
   const [open, setOpen] = useState(false);
+  const [disabled, setDisabled] = useState(false);
   const size = useContext(ResponsiveContext);
   const alignTitle = size === "small" ? "start" : "end";
   const [checkBoxCancel, setCheckBoxCancel] = useState(false);
@@ -140,12 +141,17 @@ const Appointment = ({ form, deleteForm, deleteAndReschedule }) => {
           >
             Notes
           </Text>
-          <Paragraph>{form.remarks}</Paragraph>
+          <Paragraph textAlign="center">{form.remarks}</Paragraph>
         </Box>
       )}
 
       {form.cancelled ? (
-        <Button secondary disabled label="cancelled" />
+        <Button
+          disabled
+          label="Cancelled"
+          color="status-critical"
+          style={{ color: "white" }}
+        />
       ) : (
         <Button primary disabled={open} onClick={() => setOpen(true)}>
           Cancel Appointment
@@ -153,27 +159,48 @@ const Appointment = ({ form, deleteForm, deleteAndReschedule }) => {
       )}
       {open && (
         <Box gap="small">
-          <CheckBox
-            checked={checkBoxCancel}
-            onChange={(e) => setCheckBoxCancel(e.target.checked)}
-            label="We know your time is valuable, and ours is too. We ask that you give
-            us at least 24 hours notice if you need to cancel or reschedule an
-            appointment."
-          />
+          <Box direction="row" align="start" margin={{ vertical: "medium" }}>
+            <CheckBox
+              checked={checkBoxCancel}
+              onChange={(e) => setCheckBoxCancel(e.target.checked)}
+            />
+
+            <Text alignSelf="center">
+              We ask that you give us at least 24 hours notice if you need to
+              cancel or reschedule an appointment.
+            </Text>
+          </Box>
 
           <Box direction="row" gap="medium" justify="center">
             <Button
               label="Cancel & Reschedule"
-              onClick={() => deleteAndReschedule(form._id)}
+              onClick={() => {
+                setDisabled(true);
+                deleteAndReschedule(
+                  form._id,
+                  form.emailAddress,
+                  form.bookedFor,
+                  form.firstName + " " + form.lastName
+                );
+              }}
               primary
-              disabled={!checkBoxCancel}
+              disabled={!checkBoxCancel || disabled}
             />
             <Button
               label="Just Cancel"
               primary
               color="status-critical"
-              onClick={() => deleteForm(form._id)}
-              disabled={!checkBoxCancel}
+              onClick={() => {
+                setDisabled(true);
+
+                deleteForm(
+                  form._id,
+                  form.emailAddress,
+                  form.bookedFor,
+                  form.firstName + " " + form.lastName
+                );
+              }}
+              disabled={!checkBoxCancel || disabled}
             />
           </Box>
         </Box>

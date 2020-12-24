@@ -1,16 +1,31 @@
-import { Box, Card, Heading, Text } from "grommet";
-import React, { useState } from "react";
+import Axios from "axios";
+import { Box, Heading } from "grommet";
+import React from "react";
 import { useHistory } from "react-router-dom";
 import { removeForm } from "../../../services/forms";
 import AppointmentCard from "./AppointmentCard";
 
 const Appointments = ({ forms }) => {
   const history = useHistory();
-  const deleteForm = (id) => {
-    removeForm(id).then((res) => history.push("/profile"));
+
+  const deleteForm = (id, emailAddress, date, fullName) => {
+    removeForm(id).then((res) => {
+      Axios.post("/api/cancellation", {
+        emailAddress,
+        date,
+        fullName,
+      }).then((res) => history.push("/profile"));
+    });
   };
-  const deleteAndRescheduleForm = (id) => {
-    removeForm(id).then((res) => history.push("/book-now"));
+
+  const deleteAndRescheduleForm = (id, emailAddress, date, fullName) => {
+    removeForm(id).then((res) => {
+      Axios.post("/api/cancellation", { emailAddress, date, fullName }).then(
+        (res) => {
+          history.push("/book-now");
+        }
+      );
+    });
   };
 
   return (

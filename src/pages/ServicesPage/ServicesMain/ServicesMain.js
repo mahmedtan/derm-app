@@ -1,6 +1,5 @@
 import { Box, Heading, ResponsiveContext, Text } from "grommet";
 import React, { useContext } from "react";
-import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 import Column from "./Column";
 import Loading from "../../Extras/Loading";

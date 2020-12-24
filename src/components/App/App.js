@@ -1,4 +1,4 @@
-import { Grommet, Main } from "grommet";
+import { Grommet } from "grommet";
 import { theme } from "../../styles/theme.js";
 import { Route, Switch } from "react-router-dom";
 import Home from "../../pages/Home";
@@ -9,7 +9,7 @@ import { useEffect } from "react";
 import Blog from "../../pages/Blogs/Blog";
 import { initializeBlogs } from "../../reducers/blogReducer";
 import Layout from "../Utils/Layout.js";
-import Services from "../../pages/Services/Services.js";
+import Services from "../../pages/ServicesPage/Services.js";
 import { initServiceTypes } from "../../reducers/serviceTypeReducer.js";
 import { initServices } from "../../reducers/serviceReducer.js";
 import Book from "../../pages/Book/Book.js";

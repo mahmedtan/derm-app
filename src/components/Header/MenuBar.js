@@ -3,6 +3,7 @@ import { Anchor, Box, Button, ResponsiveContext } from "grommet";
 import { Link } from "react-router-dom";
 import {
   Article,
+  Facebook,
   FacebookOption,
   Instagram,
   Phone,
@@ -34,12 +35,17 @@ const MenuBar = ({ uiTheme }) => {
         align="center"
         alignContent="center"
       >
-        <Link to="/blogs">
-          <Button icon={<Instagram />} />
-        </Link>
-        <Link to="/blogs">
-          <Button icon={<FacebookOption />} />
-        </Link>
+        <Button
+          icon={<Facebook />}
+          target="_blank"
+          href="https://www.facebook.com/Chic-Derm-Aesthetics-100979451932538/"
+        />
+        <Button
+          icon={<Instagram />}
+          target="_blank"
+          href="https://www.instagram.com/myderm_pa/"
+        />
+
         <Link to="/blogs">
           <Button icon={<Article />} />
         </Link>

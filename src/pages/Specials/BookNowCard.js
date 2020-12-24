@@ -13,10 +13,10 @@ const BookNowCard = () => {
       gap="large"
       pad="medium"
     >
-      <Heading level="3" margin="none">
+      <Heading level="3" margin="none" alignSelf="center">
         Ready to schedule?
       </Heading>
-      <Box direction="row" align="center" gap="small">
+      <Box direction="row" align="center" gap="small" alignSelf="center">
         <Button
           label="Book now"
           primary

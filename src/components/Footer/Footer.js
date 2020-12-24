@@ -6,6 +6,7 @@ import {
   Anchor,
   ResponsiveContext,
   Heading,
+  Button,
 } from "grommet";
 import { Article, Facebook, Instagram } from "grommet-icons";
 import { useContext } from "react";
@@ -79,10 +80,19 @@ const NavFooter = () => {
               </Text>
             </Box>
 
-            <Box direction="row" gap="medium" align="center">
-              <Facebook />
-              <Instagram />
-              <Article />
+            <Box direction="row" gap="small" align="center">
+              <Button
+                icon={<Facebook />}
+                href="https://www.facebook.com/Chic-Derm-Aesthetics-100979451932538/"
+                target="_blank"
+              />
+              <Button
+                icon={<Instagram />}
+                href="https://www.instagram.com/myderm_pa/"
+                target="_blank"
+              />
+
+              <Button icon={<Article />} href="/blogs" />
             </Box>
           </Box>
         </Box>

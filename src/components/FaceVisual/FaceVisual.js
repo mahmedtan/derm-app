@@ -219,7 +219,7 @@ const FaceVisual = () => {
     <Box
       height={size === "small" ? "20rem" : "28rem"}
       width="large"
-      background={`url(${BackgroundFace})`}
+      background={`url(https://i.ibb.co/gyKDM6z/background-face.jpg)`}
       elevation="large"
     >
       <ResponsiveScatterPlot

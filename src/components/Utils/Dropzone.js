@@ -42,6 +42,7 @@ function Dropzone(props) {
     accept: "image/*",
     noClick: true,
     maxFiles: 3,
+    noDrag: images.length === 3,
     noKeyboard: true,
     onDrop: (acceptedFiles) => {
       dispatch(addImage(acceptedFiles));

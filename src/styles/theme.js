@@ -67,11 +67,11 @@ export var theme = deepFreeze({
         light: "#694F5D",
       },
       "brand-secondary": {
-        dark: "#a69da2",
+        dark: "#E5DCE0",
         light: "#E5DCE0",
       },
       "brand-tertiary": {
-        dark: "#a69da2",
+        dark: "#edddd7",
         light: "#edddd7",
       },
       background: {

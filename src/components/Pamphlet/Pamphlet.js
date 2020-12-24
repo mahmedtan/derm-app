@@ -1,9 +1,11 @@
 import React from "react";
-import { Box, Button, Heading, Image } from "grommet";
+import { Box, Button, Heading, Image, ResponsiveContext } from "grommet";
 import sapiens from "./sapiens-v2.png";
 import { Link } from "react-router-dom";
+import { useContext } from "react";
 
 const Pamphlet = () => {
+  const size = useContext(ResponsiveContext);
   return (
     <Box
       height="full"
@@ -19,8 +21,12 @@ const Pamphlet = () => {
         <Image src={sapiens} fit="cover" />
       </Box>
       <Box width="large" align="center" pad="small">
-        <Heading color="#0f1f25" textAlign="center">
-          Schedule your free Cosmetic Evaluation.
+        <Heading
+          color="#0f1f25"
+          textAlign="center"
+          level={size === "small" ? "2" : "1"}
+        >
+          Schedule Free Cosmetic Evaluation!
         </Heading>
         <Box gap="small" direction="row" align="center" justify="center">
           <Button

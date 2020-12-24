@@ -1,4 +1,4 @@
-import { Box, Heading, Button, Main } from "grommet";
+import { Box, Heading, Button, Main, Text } from "grommet";
 import React, { useEffect, useState } from "react";
 import BlockContentMain from "../components/Utils/BlockContentMain";
 import { getFinancing } from "../services/extras";
@@ -17,11 +17,13 @@ const Finance = () => {
         align="center"
         width="large"
         fill
-        pad={{ horizontal: "large", vertical: "small" }}
-        background={{ color: "#DCC1BC", opacity: "strong" }}
+        pad={{ horizontal: "large", vertical: "medium" }}
+        background={{ color: "#C6CCD2", opacity: "strong" }}
+        gap="small"
         border="horizontal"
       >
-        <Heading>{financing.title}</Heading>
+        <Heading margin="none">{financing.title}</Heading>
+        <Text>Lorem ipsum dolor sit amet.</Text>
       </Box>
       <Box width="large" pad="large" align="center">
         <BlockContentMain body={financing.body} />

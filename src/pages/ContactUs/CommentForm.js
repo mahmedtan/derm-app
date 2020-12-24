@@ -77,7 +77,7 @@ const CommentForm = () => {
           primary
           label="Submit"
           fill
-          background="brand-tertiary"
+          color="brand-tertiary"
           style={{ color: "black" }}
           type="submit"
           disabled={

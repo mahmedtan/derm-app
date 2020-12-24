@@ -11,7 +11,7 @@ export default [
   },
   {
     title: "Upload photos",
-    description: "optional",
+    description: "Optional",
     item: <StepTwo />,
   },
   {

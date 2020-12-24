@@ -1,6 +1,7 @@
 const reducer = (state = [], action) => {
   switch (action.type) {
     case "ADD_IMAGE":
+      console.log(state);
       return state.concat(
         action.data.map((file) =>
           Object.assign(file, {
@@ -8,6 +9,7 @@ const reducer = (state = [], action) => {
           })
         )
       );
+
     case "RESET_IMAGES":
       return [];
     default:
@@ -19,6 +21,10 @@ const reducer = (state = [], action) => {
 
 export const addImage = (file) => ({
   type: "ADD_IMAGE",
+  data: file,
+});
+export const removeImage = (file) => ({
+  type: "REMOVE_IMAGE",
   data: file,
 });
 export const initImages = (data) => ({

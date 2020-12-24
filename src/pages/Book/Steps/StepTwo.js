@@ -5,7 +5,7 @@ import Dropzone from "../../../components/Utils/Dropzone";
 const StepThree = () => {
   return (
     <Box gap="medium">
-      <Box animation="fadeIn" round="small" border="all" width="medium">
+      <Box animation="fadeIn" round="xsmall" border="all" width="medium">
         <Dropzone />
       </Box>
       <FormField label="Additional notes" htmlFor="remarks">

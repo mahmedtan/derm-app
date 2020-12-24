@@ -26,7 +26,7 @@ import AboutUs from "../../pages/ContactUs/AboutUs.js";
 import Specials from "../../pages/Specials/Specials.js";
 import Finance from "../../pages/Financing.js";
 import ContactUs from "../../pages/ContactUs/ContactUs.js";
-import ServicesMain from "../../pages/Services/ServicesMain/ServicesMain.js";
+import ServicesMain from "../../pages/ServicesPage/ServicesMain/ServicesMain.js";
 import { changeValues } from "../../reducers/formValuesReducer.js";
 import { changeDate } from "../../reducers/dateReducer.js";
 

@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, FormField, TextArea, TextInput } from "grommet";
+import { Box, FormField, Text, TextArea, TextInput } from "grommet";
 import Dropzone from "../../../components/Utils/Dropzone";
 
 const StepThree = () => {
@@ -8,7 +8,7 @@ const StepThree = () => {
       <Box animation="fadeIn" round="xsmall" border="all" width="medium">
         <Dropzone />
       </Box>
-      <FormField label="Additional notes" htmlFor="remarks">
+      <FormField label={<Text size="large">Remarks</Text>} htmlFor="remarks">
         <TextArea id="remarks" name="remarks" rows="5" />
       </FormField>
     </Box>

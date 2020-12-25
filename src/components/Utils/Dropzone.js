@@ -3,7 +3,8 @@ import React, { useEffect, useState } from "react";
 import { useDropzone } from "react-dropzone";
 import { useDispatch, useSelector } from "react-redux";
 import { addImage, removeImage } from "../../reducers/imageReducer";
-import { Close } from "grommet-icons";
+import { Close, FormSubtract, FormTrash } from "grommet-icons";
+import styles from "./Dropzone.module.css";
 
 const thumbsContainer = {
   display: "flex",
@@ -26,6 +27,7 @@ const thumb = {
 
 const thumbInner = {
   display: "flex",
+  justifyContent: "center",
   minWidth: 0,
   overflow: "hidden",
 };
@@ -56,15 +58,17 @@ function Dropzone(props) {
           <img src={file.preview} style={img} />
         </div>
       </div>
-      <Button
-        margin="xsmall"
-        hoverIndicator="none"
-        focusIndicator={false}
-        label={<Close color="white" type="plain" />}
+      <Box
+        margin={{ horizontal: "1.2rem", vertical: "0.7rem" }}
+        round="full"
+        elevation="medium"
+        background="black"
         onClick={() => {
           dispatch(removeImage({ name: file.name }));
         }}
-      />
+      >
+        <FormSubtract color="white" type="filled" />
+      </Box>
     </Stack>
   ));
 
@@ -84,7 +88,11 @@ function Dropzone(props) {
         gap="medium"
       >
         <input {...getInputProps()} />
-        <Text>Drag 'n' drop some images here, or</Text>
+        <Box gap="small">
+          <Text textAlign="center">Drag 'n' drop some images here</Text>
+          <Text textAlign="center">or</Text>
+        </Box>
+
         <Button
           secondary
           disabled={images.length === 3}

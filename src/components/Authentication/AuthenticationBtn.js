@@ -20,7 +20,7 @@ const AutheticationBtn = () => {
       margin={{ horizontal: "medium" }}
     >
       <Link to="/profile">
-        <Box elevation="small" round="large">
+        <Box elevation="medium" round="large">
           <Button label="Profile" size={btnSize} />
         </Box>
       </Link>

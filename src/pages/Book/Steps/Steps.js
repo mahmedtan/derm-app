@@ -10,7 +10,7 @@ export default [
     item: <StepOne />,
   },
   {
-    title: "Upload photos",
+    title: "Upload Images",
     description: "Optional",
     item: <StepTwo />,
   },

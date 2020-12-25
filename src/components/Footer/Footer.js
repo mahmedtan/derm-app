@@ -65,12 +65,12 @@ const NavFooter = () => {
             </Text>
           </Box>
 
-          <Text>5717 Legacy Drive Plano</Text>
-          <Text>TX, 75024</Text>
+          <Text>5717 Legacy Drive, Suite 250</Text>
+          <Text>Plano, Texas 75024</Text>
           <Box align="center" gap={size === "small" ? "large" : "medium"}>
             <Box>
               <Text textAlign="center">
-                Ph: <Anchor href="tel:(123) 456-7890">(123) 456-7890</Anchor>
+                Ph: <Anchor href="tel:(469) 466-2727">(469) 466-2727</Anchor>
               </Text>
               <Text>
                 Email:{" "}

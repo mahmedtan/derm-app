@@ -45,7 +45,7 @@ const Confirmation = () => {
                 month: "long",
                 day: "numeric",
               }) +
-                " " +
+                " at " +
                 new Date(submittedDate).toLocaleTimeString("en-US", {
                   timeStyle: "short",
                 })}

@@ -17,7 +17,6 @@ const reducer = (state = [], action) => {
     case "INIT_IMAGES":
       return action.data;
     default:
-      console.log(state);
       return state;
   }
 };

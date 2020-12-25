@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { ResponsiveScatterPlot } from "@nivo/scatterplot";
 import { Box, Button, ResponsiveContext, Text } from "grommet";
 import BackgroundFace from "./background-face.jpeg";
@@ -183,7 +183,7 @@ const FaceVisual = () => {
         },
         {
           x: 56,
-          y: 43,
+          y: 42,
           availableProcedures: [
             {
               name: "Botox",
@@ -217,8 +217,9 @@ const FaceVisual = () => {
 
   return (
     <Box
-      height={size === "small" ? "20rem" : "28rem"}
-      width="large"
+      alignSelf="center"
+      height={size === "small" ? "300px" : "440px"}
+      width={size === "small" ? "320px" : "650px"}
       background={`url(https://i.ibb.co/gyKDM6z/background-face.jpg)`}
       elevation="large"
     >
@@ -229,13 +230,14 @@ const FaceVisual = () => {
         yScale={{ type: "linear", min: 0, max: 100 }}
         colors={{ scheme: "red_purple" }}
         blendMode="mixed"
-        nodeSize={size === "small" ? 15 : 18}
+        nodeSize={18}
         enableGridX={false}
         enableGridY={false}
         axisTop={null}
         axisBottom={null}
         axisLeft={null}
         axisRight={null}
+        renderNode={CustomNode}
         useMesh={false}
         tooltip={({
           node: {
@@ -244,13 +246,13 @@ const FaceVisual = () => {
         }) => {
           return (
             <Box
-              background={{ color: "background", opacity: "60%" }}
+              background={{ color: "dark-3", opacity: "60%" }}
               pad="xsmall"
               elevation="large"
               round="xsmall"
             >
               {availableProcedures.map((item) => (
-                <Text size={size} weight="normal" key={item.name}>
+                <Text size={size} weight="normal" key={item.name} color="white">
                   {item.name}
                 </Text>
               ))}
@@ -262,4 +264,45 @@ const FaceVisual = () => {
   );
 };
 
+const CustomNode = ({
+  node,
+  x,
+  y,
+  size,
+  color,
+  blendMode,
+  onMouseEnter,
+  onMouseMove,
+  onMouseLeave,
+  onClick,
+}) => {
+  const [cSize, setCSize] = useState(size / 2);
+
+  return (
+    <g transform={`translate(${x},${y})`}>
+      <circle
+        r={cSize}
+        id="my-circle"
+        opacity={0.4}
+        fill={color}
+        style={{ background: "red" }}
+        onMouseEnter={onMouseEnter}
+        onMouseMove={onMouseMove}
+        onMouseLeave={onMouseLeave}
+        onClick={onClick}
+      >
+        <animateTransform
+          attributeName="transform"
+          type="scale"
+          additive="add"
+          begin="0s"
+          dur="2.5s"
+          values="1; 1.5; 1"
+          keyTimes="0; 0.5; 1"
+          repeatCount="indefinite"
+        ></animateTransform>
+      </circle>
+    </g>
+  );
+};
 export default FaceVisual;

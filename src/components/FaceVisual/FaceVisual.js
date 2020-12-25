@@ -276,12 +276,10 @@ const CustomNode = ({
   onMouseLeave,
   onClick,
 }) => {
-  const [cSize, setCSize] = useState(size / 2);
-
   return (
     <g transform={`translate(${x},${y})`}>
       <circle
-        r={cSize}
+        r={size / 2}
         id="my-circle"
         opacity={0.4}
         fill={color}

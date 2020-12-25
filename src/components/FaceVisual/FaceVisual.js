@@ -274,9 +274,11 @@ const CustomNode = ({
   onMouseMove,
   onMouseLeave,
   onClick,
+  ...extras
 }) => {
   return (
     <g
+      {...extras}
       transform={`translate(${x},${y})`}
       onMouseEnter={onMouseEnter}
       onMouseMove={onMouseMove}

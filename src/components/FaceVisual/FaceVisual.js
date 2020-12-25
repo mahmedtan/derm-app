@@ -265,30 +265,25 @@ const FaceVisual = () => {
 };
 
 const CustomNode = ({
-  node,
   x,
   y,
   size,
   color,
-  blendMode,
+
   onMouseEnter,
   onMouseMove,
   onMouseLeave,
   onClick,
 }) => {
   return (
-    <g transform={`translate(${x},${y})`}>
-      <circle
-        r={size / 2}
-        id="my-circle"
-        opacity={0.4}
-        fill={color}
-        style={{ background: "red" }}
-        onMouseEnter={onMouseEnter}
-        onMouseMove={onMouseMove}
-        onMouseLeave={onMouseLeave}
-        onClick={onClick}
-      >
+    <g
+      transform={`translate(${x},${y})`}
+      onMouseEnter={onMouseEnter}
+      onMouseMove={onMouseMove}
+      onMouseLeave={onMouseLeave}
+      onClick={onClick}
+    >
+      <circle r={size / 2} id="my-circle" opacity={0.4} fill={color}>
         <animateTransform
           attributeName="transform"
           type="scale"

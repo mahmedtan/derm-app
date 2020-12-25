@@ -1,0 +1,50 @@
+diff --git a/node_modules/@react-spring/web/package.json b/node_modules/@react-spring/web/package.json
+index 88a9262..907d8ab 100644
+--- a/node_modules/@react-spring/web/package.json
++++ b/node_modules/@react-spring/web/package.json
+@@ -1,27 +1,28 @@
+ {
+-  "_from": "https://registry.npmjs.org/@react-spring/web/-/web-9.0.0-rc.3.tgz",
++  "_from": "@react-spring/web@9.0.0-rc.3",
+   "_id": "@react-spring/web@9.0.0-rc.3",
+   "_inBundle": false,
+   "_integrity": "sha512-rEvipblmihiz8+Eo01zDp5dqWn6XfYk8q2rlN9c18YIOL4o6nuY/VplDoocUMHYfH4liurpO4o1QudKOO1nAiQ==",
+   "_location": "/@react-spring/web",
+   "_phantomChildren": {},
+   "_requested": {
+-    "type": "remote",
+-    "raw": "@react-spring/web@https://registry.npmjs.org/@react-spring/web/-/web-9.0.0-rc.3.tgz",
++    "type": "version",
++    "registry": true,
++    "raw": "@react-spring/web@9.0.0-rc.3",
+     "name": "@react-spring/web",
+     "escapedName": "@react-spring%2fweb",
+     "scope": "@react-spring",
+-    "rawSpec": "https://registry.npmjs.org/@react-spring/web/-/web-9.0.0-rc.3.tgz",
+-    "saveSpec": "https://registry.npmjs.org/@react-spring/web/-/web-9.0.0-rc.3.tgz",
+-    "fetchSpec": "https://registry.npmjs.org/@react-spring/web/-/web-9.0.0-rc.3.tgz"
++    "rawSpec": "9.0.0-rc.3",
++    "saveSpec": null,
++    "fetchSpec": "9.0.0-rc.3"
+   },
+   "_requiredBy": [
+-    "/"
++    "/react-spring"
+   ],
+   "_resolved": "https://registry.npmjs.org/@react-spring/web/-/web-9.0.0-rc.3.tgz",
+   "_shasum": "da977382f91d9af4c400e4aa7dc37d3db07b87e0",
+-  "_spec": "@react-spring/web@https://registry.npmjs.org/@react-spring/web/-/web-9.0.0-rc.3.tgz",
+-  "_where": "/private/var/folders/bv/lp8sv1pd55g1y5j5s993scdm0000gn/T/tmp-10378SbgDMnbIr6SK",
++  "_spec": "@react-spring/web@9.0.0-rc.3",
++  "_where": "/Users/mahmedtan/Developer/derm-app/node_modules/react-spring",
+   "author": {
+     "name": "Paul Henschel"
+   },
+@@ -69,7 +70,6 @@
+   "publishConfig": {
+     "access": "public"
+   },
+-  "sideEffects": false,
+   "types": "index.d.ts",
+   "version": "9.0.0-rc.3"
+ }

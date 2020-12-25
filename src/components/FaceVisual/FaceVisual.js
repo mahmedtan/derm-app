@@ -230,7 +230,7 @@ const FaceVisual = () => {
         yScale={{ type: "linear", min: 0, max: 100 }}
         colors={{ scheme: "red_purple" }}
         blendMode="mixed"
-        nodeSize={18}
+        nodeSize={20}
         enableGridX={false}
         enableGridY={false}
         axisTop={null}
@@ -274,11 +274,9 @@ const CustomNode = ({
   onMouseMove,
   onMouseLeave,
   onClick,
-  ...extras
 }) => {
   return (
     <g
-      {...extras}
       transform={`translate(${x},${y})`}
       onMouseEnter={onMouseEnter}
       onMouseMove={onMouseMove}

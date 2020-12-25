@@ -1,4 +1,4 @@
-import { Box, Heading, Card, Paragraph, Button } from "grommet";
+import { Box, Heading, Card, Paragraph, Button, Text } from "grommet";
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import Layout from "../../components/Utils/Layout";
@@ -36,10 +36,8 @@ const Confirmation = () => {
       >
         <Heading>You are all set!</Heading>
         <Card align="center">
-          <Box pad="medium" align="center" gap="medium">
-            <Heading level="3" margin="none">
-              Dear {fullName}
-            </Heading>
+          <Box pad="medium" align="center" gap="small">
+            <Text size="xlarge">Dear {fullName}</Text>
             <Paragraph size="large" textAlign="center">
               Your appointment has been booked for{" "}
               {new Date(submittedDate).toLocaleDateString("en-US", {

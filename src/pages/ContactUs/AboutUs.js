@@ -3,11 +3,13 @@ import React, { useEffect, useState } from "react";
 import { getAboutUs } from "../../services/extras";
 import AboutUsPart from "./AboutUsPart";
 import CommentForm from "./CommentForm";
+import Loading from "../Extras/Loading";
 
 const AboutUs = () => {
   const [aboutUs, setAboutUs] = useState(null);
   useEffect(() => {}, [getAboutUs().then((res) => setAboutUs(res))]);
 
+  if (!aboutUs) return <Loading />;
   return (
     <Box fill>
       <Box
@@ -17,7 +19,7 @@ const AboutUs = () => {
         pad="large"
         align="center"
       >
-        <Box width="large" pad={{ horizontal: "large" }} align="center">
+        <Box width="xlarge" pad={{ horizontal: "large" }} align="center">
           <AboutUsPart aboutUs={aboutUs} />
 
           <Box align="center">

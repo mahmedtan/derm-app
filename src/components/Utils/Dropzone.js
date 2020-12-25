@@ -4,8 +4,7 @@ import { useDropzone } from "react-dropzone";
 import { useDispatch, useSelector } from "react-redux";
 import { addImage, removeImage } from "../../reducers/imageReducer";
 import { Close, FormSubtract, FormTrash } from "grommet-icons";
-import styles from "./Dropzone.module.css";
-
+import imageCompression from "browser-image-compression";
 const thumbsContainer = {
   display: "flex",
   flexDirection: "row",
@@ -47,7 +46,17 @@ function Dropzone(props) {
     maxFiles: 3,
     noKeyboard: true,
     onDrop: (acceptedFiles) => {
-      dispatch(addImage(acceptedFiles));
+      Promise.all(
+        acceptedFiles.map((acceptedFile) => {
+          return imageCompression(acceptedFile, {
+            maxSizeMB: 1,
+            maxWidthOrHeight: 1920,
+            useWebWorker: true,
+          });
+        })
+      ).then((files) => {
+        dispatch(addImage(files));
+      });
     },
   });
 

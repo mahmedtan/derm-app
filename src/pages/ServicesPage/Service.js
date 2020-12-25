@@ -31,17 +31,18 @@ const Service = ({ service, services, serviceTypes, size }) => {
           vertical: "large",
         }}
       >
-        <Heading
-          level="2"
-          margin="none"
-          textAlign={size === "small" ? "center" : "start"}
-        >
+        <Heading level="2" margin="none" textAlign="center">
           {service.name}
         </Heading>
-        <Text size="xlarge" textAlign="center" margin="none">
-          Lorem ipsum dolor sit amet.
-        </Text>
-        {service.slug === "procedures-injectables" && <FaceVisual />}
+
+        {service.slug === "procedures-injectables" && (
+          <Box gap="small">
+            <Text size="xlarge" textAlign="center" margin="none">
+              Lorem ipsum dolor sit amet.
+            </Text>{" "}
+            <FaceVisual />
+          </Box>
+        )}
         <BlockContentMain body={service.body} />
 
         {(size === "small" || size === "xsmall") && (

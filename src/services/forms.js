@@ -1,5 +1,7 @@
 import sanityClient from "@sanity/client";
 import Axios from "axios";
+import { v4 as uuidv4 } from "uuid";
+
 const client = sanityClient({
   projectId: "zegc2wrv",
   dataset: "production",
@@ -8,7 +10,6 @@ const client = sanityClient({
 
   token: process.env.REACT_APP_CMS_TOKEN,
 });
-import { v4 as uuidv4 } from "uuid";
 
 export const submitForm = async (
   {

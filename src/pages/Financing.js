@@ -22,7 +22,9 @@ const Finance = () => {
         gap="small"
         border="horizontal"
       >
-        <Heading margin="none">{financing.title}</Heading>
+        <Heading margin="none" style={{ fontFamily: "Dancing Script" }}>
+          {financing.title}
+        </Heading>
         <Text>Lorem ipsum dolor sit amet.</Text>
       </Box>
       <Box width="large" pad="large" align="center">

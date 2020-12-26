@@ -94,17 +94,9 @@ const Appointment = ({ form, deleteForm, deleteAndReschedule }) => {
             </Box>
             <Box width="small">
               <Text weight="bold" size="large">
-                Submitted at
+                Appointment ID
               </Text>
-              {new Date(form.submitted).toLocaleDateString("en-US", {
-                year: "numeric",
-                month: "short",
-                day: "numeric",
-              }) +
-                " " +
-                new Date(form.submitted).toLocaleTimeString("en-US", {
-                  timeStyle: "short",
-                })}
+              {form.appointmentId}
             </Box>
           </Box>
         </Box>

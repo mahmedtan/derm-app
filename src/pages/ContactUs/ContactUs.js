@@ -105,7 +105,7 @@ const ContactUs = () => {
               : "background-front"
           }
         >
-          <Text size="xxlarge">Drop us a line</Text>
+          <Text size="xxlarge">Reach us</Text>
           <Box direction="row" gap="small">
             <Button
               href="mailto:contact@mydermpa.com"

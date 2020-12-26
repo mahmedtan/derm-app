@@ -8,6 +8,7 @@ const client = sanityClient({
 
   token: process.env.REACT_APP_CMS_TOKEN,
 });
+import { v4 as uuidv4 } from "uuid";
 
 export const submitForm = async (
   {
@@ -45,6 +46,7 @@ export const submitForm = async (
     images: images,
     phoneNumber,
     remarks,
+    appointmentId: uuidv4().substring(0, 8),
     procedures: getProcedures(ids, procedures),
     consultations: getConsultations(ids, consultations),
     submitted: new Date(),
@@ -87,7 +89,7 @@ export const uploadImages = async (images) => {
 
 export const getForm = async (sub) => {
   const response = await client.fetch(
-    '*[_type=="form" && sub ==$sub] | order(_createdAt desc) {...,procedures[]->,consultations[]->,"images":images[].asset->url, cancelled}',
+    '*[_type=="form" && sub ==$sub] | order(_createdAt desc) {...,procedures[]->,consultations[]->,"images":images[].asset->url, cancelled,appointmentId}',
     {
       sub,
     }

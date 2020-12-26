@@ -61,9 +61,9 @@ const AppointmentCard = ({ form, deleteForm, deleteAndReschedule, first }) => {
               <Box gap="medium" direction="row-responsive" justify="center">
                 <Box width="11rem" align={alignTitle}>
                   <Text weight="bold" size="large">
-                    Phone{" "}
+                    Appointment ID
                   </Text>
-                  {form.phoneNumber}
+                  {form.appointmentId}
                 </Box>
 
                 <Box width="11rem">

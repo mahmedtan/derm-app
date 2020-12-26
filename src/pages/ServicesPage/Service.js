@@ -37,8 +37,9 @@ const Service = ({ service, services, serviceTypes, size }) => {
 
         {service.slug === "procedures-injectables" && (
           <Box gap="small">
-            <Text size="xlarge" textAlign="center" margin="none">
-              Lorem ipsum dolor sit amet.
+            <Text size="large" textAlign="center" margin="none">
+              Select the areas of treatment to see what treatment options are
+              available.
             </Text>{" "}
             <FaceVisual />
           </Box>

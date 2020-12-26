@@ -59,26 +59,27 @@ const AppointmentCard = ({ form, deleteForm, deleteAndReschedule, first }) => {
                 </Box>
               )}
               <Box gap="medium" direction="row-responsive" justify="center">
-                <Box width="10rem" align={alignTitle}>
+                <Box width="11rem" align={alignTitle}>
                   <Text weight="bold" size="large">
                     Phone{" "}
                   </Text>
                   {form.phoneNumber}
                 </Box>
 
-                <Box width="10rem">
+                <Box width="11rem">
                   <Text weight="bold" size="large">
                     Date & Time
                   </Text>
                   {new Date(form.bookedFor).toLocaleDateString("en-US", {
                     year: "numeric",
-                    month: "numeric",
+                    month: "short",
                     day: "numeric",
                   }) +
                     " " +
-                    new Date(form.bookedFor).toLocaleTimeString("en-US", {
+                    new Date(form.bookedFor).toLocaleTimeString([], {
                       hour: "2-digit",
                       minute: "2-digit",
+                      hour12: true,
                     })}
                 </Box>
               </Box>

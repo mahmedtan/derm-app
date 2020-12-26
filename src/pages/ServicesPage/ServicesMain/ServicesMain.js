@@ -18,7 +18,7 @@ const ServicesMain = () => {
     <Box pad="large" align="center" gap="xlarge">
       <Box gap="small" align="center">
         <Heading margin="none">Services</Heading>
-        <Text>Lorem ipsum dolor sit amet.</Text>
+        <Text>Click on categories below to view services</Text>
       </Box>
 
       <Box

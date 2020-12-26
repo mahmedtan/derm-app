@@ -78,8 +78,10 @@ const Appointment = ({ form, deleteForm, deleteAndReschedule }) => {
                 day: "numeric",
               }) +
                 " " +
-                new Date(form.bookedFor).toLocaleTimeString("en-US", {
-                  timeStyle: "short",
+                new Date(form.bookedFor).toLocaleTimeString([], {
+                  hour: "2-digit",
+                  minute: "2-digit",
+                  hour12: true,
                 })}
             </Box>
           </Box>
@@ -149,6 +151,7 @@ const Appointment = ({ form, deleteForm, deleteAndReschedule }) => {
         <Button
           disabled
           label="Cancelled"
+          size="large"
           color="status-critical"
           style={{ color: "white" }}
         />

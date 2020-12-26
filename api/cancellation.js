@@ -22,9 +22,11 @@ module.exports = async (req, res) => {
             month: "long",
             day: "numeric",
           }) +
-          " " +
-          new Date(date).toLocaleTimeString("en-US", {
-            timeStyle: "short",
+          " at " +
+          new Date(date).toLocaleTimeString([], {
+            hour: "2-digit",
+            minute: "2-digit",
+            hour12: true,
           }),
       },
     };

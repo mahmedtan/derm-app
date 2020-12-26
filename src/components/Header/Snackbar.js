@@ -14,7 +14,7 @@ const Snackbar = ({ uiTheme }) => {
   const [show, setShow] = useState(false);
 
   return (
-    <Box>
+    <Box fill="horizontal">
       <MenuBar uiTheme={uiTheme} />
       <Box
         direction="row"
@@ -22,6 +22,7 @@ const Snackbar = ({ uiTheme }) => {
         align="center"
         height="3.5rem"
         justify="around"
+        fill="horizontal"
         pad={{ horizontal: "large" }}
         width="xlarge"
       >

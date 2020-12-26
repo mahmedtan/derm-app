@@ -51,7 +51,7 @@ const MenuBar = ({ uiTheme }) => {
         </Link>
       </Box>
       <Box direction="row" margin={{ horizontal: "small" }}>
-        <Button href="tel:214-625-2777" icon={<Phone />} />
+        <Button href="tel:(469) 466-2727" icon={<Phone />} />
         <Button
           icon={uiTheme === "light" ? <Moon /> : <Sun />}
           onClick={() => {

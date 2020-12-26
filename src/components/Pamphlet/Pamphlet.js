@@ -13,39 +13,39 @@ const Pamphlet = () => {
       pad="large"
       id="pamphlet"
       background="brand-tertiary"
-      justify="evenly"
       align="center"
-      direction="row-responsive"
     >
-      <Box width="large" align="center">
-        <Image src={sapiens} fit="cover" />
-      </Box>
-      <Box width="large" align="center" pad="small">
-        <Heading
-          color="#0f1f25"
-          textAlign="center"
-          level={size === "small" ? "2" : "1"}
-        >
-          Schedule Free Cosmetic Evaluation!
-        </Heading>
-        <Box gap="small" direction="row" align="center" justify="center">
-          <Button
-            label="Book now"
-            primary
+      <Box direction="row-responsive" align="center">
+        <Box width="large" align="center">
+          <Image src={sapiens} fit="cover" />
+        </Box>
+        <Box width="large" align="center" pad="small">
+          <Heading
             color="#0f1f25"
-            size="large"
-            style={{ color: "white" }}
-            href="/book-now"
-          />
+            textAlign="center"
+            level={size === "small" ? "2" : "1"}
+          >
+            Schedule Free Cosmetic Evaluation!
+          </Heading>
+          <Box gap="small" direction="row" align="center" justify="center">
+            <Button
+              label="Book now"
+              primary
+              color="#0f1f25"
+              size="large"
+              style={{ color: "white" }}
+              href="/book-now"
+            />
 
-          <Button
-            label="Call now"
-            secondary
-            size="large"
-            color="#0f1f25"
-            href="tel:214-625-2777"
-            style={{ color: "#0f1f25" }}
-          />
+            <Button
+              label="Call now"
+              secondary
+              size="large"
+              color="#0f1f25"
+              href="tel:469-466-2727"
+              style={{ color: "#0f1f25" }}
+            />
+          </Box>
         </Box>
       </Box>
     </Box>

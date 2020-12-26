@@ -18,7 +18,7 @@ const Finance = () => {
         width="large"
         fill
         pad={{ horizontal: "large", vertical: "medium" }}
-        background={{ color: "#C6CCD2", opacity: "strong" }}
+        background={{ color: "#C6CCD2", opacity: "medium" }}
         gap="small"
         border="horizontal"
       >

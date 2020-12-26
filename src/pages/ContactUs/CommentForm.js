@@ -14,8 +14,6 @@ import React, { useState } from "react";
 import { useSelector } from "react-redux";
 import { postAComment } from "../../services/comments";
 
-import Background from "./background.png";
-
 const CommentForm = () => {
   const [formValues, setFormValues] = useState({
     patientName: "",
@@ -25,16 +23,10 @@ const CommentForm = () => {
 
   const [message, setMessage] = useState(null);
   return (
-    <Card
-      gap="small"
-      pad="medium"
-      width="large"
-      background={`url(${Background})`}
-      animation="slideDown"
-    >
-      <Heading margin="none" level="3" textAlign="center">
+    <Box gap="small" fill="horizontal">
+      <Text margin="none" size="xxlarge" textAlign="center">
         Leave a review!
-      </Heading>
+      </Text>
       <Form
         value={formValues}
         onChange={(nextValue) => setFormValues(nextValue)}
@@ -55,42 +47,48 @@ const CommentForm = () => {
           });
         }}
       >
-        <FormField label="Full name" htmlFor="fullName-input-contact">
-          <TextInput
-            style={{ background: uiTheme === "light" ? "#FFFFFF" : "#404B5C" }}
-            id="fullName-input-contact"
-            placeholder="Jane Smith"
-            name="patientName"
-          />
-        </FormField>
-        <FormField label="Remarks" htmlFor="remarks-input-contact">
-          <TextArea
-            style={{ background: uiTheme === "light" ? "#FFFFFF" : "#404B5C" }}
-            id="remarks-input-contact"
-            placeholder="Start writing here"
-            name="remarks"
-            rows="4"
-          />
-        </FormField>
+        <Box gap="xxsmall">
+          <FormField label="Full name" htmlFor="fullName-input-contact">
+            <TextInput
+              style={{
+                background: uiTheme === "light" ? "#FFFFFF" : "#404B5C",
+              }}
+              id="fullName-input-contact"
+              placeholder="Jane Smith"
+              name="patientName"
+            />
+          </FormField>
+          <FormField label="Remarks" htmlFor="remarks-input-contact">
+            <TextArea
+              style={{
+                background: uiTheme === "light" ? "#FFFFFF" : "#404B5C",
+              }}
+              id="remarks-input-contact"
+              placeholder="Start writing here"
+              name="remarks"
+              rows="4"
+            />
+          </FormField>
 
-        <Button
-          primary
-          label="Submit"
-          fill
-          color="brand-tertiary"
-          style={{ color: "black" }}
-          type="submit"
-          disabled={
-            !(formValues.patientName.length > 2 && formValues.remarks.length)
-          }
-        />
+          <Button
+            primary
+            fill="horizontal"
+            label="Submit"
+            color="brand-secondary"
+            style={{ color: "black" }}
+            type="submit"
+            disabled={
+              !(formValues.patientName.length > 2 && formValues.remarks.length)
+            }
+          />
+        </Box>
       </Form>
       {message && (
         <Text size="large" weight="bold">
           {message}
         </Text>
       )}
-    </Card>
+    </Box>
   );
 };
 

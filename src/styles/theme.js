@@ -50,6 +50,11 @@ var deepFreeze = function deepFreeze(obj) {
 export var theme = deepFreeze({
   defaultMode: "light",
   global: {
+    breakpoints: {
+      small: {
+        value: 1300,
+      },
+    },
     colors: {
       /* deprecated accent and neutral colors */
       "accent-1": undefined,

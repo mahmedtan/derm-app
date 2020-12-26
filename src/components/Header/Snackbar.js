@@ -117,7 +117,7 @@ const Snackbar = ({ uiTheme }) => {
                   <Link to="/About-us" onClick={() => setShow(false)}>
                     <Button>
                       <Heading level="3" margin="none">
-                        About us
+                        About Us
                       </Heading>
                     </Button>
                   </Link>

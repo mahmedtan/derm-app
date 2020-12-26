@@ -1,4 +1,4 @@
-import { Grommet, ResponsiveContext } from "grommet";
+import { Grommet } from "grommet";
 import { theme } from "../../styles/theme.js";
 import { Route, Switch } from "react-router-dom";
 import Home from "../../pages/Home";
@@ -35,7 +35,6 @@ function App() {
   const blogs = useSelector((state) => state.blogs);
   const dispatch = useDispatch();
   const { isLoading } = useAuth0();
-  const size = useContext(ResponsiveContext);
 
   useEffect(() => {
     dispatch(initializeBlogs());
@@ -50,7 +49,7 @@ function App() {
       dispatch(changeValues(JSON.parse(formValues)));
       dispatch(changeDate(new Date(date)));
     }
-    if (window.sessionStorage.getItem("uiTheme")) {
+    if (window.localStorage.getItem("uiTheme")) {
       dispatch({
         type: "SET_THEME",
         uiTheme: window.localStorage.getItem("uiTheme"),

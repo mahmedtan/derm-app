@@ -27,17 +27,46 @@ const ContactUs = () => {
     { day: "Friday", timings: "9AM to 7PM" },
     { day: "Saturday", timings: "12PM to 6PM" },
   ];
+
   return (
     <Box pad="large" align="center" gap="large">
-      <Card width="large" elevation="large" pad="medium">
+      <Card width="large" elevation="small" pad="large">
+        <Heading
+          style={{ fontFamily: "Jost" }}
+          textAlign="center"
+          margin="none"
+          level="3"
+        >
+          Chic Derm & Aesthetics
+        </Heading>
         <Box style={{ fontSize: "1.2rem" }}>
           <BlockContentMain body={contactUs.body} />{" "}
         </Box>
-        <BlockQuote>{contactUs.description}</BlockQuote>
+        <Box
+          background={
+            uiTheme === "light"
+              ? { color: "brand-secondary", opacity: "medium" }
+              : "brand-secondary"
+          }
+          round="small"
+          elevation="small"
+          pad="small"
+        >
+          <Text
+            textAlign="center"
+            size="medium"
+            style={{
+              fontFamily: "Jost",
+            }}
+          >
+            {" "}
+            {contactUs.description}
+          </Text>
+        </Box>
       </Card>
       <Box direction="row-responsive" gap="large" width="large">
         <Card
-          elevation="large"
+          elevation="small"
           basis="1/2"
           align="center"
           pad="large"
@@ -66,7 +95,7 @@ const ContactUs = () => {
         </Card>
         <Card
           basis="1/2"
-          elevation="large"
+          elevation="small"
           pad="large"
           gap="medium"
           align="center"

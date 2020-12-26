@@ -1,4 +1,4 @@
-import { Box, Heading } from "grommet";
+import { Box, Heading, Text } from "grommet";
 import React, { useEffect, useState } from "react";
 import Background from "./background.png";
 import Loading from "../Extras/Loading";
@@ -29,15 +29,16 @@ const Specials = () => {
       <Box
         align="center"
         width="large"
-        fill
-        pad={{ horizontal: "large", vertical: "small" }}
+        fill="horizontal"
+        gap="small"
+        pad={{ horizontal: "large", vertical: "medium" }}
         background={{ color: "background-front", opacity: "strong" }}
         border="horizontal"
       >
-        <Heading style={{ fontFamily: "Dancing Script" }}>
+        <Heading style={{ fontFamily: "Dancing Script" }} margin="none">
           {specials.title}
         </Heading>
-        <BlockContentMain body={specials.body} />
+        <Text>{specials.description}</Text>
       </Box>
 
       <Special posters={specials.posters} banner={specials.avatar} />

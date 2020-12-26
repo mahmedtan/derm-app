@@ -11,6 +11,7 @@ const Finance = () => {
     getFinancing().then((res) => setFinancing(res));
   }, []);
   if (!financing) return <Loading />;
+  console.log(financing);
   return (
     <Main height={{ min: "90vh" }} align="center" pad={{ top: "large" }}>
       <Box
@@ -25,7 +26,7 @@ const Finance = () => {
         <Heading margin="none" style={{ fontFamily: "Dancing Script" }}>
           {financing.title}
         </Heading>
-        <Text>Lorem ipsum dolor sit amet.</Text>
+        <Text>{financing.description}</Text>
       </Box>
       <Box width="large" pad="large" align="center">
         <BlockContentMain body={financing.body} />

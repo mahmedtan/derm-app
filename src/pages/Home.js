@@ -28,7 +28,7 @@ const Home = () => {
         <Slider />
         <Link to="/services">
           <Button
-            label="Schedule your visit"
+            label="Schedule Your Visit"
             icon={<LinkNext />}
             reverse
             margin={{ vertical: size === "small" ? "medium" : "none" }}

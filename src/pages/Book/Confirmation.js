@@ -40,7 +40,7 @@ const Confirmation = () => {
               Dear {fullName}
             </Text>
             <Paragraph size="large" textAlign="center">
-              Your appointment has been booked for{" "}
+              Your appointment has been booked for <br />
               {new Date(submittedDate).toLocaleDateString("en-US", {
                 year: "numeric",
                 month: "long",

@@ -6,6 +6,7 @@ import {
   Anchor,
   ResponsiveContext,
   Button,
+  List,
 } from "grommet";
 import { Article, Facebook, Instagram } from "grommet-icons";
 import { useContext } from "react";
@@ -30,30 +31,55 @@ const NavFooter = () => {
           fill="horizontal"
           justify="center"
         >
-          {size !== "small" && (
-            <Box width="medium" align="center" justify="start">
-              <Text size="large" margin={{ bottom: "small" }}>
-                Navigation
-              </Text>
-              <Box align="center">
-                <Link to="/" component={Anchor}>
+          <Box width="medium" align="center" pad="medium" gap="medium">
+            <Box
+              align="center"
+              border="between"
+              width={{ min: "6rem" }}
+              gap="small"
+            >
+              <Link to="/" component={Anchor}>
+                <Text color="brand" style={{ fontFamily: "Jost" }}>
                   Home
-                </Link>
-                <Link to="/services" component={Anchor}>
+                </Text>
+              </Link>
+
+              <Link to="/services" component={Anchor}>
+                <Text color="brand" style={{ fontFamily: "Jost" }}>
+                  {" "}
                   Services
-                </Link>
-                <Link to="/specials" component={Anchor}>
+                </Text>
+              </Link>
+
+              <Link to="/specials" component={Anchor}>
+                <Text color="brand" style={{ fontFamily: "Jost" }}>
+                  {" "}
                   Specials
-                </Link>
-                <Link to="/finance" component={Anchor}>
+                </Text>
+              </Link>
+
+              <Link to="/finance" component={Anchor}>
+                <Text color="brand" style={{ fontFamily: "Jost" }}>
+                  {" "}
                   Finance
-                </Link>
-                <Link to="/book-now" component={Anchor}>
-                  Book Now
-                </Link>
-              </Box>
+                </Text>
+              </Link>
             </Box>
-          )}
+            <Box
+              background="brand-tertiary"
+              width={{ min: "6rem" }}
+              align="center"
+              pad={{ vertical: "xsmall" }}
+            >
+              <Link to="/book-now" component={Anchor}>
+                <Text color="brand" style={{ fontFamily: "Jost" }}>
+                  {" "}
+                  Book Now
+                </Text>
+              </Link>
+            </Box>
+          </Box>
+
           <Box align="center" width="medium" justify="start">
             <Box align="center" margin={{ bottom: "small" }}>
               <Text size="large" weight="bold">
@@ -114,8 +140,17 @@ const NavFooter = () => {
           </Box>
         </Box>
 
-        <Box margin={{ bottom: size === "small" ? "8rem" : "none" }}>
-          ©{new Date().getFullYear()}, CHIC Derm & Aesthetics
+        <Box
+          margin={{ bottom: size === "small" ? "8rem" : "none" }}
+          align="center"
+          gap="small"
+        >
+          <Text size={size === "small" ? "small" : "medium"}>
+            <Anchor>Privacy Policy </Anchor> |{" "}
+            <Anchor>Non-Discrimination Policy </Anchor>
+          </Text>
+
+          <Text>©{new Date().getFullYear()}, CHIC Derm & Aesthetics</Text>
         </Box>
       </Box>
     </Footer>

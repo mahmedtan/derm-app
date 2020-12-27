@@ -22,7 +22,7 @@ const CommentForm = () => {
   return (
     <Box gap="small" fill="horizontal">
       <Text margin="none" size="xxlarge" textAlign="center">
-        Leave a review!
+        Leave A Review
       </Text>
       <Form
         value={formValues}

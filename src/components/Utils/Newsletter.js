@@ -20,7 +20,7 @@ const Newsletter = () => {
       pad={size === "small" ? "large" : "medium"}
     >
       <Text textAlign="center" size="xlarge" weight="bold">
-        Stay connected!
+        Stay Connected!
       </Text>
 
       <Form

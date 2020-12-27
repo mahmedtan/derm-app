@@ -7,13 +7,11 @@ import {
   Paragraph,
 } from "grommet";
 import React, { useContext, useEffect } from "react";
-
 import StepFooter from "./StepFooter";
 import { useHistory } from "react-router-dom";
 import Steps from "./Steps/Steps";
 import { useDispatch, useSelector } from "react-redux";
 import StepHeader from "./StepHeader";
-
 import Loading from "../Extras/Loading";
 import { changeValues } from "../../reducers/formValuesReducer";
 import { uploadImages } from "../../services/forms";
@@ -45,8 +43,9 @@ const Book = () => {
   useEffect(() => {}, [activeIndex]);
 
   useEffect(() => {
-    setTimeout(() => setWaiting(false), 50);
-  }, []);
+    setWaiting(true);
+    setTimeout(() => setWaiting(false), 1);
+  }, [activeIndex]);
   if (!(procedures && consultations && images)) {
     return <Loading />;
   }

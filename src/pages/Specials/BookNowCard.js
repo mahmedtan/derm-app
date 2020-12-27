@@ -8,12 +8,11 @@ const BookNowCard = () => {
       direction="row-responsive"
       justify="center"
       background="brand-secondary"
-      border="top"
       gap="large"
       pad="medium"
     >
       <Heading level="3" margin="none" alignSelf="center">
-        Ready to schedule?
+        Ready to schedule your visit?
       </Heading>
       <Box direction="row" align="center" gap="small" alignSelf="center">
         <Button

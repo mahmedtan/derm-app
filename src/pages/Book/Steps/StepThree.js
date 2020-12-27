@@ -55,7 +55,7 @@ const StepThree = () => {
       <Datepicker
         id="datepicker"
         name="bookedDate"
-        selected={date || new Date()}
+        selected={date}
         onChange={(val) => dispatch(changeDate(val))}
         inline
         timeIntervals={15}

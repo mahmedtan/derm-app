@@ -106,7 +106,7 @@ function Dropzone(props) {
         <Button
           secondary
           disabled={images.length === 3}
-          label="Click to select images"
+          label="Upload"
           onClick={open}
         />
       </Box>

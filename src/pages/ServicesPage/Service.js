@@ -35,7 +35,7 @@ const Service = ({ service, services, serviceTypes, size }) => {
           {service.name}
         </Heading>
 
-        {service.slug === "procedures-injectables" && (
+        {service.slug === "injectables" && (
           <Box gap="small">
             <Text size="large" textAlign="center" margin="none">
               Select the areas of treatment to see what treatment options are

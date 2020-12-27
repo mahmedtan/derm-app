@@ -62,7 +62,7 @@ const Processing = () => {
       if (formValues.emailAddress === "")
         setError("Looks like you're on the wrong page");
     }
-  }, [formValues, procedures, consultations, date, dispatch, submitted]);
+  }, [formValues, procedures, consultations, date, dispatch, submitted, user]);
   useEffect(() => {
     if (submitted) {
       window.sessionStorage.clear();
@@ -79,7 +79,14 @@ const Processing = () => {
 
       history.push("/confirmation");
     }
-  }, [submitted, dispatch]);
+  }, [
+    submitted,
+    dispatch,
+    formValues.firstName,
+    formValues.lastName,
+    date,
+    history,
+  ]);
 
   if (error)
     return (

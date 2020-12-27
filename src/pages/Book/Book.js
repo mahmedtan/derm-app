@@ -6,7 +6,7 @@ import {
   ResponsiveContext,
   Paragraph,
 } from "grommet";
-import React, { useContext, useEffect, useRef } from "react";
+import React, { useContext, useEffect } from "react";
 
 import StepFooter from "./StepFooter";
 import { useHistory } from "react-router-dom";

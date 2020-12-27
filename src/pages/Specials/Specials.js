@@ -3,7 +3,6 @@ import React, { useEffect, useState } from "react";
 import Background from "./background.png";
 import Loading from "../Extras/Loading";
 import { getSpecials } from "../../services/extras";
-import BlockContentMain from "../../components/Utils/BlockContentMain";
 import Special from "./Special";
 import BookNowCard from "./BookNowCard";
 

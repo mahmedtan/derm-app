@@ -1,4 +1,4 @@
-import { Box, Paragraph, Text } from "grommet";
+import { Box, Paragraph } from "grommet";
 import React, { useState } from "react";
 import EditProfile from "./EditProfile";
 

@@ -1,6 +1,5 @@
-import { Box, Button, Heading, Text } from "grommet";
+import { Box, Button, Heading } from "grommet";
 import React from "react";
-import { Link } from "react-router-dom";
 
 const BookNowCard = () => {
   return (

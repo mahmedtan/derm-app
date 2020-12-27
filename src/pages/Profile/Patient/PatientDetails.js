@@ -1,5 +1,5 @@
 import { useAuth0 } from "@auth0/auth0-react";
-import { Box, Card, Heading, ResponsiveContext } from "grommet";
+import { Box, Card, ResponsiveContext } from "grommet";
 import React, { useContext, useEffect, useState } from "react";
 import { getPatientDetails } from "../../../services/patients";
 import Loading from "../../Extras/Loading";
@@ -18,11 +18,11 @@ const PatientDetails = ({ setFullName }) => {
     getPatientDetails(sub).then((details) => {
       !details.length ? setDetails({}) : setDetails(details[0]);
     });
-  }, [change]);
+  }, [change, sub]);
 
   useEffect(() => {
     details && details.fullName && setFullName(details.fullName);
-  }, [details]);
+  }, [details, setFullName]);
   if (!details) return <Loading />;
 
   return (

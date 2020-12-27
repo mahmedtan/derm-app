@@ -1,7 +1,6 @@
 import React from "react";
 import { Box, Button, Heading, Image, ResponsiveContext } from "grommet";
 import sapiens from "./sapiens-v2.png";
-import { Link } from "react-router-dom";
 import { useContext } from "react";
 
 const Pamphlet = () => {

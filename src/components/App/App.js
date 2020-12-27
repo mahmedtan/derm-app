@@ -1,11 +1,11 @@
-import { Box, Grommet } from "grommet";
+import { Grommet } from "grommet";
 import { theme } from "../../styles/theme.js";
 import { Route, Switch } from "react-router-dom";
 import Home from "../../pages/Home";
 import Blogs from "../../pages/Blogs/Blogs";
 import NotFound from "../../pages/Extras/404";
 import { useDispatch, useSelector } from "react-redux";
-import { useEffect, useContext } from "react";
+import { useEffect } from "react";
 import Blog from "../../pages/Blogs/Blog";
 import { initializeBlogs } from "../../reducers/blogReducer";
 import Layout from "../Utils/Layout.js";

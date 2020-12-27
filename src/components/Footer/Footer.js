@@ -5,7 +5,6 @@ import {
   Image,
   Anchor,
   ResponsiveContext,
-  Heading,
   Button,
 } from "grommet";
 import { Article, Facebook, Instagram } from "grommet-icons";

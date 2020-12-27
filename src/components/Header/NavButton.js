@@ -1,5 +1,5 @@
 import React from "react";
-import { Anchor, Button, Text } from "grommet";
+import { Anchor } from "grommet";
 import { Link } from "react-router-dom";
 
 const NavButton = ({ to, label }) => {
@@ -9,6 +9,5 @@ const NavButton = ({ to, label }) => {
     </Link>
   );
 };
-const Label = (label) => <Text>{label}</Text>;
 
 export default NavButton;

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Box, Text, Button, Card } from "grommet";
+import { Box, Card } from "grommet";
 import { getAvailableTimes } from "../../../services/slots";
 import Loading from "../../Extras/Loading";
 import { useDispatch, useSelector } from "react-redux";
@@ -24,7 +24,7 @@ const StepThree = () => {
         times.find((time) => time.dayOfTheWeek === new Date(date).getDay())
           .slots
       );
-  }, [date]);
+  }, [date, times]);
 
   if (!times) return <Loading />;
 

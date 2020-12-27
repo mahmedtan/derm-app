@@ -1,6 +1,6 @@
 import { ResponsiveContext, Box } from "grommet";
 import { LinkNext, LinkPrevious } from "grommet-icons";
-import { useContext, useEffect, useState } from "react";
+import { useContext } from "react";
 import { useSelector } from "react-redux";
 import Slider from "react-slick";
 import Loading from "../../pages/Extras/Loading";

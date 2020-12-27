@@ -1,5 +1,5 @@
 import { Box, ResponsiveContext } from "grommet";
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext } from "react";
 import { useSelector } from "react-redux";
 import StoryCard from "./StoryCard";
 import Loading from "../../pages/Extras/Loading";

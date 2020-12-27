@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Layer, Button, Heading, Box, Image } from "grommet";
-import { Menu, Close, Moon, Sun, User } from "grommet-icons";
+import { Menu, Close } from "grommet-icons";
 import { Link } from "react-router-dom";
 
 import LightLogo from "./logo-light.png";
@@ -8,7 +8,6 @@ import DarkLogo from "./logo-dark.png";
 
 import MenuBar from "./MenuBar";
 import AuthenticationBtn from "../Authentication/AuthenticationBtn";
-import AuthenticationSnackbar from "../Authentication/AuthenticationSnackbar";
 
 const Snackbar = ({ uiTheme }) => {
   const [show, setShow] = useState(false);

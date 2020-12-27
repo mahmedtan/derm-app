@@ -1,5 +1,4 @@
 import {
-  Card,
   Box,
   Text,
   Image,
@@ -15,7 +14,6 @@ const Appointment = ({ form, deleteForm, deleteAndReschedule }) => {
   const [open, setOpen] = useState(false);
   const [disabled, setDisabled] = useState(false);
   const size = useContext(ResponsiveContext);
-  const alignTitle = size === "small" ? "start" : "end";
   const [checkBoxCancel, setCheckBoxCancel] = useState(false);
 
   return (

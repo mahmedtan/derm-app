@@ -1,5 +1,5 @@
 import React from "react";
-import { Heading, Text, Box, Image, Avatar } from "grommet";
+import { Heading, Box, Image } from "grommet";
 import Linker from "../Utils/Linker";
 
 const RecentBlogCard = (blog) => {
@@ -13,7 +13,7 @@ const RecentBlogCard = (blog) => {
 
       <Box>
         <Linker to={`/blogs/${blog.slug}`}>
-          <Heading level={3} color="text" textAlign="center" color="#131600">
+          <Heading level={3} color="text" textAlign="center">
             {blog.title}
           </Heading>
         </Linker>

@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, FormField, Text, TextArea, TextInput } from "grommet";
+import { Box, FormField, Text, TextArea } from "grommet";
 import Dropzone from "../../../components/Utils/Dropzone";
 
 const StepThree = () => {

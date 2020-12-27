@@ -1,4 +1,4 @@
-import { Image, Box, Heading, Stack, Text } from "grommet";
+import { Image, Box, Stack, Text } from "grommet";
 import React from "react";
 import { Link } from "react-router-dom";
 

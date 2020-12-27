@@ -1,5 +1,5 @@
 import React from "react";
-import { Button, Box, Stack, Image } from "grommet";
+import { Box, Stack, Image } from "grommet";
 import { Link } from "react-router-dom";
 import NavButton from "./NavButton";
 import MenuBar from "./MenuBar";

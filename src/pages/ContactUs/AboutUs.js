@@ -1,13 +1,14 @@
-import { Box, Form, FormField } from "grommet";
+import { Box } from "grommet";
 import React, { useEffect, useState } from "react";
 import { getAboutUs } from "../../services/extras";
 import AboutUsPart from "./AboutUsPart";
-import CommentForm from "./CommentForm";
 import Loading from "../Extras/Loading";
 
 const AboutUs = () => {
   const [aboutUs, setAboutUs] = useState(null);
-  useEffect(() => {}, [getAboutUs().then((res) => setAboutUs(res))]);
+  useEffect(() => {
+    getAboutUs().then((res) => setAboutUs(res));
+  }, []);
 
   if (!aboutUs) return <Loading />;
   return (

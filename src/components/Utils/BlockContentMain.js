@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import BlockContent from "@sanity/block-content-to-react";
 import getYouTubeId from "get-youtube-id";
 import YouTube from "react-youtube";
-import { Paragraph, ResponsiveContext } from "grommet";
+import { ResponsiveContext } from "grommet";
 
 const BlockContentMain = ({ body, ...extras }) => {
   const size = useContext(ResponsiveContext);

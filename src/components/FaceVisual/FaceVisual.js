@@ -1,8 +1,6 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext } from "react";
 import { ResponsiveScatterPlot } from "@nivo/scatterplot";
-import { Box, Button, ResponsiveContext, Text } from "grommet";
-import BackgroundFace from "./background-face.jpeg";
-import { Link } from "react-router-dom";
+import { Box, ResponsiveContext, Text } from "grommet";
 
 const FaceVisual = () => {
   const size = useContext(ResponsiveContext);

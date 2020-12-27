@@ -3,7 +3,6 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import Layout from "../../components/Utils/Layout";
 import NotFound from "../Extras/404";
-import Loading from "../Extras/Loading";
 
 const Confirmation = () => {
   const [fullName, setFullName] = useState(null);

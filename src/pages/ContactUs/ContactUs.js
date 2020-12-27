@@ -1,5 +1,4 @@
 import { Box, Button, Card, Heading, List, Text } from "grommet";
-import { BlockQuote } from "grommet-icons";
 import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import BlockContentMain from "../../components/Utils/BlockContentMain";
@@ -120,7 +119,6 @@ const ContactUs = () => {
               color="brand-secondary"
             />
             <Button
-              href="mailto:contact@mydermpa.com"
               label="Call"
               primary
               color="brand-secondary"

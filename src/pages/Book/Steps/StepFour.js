@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { Box, CheckBoxGroup, FormField, MaskedInput, TextInput } from "grommet";
 const emailValidation = [
   {

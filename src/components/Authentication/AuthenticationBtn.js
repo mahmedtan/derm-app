@@ -5,7 +5,6 @@ import SignupBtn from "./SignupBtn";
 import LoginBtn from "./LoginBtn";
 import LogoutBtn from "./LogoutBtn";
 import { Link } from "react-router-dom";
-import { User } from "grommet-icons";
 
 const AutheticationBtn = () => {
   const { isAuthenticated } = useAuth0();

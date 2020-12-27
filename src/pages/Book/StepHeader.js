@@ -3,7 +3,7 @@ import { FormPrevious } from "grommet-icons";
 import { Link } from "react-router-dom";
 import Steps from "./Steps/Steps";
 
-import { Box, Heading, Button, Text, ResponsiveContext } from "grommet";
+import { Box, Button, Text, ResponsiveContext } from "grommet";
 
 import { decrementIndex } from "../../reducers/indexReducer";
 import { useDispatch, useSelector } from "react-redux";

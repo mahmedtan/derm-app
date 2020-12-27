@@ -1,9 +1,9 @@
 import { Button, Box, Text, Stack } from "grommet";
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { useDropzone } from "react-dropzone";
 import { useDispatch, useSelector } from "react-redux";
 import { addImage, removeImage } from "../../reducers/imageReducer";
-import { Close, FormSubtract, FormTrash } from "grommet-icons";
+import { FormSubtract } from "grommet-icons";
 import imageCompression from "browser-image-compression";
 const thumbsContainer = {
   display: "flex",

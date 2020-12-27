@@ -3,7 +3,7 @@ import StepFour from "./StepFour";
 import StepTwo from "./StepTwo";
 import StepThree from "./StepThree";
 
-export default [
+const Steps = [
   {
     title: "Services",
     description: "Make a selection",
@@ -26,3 +26,5 @@ export default [
     item: <StepFour />,
   },
 ];
+
+export default Steps;

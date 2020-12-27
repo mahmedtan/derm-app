@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, Heading, Paragraph, Text } from "grommet";
+import { Box, Paragraph, Text } from "grommet";
 
 const Comment = ({ patientName, remarks }) => {
   return (

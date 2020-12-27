@@ -1,18 +1,5 @@
-import {
-  Box,
-  Button,
-  Form,
-  FormField,
-  Heading,
-  TextInput,
-  Card,
-  Text,
-  ResponsiveContext,
-  ThemeContext,
-} from "grommet";
-import styled from "styled-components";
+import { Box, Button, Form, TextInput, Text, ResponsiveContext } from "grommet";
 import { useContext, useState } from "react";
-import { MailOption, User } from "grommet-icons";
 import Axios from "axios";
 
 const Newsletter = () => {

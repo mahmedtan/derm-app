@@ -19,7 +19,7 @@ const OfferCard = ({ title, price, time, description, _id, type, item }) => {
         .filter((x) => formValues[x])
         .indexOf(_id) >= 0
     );
-  }, [formValues]);
+  }, [formValues, _id]);
 
   return (
     <Card

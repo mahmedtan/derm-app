@@ -1,22 +1,12 @@
-import React, { useContext } from "react";
-import { Anchor, Box, Button, ResponsiveContext } from "grommet";
+import React from "react";
+import { Box, Button } from "grommet";
 import { Link } from "react-router-dom";
-import {
-  Article,
-  Facebook,
-  FacebookOption,
-  Instagram,
-  Phone,
-  Twitter,
-  User,
-  Youtube,
-} from "grommet-icons";
+import { Article, Facebook, Instagram, Phone } from "grommet-icons";
 import { Moon, Sun } from "grommet-icons";
 import { toggleUI } from "../../reducers/uiThemeReducer";
 import { useDispatch } from "react-redux";
 
 const MenuBar = ({ uiTheme }) => {
-  const size = useContext(ResponsiveContext);
   const dispatch = useDispatch();
   return (
     <Box

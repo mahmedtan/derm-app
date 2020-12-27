@@ -1,4 +1,4 @@
-import { Box, Text, Heading } from "grommet";
+import { Box, Text } from "grommet";
 import React from "react";
 import { useSelector } from "react-redux";
 import Loading from "../../Extras/Loading";

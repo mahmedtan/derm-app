@@ -47,8 +47,10 @@ const Confirmation = () => {
                 day: "numeric",
               }) +
                 " at " +
-                new Date(submittedDate).toLocaleTimeString("en-US", {
-                  timeStyle: "short",
+                new Date(submittedDate).toLocaleTimeString([], {
+                  hour: "2-digit",
+                  minute: "2-digit",
+                  hour12: true,
                 })}
             </Paragraph>
             <Link to="/profile">

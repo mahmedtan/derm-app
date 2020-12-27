@@ -11,7 +11,7 @@ import { LinkNext } from "grommet-icons";
 import { Link } from "react-router-dom";
 import FaceVisual from "../../components/FaceVisual/FaceVisual";
 
-const Service = ({ service, services, serviceTypes, size }) => {
+const Service = ({ service, serviceTypes, size }) => {
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -36,10 +36,10 @@ const Service = ({ service, services, serviceTypes, size }) => {
         </Heading>
 
         {service.slug === "injectables" && (
-          <Box gap="small">
+          <Box gap={size === "small" ? "large" : "medium"}>
             <Text size="large" textAlign="center" margin="none">
-              Select the areas to see what treatment options are available.
-            </Text>{" "}
+              Select desired areas to view available treatment options
+            </Text>
             <FaceVisual />
           </Box>
         )}

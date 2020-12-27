@@ -22,7 +22,7 @@ module.exports = async (req, res) => {
     console.log(getProcedures(ids, procedures));
     const message = {
       to: emailAddress,
-      bcc: "faseeha@mydermpa.com",
+      bcc: ["contact@mydermpa.com", "faseeha@mydermpa.com"],
       from: "Chic Derm & Aesthetics <contact@mydermpa.com>",
       templateId: "d-61035d75b8014f2a9f781b4fd26181c9",
       dynamicTemplateData: {

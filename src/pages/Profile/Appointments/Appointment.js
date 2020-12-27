@@ -44,6 +44,7 @@ const Appointment = ({ form, deleteForm, deleteAndReschedule }) => {
         fill
         pad={{ horizontal: "xlarge" }}
         gap="medium"
+        margin={{ left: size !== "small" ? "none" : "xlarge" }}
       >
         <Box
           gap={size == "small" ? "medium" : "xlarge"}

@@ -8,7 +8,7 @@ module.exports = async (req, res) => {
 
     const message = {
       to: emailAddress,
-      bcc: "faseeha@mydermpa.com",
+      bcc: ["contact@mydermpa.com", "faseeha@mydermpa.com"],
       from: "Chic Derm & Aesthetics <contact@mydermpa.com>",
       templateId: "d-8e49bec36dcf4d5bbfe67b4339ea8ea7",
       dynamicTemplateData: {

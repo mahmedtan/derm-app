@@ -220,6 +220,7 @@ const FaceVisual = () => {
       width={size === "small" ? "320px" : "650px"}
       background={`url(https://i.ibb.co/gyKDM6z/background-face.jpg)`}
       elevation="large"
+      round="small"
     >
       <ResponsiveScatterPlot
         animate="true"

@@ -38,13 +38,13 @@ const AppointmentCard = ({ form, deleteForm, deleteAndReschedule, first }) => {
             align={size === "small" ? "start" : "center"}
             animation="fadeIn"
             width="large"
+            margin={{ left: size !== "small" ? "none" : "large" }}
           >
             <Box gap="medium" pad={{ horizontal: "xlarge" }}>
               {first && (
                 <Box gap="medium" direction="row-responsive" justify="center">
                   <Box
                     width="11rem"
-                    align="start"
                     margin={{ left: size !== "small" ? "large" : "none" }}
                   >
                     <Box>

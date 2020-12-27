@@ -11,7 +11,7 @@ const DetailsField = ({ fieldName, fieldValue }) => {
       gap={size === "small" ? "medium" : "large"}
     >
       <Text size="large" weight="bold">
-        {fieldName}:
+        {fieldName}
       </Text>
       <Text size="large">{fieldValue}</Text>
     </Box>

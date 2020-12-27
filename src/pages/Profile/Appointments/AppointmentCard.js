@@ -6,7 +6,6 @@ import Appointment from "./Appointment";
 const AppointmentCard = ({ form, deleteForm, deleteAndReschedule, first }) => {
   const [open, setOpen] = useState(false);
   const size = useContext(ResponsiveContext);
-  const alignTitle = size === "small" ? "start" : "end";
 
   return (
     <Card
@@ -42,14 +41,14 @@ const AppointmentCard = ({ form, deleteForm, deleteAndReschedule, first }) => {
             <Box gap="medium" pad={{ horizontal: "xlarge" }}>
               {first && (
                 <Box gap="medium" direction="row-responsive" justify="center">
-                  <Box width="10rem" align={alignTitle}>
+                  <Box width="11rem">
                     <Text weight="bold" size="large">
                       First Name
                     </Text>
                     {form.firstName}
                   </Box>
 
-                  <Box width="10rem">
+                  <Box width="11rem">
                     <Text weight="bold" size="large">
                       Last Name
                     </Text>
@@ -58,7 +57,7 @@ const AppointmentCard = ({ form, deleteForm, deleteAndReschedule, first }) => {
                 </Box>
               )}
               <Box gap="medium" direction="row-responsive" justify="center">
-                <Box width="11rem" align={alignTitle}>
+                <Box width="11rem">
                   <Text weight="bold" size="large">
                     Appointment ID
                   </Text>

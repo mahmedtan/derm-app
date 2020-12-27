@@ -25,6 +25,7 @@ const Book = () => {
   const dispatch = useDispatch();
   const history = useHistory();
   const [loading, setLoading] = useState(false);
+  const [waiting, setWaiting] = useState(true);
 
   const {
     activeIndex,
@@ -41,10 +42,16 @@ const Book = () => {
       images,
     })
   );
+  useEffect(() => {}, [activeIndex]);
 
+  useEffect(() => {
+    setTimeout(() => setWaiting(false), 50);
+  }, []);
   if (!(procedures && consultations && images)) {
     return <Loading />;
   }
+
+  if (waiting) return <Loading />;
   if (loading)
     return (
       <Box

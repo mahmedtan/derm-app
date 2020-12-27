@@ -35,6 +35,7 @@ const Appointment = ({ form, deleteForm, deleteAndReschedule }) => {
         Booking for{" "}
         {new Date(form.bookedFor).toLocaleDateString("en-US", {
           month: "long",
+
           day: "numeric",
         })}
       </Text>
@@ -43,60 +44,59 @@ const Appointment = ({ form, deleteForm, deleteAndReschedule }) => {
         align={size === "small" ? "start" : "center"}
         fill
         pad={{ horizontal: "xlarge" }}
+        gap="medium"
       >
-        <Box gap="medium">
-          <Box gap="medium" direction="row-responsive" justify="center">
-            <Box width="small" align={alignTitle}>
-              <Text weight="bold" size="large">
-                First Name
-              </Text>
-              {form.firstName}
-            </Box>
-            <Box width="small">
-              <Text weight="bold" size="large">
-                Last Name
-              </Text>
-              {form.lastName}
-            </Box>
+        <Box gap="medium" direction="row-responsive">
+          <Box width="small">
+            <Text weight="bold" size="large">
+              First Name
+            </Text>
+            {form.firstName}
           </Box>
+          <Box width="small">
+            <Text weight="bold" size="large">
+              Last Name
+            </Text>
+            {form.lastName}
+          </Box>
+        </Box>
 
-          <Box gap="medium" direction="row-responsive" justify="center">
-            <Box width="small" align={alignTitle}>
-              <Text weight="bold" size="large">
-                Email Address
-              </Text>
-              {form.emailAddress}
-            </Box>
-            <Box width="small">
-              <Text weight="bold" size="large">
-                Date & Time
-              </Text>
-              {new Date(form.bookedFor).toLocaleDateString("en-US", {
-                year: "numeric",
-                month: "short",
-                day: "numeric",
-              }) +
-                " " +
-                new Date(form.bookedFor).toLocaleTimeString([], {
-                  hour: "2-digit",
-                  minute: "2-digit",
-                  hour12: true,
-                })}
-            </Box>
+        <Box gap="medium" direction="row-responsive" justify="center">
+          <Box width="small">
+            <Text weight="bold" size="large">
+              Email Address
+            </Text>
+            {form.emailAddress}
           </Box>
-          <Box gap="medium" direction="row-responsive" justify="center">
-            <Box width="small" align={alignTitle}>
-              <Text weight="bold" size="large">
-                Phone Number
-              </Text>
-              {form.phoneNumber}
-            </Box>
-            <Box width="small">
-              <Text weight="bold" size="large">
-                Appointment ID
-              </Text>
-              {form.appointmentId}
-            </Box>
+          <Box width="small">
+            <Text weight="bold" size="large">
+              Date & Time
+            </Text>
+            {new Date(form.bookedFor).toLocaleDateString("en-US", {
+              year: "numeric",
+              month: "short",
+              day: "numeric",
+            }) +
+              " " +
+              new Date(form.bookedFor).toLocaleTimeString([], {
+                hour: "2-digit",
+                minute: "2-digit",
+                hour12: true,
+              })}
+          </Box>
+        </Box>
+        <Box gap="medium" direction="row-responsive">
+          <Box width="small">
+            <Text weight="bold" size="large">
+              Phone Number
+            </Text>
+            {form.phoneNumber}
+          </Box>
+          <Box width="small">
+            <Text weight="bold" size="large">
+              Appointment ID
+            </Text>
+            {form.appointmentId}
           </Box>
         </Box>
       </Box>

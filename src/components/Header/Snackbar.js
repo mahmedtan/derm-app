@@ -44,7 +44,7 @@ const Snackbar = ({ uiTheme }) => {
             background="background-front"
             onClickOutside={() => setShow(false)}
           >
-            <Box pad="large" gap="large">
+            <Box pad="large" gap="small">
               <Button
                 icon={<Close />}
                 alignSelf="end"
@@ -54,7 +54,7 @@ const Snackbar = ({ uiTheme }) => {
                 fill="vertical"
                 pad="small"
                 align="center"
-                overflow="hidden"
+                overflow="auto"
                 animation="fadeIn"
                 gap="large"
               >

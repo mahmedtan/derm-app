@@ -1,4 +1,4 @@
-import { Grommet } from "grommet";
+import { Box, Grommet } from "grommet";
 import { theme } from "../../styles/theme.js";
 import { Route, Switch } from "react-router-dom";
 import Home from "../../pages/Home";

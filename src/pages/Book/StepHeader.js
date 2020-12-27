@@ -25,8 +25,11 @@ const StepHeader = () => {
             />
           ) : (
             <Link to="/services">
-              <Button          style={{ boxShadow: "2px 2px 10px -5px black" }}
- size="small" label="Back to Services" />
+              <Button
+                style={{ boxShadow: "2px 2px 10px -7px black" }}
+                size="small"
+                label="Back to Services"
+              />
             </Link>
           ))}
       </Box>

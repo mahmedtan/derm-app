@@ -37,7 +37,9 @@ const Confirmation = () => {
         <Heading>You are all set!</Heading>
         <Card align="center">
           <Box pad="medium" align="center" gap="small">
-            <Text size="xlarge">Dear {fullName}</Text>
+            <Text size="xlarge" weight="bold">
+              Dear {fullName}
+            </Text>
             <Paragraph size="large" textAlign="center">
               Your appointment has been booked for{" "}
               {new Date(submittedDate).toLocaleDateString("en-US", {

@@ -27,8 +27,7 @@ const Appointment = ({ form, deleteForm, deleteAndReschedule }) => {
       width="large"
     >
       <Text
-        size="xlarge"
-        weight="normal"
+        size={size === "small" ? "large" : "xlarge"}
         margin="medium"
         alignSelf="center"
         textAlign="center"

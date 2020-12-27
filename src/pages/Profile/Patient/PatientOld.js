@@ -15,8 +15,8 @@ const PatientOld = ({ details, sub, setChange }) => {
       gap={size === "small" ? "large" : "medium"}
       margin={size === "small" ? "large" : "none"}
     >
-      <Text size="xlarge" weight="normal" margin="none" alignSelf="center">
-        Details
+      <Text size="xlarge" weight="bold" margin="none" alignSelf="center">
+        Profile Details
       </Text>
       <DetailsField fieldName="Full Name" fieldValue={fullName} />
       <DetailsField fieldName="Phone Number" fieldValue={phoneNumber} />

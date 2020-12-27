@@ -6,7 +6,7 @@ const Column = ({ services }) => {
   const size = useContext(ResponsiveContext);
 
   return (
-    <Box gap={size === "small" ? "xlarge" : "large"}>
+    <Box gap={size === "small" ? "xlarge" : "medium"}>
       {services.map((servType) => (
         <Item servType={servType} key={servType.slug} />
       ))}

@@ -48,7 +48,7 @@ const CommentForm = () => {
         }}
       >
         <Box gap="xxsmall">
-          <FormField label="Full name" htmlFor="fullName-input-contact">
+          <FormField label="Name" htmlFor="fullName-input-contact">
             <TextInput
               style={{
                 background: uiTheme === "light" ? "#FFFFFF" : "#404B5C",

@@ -24,7 +24,7 @@ const Newsletter = () => {
 
   return (
     <Box
-      background="background"
+      background="newsletter"
       fill="horizontal"
       direction="row-responsive"
       justify="center"

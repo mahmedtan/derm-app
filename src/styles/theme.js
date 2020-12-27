@@ -68,15 +68,19 @@ export var theme = deepFreeze({
       "neutral-5": undefined,
       "status-error": undefined,
       brand: {
-        dark: "#C493AD",
+        dark: "#B9A2AE",
         light: "#694F5D",
       },
+      newsletter: {
+        dark: "#4B586C",
+        light: "#FFF",
+      },
       "brand-secondary": {
-        dark: "#E5DCE0",
+        dark: "#B9A2AE",
         light: "#E5DCE0",
       },
       "brand-tertiary": {
-        dark: "#edddd7",
+        dark: "#B9A2AD",
         light: "#edddd7",
       },
       background: {

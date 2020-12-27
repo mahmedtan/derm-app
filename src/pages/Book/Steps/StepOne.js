@@ -24,7 +24,9 @@ const StepOne = () => {
       animation="fadeIn"
       margin={{ bottom: "medium" }}
     >
-      <Text size="xlarge">Consultations</Text>
+      <Text size="xlarge" weight="bold">
+        Consultations
+      </Text>
       <Box gap="large" direction="row-responsive">
         <Box gap="large">
           {consultations.slice(0, consultations.length / 2 + 1).map((item) => (
@@ -37,7 +39,7 @@ const StepOne = () => {
           ))}
         </Box>
       </Box>
-      <Text size="xlarge" margin={{ top: "medium" }}>
+      <Text size="xlarge" margin={{ top: "medium" }} weight="bold">
         Procedures
       </Text>
       <Box gap="large" direction="row-responsive">

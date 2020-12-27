@@ -30,7 +30,7 @@ const ContactUs = () => {
 
   return (
     <Box pad="large" align="center" gap="large">
-      <Card width="large" elevation="small" pad="large">
+      <Card width="large" elevation="small" pad="large" gap="small">
         <Heading
           style={{ fontFamily: "Jost" }}
           textAlign="center"
@@ -39,8 +39,14 @@ const ContactUs = () => {
         >
           Chic Derm & Aesthetics
         </Heading>
-        <Box style={{ fontSize: "1.2rem" }}>
-          <BlockContentMain body={contactUs.body} />{" "}
+        <Box
+          style={{
+            fontSize: "1.2rem",
+            textAlignLast: "center",
+            textAlign: "end",
+          }}
+        >
+          <BlockContentMain body={contactUs.body} />
         </Box>
         <Box
           background={
@@ -81,7 +87,7 @@ const ContactUs = () => {
               : "background-front"
           }
         >
-          <Text size="xxlarge">Working Hours</Text>
+          <Text size="xxlarge">Office Hours</Text>
 
           <List data={data} primaryKey="day" secondaryKey="timings" />
           <Button
@@ -105,17 +111,17 @@ const ContactUs = () => {
               : "background-front"
           }
         >
-          <Text size="xxlarge">Reach us</Text>
+          <Text size="xxlarge">Contact Us</Text>
           <Box direction="row" gap="small">
             <Button
               href="mailto:contact@mydermpa.com"
-              label="Email us"
+              label="Email"
               secondary
               color="brand-secondary"
             />
             <Button
               href="mailto:contact@mydermpa.com"
-              label="Call us"
+              label="Call"
               primary
               color="brand-secondary"
               style={{ color: "black" }}

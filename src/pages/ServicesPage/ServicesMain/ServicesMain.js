@@ -22,7 +22,7 @@ const ServicesMain = () => {
       </Box>
 
       <Box
-        gap={size === "small" ? "xlarge" : "large"}
+        gap={size === "small" ? "xlarge" : "medium"}
         direction="row-responsive"
       >
         <Column services={serviceTypes.slice(0, divider)} />

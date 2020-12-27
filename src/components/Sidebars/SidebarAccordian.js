@@ -27,7 +27,9 @@ const SidebarAccordian = ({ serviceTypes }) => {
       {serviceTypes.map(({ name, services, slug }) => (
         <AccordionPanel label={<Text size="xlarge">{name}</Text>} key={slug}>
           {services
+            .filter((item) => !item.hideOnAccordian)
             .sort((a, b) => a.orderAccordian - b.orderAccordian)
+
             .map((service) => {
               return (
                 <Anchor href={`/services/${service.slug}`} key={service._id}>

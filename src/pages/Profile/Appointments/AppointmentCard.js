@@ -24,8 +24,7 @@ const AppointmentCard = ({ form, deleteForm, deleteAndReschedule, first }) => {
       ) : (
         <Box>
           <Text
-            size="xlarge"
-            weight="normal"
+            size={size === "small" ? "large" : "xlarge"}
             margin="medium"
             textAlign="center"
           >

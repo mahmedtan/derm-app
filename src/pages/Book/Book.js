@@ -53,7 +53,7 @@ const Book = () => {
         height={{ min: "100vh" }}
         pad="large"
       >
-        <Heading textAlign="center">Processing your application</Heading>
+        <Heading textAlign="center">Processing your request</Heading>
         <Box height="medium">
           <Spinner />
         </Box>

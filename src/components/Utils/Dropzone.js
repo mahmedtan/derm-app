@@ -95,10 +95,11 @@ function Dropzone(props) {
         {...getRootProps({ className: "dropzone" })}
         focusIndicator={false}
         gap="medium"
+        align="center"
       >
         <input {...getInputProps()} />
         <Box gap="small">
-          <Text textAlign="center">Drag 'n' drop some images here</Text>
+          <Text textAlign="center">Drag 'n' drop your images here</Text>
           <Text textAlign="center">or</Text>
         </Box>
 

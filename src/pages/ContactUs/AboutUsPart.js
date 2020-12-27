@@ -18,9 +18,7 @@ const AboutUs = ({ aboutUs }) => {
       </Box>
 
       <Box align="center" gap="small">
-        <Heading style={{ fontFamily: "Harmattan" }} margin="none">
-          {aboutUs.title}
-        </Heading>
+        <Heading margin="none">{aboutUs.title}</Heading>
 
         <BlockContentMain body={aboutUs.body} />
       </Box>

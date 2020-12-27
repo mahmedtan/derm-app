@@ -19,16 +19,14 @@ const Finance = () => {
         width="large"
         fill
         pad={{ horizontal: "large", vertical: "medium" }}
-        background={{ color: "#C6CCD2", opacity: "medium" }}
+        background={{ color: "background-contrast" }}
         gap="small"
         border="horizontal"
       >
-        <Heading margin="none" style={{ fontFamily: "Dancing Script" }}>
-          {financing.title}
-        </Heading>
+        <Heading margin="none">{financing.title}</Heading>
         <Text>{financing.description}</Text>
       </Box>
-      <Box width="large" pad="large" align="center">
+      <Box width="large" pad="large" align="center" gap="small">
         <BlockContentMain body={financing.body} />
         <Button
           href="https://google.com"

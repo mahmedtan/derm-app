@@ -10,12 +10,7 @@ const Consultations = ({ consultations, title }) => {
       <Text textAlign="center" size="xlarge" margin="medium">
         {title}
       </Text>
-      <Box
-        gap="large"
-        direction="row-responsive"
-        align="center"
-        justify="center"
-      >
+      <Box gap="large" direction="row-responsive" justify="center">
         <Box gap="large">
           {consultations.slice(0, consultations.length / 2 + 1).map((item) => (
             <DisplayCard {...item} key={item._id} item={item} />

@@ -19,7 +19,7 @@ const AboutUs = () => {
         pad="large"
         align="center"
       >
-        <Box width="xlarge" pad={{ horizontal: "large" }} align="center">
+        <Box width="xlarge" align="center">
           <AboutUsPart aboutUs={aboutUs} />
         </Box>
       </Box>

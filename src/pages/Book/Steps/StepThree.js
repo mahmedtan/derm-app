@@ -1,23 +1,20 @@
 import React, { useEffect, useState } from "react";
 import { Box, Text, Button, Card } from "grommet";
-import { getAvailableDates, getAvailableTimes } from "../../../services/slots";
+import { getAvailableTimes } from "../../../services/slots";
 import Loading from "../../Extras/Loading";
 import { useDispatch, useSelector } from "react-redux";
 import { changeDate } from "../../../reducers/dateReducer";
 import "react-datepicker/dist/react-datepicker.css";
 import Datepicker from "react-datepicker";
-import moment from "moment";
 
-const StepFour = () => {
+const StepThree = () => {
   const dispatch = useDispatch();
 
   const date = useSelector(({ date }) => date);
   const [availableTimes, setAvailableTimes] = useState(null);
-  const [dates, setDates] = useState(null);
   const [times, setTimes] = useState(null);
 
   useEffect(() => {
-    getAvailableDates().then((dates) => setDates(dates));
     getAvailableTimes().then((times) => setTimes(times));
   }, []);
 
@@ -29,14 +26,17 @@ const StepFour = () => {
       );
   }, [date]);
 
-  if (!(dates && times)) return <Loading />;
+  if (!times) return <Loading />;
 
   const filterDate = (current) => {
-    const date = dates.find((item) => {
-      return new Date(item).getDate() === new Date(current).getDate();
-    });
+    const day = new Date(current).getDay();
 
-    return date && new Date(date).getDate() >= new Date().getDate();
+    return times.find(
+      (item) =>
+        item.dayOfTheWeek === day &&
+        item.available &&
+        new Date(current).getTime() >= new Date().getTime()
+    );
   };
   const filterTime = (time) => {
     if (availableTimes)
@@ -55,7 +55,7 @@ const StepFour = () => {
       <Datepicker
         id="datepicker"
         name="bookedDate"
-        selected={date}
+        selected={date || new Date()}
         onChange={(val) => dispatch(changeDate(val))}
         inline
         timeIntervals={15}
@@ -81,4 +81,4 @@ const Container = ({ children, className }) => {
   );
 };
 
-export default StepFour;
+export default StepThree;

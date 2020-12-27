@@ -22,6 +22,8 @@ const Appointments = ({ forms }) => {
     removeForm(id).then((res) => {
       Axios.post("/api/cancellation", { emailAddress, date, fullName }).then(
         (res) => {
+          // history.createHref("/book-now");
+          window.scrollTo(0, 0);
           history.push("/book-now");
         }
       );

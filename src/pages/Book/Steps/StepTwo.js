@@ -1,8 +1,6 @@
 import React from "react";
 import { Box, FormField, Text, TextArea } from "grommet";
 import Dropzone from "../../../components/Utils/Dropzone";
-import { useState, useEffect } from "react";
-import Loading from "../../Extras/Loading";
 
 const StepTwo = () => {
   return (

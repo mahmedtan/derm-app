@@ -27,10 +27,11 @@ const AppointmentCard = ({ form, deleteForm, deleteAndReschedule, first }) => {
             margin="medium"
             textAlign="center"
           >
-            Booking for{" "}
+            Booking for <br />
             {new Date(form.bookedFor).toLocaleDateString("en-US", {
               month: "long",
               day: "numeric",
+              year: "numeric",
             })}
           </Text>
           <Box
@@ -41,11 +42,17 @@ const AppointmentCard = ({ form, deleteForm, deleteAndReschedule, first }) => {
             <Box gap="medium" pad={{ horizontal: "xlarge" }}>
               {first && (
                 <Box gap="medium" direction="row-responsive" justify="center">
-                  <Box width="11rem">
-                    <Text weight="bold" size="large">
-                      First Name
-                    </Text>
-                    {form.firstName}
+                  <Box
+                    width="11rem"
+                    align="start"
+                    margin={{ left: size !== "small" ? "large" : "none" }}
+                  >
+                    <Box>
+                      <Text weight="bold" size="large">
+                        First Name
+                      </Text>
+                      {form.firstName}
+                    </Box>
                   </Box>
 
                   <Box width="11rem">
@@ -57,11 +64,17 @@ const AppointmentCard = ({ form, deleteForm, deleteAndReschedule, first }) => {
                 </Box>
               )}
               <Box gap="medium" direction="row-responsive" justify="center">
-                <Box width="11rem">
-                  <Text weight="bold" size="large">
-                    Appointment ID
-                  </Text>
-                  {form.appointmentId}
+                <Box
+                  width="11rem"
+                  align="start"
+                  margin={{ left: size !== "small" ? "large" : "none" }}
+                >
+                  <Box>
+                    <Text weight="bold" size="large">
+                      Appointment ID
+                    </Text>
+                    {form.appointmentId}
+                  </Box>
                 </Box>
 
                 <Box width="11rem">

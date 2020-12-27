@@ -30,11 +30,12 @@ const Appointment = ({ form, deleteForm, deleteAndReschedule }) => {
         alignSelf="center"
         textAlign="center"
       >
-        Booking for{" "}
+        Booking for <br />
         {new Date(form.bookedFor).toLocaleDateString("en-US", {
           month: "long",
 
           day: "numeric",
+          year: "numeric",
         })}
       </Text>
 
@@ -44,12 +45,17 @@ const Appointment = ({ form, deleteForm, deleteAndReschedule }) => {
         pad={{ horizontal: "xlarge" }}
         gap="medium"
       >
-        <Box gap="medium" direction="row-responsive">
+        <Box
+          gap={size == "small" ? "medium" : "xlarge"}
+          direction="row-responsive"
+        >
           <Box width="small">
-            <Text weight="bold" size="large">
-              First Name
-            </Text>
-            {form.firstName}
+            <Box margin={{ left: size !== "small" ? "large" : "none" }}>
+              <Text weight="bold" size="large">
+                First Name
+              </Text>
+              {form.firstName}
+            </Box>
           </Box>
           <Box width="small">
             <Text weight="bold" size="large">
@@ -59,12 +65,18 @@ const Appointment = ({ form, deleteForm, deleteAndReschedule }) => {
           </Box>
         </Box>
 
-        <Box gap="medium" direction="row-responsive" justify="center">
+        <Box
+          gap={size == "small" ? "medium" : "xlarge"}
+          direction="row-responsive"
+          justify="center"
+        >
           <Box width="small">
-            <Text weight="bold" size="large">
-              Email Address
-            </Text>
-            {form.emailAddress}
+            <Box margin={{ left: size !== "small" ? "large" : "none" }}>
+              <Text weight="bold" size="large">
+                Email Address
+              </Text>
+              {form.emailAddress}
+            </Box>
           </Box>
           <Box width="small">
             <Text weight="bold" size="large">
@@ -83,12 +95,17 @@ const Appointment = ({ form, deleteForm, deleteAndReschedule }) => {
               })}
           </Box>
         </Box>
-        <Box gap="medium" direction="row-responsive">
-          <Box width="small">
-            <Text weight="bold" size="large">
-              Phone Number
-            </Text>
-            {form.phoneNumber}
+        <Box
+          gap={size == "small" ? "medium" : "xlarge"}
+          direction="row-responsive"
+        >
+          <Box width="small" align="start">
+            <Box margin={{ left: size !== "small" ? "large" : "none" }}>
+              <Text weight="bold" size="large">
+                Phone Number
+              </Text>
+              {form.phoneNumber}
+            </Box>
           </Box>
           <Box width="small">
             <Text weight="bold" size="large">

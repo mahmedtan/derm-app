@@ -228,7 +228,7 @@ const FaceVisual = () => {
         yScale={{ type: "linear", min: 0, max: 100 }}
         colors={{ scheme: "red_purple" }}
         blendMode="mixed"
-        nodeSize={size === "small" ? 15 : 18}
+        nodeSize={size === "small" ? 15 : 19}
         enableGridX={false}
         enableGridY={false}
         axisTop={null}
@@ -283,11 +283,10 @@ const CustomNode = ({
       <circle
         r={size / 2}
         id="my-circle"
-        opacity={0.3}
-        stroke="black"
-        strokeOpacity="0.3"
-        strokeWidth="1"
-        fill={color}
+        opacity={0.4}
+        fill="white"
+        stroke="gray"
+        strokeWidth="0.25"
       >
         <animateTransform
           attributeName="transform"

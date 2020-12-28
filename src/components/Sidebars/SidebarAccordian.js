@@ -1,4 +1,4 @@
-import { Accordion, AccordionPanel, Button, Text, Anchor } from "grommet";
+import { Accordion, AccordionPanel, Button, Text, Anchor, Box } from "grommet";
 import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 
@@ -19,6 +19,7 @@ const SidebarAccordian = ({ serviceTypes }) => {
 
   return (
     <Accordion
+      focusIndicator={false}
       margin="medium"
       gap="medium"
       activeIndex={activeIndex}

@@ -11,18 +11,18 @@ const PatientOld = ({ details, sub, setChange }) => {
   const { emailAddress, phoneNumber, fullName, patientId } = details;
 
   return (
-    <Box
-      gap={size === "small" ? "large" : "medium"}
-      margin={size === "small" ? "large" : "none"}
-    >
+    <Box gap="large" margin={{ vertical: size === "small" ? "large" : "none" }}>
       <Text size="xlarge" weight="bold" margin="none" alignSelf="center">
         Profile Details
       </Text>
-      <DetailsField fieldName="Full Name" fieldValue={fullName} />
-      <DetailsField fieldName="Phone Number" fieldValue={phoneNumber} />
-      <DetailsField fieldName="Email Address" fieldValue={emailAddress} />
-      <DetailsField fieldName="Patient ID" fieldValue={patientId} />
-
+      <Box align="center">
+        <Box gap="medium">
+          <DetailsField fieldName="Full Name" fieldValue={fullName} />
+          <DetailsField fieldName="Phone Number" fieldValue={phoneNumber} />
+          <DetailsField fieldName="Email Address" fieldValue={emailAddress} />
+          <DetailsField fieldName="Patient ID" fieldValue={patientId} />
+        </Box>
+      </Box>
       <EditProfile
         setChange={setChange}
         {...details}

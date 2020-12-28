@@ -13,6 +13,7 @@ const AppointmentCard = ({ form, deleteForm, deleteAndReschedule, first }) => {
       margin={{ horizontal: "large", bottom: "large" }}
       gap="medium"
       pad="medium"
+      elevation={open ? "large" : "small"}
     >
       {open ? (
         <Appointment
@@ -34,12 +35,7 @@ const AppointmentCard = ({ form, deleteForm, deleteAndReschedule, first }) => {
               year: "numeric",
             })}
           </Text>
-          <Box
-            align={size === "small" ? "start" : "center"}
-            animation="fadeIn"
-            width="large"
-            margin={{ left: size !== "small" ? "none" : "large" }}
-          >
+          <Box align="center" animation="fadeIn" width="large">
             <Box gap="medium" pad={{ horizontal: "xlarge" }}>
               {first && (
                 <Box gap="medium" direction="row-responsive" justify="center">

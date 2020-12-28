@@ -194,7 +194,7 @@ export var theme = deepFreeze({
       "graph-2": "purple!",
       "graph-3": "yellow!",
       "graph-4": "teal!",
-      focus: "light-5",
+      focus: "none",
       placeholder: "text-weak",
     },
     input: {

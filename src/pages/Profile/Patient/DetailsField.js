@@ -8,12 +8,12 @@ const DetailsField = ({ fieldName, fieldValue }) => {
       direction="row-responsive"
       align="center"
       justify="between"
-      gap={size === "small" ? "medium" : "large"}
+      gap={size === "small" ? "small" : "large"}
     >
-      <Text size="large" weight="bold">
+      <Text weight="bold" size="large">
         {fieldName}
       </Text>
-      <Text size="large">{fieldValue}</Text>
+      <Text>{fieldValue}</Text>
     </Box>
   );
 };

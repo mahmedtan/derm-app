@@ -10,7 +10,7 @@ const DetailsField = ({ fieldName, fieldValue }) => {
       justify="between"
       gap={size === "small" ? "small" : "large"}
     >
-      <Text weight="bold" size="large">
+      <Text weight="500" size="large">
         {fieldName}
       </Text>
       <Text>{fieldValue}</Text>

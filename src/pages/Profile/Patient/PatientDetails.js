@@ -28,10 +28,7 @@ const PatientDetails = ({ setFullName }) => {
   return (
     <Box align="center" pad={{ horizontal: "large" }}>
       <Card
-        pad={{
-          vertical: size === "small" ? "medium" : "large",
-          horizontal: "medium",
-        }}
+        pad="large"
         width={size === "small" ? "large" : "none"}
         animation="zoomOut"
       >

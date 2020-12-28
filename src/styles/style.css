@@ -23,3 +23,7 @@ div:focus {
 p {
   text-align: justify;
 }
+
+.is-scrollLocked {
+  overflow: hidden;
+}

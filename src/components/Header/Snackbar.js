@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Layer, Button, Heading, Box, Image } from "grommet";
 import { Menu, Close } from "grommet-icons";
 import { Link } from "react-router-dom";
@@ -11,6 +11,11 @@ import AuthenticationBtn from "../Authentication/AuthenticationBtn";
 
 const Snackbar = ({ uiTheme }) => {
   const [show, setShow] = useState(false);
+
+  const removeLayer = () => {
+    setShow(false);
+    document.body.classList.remove("is-scrollLocked");
+  };
 
   return (
     <Box fill="horizontal">
@@ -36,19 +41,21 @@ const Snackbar = ({ uiTheme }) => {
             />
           </Box>
         </Link>
-        <Button icon={<Menu />} onClick={() => setShow(true)} />
+        <Button
+          icon={<Menu />}
+          onClick={() => {
+            setShow(true);
+            document.body.classList.add("is-scrollLocked");
+          }}
+        />
         {show && (
           <Layer
             position="right"
             background="background-front"
-            onClickOutside={() => setShow(false)}
+            onClickOutside={() => removeLayer()}
           >
             <Box pad="large" gap="small">
-              <Button
-                icon={<Close />}
-                alignSelf="end"
-                onClick={() => setShow(false)}
-              />
+              <Button icon={<Close />} alignSelf="end" onClick={removeLayer} />
               <Box
                 fill="vertical"
                 pad="small"
@@ -58,62 +65,56 @@ const Snackbar = ({ uiTheme }) => {
                 gap="large"
               >
                 <Box align="center" gap="large">
-                  <Link to="/book-now" onClick={() => setShow(false)}>
+                  <Link to="/book-now" onClick={removeLayer}>
                     <Button>
                       <Heading level="3" margin="none">
                         Book now
                       </Heading>
                     </Button>
                   </Link>
-                  <Link
-                    to="/services/dermatology"
-                    onClick={() => setShow(false)}
-                  >
+                  <Link to="/services/dermatology" onClick={removeLayer}>
                     <Button>
                       <Heading level="3" margin="none">
                         Dermatology
                       </Heading>
                     </Button>
                   </Link>
-                  <Link
-                    to="/services/injectables"
-                    onClick={() => setShow(false)}
-                  >
+                  <Link to="/services/injectables" onClick={removeLayer}>
                     <Button>
                       <Heading level="3" margin="none">
                         Aesthetics
                       </Heading>
                     </Button>
                   </Link>
-                  <Link to="/specials" onClick={() => setShow(false)}>
+                  <Link to="/specials" onClick={removeLayer}>
                     <Button>
                       <Heading level="3" margin="none">
                         Specials
                       </Heading>
                     </Button>
                   </Link>
-                  <Link to="/services" onClick={() => setShow(false)}>
+                  <Link to="/services" onClick={removeLayer}>
                     <Button>
                       <Heading level="3" margin="none">
                         Services
                       </Heading>
                     </Button>
                   </Link>
-                  <Link to="/finance" onClick={() => setShow(false)}>
+                  <Link to="/finance" onClick={removeLayer}>
                     <Button>
                       <Heading level="3" margin="none">
                         Finance
                       </Heading>
                     </Button>
                   </Link>
-                  <Link to="/contact-us" onClick={() => setShow(false)}>
+                  <Link to="/contact-us" onClick={removeLayer}>
                     <Button>
                       <Heading level="3" margin="none">
                         Contact us
                       </Heading>
                     </Button>
                   </Link>
-                  <Link to="/About-us" onClick={() => setShow(false)}>
+                  <Link to="/About-us" onClick={removeLayer}>
                     <Button>
                       <Heading level="3" margin="none">
                         About Us
@@ -122,7 +123,12 @@ const Snackbar = ({ uiTheme }) => {
                   </Link>
                 </Box>
               </Box>
-              <Box alignSelf="center">
+              <Box
+                alignSelf="center"
+                onClick={() =>
+                  document.body.classList.remove("is-scrollLocked")
+                }
+              >
                 <AuthenticationBtn />
               </Box>
             </Box>

@@ -134,7 +134,6 @@ export const EditProfile = ({
         onClick={() => {
           setOpen(true);
         }}
-        margin="xsmall"
       />
     );
   return (

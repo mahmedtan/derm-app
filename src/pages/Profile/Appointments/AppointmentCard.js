@@ -24,9 +24,10 @@ const AppointmentCard = ({ form, deleteForm, deleteAndReschedule, first }) => {
       ) : (
         <Box>
           <Text
-            size={size === "small" ? "large" : "xlarge"}
-            margin="medium"
-            textAlign="center"
+            size={size === "small" ? "xlarge" : "xlarge"}
+            weight="600"
+            margin={{ horizontal: "2.3rem", vertical: "medium" }}
+            textAlign={size === "small" ? "start" : "center"}
           >
             Booking for <br />
             {new Date(form.bookedFor).toLocaleDateString("en-US", {
@@ -36,7 +37,12 @@ const AppointmentCard = ({ form, deleteForm, deleteAndReschedule, first }) => {
             })}
           </Text>
 
-          <Box align="center" animation="fadeIn" width="large">
+          <Box
+            align={size === "small" ? "start" : "center"}
+            animation="fadeIn"
+            margin={{ left: size === "small" ? "2.3rem" : "none" }}
+            width="large"
+          >
             <Box align="center">
               <Box gap="medium">
                 {first && (
@@ -46,7 +52,7 @@ const AppointmentCard = ({ form, deleteForm, deleteAndReschedule, first }) => {
                       margin={{ left: size !== "small" ? "large" : "none" }}
                     >
                       <Box>
-                        <Text weight="bold" size="large">
+                        <Text weight="500" size="large">
                           First Name
                         </Text>
                         {form.firstName}
@@ -54,7 +60,7 @@ const AppointmentCard = ({ form, deleteForm, deleteAndReschedule, first }) => {
                     </Box>
 
                     <Box width="11rem">
-                      <Text weight="bold" size="large">
+                      <Text weight="500" size="large">
                         Last Name
                       </Text>
                       {form.lastName}
@@ -68,7 +74,7 @@ const AppointmentCard = ({ form, deleteForm, deleteAndReschedule, first }) => {
                     margin={{ left: size !== "small" ? "large" : "none" }}
                   >
                     <Box>
-                      <Text weight="bold" size="large">
+                      <Text weight="500" size="large">
                         Appointment ID
                       </Text>
                       {form.appointmentId}
@@ -76,7 +82,7 @@ const AppointmentCard = ({ form, deleteForm, deleteAndReschedule, first }) => {
                   </Box>
 
                   <Box width="11rem">
-                    <Text weight="bold" size="large">
+                    <Text weight="500" size="large">
                       Date & Time
                     </Text>
                     {new Date(form.bookedFor).toLocaleDateString("en-US", {

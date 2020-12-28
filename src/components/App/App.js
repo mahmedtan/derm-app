@@ -1,4 +1,4 @@
-import { Grommet } from "grommet";
+import { Box, Grommet } from "grommet";
 import { theme } from "../../styles/theme.js";
 import { Route, Switch } from "react-router-dom";
 import Home from "../../pages/Home";
@@ -60,7 +60,7 @@ function App() {
   if (isLoading) return <Loading />;
 
   return (
-    <Grommet theme={theme} themeMode={uiTheme} full>
+    <Grommet theme={theme} themeMode={uiTheme}>
       <Switch>
         <Route path="/blogs/:slug">
           <Blog />

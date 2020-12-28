@@ -19,7 +19,7 @@ const StepThree = () => {
   }, []);
 
   useEffect(() => {
-    if (times)
+    if (times && date)
       setAvailableTimes(
         times.find((time) => time.dayOfTheWeek === new Date(date).getDay())
           .slots

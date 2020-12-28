@@ -47,7 +47,7 @@ const Confirmation = () => {
                 day: "numeric",
               }) +
                 " at " +
-                new Date(submittedDate).toLocaleTimeString([], {
+                new Date(submittedDate).toLocaleTimeString("en-US", {
                   hour: "2-digit",
                   minute: "2-digit",
                   hour12: true,

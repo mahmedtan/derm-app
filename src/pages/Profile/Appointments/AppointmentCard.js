@@ -83,7 +83,7 @@ const AppointmentCard = ({ form, deleteForm, deleteAndReschedule, first }) => {
                     day: "numeric",
                   }) +
                     " " +
-                    new Date(form.bookedFor).toLocaleTimeString([], {
+                    new Date(form.bookedFor).toLocaleTimeString("en-US", {
                       hour: "2-digit",
                       minute: "2-digit",
                       hour12: true,

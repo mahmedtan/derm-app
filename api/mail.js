@@ -38,7 +38,7 @@ module.exports = async (req, res) => {
             day: "numeric",
           }) +
           " at " +
-          new Date(date).toLocaleTimeString([], {
+          new Date(date).toLocaleTimeString("en-US", {
             hour: "2-digit",
             minute: "2-digit",
             hour12: true,

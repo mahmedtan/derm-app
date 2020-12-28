@@ -35,59 +35,62 @@ const AppointmentCard = ({ form, deleteForm, deleteAndReschedule, first }) => {
               year: "numeric",
             })}
           </Text>
+
           <Box align="center" animation="fadeIn" width="large">
-            <Box gap="medium" pad={{ horizontal: "xlarge" }}>
-              {first && (
+            <Box align="center">
+              <Box gap="medium">
+                {first && (
+                  <Box gap="medium" direction="row-responsive" justify="center">
+                    <Box
+                      width="11rem"
+                      margin={{ left: size !== "small" ? "large" : "none" }}
+                    >
+                      <Box>
+                        <Text weight="bold" size="large">
+                          First Name
+                        </Text>
+                        {form.firstName}
+                      </Box>
+                    </Box>
+
+                    <Box width="11rem">
+                      <Text weight="bold" size="large">
+                        Last Name
+                      </Text>
+                      {form.lastName}
+                    </Box>
+                  </Box>
+                )}
                 <Box gap="medium" direction="row-responsive" justify="center">
                   <Box
                     width="11rem"
+                    align="start"
                     margin={{ left: size !== "small" ? "large" : "none" }}
                   >
                     <Box>
                       <Text weight="bold" size="large">
-                        First Name
+                        Appointment ID
                       </Text>
-                      {form.firstName}
+                      {form.appointmentId}
                     </Box>
                   </Box>
 
                   <Box width="11rem">
                     <Text weight="bold" size="large">
-                      Last Name
+                      Date & Time
                     </Text>
-                    {form.lastName}
+                    {new Date(form.bookedFor).toLocaleDateString("en-US", {
+                      year: "numeric",
+                      month: "short",
+                      day: "numeric",
+                    }) +
+                      " " +
+                      new Date(form.bookedFor).toLocaleTimeString("en-US", {
+                        hour: "2-digit",
+                        minute: "2-digit",
+                        hour12: true,
+                      })}
                   </Box>
-                </Box>
-              )}
-              <Box gap="medium" direction="row-responsive" justify="center">
-                <Box
-                  width="11rem"
-                  align="start"
-                  margin={{ left: size !== "small" ? "large" : "none" }}
-                >
-                  <Box>
-                    <Text weight="bold" size="large">
-                      Appointment ID
-                    </Text>
-                    {form.appointmentId}
-                  </Box>
-                </Box>
-
-                <Box width="11rem">
-                  <Text weight="bold" size="large">
-                    Date & Time
-                  </Text>
-                  {new Date(form.bookedFor).toLocaleDateString("en-US", {
-                    year: "numeric",
-                    month: "short",
-                    day: "numeric",
-                  }) +
-                    " " +
-                    new Date(form.bookedFor).toLocaleTimeString("en-US", {
-                      hour: "2-digit",
-                      minute: "2-digit",
-                      hour12: true,
-                    })}
                 </Box>
               </Box>
             </Box>

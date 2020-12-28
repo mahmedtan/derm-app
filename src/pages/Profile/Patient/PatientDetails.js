@@ -30,7 +30,7 @@ const PatientDetails = ({ setFullName }) => {
       <Card
         pad={{
           vertical: size === "small" ? "medium" : "large",
-          horizontal: "large",
+          horizontal: "medium",
         }}
         width={size === "small" ? "large" : "none"}
         animation="zoomOut"

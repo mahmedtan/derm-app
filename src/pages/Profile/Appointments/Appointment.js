@@ -39,13 +39,7 @@ const Appointment = ({ form, deleteForm, deleteAndReschedule }) => {
         })}
       </Text>
 
-      <Box
-        align="center"
-        fill
-        pad={{ horizontal: "xlarge" }}
-        gap="medium"
-        background="red"
-      >
+      <Box align="center" fill pad={{ horizontal: "xlarge" }} gap="medium">
         <Box
           gap={size == "small" ? "medium" : "xlarge"}
           direction="row-responsive"

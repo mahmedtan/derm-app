@@ -29,7 +29,8 @@ const AppointmentCard = ({ form, deleteForm, deleteAndReschedule, first }) => {
             margin={{ horizontal: "2.3rem", vertical: "medium" }}
             textAlign={size === "small" ? "start" : "center"}
           >
-            Booking for <br />
+            {size !== "small" && "Booking for "}
+            {size !== "small" && <br />}
             {new Date(form.bookedFor).toLocaleDateString("en-US", {
               month: "long",
               day: "numeric",

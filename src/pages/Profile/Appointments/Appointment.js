@@ -31,7 +31,8 @@ const Appointment = ({ form, deleteForm, deleteAndReschedule }) => {
         margin={{ horizontal: "2.3rem", vertical: "medium" }}
         weight="600"
       >
-        Booking for <br />
+        {size !== "small" && "Booking for "}
+        {size !== "small" && <br />}
         {new Date(form.bookedFor).toLocaleDateString("en-US", {
           month: "long",
 

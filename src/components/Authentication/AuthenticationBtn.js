@@ -7,11 +7,11 @@ import LogoutBtn from "./LogoutBtn";
 import { Link } from "react-router-dom";
 
 const AutheticationBtn = () => {
-  const { isAuthenticated } = useAuth0();
+  const { user } = useAuth0();
   const size = useContext(ResponsiveContext);
   const btnSize = size === "small" ? "large" : "medium";
 
-  return isAuthenticated ? (
+  return user ? (
     <Box
       direction="row"
       gap="small"

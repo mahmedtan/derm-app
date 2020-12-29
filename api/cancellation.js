@@ -1,4 +1,5 @@
 const sg = require("@sendgrid/mail");
+const moment = require("moment");
 
 sg.setApiKey(process.env.REACT_APP_SENDGRID_API_KEY);
 
@@ -23,11 +24,7 @@ module.exports = async (req, res) => {
             day: "numeric",
           }) +
           " at " +
-          new Date(date).toLocaleTimeString("en-US", {
-            hour: "2-digit",
-            minute: "2-digit",
-            hour12: true,
-          }),
+          moment(date).format("hh:mm A"),
       },
     };
 

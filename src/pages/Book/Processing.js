@@ -105,8 +105,12 @@ const Processing = () => {
         <NotFound />
       </Layout>
     );
-  if (!submitted) return <Loading />;
-  return "Yes";
+
+  return (
+    <Layout>
+      <Loading />
+    </Layout>
+  );
 };
 
 export default Processing;

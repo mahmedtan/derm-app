@@ -14,7 +14,7 @@ const PatientOld = ({ details, sub, setChange }) => {
     <Box gap="large">
       <Text
         size="xlarge"
-        weight="600"
+        style={{ fontWeight: "600" }}
         margin={{ horizontal: "medium" }}
         alignSelf={size === "small" ? "start" : "center"}
       >

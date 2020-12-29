@@ -1,11 +1,13 @@
 import React from "react";
-import { Anchor } from "grommet";
+import { Anchor, Text } from "grommet";
 import { Link } from "react-router-dom";
 
 const NavButton = ({ to, label }) => {
   return (
-    <Link to={to} component={Anchor}>
-      {label}
+    <Link to={to}>
+      <Text color="text" style={{ fontWeight: "500" }}>
+        {label}
+      </Text>
     </Link>
   );
 };

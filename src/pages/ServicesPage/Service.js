@@ -17,6 +17,7 @@ const Service = ({ service, serviceTypes, size }) => {
   useEffect(() => {
     service && dispatch(selectItem(service.serviceType.slug, service.slug));
   }, [service, dispatch]);
+
   if (service === undefined) return <PageNotFound />;
   if (!service) return <Loading />;
 

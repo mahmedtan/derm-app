@@ -23,7 +23,6 @@ const Book = () => {
   const dispatch = useDispatch();
   const history = useHistory();
   const [loading, setLoading] = useState(false);
-  const [waiting, setWaiting] = useState(true);
 
   const {
     activeIndex,
@@ -40,17 +39,16 @@ const Book = () => {
       images,
     })
   );
-  useEffect(() => {}, [activeIndex]);
 
   useEffect(() => {
-    setWaiting(true);
-    setTimeout(() => setWaiting(false), 1);
+    console.log("heyy");
+    window.scrollTo(0, 0);
   }, [activeIndex]);
+
   if (!(procedures && consultations && images)) {
     return <Loading />;
   }
 
-  if (waiting) return <Loading />;
   if (loading)
     return (
       <Box

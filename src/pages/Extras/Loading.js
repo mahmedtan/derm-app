@@ -14,7 +14,7 @@ export default function Loading() {
         height="large"
         background={uiTheme === "light" ? "white" : "#263040"}
       >
-        <Spinner color={uiTheme === "light" ? "black" : "whitesmoke"} />
+        {/* <Spinner color={uiTheme === "light" ? "black" : "whitesmoke"} /> */}
       </Box>
     </Main>
   );

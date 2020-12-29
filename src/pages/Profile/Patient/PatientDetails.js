@@ -1,6 +1,7 @@
 import { useAuth0 } from "@auth0/auth0-react";
 import { Box, Card, ResponsiveContext } from "grommet";
 import React, { useContext, useEffect, useState } from "react";
+import Spinner from "../../../components/Utils/Spinner";
 import { getPatientDetails } from "../../../services/patients";
 import Loading from "../../Extras/Loading";
 import PatientNew from "./PatientNew";
@@ -23,7 +24,7 @@ const PatientDetails = ({ setFullName }) => {
   useEffect(() => {
     details && details.fullName && setFullName(details.fullName);
   }, [details, setFullName]);
-  if (!details) return <Loading />;
+  if (!details) return null;
 
   return (
     <Box align="center" pad={{ horizontal: "large" }}>

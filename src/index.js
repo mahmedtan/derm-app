@@ -1,4 +1,5 @@
 import React from "react";
+import ScrollToTop from "./components/Utils/ScrollToTop";
 import ReactDOM from "react-dom";
 import "normalize.css";
 import "./styles/style.css";
@@ -44,6 +45,7 @@ ReactDOM.render(
   <Provider store={store}>
     <Router>
       <Auth0ProviderWithHistory>
+        <ScrollToTop />
         <App />
       </Auth0ProviderWithHistory>
     </Router>

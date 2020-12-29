@@ -57,8 +57,6 @@ function App() {
     }
   }, [dispatch]);
 
-  if (isLoading) return <Loading />;
-
   return (
     <Grommet theme={theme} themeMode={uiTheme}>
       <Switch>

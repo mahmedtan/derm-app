@@ -46,7 +46,7 @@ const phoneMask = [
     placeholder: "xxxx",
   },
 ];
-const StepTwo = () => {
+const StepFour = () => {
   return (
     <Box animation="fadeIn">
       <Box direction="row-responsive" gap="small" width="medium">
@@ -104,4 +104,4 @@ const StepTwo = () => {
   );
 };
 
-export default StepTwo;
+export default StepFour;

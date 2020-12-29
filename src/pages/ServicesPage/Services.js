@@ -6,6 +6,7 @@ import Service from "./Service";
 import { useSelector } from "react-redux";
 import Loading from "../Extras/Loading";
 import SidebarServices from "../../components/Sidebars/SidebarServices";
+import Layout from "../../components/Utils/Layout";
 
 const Services = () => {
   const size = useContext(ResponsiveContext);
@@ -19,7 +20,12 @@ const Services = () => {
       ? services.find((service) => service.slug === match.params.slug)
       : undefined;
 
-  if (!serviceTypes) return <Loading />;
+  if (!serviceTypes)
+    return (
+      <Layout>
+        <Loading />
+      </Layout>
+    );
 
   return (
     <Box>

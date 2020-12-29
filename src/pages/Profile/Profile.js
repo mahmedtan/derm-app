@@ -34,7 +34,12 @@ const Profile = () => {
     }
   }, []);
 
-  if (!forms) return <Loading />;
+  if (!forms)
+    return (
+      <Layout>
+        <Loading />
+      </Layout>
+    );
 
   return (
     isAuthenticated && (

@@ -2,7 +2,8 @@ import React, { useContext } from "react";
 import BlockContent from "@sanity/block-content-to-react";
 import getYouTubeId from "get-youtube-id";
 import YouTube from "react-youtube";
-import { ResponsiveContext } from "grommet";
+import { Box, ResponsiveContext } from "grommet";
+import ScrollToTopOnMount from "./ScrollToTopOnMount";
 
 const BlockContentMain = ({ body, ...extras }) => {
   const size = useContext(ResponsiveContext);

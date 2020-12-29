@@ -25,7 +25,7 @@ const AppointmentCard = ({ form, deleteForm, deleteAndReschedule, first }) => {
         <Box>
           <Text
             size={size === "small" ? "xlarge" : "xlarge"}
-            weight="600"
+            style={{ fontWeight: "600" }}
             margin={{ horizontal: "2.3rem", vertical: "medium" }}
             textAlign={size === "small" ? "start" : "center"}
           >
@@ -53,7 +53,7 @@ const AppointmentCard = ({ form, deleteForm, deleteAndReschedule, first }) => {
                       margin={{ left: size !== "small" ? "large" : "none" }}
                     >
                       <Box>
-                        <Text weight="500" size="large">
+                        <Text style={{ fontWeight: "500" }} size="large">
                           First Name
                         </Text>
                         {form.firstName}
@@ -61,7 +61,7 @@ const AppointmentCard = ({ form, deleteForm, deleteAndReschedule, first }) => {
                     </Box>
 
                     <Box width="11rem">
-                      <Text weight="500" size="large">
+                      <Text style={{ fontWeight: "500" }} size="large">
                         Last Name
                       </Text>
                       {form.lastName}
@@ -75,7 +75,7 @@ const AppointmentCard = ({ form, deleteForm, deleteAndReschedule, first }) => {
                     margin={{ left: size !== "small" ? "large" : "none" }}
                   >
                     <Box>
-                      <Text weight="500" size="large">
+                      <Text style={{ fontWeight: "500" }} size="large">
                         Appointment ID
                       </Text>
                       {form.appointmentId}
@@ -83,7 +83,7 @@ const AppointmentCard = ({ form, deleteForm, deleteAndReschedule, first }) => {
                   </Box>
 
                   <Box width="11rem">
-                    <Text weight="500" size="large">
+                    <Text style={{ fontWeight: "500" }} size="large">
                       Date & Time
                     </Text>
                     {new Date(form.bookedFor).toLocaleDateString("en-US", {

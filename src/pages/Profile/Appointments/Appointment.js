@@ -29,7 +29,7 @@ const Appointment = ({ form, deleteForm, deleteAndReschedule }) => {
         alignSelf={size === "small" ? "start" : "center"}
         textAlign={size === "small" ? "start" : "center"}
         margin={{ horizontal: "2.3rem", vertical: "medium" }}
-        weight="600"
+        style={{ fontWeight: "600" }}
       >
         {size !== "small" && "Booking for "}
         {size !== "small" && <br />}
@@ -53,14 +53,14 @@ const Appointment = ({ form, deleteForm, deleteAndReschedule }) => {
         >
           <Box width="small">
             <Box margin={{ left: size !== "small" ? "large" : "none" }}>
-              <Text weight="500" size="large">
+              <Text style={{ fontWeight: "500" }} size="large">
                 First Name
               </Text>
               {form.firstName}
             </Box>
           </Box>
           <Box width="small">
-            <Text weight="500" size="large">
+            <Text style={{ fontWeight: "500" }} size="large">
               Last Name
             </Text>
             {form.lastName}
@@ -74,14 +74,14 @@ const Appointment = ({ form, deleteForm, deleteAndReschedule }) => {
         >
           <Box width="small">
             <Box margin={{ left: size !== "small" ? "large" : "none" }}>
-              <Text weight="500" size="large">
+              <Text style={{ fontWeight: "500" }} size="large">
                 Email Address
               </Text>
               {form.emailAddress}
             </Box>
           </Box>
           <Box width="small">
-            <Text weight="500" size="large">
+            <Text style={{ fontWeight: "500" }} size="large">
               Date & Time
             </Text>
             {new Date(form.bookedFor).toLocaleDateString("en-US", {
@@ -103,14 +103,14 @@ const Appointment = ({ form, deleteForm, deleteAndReschedule }) => {
         >
           <Box width="small" align="start">
             <Box margin={{ left: size !== "small" ? "large" : "none" }}>
-              <Text weight="500" size="large">
+              <Text style={{ fontWeight: "500" }} size="large">
                 Phone Number
               </Text>
               {form.phoneNumber}
             </Box>
           </Box>
           <Box width="small">
-            <Text weight="500" size="large">
+            <Text style={{ fontWeight: "500" }} size="large">
               Appointment ID
             </Text>
             {form.appointmentId}

@@ -1,17 +1,24 @@
 import { Box, Heading, ResponsiveContext, Text } from "grommet";
 import React, { useContext } from "react";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import Column from "./Column";
 import Loading from "../../Extras/Loading";
+import { useEffect } from "react";
 
 const ServicesMain = () => {
   const [serviceTypes] = useSelector(({ serviceTypes }) => [serviceTypes]);
+  const dispatch = useDispatch();
 
   const size = useContext(ResponsiveContext);
+  useEffect(() => {
+    dispatch({ type: "RESET_FORM" });
+    dispatch({ type: "RESET_INDEX" });
+    dispatch({ type: "RESET_IMAGES" });
+    dispatch({ type: "RESET_DATE" });
+  }, []);
 
   if (!serviceTypes) return <Loading />;
 
-  console.log(serviceTypes);
   const divider = serviceTypes.length / 3;
 
   return (

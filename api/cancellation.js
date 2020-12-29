@@ -16,15 +16,7 @@ module.exports = async (req, res) => {
         subject: "Appointment Cancellation",
         fullName,
 
-        date:
-          new Date(date).toLocaleDateString("en-US", {
-            weekday: "long",
-            year: "numeric",
-            month: "long",
-            day: "numeric",
-          }) +
-          " at " +
-          moment(date).format("hh:mm A"),
+        date: date,
       },
     };
 

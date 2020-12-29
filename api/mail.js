@@ -32,15 +32,7 @@ module.exports = async (req, res) => {
         consultations: getConsultations(ids, consultations),
         subject: "Appointment Confirmation",
         fullName: `${firstName} ${lastName}`,
-        date:
-          new Date(date).toLocaleDateString("en-US", {
-            weekday: "long",
-            year: "numeric",
-            month: "long",
-            day: "numeric",
-          }) +
-          " at " +
-          moment(date).format("hh:mm A"),
+        date: date,
       },
     };
 

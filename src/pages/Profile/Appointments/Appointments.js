@@ -12,7 +12,18 @@ const Appointments = ({ forms }) => {
     removeForm(id).then((res) => {
       Axios.post("/api/cancellation", {
         emailAddress,
-        date,
+        date:
+          new Date(date).toLocaleDateString("en-US", {
+            year: "numeric",
+            month: "long",
+            day: "numeric",
+          }) +
+          " at " +
+          new Date(date).toLocaleTimeString("en-US", {
+            hour: "2-digit",
+            minute: "2-digit",
+            hour12: true,
+          }),
         fullName,
       }).then((res) => history.push("/profile"));
     });
@@ -20,13 +31,26 @@ const Appointments = ({ forms }) => {
 
   const deleteAndRescheduleForm = (id, emailAddress, date, fullName) => {
     removeForm(id).then((res) => {
-      Axios.post("/api/cancellation", { emailAddress, date, fullName }).then(
-        (res) => {
-          // history.createHref("/book-now");
-          window.scrollTo(0, 0);
-          history.push("/book-now");
-        }
-      );
+      Axios.post("/api/cancellation", {
+        emailAddress,
+        date:
+          new Date(date).toLocaleDateString("en-US", {
+            year: "numeric",
+            month: "long",
+            day: "numeric",
+          }) +
+          " at " +
+          new Date(date).toLocaleTimeString("en-US", {
+            hour: "2-digit",
+            minute: "2-digit",
+            hour12: true,
+          }),
+        fullName,
+      }).then((res) => {
+        // history.createHref("/book-now");
+        window.scrollTo(0, 0);
+        history.push("/book-now");
+      });
     });
   };
 

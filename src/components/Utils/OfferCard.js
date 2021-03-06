@@ -26,7 +26,7 @@ const OfferCard = ({ title, price, time, description, _id, type, item }) => {
       pad={size === "small" ? "large" : "medium"}
       justify="center"
       border={selected && { color: "#8E677A", size: "small" }}
-      elevation={selected ? "large" : "small"}
+      elevation={selected ? "xlarge" : "large"}
       round={size === "small" ? "medium" : "small"}
     >
       <Box direction="row" justify="between">

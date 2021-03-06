@@ -6,7 +6,7 @@ function ProgressBarSteps({ total, active }) {
     <Box direction="row" gap="small">
       {total.map((item, index) => (
         <Box
-          key={item.title}
+          key={item.description}
           width="10px"
           height="10px"
           background={index < active ? "dark-2" : "#eee"}

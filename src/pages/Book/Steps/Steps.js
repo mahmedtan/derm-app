@@ -5,8 +5,8 @@ import StepThree from "./StepThree";
 
 const Steps = [
   {
-    title: "Services",
-    description: "Make a selection",
+    title: "Appointment",
+    description: "Book Online",
     item: <StepOne />,
   },
   {
@@ -15,7 +15,7 @@ const Steps = [
     item: <StepTwo />,
   },
   {
-    title: "Appointment",
+    title: "Appointment ",
     description: "Select your date and time of visit",
     item: <StepThree />,
   },

@@ -15,7 +15,7 @@ const StepHeader = () => {
   const activeIndex = useSelector(({ activeIndex }) => activeIndex);
 
   return (
-    <Box gap="large" align="start" justify="center">
+    <Box gap="large" align="start" justify="center" direction="column-reverse">
       <Box fill align="center">
         {size === "small" &&
           (activeIndex !== 0 ? (
@@ -38,6 +38,7 @@ const StepHeader = () => {
       <Box
         direction="row"
         fill="horizontal"
+        gap="large"
         align="center"
         justify={size === "small" ? "center" : "between"}
       >
@@ -57,9 +58,7 @@ const StepHeader = () => {
               />
             </Link>
           ))}
-        {/* <Text textAlign="center" weight="normal">{`Step ${activeIndex + 1} of ${
-          Steps.length
-        }`}</Text> */}
+
         <ProgressBarSteps total={Steps} active={activeIndex + 1} />
       </Box>
     </Box>

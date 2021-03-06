@@ -36,7 +36,8 @@ const NavFooter = () => {
               align="center"
               border="between"
               width={{ min: "6rem" }}
-              gap="small"
+              direction={size === "small" ? "row" : "column"}
+              gap={size === "small" ? "medium" : "small"}
             >
               <Link to="/" component={Anchor}>
                 <Text color="brand" style={{ fontFamily: "Jost" }}>

@@ -4,12 +4,15 @@ import React, { useContext } from "react";
 import SignupBtn from "./SignupBtn";
 import LoginBtn from "./LoginBtn";
 import LogoutBtn from "./LogoutBtn";
+import { useSelector } from "react-redux";
+
 import { Link } from "react-router-dom";
 
 const AutheticationBtn = () => {
   const { user } = useAuth0();
   const size = useContext(ResponsiveContext);
   const btnSize = size === "small" ? "large" : "medium";
+  const uiTheme = useSelector(({ uiTheme }) => uiTheme);
 
   return user ? (
     <Box
@@ -20,11 +23,7 @@ const AutheticationBtn = () => {
     >
       <Link to="/profile">
         <Box elevation="large" round="large">
-          <Button
-            label="Profile"
-            size={btnSize}
-            style={{ background: "#E5DCE0" }}
-          />
+          <Button label="Profile" size={btnSize} secondary />
         </Box>
       </Link>
       <Box>

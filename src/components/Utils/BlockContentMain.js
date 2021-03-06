@@ -3,10 +3,11 @@ import BlockContent from "@sanity/block-content-to-react";
 import getYouTubeId from "get-youtube-id";
 import YouTube from "react-youtube";
 import { Box, ResponsiveContext } from "grommet";
-import ScrollToTopOnMount from "./ScrollToTopOnMount";
+import { useSelector } from "react-redux";
 
 const BlockContentMain = ({ body, ...extras }) => {
   const size = useContext(ResponsiveContext);
+  const uiTheme = useSelector(({ uiTheme }) => uiTheme);
 
   const serializers = {
     types: {
@@ -21,7 +22,26 @@ const BlockContentMain = ({ body, ...extras }) => {
         );
       },
     },
+    marks: {
+      link: ({ mark, children }) => {
+        // Read https://css-tricks.com/use-target_blank/
+        const { blank, href } = mark;
+        return blank ? (
+          <a href={href} target="_blank" rel="noopener">
+            {children}
+          </a>
+        ) : (
+          <a
+            href={href}
+            style={{ color: uiTheme === "light" ? "#694F5D" : "#B9A2AE" }}
+          >
+            {children}
+          </a>
+        );
+      },
+    },
   };
+
   return (
     <BlockContent
       blocks={body}

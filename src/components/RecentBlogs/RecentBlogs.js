@@ -23,7 +23,9 @@ const RecentBlogs = ({ blogs }) => {
       background="brand-secondary"
       pad="medium"
     >
-      <Heading color="#131600">Recent Blogs</Heading>
+      <Heading color="#131600" level="2">
+        Recent Blogs
+      </Heading>
       <Box direction="row-responsive" gap="small">
         {recentBlogs.map((blog) => (
           <RecentBlogCard {...blog} key={blog.slug} />

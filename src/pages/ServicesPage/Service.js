@@ -18,8 +18,7 @@ const Service = ({ service, serviceTypes, size }) => {
     service && dispatch(selectItem(service.serviceType.slug, service.slug));
   }, [service, dispatch]);
 
-  if (service === undefined) return <PageNotFound />;
-  if (!service) return <Loading />;
+  if (service === undefined) return <Loading />;
 
   return (
     <Box align="center" margin={{ vertical: "small" }} fill>

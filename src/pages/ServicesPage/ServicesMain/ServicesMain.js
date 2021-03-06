@@ -24,7 +24,9 @@ const ServicesMain = () => {
   return (
     <Box pad="large" align="center" gap="xlarge">
       <Box gap="small" align="center">
-        <Heading margin="none">Services</Heading>
+        <Heading margin="none" level="2">
+          Services
+        </Heading>
         <Text>Click on categories below to view services</Text>
       </Box>
 

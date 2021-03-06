@@ -25,7 +25,9 @@ const Comments = () => {
   if (!remarks) return <Spinner />;
   return (
     <Box fill="horizontal" pad="large" background="background-back">
-      <Heading alignSelf="center">Reviews</Heading>
+      <Heading alignSelf="center" level="2">
+        Reviews
+      </Heading>
       <Slider slidesToShow={1} {...settings}>
         {remarks.map((item) => (
           <Comment key={item._id} {...item} />

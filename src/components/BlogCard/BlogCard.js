@@ -1,5 +1,14 @@
 import React from "react";
-import { Heading, Text, Box, Image, Avatar } from "grommet";
+import {
+  Heading,
+  Text,
+  Box,
+  Image,
+  Avatar,
+  Paragraph,
+  Button,
+  Anchor,
+} from "grommet";
 import Linker from "../Utils/Linker";
 
 const BlogCard = ({ blog }) => {
@@ -10,18 +19,27 @@ const BlogCard = ({ blog }) => {
           <Image fit="cover" src={blog.mainImage} a11yTitle="bridge" />
         </Box>
       </Linker>
+
       <Box>
         <Linker to={`/blogs/${blog.slug}`}>
-          <Heading level={3} color="text">
+          <Heading level={3} color="text" style={{ textAlign: "center" }}>
             {blog.title}
           </Heading>
         </Linker>
         <Box direction="row" flex align="center" justify="start" gap="medium">
           <Avatar src={blog.author.image} elevation="medium" />
-          <Text>
-            <strong>{blog.author.name}</strong>
-          </Text>
+          <Box>
+            <Text>
+              <strong>{blog.author.name}</strong>
+            </Text>
+
+            <Text color="brand">{blog.author.bio}</Text>
+          </Box>
         </Box>
+        <Text margin={{ vertical: "medium" }}>
+          {blog.description}{" "}
+          <Anchor label="learn more" href={`/blogs/${blog.slug}`} />
+        </Text>
       </Box>
     </Box>
   );

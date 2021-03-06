@@ -1,11 +1,11 @@
 import Axios from "axios";
 import { Box, Heading } from "grommet";
-import React from "react";
+import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
 import { removeForm } from "../../../services/forms";
 import AppointmentCard from "./AppointmentCard";
 
-const Appointments = ({ forms }) => {
+const Appointments = ({ forms, cancel }) => {
   const history = useHistory();
 
   const deleteForm = (id, emailAddress, date, fullName) => {
@@ -25,7 +25,10 @@ const Appointments = ({ forms }) => {
             hour12: true,
           }),
         fullName,
-      }).then((res) => history.push("/profile"));
+      }).then((res) => {
+        window.localStorage.setItem("cancel", true);
+        history.push("/profile");
+      });
     });
   };
 

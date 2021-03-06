@@ -7,14 +7,14 @@ const client = sanityClient({
 
 export const getAllBlogs = async () => {
   const blogs = await client.fetch(
-    '*[_type=="post"] | order(_createdAt desc){title,"slug":slug.current,"mainImage":mainImage.asset->url,author->{name, "image":image.asset->url}}'
+    '*[_type=="post"] | order(_createdAt desc){title,"slug":slug.current,"mainImage":mainImage.asset->url,author->{name, "image":image.asset->url, bio}, description}'
   );
   return blogs;
 };
 
 export const getFullBlog = async (slug) => {
   const blog = await client.fetch(
-    `*[_type=="post" && slug.current == $slug] {title,"mainImage":mainImage.asset->url,author->{name, "image":image.asset->url},body}`,
+    `*[_type=="post" && slug.current == $slug] {title,"mainImage":mainImage.asset->url,author->{name, "image":image.asset->url, bio},body}`,
     {
       slug,
     }

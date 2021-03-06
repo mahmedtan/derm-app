@@ -25,7 +25,9 @@ const Blog = () => {
     <Layout>
       <Box align="center" margin={{ horizontal: "large", bottom: "large" }}>
         <Box width="large" gap="medium">
-          <Heading>{blog.title}</Heading>
+          <Heading level="2" textAlign="center">
+            {blog.title}
+          </Heading>
           <Image src={blog.mainImage} fit="contain" />
           <Box
             direction="row"
@@ -36,9 +38,12 @@ const Blog = () => {
             gap="medium"
           >
             <Avatar src={blog.author.image} elevation="medium" />
-            <Text>
-              <strong>{blog.author.name}</strong>
-            </Text>
+            <Box>
+              <Text>
+                <strong>{blog.author.name}</strong>
+              </Text>
+              <Text color="brand">{blog.author.bio}</Text>
+            </Box>
           </Box>
           <BlockContentMain body={blog.body} />
         </Box>

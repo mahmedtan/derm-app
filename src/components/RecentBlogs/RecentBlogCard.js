@@ -1,6 +1,7 @@
 import React from "react";
-import { Text, Box, Image } from "grommet";
+import { Text, Box, Image, Anchor } from "grommet";
 import Linker from "../Utils/Linker";
+import { Link } from "react-router-dom";
 
 const RecentBlogCard = (blog) => {
   return (
@@ -11,12 +12,18 @@ const RecentBlogCard = (blog) => {
         </Box>
       </Linker>
 
-      <Box>
-        <Linker to={`/blogs/${blog.slug}`}>
-          <Text size="xlarge" color="text">
-            {blog.title}
-          </Text>
-        </Linker>
+      <Box align="center">
+        <Anchor
+          size="xlarge"
+          style={{
+            textAlign: "center",
+            textDecoration: "none",
+            fontWeight: "normal",
+          }}
+          href={`/blogs/${blog.slug}`}
+        >
+          {blog.title}
+        </Anchor>
       </Box>
     </Box>
   );

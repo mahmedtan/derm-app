@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import CancellationBanner from "./CancellationBanner";
 import { useAuth0 } from "@auth0/auth0-react";
 import { Box, Heading, Text } from "grommet";
 import Layout from "../../components/Utils/Layout";
@@ -8,6 +9,7 @@ import Appointments from "./Appointments/Appointments";
 import Loading from "../Extras/Loading";
 import PatientDetails from "./Patient/PatientDetails";
 import { useHistory } from "react-router-dom";
+import ScrollToTop from "../../components/Utils/ScrollToTop";
 
 const Profile = () => {
   const { user, isAuthenticated } = useAuth0();
@@ -33,6 +35,10 @@ const Profile = () => {
       });
     }
   }, []);
+  useEffect(() => {
+    if (window.localStorage.getItem("cancel"))
+      setTimeout(() => window.localStorage.removeItem("cancel"), 20000);
+  }, []);
 
   if (!forms)
     return (
@@ -44,6 +50,7 @@ const Profile = () => {
   return (
     isAuthenticated && (
       <Layout>
+        <ScrollToTop />
         <Box
           align="center"
           height={{ min: "90vh" }}
@@ -65,6 +72,9 @@ const Profile = () => {
           </Box>
 
           {!user.email_verified && <VerifyBanner user={user} />}
+
+          {window.localStorage.getItem("cancel") && <CancellationBanner />}
+
           <PatientDetails
             setFullName={(fullName) => {
               setFullName(fullName);

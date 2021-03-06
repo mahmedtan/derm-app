@@ -25,18 +25,33 @@ const ResponsiveSlider = () => {
     <LinkNext className={props.className} onClick={props.onClick} />
   );
 
-  const settings = {
-    slidesToScroll: size === "small" ? 1 : 2,
-    speed: 1000,
-    autoplaySpeed: 3000,
-    swipe: true,
-    swipeToScroll: true,
-    arrows: size !== "small",
-    autoplay: true,
-    dots: true,
-    prevArrow: <PrevArrow />,
-    nextArrow: <NextArrow />,
-  };
+  const settings =
+    size === "small"
+      ? {
+          slidesToScroll: size === "small" ? 1 : 2,
+          swipe: true,
+          autoplaySpeed: 4000,
+          swipeToScroll: true,
+          arrows: size !== "small",
+          autoplay: true,
+          dots: true,
+          prevArrow: <PrevArrow />,
+          nextArrow: <NextArrow />,
+        }
+      : {
+          slidesToScroll: size === "small" ? 1 : 2,
+          speed: 2000,
+          autoplaySpeed: 4000,
+          swipe: true,
+          swipeToScroll: true,
+          pauseOnHover: false,
+
+          arrows: size !== "small",
+          autoplay: true,
+          dots: true,
+          prevArrow: <PrevArrow />,
+          nextArrow: <NextArrow />,
+        };
 
   return (
     <Box width="xlarge" pad={{ horizontal: "medium" }}>

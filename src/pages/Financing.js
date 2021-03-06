@@ -29,7 +29,7 @@ const Finance = () => {
       <Box width="large" pad="large" align="center" gap="small">
         <BlockContentMain body={financing.body} />
         <Button
-          href="https://google.com"
+          href="https://www.carecredit.com/apply/"
           primary
           label="Apply Now"
           target="_blank"

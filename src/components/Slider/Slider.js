@@ -26,12 +26,11 @@ const ResponsiveSlider = () => {
   );
 
   const settings = {
-    slidesToScroll: size === "small" ? 1 : 3,
-    speed: 2500,
-    autoplaySpeed: 5000,
+    slidesToScroll: size === "small" ? 1 : 2,
+    speed: 1000,
+    autoplaySpeed: 3000,
     swipe: true,
     swipeToScroll: true,
-    pauseOnHover: true,
     arrows: size !== "small",
     autoplay: true,
     dots: true,

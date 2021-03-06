@@ -26,7 +26,7 @@ const Service = ({ service, serviceTypes, size }) => {
       <Box
         width="large"
         flex="grow"
-        gap="large"
+        gap="medium"
         pad={{
           horizontal: size === "small" ? "large" : "4rem",
           vertical: "large",
@@ -37,9 +37,9 @@ const Service = ({ service, serviceTypes, size }) => {
         </Heading>
 
         {service.slug === "injectables" && (
-          <Box gap={size === "small" ? "large" : "medium"}>
+          <Box gap={size === "small" ? "large" : "large"}>
             <Text size="large" textAlign="center" margin="none">
-              Select desired areas to view available treatment options
+              Available Treatment Options
             </Text>
             <FaceVisual />
           </Box>

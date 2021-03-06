@@ -34,7 +34,6 @@ function App() {
   const uiTheme = useSelector(({ uiTheme }) => uiTheme);
   const blogs = useSelector((state) => state.blogs);
   const dispatch = useDispatch();
-  const { isLoading } = useAuth0();
 
   useEffect(() => {
     dispatch(initializeBlogs());
@@ -48,12 +47,6 @@ function App() {
     if (formValues && date) {
       dispatch(changeValues(JSON.parse(formValues)));
       dispatch(changeDate(new Date(date)));
-    }
-    if (window.localStorage.getItem("uiTheme")) {
-      dispatch({
-        type: "SET_THEME",
-        uiTheme: window.localStorage.getItem("uiTheme"),
-      });
     }
   }, [dispatch]);
 

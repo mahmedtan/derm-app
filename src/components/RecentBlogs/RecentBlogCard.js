@@ -13,7 +13,7 @@ const RecentBlogCard = (blog) => {
 
       <Box>
         <Linker to={`/blogs/${blog.slug}`}>
-          <Text size="xlarge" color="text" textAlign="center">
+          <Text size="xlarge" color="text">
             {blog.title}
           </Text>
         </Linker>

@@ -23,8 +23,9 @@ const Pamphlet = () => {
             color="#0f1f25"
             textAlign="center"
             level={size === "small" ? "2" : "1"}
+            style={{ fontFamily: "Metric" }}
           >
-            Schedule Free Cosmetic Evaluation!
+            Schedule <br /> Your Free Cosmetic Evaluation!
           </Heading>
           <Box gap="small" direction="row" align="center" justify="center">
             <Button

@@ -7,6 +7,7 @@ import { Box, Button, Text, ResponsiveContext } from "grommet";
 
 import { decrementIndex } from "../../reducers/indexReducer";
 import { useDispatch, useSelector } from "react-redux";
+import ProgressBarSteps from "./ProgressBarSteps";
 
 const StepHeader = () => {
   const dispatch = useDispatch();
@@ -56,9 +57,10 @@ const StepHeader = () => {
               />
             </Link>
           ))}
-        <Text textAlign="center" weight="normal">{`Step ${activeIndex + 1} of ${
+        {/* <Text textAlign="center" weight="normal">{`Step ${activeIndex + 1} of ${
           Steps.length
-        }`}</Text>
+        }`}</Text> */}
+        <ProgressBarSteps total={Steps} active={activeIndex + 1} />
       </Box>
     </Box>
   );

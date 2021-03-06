@@ -20,7 +20,11 @@ const AutheticationBtn = () => {
     >
       <Link to="/profile">
         <Box elevation="large" round="large">
-          <Button label="Profile" size={btnSize} />
+          <Button
+            label="Profile"
+            size={btnSize}
+            style={{ background: "#E5DCE0" }}
+          />
         </Box>
       </Link>
       <Box>

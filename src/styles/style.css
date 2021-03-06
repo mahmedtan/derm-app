@@ -27,3 +27,11 @@ p {
 .is-scrollLocked {
   overflow: hidden;
 }
+
+h1 {
+  font-family: Comfortaa;
+}
+
+h2 {
+  font-family: nunito;
+}

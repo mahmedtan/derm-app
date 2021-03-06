@@ -19,12 +19,12 @@ const ContactUs = () => {
   if (!contactUs) return <Loading />;
 
   const data = [
-    { day: "Monday", timings: "9AM to 7PM" },
-    { day: "Tuesday", timings: "9AM to 7PM" },
-    { day: "Wednesday", timings: "9AM to 7PM" },
-    { day: "Thursday", timings: "9AM to 7PM" },
-    { day: "Friday", timings: "9AM to 7PM" },
-    { day: "Saturday", timings: "12PM to 6PM" },
+    { day: "Monday", timings: "9 AM to 7 PM" },
+    { day: "Tuesday", timings: "9 AM to 7 PM" },
+    { day: "Wednesday", timings: "9 AM to 7 PM" },
+    { day: "Thursday", timings: "9 AM to 7 PM" },
+    { day: "Friday", timings: "9 AM to 7 PM" },
+    { day: "Saturday", timings: "12 PM to 6 PM" },
   ];
 
   return (
@@ -90,7 +90,7 @@ const ContactUs = () => {
 
           <List data={data} primaryKey="day" secondaryKey="timings" />
           <Button
-            label="Make a Reservation"
+            label="Schedule a Visit"
             primary
             fill="horizontal"
             href="/book-now"

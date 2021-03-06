@@ -29,7 +29,7 @@ const StoryCard = ({ image, name, description, services }) => {
         gap={size === "small" ? "medium" : "small"}
         align={size === "small" ? "center" : "start"}
       >
-        <Box style={{ fontFamily: "sans-serif", fontSize: "1.5rem" }}>
+        <Box style={{ fontFamily: "nunito", fontSize: "1.5rem" }}>
           <strong>{name}</strong>
         </Box>
         <Text textAlign={size === "small" ? "center" : "start"}>

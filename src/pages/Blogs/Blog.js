@@ -25,10 +25,12 @@ const Blog = () => {
     <Layout>
       <Box align="center" margin={{ horizontal: "large", bottom: "large" }}>
         <Box width="large" gap="medium">
-          <Heading level="2" textAlign="center">
+          <Heading level="3" textAlign="center">
             {blog.title}
           </Heading>
-          <Image src={blog.mainImage} fit="contain" />
+          <Box width="45rem" height="25rem" align="center" alignSelf="center">
+            <Image src={blog.mainImage} fit="contain" />
+          </Box>
           <Box
             direction="row"
             flex

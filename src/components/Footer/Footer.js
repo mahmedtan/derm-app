@@ -141,14 +141,11 @@ const NavFooter = () => {
           </Box>
         </Box>
 
-        <Box
-          margin={{ bottom: size === "small" ? "8rem" : "none" }}
-          align="center"
-          gap="small"
-        >
+        <Box align="center" gap="small">
           <Text size={size === "small" ? "small" : "medium"}>
-            <Anchor>Privacy Policy </Anchor> |{" "}
-            <Anchor>Non-Discrimination Policy </Anchor>
+            <Link to="/privacy-policy" component={Anchor}>
+              Privacy Policy{" "}
+            </Link>
           </Text>
 
           <Text>©{new Date().getFullYear()}, CHIC Derm & Aesthetics</Text>

@@ -11,8 +11,8 @@ export default function Blogs({ blogs }) {
 
   return (
     <Layout>
-      <Box animation="fadeIn" margin="large" align="center" gap="medium">
-        <Heading level={1} alignSelf="center">
+      <Box animation="fadeIn" margin="large" align="center" gap="small">
+        <Heading level={2} alignSelf="center">
           Latest Blogs
         </Heading>
 

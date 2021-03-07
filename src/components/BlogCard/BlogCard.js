@@ -13,7 +13,7 @@ import Linker from "../Utils/Linker";
 
 const BlogCard = ({ blog }) => {
   return (
-    <Box width="large" margin={{ bottom: "xlarge" }}>
+    <Box width="40rem" margin={{ bottom: "large" }}>
       <Linker to={`/blogs/${blog.slug}`}>
         <Box elevation="medium" height="medium" overflow="hidden" round="small">
           <Image fit="cover" src={blog.mainImage} a11yTitle="bridge" />
@@ -22,7 +22,7 @@ const BlogCard = ({ blog }) => {
 
       <Box>
         <Linker to={`/blogs/${blog.slug}`}>
-          <Heading level={3} color="text" style={{ textAlign: "center" }}>
+          <Heading level={4} color="text">
             {blog.title}
           </Heading>
         </Linker>
@@ -33,13 +33,25 @@ const BlogCard = ({ blog }) => {
               <strong>{blog.author.name}</strong>
             </Text>
 
-            <Text color="brand">{blog.author.bio}</Text>
+            <Text color="brand" style={{ textAlign: "justify" }}>
+              {blog.author.bio}
+            </Text>
           </Box>
         </Box>
-        <Text margin={{ vertical: "medium" }}>
-          {blog.description}{" "}
-          <Anchor label="learn more" href={`/blogs/${blog.slug}`} />
-        </Text>
+        <Box width="40rem">
+          <Text
+            margin={{ vertical: "medium" }}
+            style={{ textAlign: "justify" }}
+          >
+            {blog.description}
+            <Anchor
+              label="learn more"
+              href={`/blogs/${blog.slug}`}
+              color="brand"
+              style={{ fontWeight: "bold" }}
+            />
+          </Text>
+        </Box>
       </Box>
     </Box>
   );

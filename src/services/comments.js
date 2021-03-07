@@ -6,18 +6,19 @@ const client = sanityClient({
   useCdn: true, // `false` if you want to ensure fresh data
 });
 
-export const postAComment = async ({ patientName, remarks }) => {
+export const postAComment = async ({ patientName, remarks, rated }) => {
   const res = await client.create({
     _type: "comment",
     patientName,
     remarks,
+    rating: rated,
     show: false,
   });
   return res;
 };
 export const getComments = async () => {
   const res = await client.fetch(
-    `*[_type=="comment" && show==true]{patientName, _id, remarks}`
+    `*[_type=="comment" && show==true]{patientName, _id, remarks, rating}`
   );
   return res;
 };

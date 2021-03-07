@@ -18,13 +18,7 @@ const Specials = () => {
   if (!specials) return <Loading />;
 
   return (
-    <Box
-      fill
-      background={`url(${Background})`}
-      align="center"
-      gap="large"
-      pad={{ top: "large" }}
-    >
+    <Box fill align="center" gap="large" pad={{ top: "large" }}>
       <Box
         align="center"
         width="large"

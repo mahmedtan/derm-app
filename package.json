@@ -37,6 +37,7 @@
     "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.1",
     "react-slick": "^0.27.13",
+    "react-star-ratings": "^2.3.0",
     "react-tooltip": "^4.2.11",
     "react-youtube": "^7.13.0",
     "recharts": "^1.8.5",
@@ -46,6 +47,7 @@
     "replace-in-file": "^6.1.0",
     "slick-carousel": "^1.8.1",
     "styled-components": "^5.2.1",
+    "styled-jsx": "^3.4.4",
     "uuid": "^8.3.2",
     "web-vitals": "^0.2.4"
   },

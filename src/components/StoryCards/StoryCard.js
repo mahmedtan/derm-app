@@ -32,9 +32,7 @@ const StoryCard = ({ image, name, description, services }) => {
         <Box style={{ fontFamily: "nunito", fontSize: "1.5rem" }}>
           <strong>{name}</strong>
         </Box>
-        <Text textAlign={size === "small" ? "center" : "start"}>
-          {description}
-        </Text>
+        <Text style={{ textAlign: "justify" }}>{description}</Text>
         <Link
           to={`/services/${
             services.sort((a, b) => a.orderAccordian - b.orderAccordian)[0].slug

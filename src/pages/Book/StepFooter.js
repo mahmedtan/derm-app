@@ -36,7 +36,7 @@ const StepFooter = () => {
         {activeIndex === Steps.length - 1 ? (
           <Button
             primary
-            label="Confirm Submission"
+            label="Confirm Appointment"
             disabled={stepFourValidation}
             size="large"
             fill

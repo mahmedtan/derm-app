@@ -20,7 +20,7 @@ const AboutUs = () => {
         pad="large"
         align="center"
       >
-        <Box width="large" align="center">
+        <Box basis="1/2" align="center">
           <AboutUsPart aboutUs={aboutUs} />
         </Box>
       </Box>

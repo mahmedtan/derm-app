@@ -6,7 +6,14 @@ import BlockContentMain from "../../components/Utils/BlockContentMain";
 const AboutUs = ({ aboutUs }) => {
   if (!aboutUs) return <Spinner />;
   return (
-    <Box align="center" gap="large" animation="fadeIn">
+    <Box align="center" gap="large" animation="fadeIn" id="aboutusjs">
+      <style jsx>
+        {`
+          p {
+            text-align: start;
+          }
+        `}
+      </style>
       <Box
         overflow="hidden"
         width="small"
@@ -18,7 +25,9 @@ const AboutUs = ({ aboutUs }) => {
       </Box>
 
       <Box align="center" gap="small">
-        <Heading margin="none">{aboutUs.title}</Heading>
+        <Heading margin="none" level="2">
+          {aboutUs.title}
+        </Heading>
 
         <BlockContentMain body={aboutUs.body} />
       </Box>

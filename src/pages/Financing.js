@@ -23,7 +23,9 @@ const Finance = () => {
         gap="small"
         border="horizontal"
       >
-        <Heading margin="none">{financing.title}</Heading>
+        <Heading margin="none" level="3">
+          {financing.title}
+        </Heading>
         <Text>{financing.description}</Text>
       </Box>
       <Box width="large" pad="large" align="center" gap="small">

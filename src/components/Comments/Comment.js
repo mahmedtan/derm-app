@@ -1,14 +1,24 @@
 import React from "react";
 import { Box, Paragraph, Text } from "grommet";
+import { useState } from "react";
+import { useEffect } from "react";
+import { Star } from "grommet-icons";
 
-const Comment = ({ patientName, remarks }) => {
+const Comment = ({ patientName, remarks, rating }) => {
+  const stars = [];
+  for (let i = 0; i < rating; i++) {
+    stars.push(i);
+  }
   return (
-    <Box align="center">
-      <Paragraph weight="bold" size="xlarge" textAlign="center">
-        <Text size="xxlarge">" </Text>
+    <Box align="center" gap="small">
+      <Paragraph weight="bold" size="large" style={{ textAlign: "left" }}>
         {remarks}
-        <Text size="xxlarge"> "</Text>
       </Paragraph>
+      <Box direction="row">
+        {stars.map((item) => (
+          <Star key={item} />
+        ))}
+      </Box>
       <Text weight="bold" size="xlarge">
         {patientName}
       </Text>

@@ -18,7 +18,7 @@ const RecentBlogCard = (blog) => {
           style={{
             textAlign: "center",
             textDecoration: "none",
-            fontWeight: "normal",
+            fontWeight: "500",
           }}
           href={`/blogs/${blog.slug}`}
         >

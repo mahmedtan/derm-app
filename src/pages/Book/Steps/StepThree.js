@@ -64,7 +64,8 @@ const StepThree = () => {
         filterDate={filterDate}
         calendarContainer={Container}
         timeClassName={(time) =>
-          (time.getHours() < 9 || time.getHours() > 18) && "text-hide"
+          (time.getHours() < 9 || time.getHours() > 18 || !filterTime(time)) &&
+          "text-hide"
         }
       />
     </Box>

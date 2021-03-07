@@ -37,7 +37,7 @@ const Profile = () => {
   }, []);
   useEffect(() => {
     if (window.localStorage.getItem("cancel"))
-      setTimeout(() => window.localStorage.removeItem("cancel"), 20000);
+      setTimeout(() => window.localStorage.removeItem("cancel"), 5000);
   }, []);
 
   if (!forms)

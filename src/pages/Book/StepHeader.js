@@ -15,7 +15,13 @@ const StepHeader = () => {
   const activeIndex = useSelector(({ activeIndex }) => activeIndex);
 
   return (
-    <Box gap="large" align="start" justify="center" direction="column-reverse">
+    <Box
+      gap="large"
+      align="start"
+      justify="center"
+      direction="column-reverse"
+      margin={{ vertical: size == "small" ? "medium" : "none" }}
+    >
       <Box fill align="center">
         {size === "small" &&
           (activeIndex !== 0 ? (

@@ -30,6 +30,7 @@ const ResponsiveSlider = () => {
       ? {
           slidesToScroll: size === "small" ? 1 : 2,
           swipe: true,
+          speed: 1000,
           autoplaySpeed: 4000,
           swipeToScroll: true,
           arrows: size !== "small",

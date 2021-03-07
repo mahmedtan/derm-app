@@ -25,14 +25,16 @@ const Comments = () => {
   if (!remarks) return <Spinner />;
   return (
     <Box fill="horizontal" pad="large" background="background-back">
-      <Heading alignSelf="center" level="2">
+      <Heading alignSelf="center" level="2" margin="none">
         Reviews
       </Heading>
-      <Slider slidesToShow={1} {...settings}>
-        {remarks.map((item) => (
-          <Comment key={item._id} {...item} />
-        ))}
-      </Slider>
+      <Box>
+        <Slider slidesToShow={1} {...settings}>
+          {remarks.map((item) => (
+            <Comment key={item._id} {...item} />
+          ))}
+        </Slider>
+      </Box>
     </Box>
   );
 };

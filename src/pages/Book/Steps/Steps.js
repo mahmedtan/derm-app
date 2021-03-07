@@ -15,13 +15,13 @@ const Steps = [
     item: <StepTwo />,
   },
   {
-    title: "Appointment ",
-    description: "Select your date and time of visit",
+    title: "Appointment",
+    description: "Select your date and time of visit.",
     item: <StepThree />,
   },
 
   {
-    title: "Details",
+    title: "Personal Information",
     description: "Fill out the following",
     item: <StepFour />,
   },

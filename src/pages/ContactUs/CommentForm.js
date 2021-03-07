@@ -7,6 +7,7 @@ import {
   TextArea,
   TextInput,
 } from "grommet";
+import StarRatings from "react-star-ratings";
 import React, { useState } from "react";
 import { useSelector } from "react-redux";
 import { postAComment } from "../../services/comments";
@@ -16,6 +17,7 @@ const CommentForm = () => {
     patientName: "",
     remarks: "",
   });
+  const [rated, setRated] = useState(0);
   const uiTheme = useSelector(({ uiTheme }) => uiTheme);
 
   const [message, setMessage] = useState(null);
@@ -28,15 +30,16 @@ const CommentForm = () => {
         value={formValues}
         onChange={(nextValue) => setFormValues(nextValue)}
         onSubmit={({ value }) => {
-          postAComment(value).then((res) => {
+          postAComment({ ...value, rated }).then((res) => {
             console.log("Comment Added", res);
 
-            setMessage("Your response has been recorded!!!");
+            setMessage("Your response has been recorded!");
 
             setFormValues({
               patientName: "",
               remarks: "",
             });
+            setRated(0);
 
             setTimeout(() => {
               setMessage(null);
@@ -66,6 +69,16 @@ const CommentForm = () => {
               rows="4"
             />
           </FormField>
+          <Box align="center" margin="small">
+            <StarRatings
+              numberOfStars={5}
+              starRatedColor="#694F5D"
+              starHoverColor="#8f6b7e"
+              starDimension="30px"
+              rating={rated}
+              changeRating={(nRating) => setRated(nRating)}
+            />
+          </Box>
 
           <Button
             primary

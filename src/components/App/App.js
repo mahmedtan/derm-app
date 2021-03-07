@@ -29,6 +29,7 @@ import ContactUs from "../../pages/ContactUs/ContactUs.js";
 import ServicesMain from "../../pages/ServicesPage/ServicesMain/ServicesMain.js";
 import { changeValues } from "../../reducers/formValuesReducer.js";
 import { changeDate } from "../../reducers/dateReducer.js";
+import PrivacyPolicy from "../../pages/PrivacyPolicy.js";
 
 function App() {
   const uiTheme = useSelector(({ uiTheme }) => uiTheme);
@@ -95,6 +96,11 @@ function App() {
         <Route path="/specials">
           <Layout>
             <Specials />
+          </Layout>
+        </Route>
+        <Route path="/privacy-policy">
+          <Layout>
+            <PrivacyPolicy />
           </Layout>
         </Route>
         <Route exact path="/">

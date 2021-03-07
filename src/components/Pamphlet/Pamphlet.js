@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, Button, Heading, Image, ResponsiveContext } from "grommet";
+import { Box, Button, Heading, Image, ResponsiveContext, Text } from "grommet";
 import sapiens from "./sapiens-v2.png";
 import { useContext } from "react";
 
@@ -25,7 +25,7 @@ const Pamphlet = () => {
             level={size === "small" ? "2" : "1"}
             style={{ fontFamily: "Metric" }}
           >
-            Schedule <br /> Your Free Cosmetic Evaluation!
+            Schedule Your <br /> Free Cosmetic Evaluation!
           </Heading>
           <Box gap="small" direction="row" align="center" justify="center">
             <Button

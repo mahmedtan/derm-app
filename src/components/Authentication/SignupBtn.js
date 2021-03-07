@@ -7,14 +7,13 @@ const SignupBtn = ({ size }) => {
   return (
     <Button
       label="Signup"
-      primary
       size={size}
       onClick={() =>
         loginWithRedirect({
           screen_hint: "signup",
         })
       }
-      style={{ borderRadius: 25 }}
+      style={{ borderRadius: 25, boxShadow: "1px 1px  15px -9px black " }}
     />
   );
 };

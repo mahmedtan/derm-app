@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, Stack, Image } from "grommet";
+import { Box, Stack, Image, Button, Anchor } from "grommet";
 import { Link } from "react-router-dom";
 import NavButton from "./NavButton";
 import MenuBar from "./MenuBar";
@@ -21,9 +21,12 @@ const Navbar = ({ uiTheme }) => {
           justify="center"
           align="center"
           gap="large"
+          margin={{ right: "70px" }}
         >
-          <Box direction="row" gap="medium">
-            <NavButton to="/book-now" label="Book Now" />
+          <Box direction="row" gap="medium" align="center">
+            <Link to="/book-now">
+              <Button label="Book Online" primary margin="none" />
+            </Link>
 
             <NavButton to="/services/dermatology" label="Dermatology" />
             <NavButton to="/services/injectables" label="Aesthetics" />
@@ -39,12 +42,12 @@ const Navbar = ({ uiTheme }) => {
           </Link>
           <Box direction="row" gap="medium">
             <NavButton to="/services" label="Services" />
-            <NavButton to="/about-us" label="About Us" />
             <NavButton to="/contact-us" label="Contact Us" />
-
             <NavButton to="/finance" label="Finance" />
+            <NavButton to="/about-us" label="About Us" />
           </Box>
         </Box>
+
         <AuthenticationBtn />
       </Stack>
     </Box>

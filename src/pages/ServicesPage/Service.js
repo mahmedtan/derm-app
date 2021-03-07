@@ -31,7 +31,7 @@ const Service = ({ service, serviceTypes, size }) => {
           vertical: "large",
         }}
       >
-        <Heading level="2" margin="none" textAlign="center">
+        <Heading level="3" margin="none" textAlign="center">
           {service.name}
         </Heading>
 

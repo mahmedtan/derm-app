@@ -1,4 +1,4 @@
-import { Box, Heading, Text } from "grommet";
+import { Anchor, Box, Heading, Text } from "grommet";
 import React from "react";
 import { useSelector } from "react-redux";
 import Loading from "../../Extras/Loading";
@@ -24,7 +24,20 @@ const StepOne = () => {
       animation="fadeIn"
       margin={{ bottom: "medium" }}
     >
-      <Text size="xlarge" weight="bold">
+      <Box direction="row" gap="small" border="between">
+        <Box>
+          <Anchor href="#consultjs" color="brand">
+            Consults
+          </Anchor>
+        </Box>
+        <Box>
+          <Anchor href="#procedurejs" color="brand">
+            Procedures
+          </Anchor>
+        </Box>
+      </Box>
+
+      <Text size="xlarge" weight="bold" id="consultjs">
         Consultations
       </Text>
       <Box gap="large" direction="row-responsive">
@@ -39,7 +52,12 @@ const StepOne = () => {
           ))}
         </Box>
       </Box>
-      <Text size="xlarge" margin={{ top: "medium" }} weight="bold">
+      <Text
+        size="xlarge"
+        margin={{ top: "medium" }}
+        weight="bold"
+        id="procedurejs"
+      >
         Procedures
       </Text>
       <Box gap="large" direction="row-responsive">

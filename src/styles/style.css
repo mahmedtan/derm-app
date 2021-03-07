@@ -28,11 +28,10 @@ p {
   overflow: hidden;
 }
 
-h1 {
-  font-family: "Cabin Condensed";
-}
-
+h1,
 h2,
-h3 {
-  font-family: "Cabin Condensed";
+h3,
+h4,
+h5 {
+  font-family: "Prata";
 }

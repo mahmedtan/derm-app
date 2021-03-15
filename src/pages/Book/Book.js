@@ -106,7 +106,7 @@ const Book = () => {
               gap="small"
               margin={{
                 bottom: "xlarge",
-                top: size === "small" ? "large" : "none",
+                top: size === "small" ? "small" : "none",
               }}
             >
               {Steps[activeIndex].item}

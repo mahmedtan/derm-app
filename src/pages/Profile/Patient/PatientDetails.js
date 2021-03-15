@@ -1,13 +1,13 @@
 import { useAuth0 } from "@auth0/auth0-react";
 import { Box, Card, ResponsiveContext } from "grommet";
 import React, { useContext, useEffect, useState } from "react";
-import Spinner from "../../../components/Utils/Spinner";
+import { useSelector } from "react-redux";
 import { getPatientDetails } from "../../../services/patients";
-import Loading from "../../Extras/Loading";
 import PatientNew from "./PatientNew";
 import PatientOld from "./PatientOld";
 
 const PatientDetails = ({ setFullName }) => {
+  const uiTheme = useSelector(({ uiTheme }) => uiTheme);
   const [details, setDetails] = useState(null);
   const size = useContext(ResponsiveContext);
   const [change, setChange] = useState(false);
@@ -32,7 +32,14 @@ const PatientDetails = ({ setFullName }) => {
         pad="large"
         width={size === "small" ? "large" : "none"}
         animation="zoomOut"
-        background="brand-secondary"
+        background={
+          uiTheme === "light"
+            ? {
+                color: "brand-secondary",
+                opacity: "medium",
+              }
+            : "background-front"
+        }
       >
         {Object.keys(details).length === 0 && details.constructor === Object ? (
           <PatientNew

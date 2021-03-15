@@ -37,7 +37,7 @@ const StepOne = () => {
         </Box>
       </Box>
 
-      <Text size="xlarge" weight="bold" id="consultjs">
+      <Text size="xlarge" id="consultjs">
         Consultations
       </Text>
       <Box gap="large" direction="row-responsive">
@@ -52,12 +52,7 @@ const StepOne = () => {
           ))}
         </Box>
       </Box>
-      <Text
-        size="xlarge"
-        margin={{ top: "medium" }}
-        weight="bold"
-        id="procedurejs"
-      >
+      <Text size="xlarge" margin={{ top: "medium" }} id="procedurejs">
         Procedures
       </Text>
       <Box gap="large" direction="row-responsive">

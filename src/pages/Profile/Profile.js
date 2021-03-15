@@ -3,7 +3,6 @@ import CancellationBanner from "./CancellationBanner";
 import { useAuth0 } from "@auth0/auth0-react";
 import { Box, Heading, Text } from "grommet";
 import Layout from "../../components/Utils/Layout";
-import VerifyBanner from "./VerifyBanner";
 import { getForm, removeForm } from "../../services/forms";
 import Appointments from "./Appointments/Appointments";
 import Loading from "../Extras/Loading";

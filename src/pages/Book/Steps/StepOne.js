@@ -37,10 +37,7 @@ const StepOne = () => {
         </Box>
       </Box>
 
-      <Text size="xlarge" id="consultjs">
-        Consultations
-      </Text>
-      <Box gap="large" direction="row-responsive">
+      <Box gap="large" direction="row-responsive" id="consultjs">
         <Box gap="large">
           {consultations.slice(0, consultations.length / 2 + 1).map((item) => (
             <OfferCard {...item} key={item._id} item={item} />

@@ -28,7 +28,12 @@ const Blog = () => {
           <Heading level="3" textAlign="center">
             {blog.title}
           </Heading>
-          <Box width="45rem" height="25rem" align="center" alignSelf="center">
+          <Box
+            width={{ max: "550px" }}
+            height={{ max: "400px" }}
+            align="center"
+            alignSelf="center"
+          >
             <Image src={blog.mainImage} fit="contain" />
           </Box>
           <Box

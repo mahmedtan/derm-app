@@ -13,10 +13,6 @@ const VerifyBanner = ({ user }) => {
       pad="medium"
       margin="large"
     >
-      <Box alignSelf="center">
-        <StatusWarning size="large" />
-      </Box>
-
       <Text size="large">
         We've sent an confirmation email to {user.email}. Please check your
         inbox to verify your account

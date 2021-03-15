@@ -71,8 +71,6 @@ const Profile = () => {
             </Text>
           </Box>
 
-          {!user.email_verified && <VerifyBanner user={user} />}
-
           {window.localStorage.getItem("cancel") && <CancellationBanner />}
 
           <PatientDetails

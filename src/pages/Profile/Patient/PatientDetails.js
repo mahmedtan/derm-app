@@ -32,6 +32,7 @@ const PatientDetails = ({ setFullName }) => {
         pad="large"
         width={size === "small" ? "large" : "none"}
         animation="zoomOut"
+        background="brand-secondary"
       >
         {Object.keys(details).length === 0 && details.constructor === Object ? (
           <PatientNew

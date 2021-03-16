@@ -94,7 +94,7 @@ const CommentForm = () => {
         </Box>
       </Form>
       {message && (
-        <Text size="large" weight="bold">
+        <Text size="large" weight="bold" textAlign="center">
           {message}
         </Text>
       )}

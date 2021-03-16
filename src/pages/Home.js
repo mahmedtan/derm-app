@@ -1,4 +1,12 @@
-import { Box, Button, ResponsiveContext, Main } from "grommet";
+import {
+  Box,
+  Button,
+  ResponsiveContext,
+  Main,
+  Layer,
+  Image,
+  Stack,
+} from "grommet";
 import Newsletter from "../components/Utils/Newsletter";
 
 import Slider from "../components/Slider/Slider";
@@ -6,45 +14,79 @@ import Slider from "../components/Slider/Slider";
 import Pamphlet from "../components/Pamphlet/Pamphlet";
 import StoryCards from "../components/StoryCards/StoryCards";
 import RecentBlogs from "../components/RecentBlogs/RecentBlogs";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
-import { LinkNext } from "grommet-icons";
+import { Close, LinkNext } from "grommet-icons";
 import Comments from "../components/Comments/Comments";
 import { useContext } from "react";
+import { useState, useEffect } from "react";
+import { getSpecials } from "../services/extras";
+import { toggleBanner } from "../reducers/bannerReducer";
 
 const Home = () => {
   const blogs = useSelector((state) => state.blogs);
   const size = useContext(ResponsiveContext);
+  const banner = useSelector(({ banner }) => banner);
+  const dispatch = useDispatch();
+
+  const [specials, setSpecials] = useState(null);
+  useEffect(() => {
+    getSpecials().then((res) => {
+      setSpecials(res);
+    });
+  }, []);
 
   return (
-    <Main animation="fadeIn" overflow="hidden" align="center" fill>
-      <Box
-        align="center"
-        justify="start"
-        gap={size === "small" ? "xlarge" : "large"}
-        height="85vh"
-        margin={{ vertical: size === "small" ? "large" : "small" }}
-      >
-        <Slider />
-        <Link to="/services">
-          <Button
-            label="Schedule Your Visit"
-            icon={<LinkNext />}
-            reverse
-            margin={{ vertical: size === "small" ? "medium" : "none" }}
-            primary
-            size="large"
-            style={{ borderRadius: "25px" }}
-          />
-        </Link>
+    <Box>
+      <Box>
+        {banner && specials && (
+          <Layer
+            responsive={false}
+            margin="small"
+            onEsc={() => dispatch(toggleBanner())}
+            onClickOutside={() => dispatch(toggleBanner())}
+          >
+            <Stack anchor="top-right">
+              <Box width="medium">
+                <Image src={specials.posters[1]} />
+              </Box>
+              <Button
+                label={<Close />}
+                onClick={() => dispatch(toggleBanner())}
+                margin="small"
+              />
+            </Stack>
+          </Layer>
+        )}
       </Box>
-      <Pamphlet />
+      <Main animation="fadeIn" overflow="hidden" align="center" fill>
+        <Box
+          align="center"
+          justify="start"
+          gap={size === "small" ? "xlarge" : "large"}
+          margin={{ bottom: "large", top: size === "small" ? "large" : "none" }}
+        >
+          <Slider />
+          <Link to="/services">
+            <Button
+              label="Schedule Your Visit"
+              icon={<LinkNext />}
+              reverse
+              margin={{ vertical: size === "small" ? "medium" : "none" }}
+              primary
+              size="large"
+              style={{ borderRadius: "25px" }}
+            />
+          </Link>
+        </Box>
+        <Pamphlet />
 
-      <Newsletter />
-      <StoryCards />
-      <Comments />
-      <RecentBlogs blogs={blogs} />
-    </Main>
+        <Newsletter />
+        <StoryCards />
+        <Comments />
+        <RecentBlogs blogs={blogs} />
+      </Main>
+    </Box>
   );
 };
 

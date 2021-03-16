@@ -5,13 +5,16 @@ import {
   Box,
   Image,
   Avatar,
-  Paragraph,
-  Button,
   Anchor,
+  ResponsiveContext,
+  Button,
 } from "grommet";
 import Linker from "../Utils/Linker";
+import { useContext } from "react";
+import { Link } from "react-router-dom";
 
 const BlogCard = ({ blog }) => {
+  const size = useContext(ResponsiveContext);
   return (
     <Box width="40rem" margin={{ bottom: "large" }}>
       <Linker to={`/blogs/${blog.slug}`}>
@@ -22,7 +25,11 @@ const BlogCard = ({ blog }) => {
 
       <Box>
         <Linker to={`/blogs/${blog.slug}`}>
-          <Heading level={4} color="text">
+          <Heading
+            level={size === "small" ? "3" : "4"}
+            color="text"
+            textAlign="center"
+          >
             {blog.title}
           </Heading>
         </Linker>
@@ -38,19 +45,21 @@ const BlogCard = ({ blog }) => {
             </Text>
           </Box>
         </Box>
-        <Box width="40rem">
+        <Box width="40rem" align="center">
           <Text
-            margin={{ vertical: "medium" }}
+            margin={{ top: "medium", bottom: "small" }}
             style={{ textAlign: "justify" }}
           >
             {blog.description}
-            <Anchor
-              label="learn more"
-              href={`/blogs/${blog.slug}`}
-              color="brand"
-              style={{ fontWeight: "bold" }}
-            />
           </Text>
+          <Link
+            to={`/blogs/${blog.slug}`}
+            color="brand"
+            style={{ fontWeight: "bold" }}
+            component={Anchor}
+          >
+            Learn more
+          </Link>
         </Box>
       </Box>
     </Box>

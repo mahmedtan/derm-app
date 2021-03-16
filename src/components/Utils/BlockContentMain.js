@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import BlockContent from "@sanity/block-content-to-react";
 import getYouTubeId from "get-youtube-id";
 import YouTube from "react-youtube";
-import { Box, ResponsiveContext } from "grommet";
+import { ResponsiveContext } from "grommet";
 import { useSelector } from "react-redux";
 
 const BlockContentMain = ({ body, ...extras }) => {

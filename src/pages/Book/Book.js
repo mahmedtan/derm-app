@@ -41,7 +41,6 @@ const Book = () => {
   );
 
   useEffect(() => {
-    console.log("heyy");
     window.scrollTo(0, 0);
   }, [activeIndex]);
 

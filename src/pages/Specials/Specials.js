@@ -1,6 +1,5 @@
-import { Box, Heading, Text } from "grommet";
+import { Box, Heading, Text, Video } from "grommet";
 import React, { useEffect, useState } from "react";
-import Background from "./background.png";
 import Loading from "../Extras/Loading";
 import { getSpecials } from "../../services/extras";
 import Special from "./Special";
@@ -10,7 +9,6 @@ const Specials = () => {
   const [specials, setSpecials] = useState(null);
   useEffect(() => {
     getSpecials().then((res) => {
-      console.log("Specials:", res);
       setSpecials(res);
     });
   }, []);
@@ -34,7 +32,13 @@ const Specials = () => {
         <Text>{specials.description}</Text>
       </Box>
 
-      <Special posters={specials.posters} banner={specials.avatar} />
+      <Special
+        posters={specials.posters}
+        banner={specials.avatar}
+        posterVideo1={specials.posterVideo1}
+        posterVideo2={specials.posterVideo2}
+        bannerVideo={specials.bannerVideo}
+      />
 
       <BookNowCard />
     </Box>

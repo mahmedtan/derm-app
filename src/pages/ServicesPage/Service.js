@@ -1,11 +1,10 @@
 import React, { useContext, useEffect } from "react";
-import { Box, Heading, Card, Button, ResponsiveContext, Text } from "grommet";
+import { Box, Heading, Card, Button, Text } from "grommet";
 import Loading from "../Extras/Loading";
 import BlockContentMain from "../../components/Utils/BlockContentMain";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { selectItem } from "../../reducers/selectedItemReducer";
 import Footer from "../../components/Footer/Footer";
-import PageNotFound from "../Extras/404";
 import SidebarAccordian from "../../components/Sidebars/SidebarAccordian";
 import { LinkNext } from "grommet-icons";
 import { Link } from "react-router-dom";
@@ -31,7 +30,12 @@ const Service = ({ service, serviceTypes, size }) => {
           vertical: "large",
         }}
       >
-        <Heading level="3" margin="none" textAlign="center">
+        <Heading
+          level="2"
+          style={{ fontWeight: "normal" }}
+          margin="none"
+          textAlign="center"
+        >
           {service.name}
         </Heading>
 
@@ -43,6 +47,7 @@ const Service = ({ service, serviceTypes, size }) => {
             <FaceVisual />
           </Box>
         )}
+
         <BlockContentMain body={service.body} />
 
         {(size === "small" || size === "xsmall") && (

@@ -14,8 +14,7 @@ import { initServiceTypes } from "../../reducers/serviceTypeReducer.js";
 import { initServices } from "../../reducers/serviceReducer.js";
 import Book from "../../pages/Book/Book.js";
 import Profile from "../../pages/Profile/Profile.js";
-import { useAuth0 } from "@auth0/auth0-react";
-import Loading from "../../pages/Extras/Loading.js";
+
 import ProtectedRoute from "../../auth/protected-route";
 import Processing from "../../pages/Book/Processing.js";
 
@@ -30,6 +29,7 @@ import ServicesMain from "../../pages/ServicesPage/ServicesMain/ServicesMain.js"
 import { changeValues } from "../../reducers/formValuesReducer.js";
 import { changeDate } from "../../reducers/dateReducer.js";
 import PrivacyPolicy from "../../pages/PrivacyPolicy.js";
+import { toggleBanner } from "../../reducers/bannerReducer.js";
 
 function App() {
   const uiTheme = useSelector(({ uiTheme }) => uiTheme);
@@ -42,6 +42,7 @@ function App() {
     dispatch(initServiceTypes());
     dispatch(initConsultations());
     dispatch(initProcedures());
+    dispatch(toggleBanner());
 
     const formValues = window.sessionStorage.getItem("formValues");
     const date = window.sessionStorage.getItem("date");

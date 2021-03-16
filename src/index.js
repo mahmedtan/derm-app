@@ -19,6 +19,7 @@ import indexReducer from "./reducers/indexReducer";
 import procedureReducer from "./reducers/procedureReducer";
 import consultationReducer from "./reducers/consultationReducer";
 import imageReducer from "./reducers/imageReducer";
+import bannerReducer from "./reducers/bannerReducer";
 import dateReducer from "./reducers/dateReducer";
 import formValuesReducer from "./reducers/formValuesReducer";
 import Auth0ProviderWithHistory from "./auth/auth0-provider-with-history";
@@ -37,6 +38,7 @@ const reducer = combineReducers({
   images: imageReducer,
   date: dateReducer,
   formValues: formValuesReducer,
+  banner: bannerReducer,
 });
 
 const store = createStore(reducer, applyMiddleware(thunk));

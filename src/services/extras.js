@@ -25,7 +25,7 @@ export const getFinancing = async () => {
 };
 export const getSpecials = async () => {
   const res = await client.fetch(
-    `*[_type=="extra"  && pageType=="specials"][0]{title, body,"posters": posters[].asset->url,"avatar":avatar.asset->url,description}`
+    `*[_type=="extra"  && pageType=="specials"][0]{title, body,"posters": posters[].asset->url,"avatar":avatar.asset->url,description,"posterVideo1": posterVideo1.asset->,"posterVideo2": posterVideo2.asset->, "bannerVideo": bannerVideo.asset->}`
   );
   return res;
 };

@@ -7,6 +7,7 @@ import {
   Image,
   Stack,
 } from "grommet";
+
 import Newsletter from "../components/Utils/Newsletter";
 
 import Slider from "../components/Slider/Slider";
@@ -20,7 +21,7 @@ import { Close, LinkNext } from "grommet-icons";
 import Comments from "../components/Comments/Comments";
 import { useContext } from "react";
 import { useState, useEffect } from "react";
-import { getPopup, getSpecials } from "../services/extras";
+import { getPopup } from "../services/extras";
 import { toggleBanner } from "../reducers/bannerReducer";
 
 const Home = () => {

@@ -22,6 +22,7 @@ const RecentBlogs = ({ blogs }) => {
       height="full"
       background="brand-secondary"
       pad="medium"
+      gap="medium"
     >
       <Heading color="#131600" level="2" margin="none">
         Recent Blogs

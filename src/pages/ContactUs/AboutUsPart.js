@@ -7,13 +7,6 @@ const AboutUs = ({ aboutUs }) => {
   if (!aboutUs) return <Spinner />;
   return (
     <Box align="center" gap="large" animation="fadeIn" id="aboutusjs">
-      <style jsx>
-        {`
-          p {
-            text-align: start;
-          }
-        `}
-      </style>
       <Box
         overflow="hidden"
         width="small"

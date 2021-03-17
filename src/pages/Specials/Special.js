@@ -9,8 +9,8 @@ const Special = ({
   posterVideo2,
   bannerVideo,
 }) => {
-  const miniBanners = posters.slice(0, 2);
-  const rest = posters.slice(2);
+  const miniBanners = posters.slice(0, 1);
+  const rest = posters.slice(1);
   let divider = rest.length % 2 === 0 ? rest.length / 2 : rest.length / 2 + 1;
 
   const firstPosters = rest.slice(0, divider);
@@ -28,29 +28,6 @@ const Special = ({
             />
           </Box>
         )}
-        <Box direction="row-responsive" gap="large">
-          {posterVideo1 && (
-            <Box width="medium" elevation="large">
-              <SanityMuxPlayer
-                assetDocument={posterVideo1}
-                autoplay
-                loop
-                showControls={false}
-              />
-            </Box>
-          )}
-
-          {posterVideo2 && (
-            <Box width="medium" elevation="large">
-              <SanityMuxPlayer
-                assetDocument={posterVideo2}
-                autoplay
-                loop
-                showControls={false}
-              />
-            </Box>
-          )}
-        </Box>
       </Box>
 
       <Box justify="center" direction="row-responsive" gap="large">
@@ -59,6 +36,18 @@ const Special = ({
         </Box>
 
         <Box width="medium" height="large" gap="large">
+          <Box direction="row-responsive" gap="large">
+            {posterVideo1 && (
+              <Box width="medium" elevation="large">
+                <SanityMuxPlayer
+                  assetDocument={posterVideo1}
+                  autoplay
+                  loop
+                  showControls={false}
+                />
+              </Box>
+            )}
+          </Box>
           {miniBanners.map((poster) => (
             <Box
               key={poster}

@@ -20,7 +20,7 @@ import { Close, LinkNext } from "grommet-icons";
 import Comments from "../components/Comments/Comments";
 import { useContext } from "react";
 import { useState, useEffect } from "react";
-import { getSpecials } from "../services/extras";
+import { getPopup, getSpecials } from "../services/extras";
 import { toggleBanner } from "../reducers/bannerReducer";
 
 const Home = () => {
@@ -29,17 +29,17 @@ const Home = () => {
   const banner = useSelector(({ banner }) => banner);
   const dispatch = useDispatch();
 
-  const [specials, setSpecials] = useState(null);
+  const [popup, setPopup] = useState(null);
   useEffect(() => {
-    getSpecials().then((res) => {
-      setSpecials(res);
+    getPopup().then((res) => {
+      setPopup(res);
     });
   }, []);
 
   return (
     <Box>
       <Box>
-        {banner && specials && (
+        {banner && popup && (
           <Layer
             responsive={false}
             margin="small"
@@ -47,11 +47,14 @@ const Home = () => {
             onClickOutside={() => dispatch(toggleBanner())}
           >
             <Stack anchor="top-right">
-              <Box width="medium">
-                <Image src={specials.posters[1]} />
-              </Box>
+              <Link to="/book-now">
+                <Box width="large">
+                  <Image src={popup.avatar} />
+                </Box>
+              </Link>
+
               <Button
-                label={<Close />}
+                label={<Close color="light-1" elevation="medium" />}
                 onClick={() => dispatch(toggleBanner())}
                 margin="small"
               />

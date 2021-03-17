@@ -1,11 +1,15 @@
 import React from "react";
-import { Text, Box, Image, Anchor } from "grommet";
+import { Box, Image, Anchor } from "grommet";
 import Linker from "../Utils/Linker";
-import { Link } from "react-router-dom";
 
 const RecentBlogCard = (blog) => {
   return (
-    <Box width="medium" pad="medium" gap="medium">
+    <Box
+      width="medium"
+      pad={{ horizontal: "medium" }}
+      background="red"
+      gap="medium"
+    >
       <Linker to={`/blogs/${blog.slug}`}>
         <Box elevation="medium" height="15rem" round="small" overflow="hidden">
           <Image fit="cover" src={blog.mainImage} a11yTitle="bridge" />

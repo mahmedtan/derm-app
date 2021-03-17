@@ -23,7 +23,7 @@ const RecentBlogs = ({ blogs }) => {
       background="brand-secondary"
       pad="medium"
     >
-      <Heading color="#131600" level="2">
+      <Heading color="#131600" level="2" margin="none">
         Recent Blogs
       </Heading>
       <Box direction="row-responsive" gap="small">

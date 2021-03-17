@@ -30,12 +30,7 @@ const Service = ({ service, serviceTypes, size }) => {
           vertical: "large",
         }}
       >
-        <Heading
-          level="2"
-          style={{ fontWeight: "normal" }}
-          margin="none"
-          textAlign="center"
-        >
+        <Heading level="2" margin="none" textAlign="center">
           {service.name}
         </Heading>
 

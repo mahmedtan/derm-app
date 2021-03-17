@@ -29,3 +29,10 @@ export const getSpecials = async () => {
   );
   return res;
 };
+
+export const getPopup = async () => {
+  const res = await client.fetch(
+    `*[_type=="extra"  && pageType=="telemarketingPopup"][0]{"avatar":avatar.asset->url}`
+  );
+  return res;
+};

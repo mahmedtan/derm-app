@@ -770,7 +770,6 @@ export var theme = deepFreeze({
         },
       },
     },
-    weight: 700,
   },
   icon: {
     size: {

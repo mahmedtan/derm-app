@@ -1,4 +1,4 @@
-import { Box, Heading, Button, Main, Text } from "grommet";
+import { Box, Heading, Button, Main, Text, Image } from "grommet";
 import React, { useEffect, useState } from "react";
 import BlockContentMain from "../components/Utils/BlockContentMain";
 import { getFinancing } from "../services/extras";
@@ -29,6 +29,7 @@ const Finance = () => {
         <Text>{financing.description}</Text>
       </Box>
       <Box width="large" pad="large" align="center" gap="small">
+        <Image src={financing.avatar} />
         <BlockContentMain body={financing.body} />
         <Box width="small">
           <Button

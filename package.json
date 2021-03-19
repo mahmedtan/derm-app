@@ -40,6 +40,7 @@
     "react-slick": "^0.27.13",
     "react-star-ratings": "^2.3.0",
     "react-tooltip": "^4.2.11",
+    "react-visibility-sensor": "^5.1.1",
     "react-youtube": "^7.13.0",
     "recharts": "^1.8.5",
     "redux": "^4.0.5",

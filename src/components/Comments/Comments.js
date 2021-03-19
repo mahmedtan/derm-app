@@ -24,7 +24,11 @@ const Comments = () => {
 
   if (!remarks) return <Spinner />;
   return (
-    <Box fill="horizontal" pad="large" background="background-back">
+    <Box
+      fill="horizontal"
+      pad={{ horizontal: "large", vertical: "medium" }}
+      background="background-back"
+    >
       <Heading alignSelf="center" level="2" margin="none">
         Reviews
       </Heading>

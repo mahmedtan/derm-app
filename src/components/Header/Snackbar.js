@@ -108,6 +108,7 @@ const Snackbar = ({ uiTheme }) => {
                               <Anchor
                                 href={`/services/${service.slug}`}
                                 key={service._id}
+                                style={{ textDecoration: "none" }}
                               >
                                 <Text
                                   size="xlarge"
@@ -146,6 +147,7 @@ const Snackbar = ({ uiTheme }) => {
                               <Anchor
                                 href={`/services/${service.slug}`}
                                 key={service._id}
+                                style={{ textDecoration: "none" }}
                               >
                                 <Text
                                   weight={"normal"}

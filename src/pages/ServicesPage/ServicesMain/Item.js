@@ -54,6 +54,7 @@ const Item = ({ servType }) => {
                   to={`/services/${service.slug}`}
                   key={service._id}
                   component={Anchor}
+                  style={{ textDecoration: "none" }}
                 >
                   <Text size="large">{service.name}</Text>
                 </Link>

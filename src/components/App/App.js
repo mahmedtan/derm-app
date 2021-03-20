@@ -29,7 +29,7 @@ import ServicesMain from "../../pages/ServicesPage/ServicesMain/ServicesMain.js"
 import { changeValues } from "../../reducers/formValuesReducer.js";
 import { changeDate } from "../../reducers/dateReducer.js";
 import PrivacyPolicy from "../../pages/PrivacyPolicy.js";
-import { toggleBanner } from "../../reducers/bannerReducer.js";
+import { setBanner, toggleBanner } from "../../reducers/bannerReducer.js";
 
 function App() {
   const uiTheme = useSelector(({ uiTheme }) => uiTheme);
@@ -42,7 +42,12 @@ function App() {
     dispatch(initServiceTypes());
     dispatch(initConsultations());
     dispatch(initProcedures());
-    dispatch(toggleBanner());
+
+    if (window.sessionStorage.getItem("banner")) {
+      dispatch(setBanner(JSON.parse(window.sessionStorage.getItem("banner"))));
+    } else {
+      dispatch(toggleBanner());
+    }
 
     const formValues = window.sessionStorage.getItem("formValues");
     const date = window.sessionStorage.getItem("date");

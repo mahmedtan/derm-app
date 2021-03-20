@@ -1,10 +1,23 @@
-import { Box, Heading, Image } from "grommet";
+import { Box, Heading, Image, ResponsiveContext } from "grommet";
 import React from "react";
 import Spinner from "../../components/Utils/Spinner";
 import BlockContentMain from "../../components/Utils/BlockContentMain";
+import Slider from "react-slick";
 
 const AboutUs = ({ aboutUs }) => {
+  const settings = {
+    slidesToScroll: 1,
+    swipe: true,
+    speed: 1000,
+    autoplaySpeed: 4000,
+    swipeToScroll: true,
+    arrows: false,
+    autoplay: true,
+  };
+
   if (!aboutUs) return <Spinner />;
+  console.log(aboutUs.showSlider);
+
   return (
     <Box align="center" gap="large" animation="fadeIn" id="aboutusjs">
       <Box
@@ -23,6 +36,16 @@ const AboutUs = ({ aboutUs }) => {
         </Heading>
 
         <BlockContentMain body={aboutUs.body} />
+
+        {aboutUs.showSlider && (
+          <Box width="medium">
+            <Slider {...settings}>
+              {aboutUs.sliderImages.map((source) => (
+                <Image src={source} key={source} />
+              ))}
+            </Slider>
+          </Box>
+        )}
       </Box>
     </Box>
   );

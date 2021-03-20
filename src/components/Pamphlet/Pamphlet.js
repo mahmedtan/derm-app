@@ -19,14 +19,16 @@ const Pamphlet = () => {
           <Image src={sapiens} fit="cover" />
         </Box>
         <Box width="large" align="center" pad="small">
-          <Heading
+          <Text
             color="#0f1f25"
             textAlign="center"
-            level={size === "small" ? "2" : "1"}
-            style={{ fontFamily: "Metric" }}
+            size="2.5rem"
+            style={{ fontWeight: "600" }}
+            margin="medium"
           >
-            Schedule Your <br /> Free Cosmetic Evaluation!
-          </Heading>
+            Schedule {size !== "small" && "Your"} <br /> Free Cosmetic
+            Evaluation!
+          </Text>
           <Box gap="small" direction="row" align="center" justify="center">
             <Button
               label="Book now"

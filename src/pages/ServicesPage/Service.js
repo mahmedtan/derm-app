@@ -1,17 +1,46 @@
-import React, { useContext, useEffect } from "react";
-import { Box, Heading, Card, Button, Text } from "grommet";
+import React, { useEffect } from "react";
+import {
+  Box,
+  Heading,
+  Card,
+  Button,
+  Text,
+  Image,
+  ResponsiveContext,
+} from "grommet";
 import Loading from "../Extras/Loading";
 import BlockContentMain from "../../components/Utils/BlockContentMain";
 import { useDispatch } from "react-redux";
 import { selectItem } from "../../reducers/selectedItemReducer";
 import Footer from "../../components/Footer/Footer";
 import SidebarAccordian from "../../components/Sidebars/SidebarAccordian";
-import { LinkNext } from "grommet-icons";
+import { LinkNext, LinkPrevious } from "grommet-icons";
 import { Link } from "react-router-dom";
 import FaceVisual from "../../components/FaceVisual/FaceVisual";
+import Slider from "react-slick";
+import { useContext } from "react";
 
 const Service = ({ service, serviceTypes, size }) => {
   const dispatch = useDispatch();
+  const PrevArrow = (props) => (
+    <LinkPrevious className={props.className} onClick={props.onClick} />
+  );
+  const NextArrow = (props) => (
+    <LinkNext className={props.className} onClick={props.onClick} />
+  );
+  const settings = {
+    slidesToScroll: 1,
+    swipe: true,
+    speed: 1000,
+    autoplaySpeed: 4000,
+    swipeToScroll: true,
+    arrows: false,
+    dots: true,
+    pauseOnHover: false,
+    autoplay: true,
+    prevArrow: <PrevArrow />,
+    nextArrow: <NextArrow />,
+  };
 
   useEffect(() => {
     service && dispatch(selectItem(service.serviceType.slug, service.slug));
@@ -40,6 +69,18 @@ const Service = ({ service, serviceTypes, size }) => {
               Available Treatment Options
             </Text>
             <FaceVisual />
+          </Box>
+        )}
+
+        {service.showSlider && (
+          <Box width="35rem" alignSelf="center" pad="small">
+            <Slider {...settings}>
+              {service.sliderImages.map((source) => (
+                <Box key={source} pad="small">
+                  <Image src={source} />
+                </Box>
+              ))}
+            </Slider>
           </Box>
         )}
 

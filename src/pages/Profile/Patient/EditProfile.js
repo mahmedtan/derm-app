@@ -119,7 +119,7 @@ export const EditProfile = ({
       fullName: fullName || value.fullName,
       sub,
       id: _id || uuidv4(),
-      patientId: patientId || uuidv4().substring(0, 6),
+      patientId: patientId || `C${uuidv4().substring(0, 6).toUpperCase()}`,
     }).then((res, error) => {
       setMessage("Your Profile has been updated");
       console.log(res);

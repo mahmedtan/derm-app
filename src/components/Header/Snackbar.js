@@ -88,6 +88,7 @@ const Snackbar = ({ uiTheme }) => {
                             alignSelf="center"
                             size="xlarge"
                             margin="none"
+                            style={{ textDecoration: "none" }}
                           >
                             Dermatology
                           </Anchor>
@@ -124,7 +125,11 @@ const Snackbar = ({ uiTheme }) => {
                     <AccordionPanel
                       header={
                         <Box align="center">
-                          <Anchor size="xlarge" margin="none">
+                          <Anchor
+                            size="xlarge"
+                            margin="none"
+                            style={{ textDecoration: "none" }}
+                          >
                             Aesthetics
                           </Anchor>
                         </Box>
@@ -156,17 +161,32 @@ const Snackbar = ({ uiTheme }) => {
                     </AccordionPanel>
                   </Accordion>
 
-                  <Link to="/specials" onClick={removeLayer} component={Anchor}>
+                  <Link
+                    to="/specials"
+                    onClick={removeLayer}
+                    component={Anchor}
+                    style={{ textDecoration: "none" }}
+                  >
                     <Text size="xlarge" margin="none">
                       Specials
                     </Text>
                   </Link>
-                  <Link to="/services" onClick={removeLayer} component={Anchor}>
+                  <Link
+                    to="/services"
+                    onClick={removeLayer}
+                    component={Anchor}
+                    style={{ textDecoration: "none" }}
+                  >
                     <Text size="xlarge" margin="none">
                       Services
                     </Text>
                   </Link>
-                  <Link to="/finance" onClick={removeLayer} component={Anchor}>
+                  <Link
+                    to="/finance"
+                    onClick={removeLayer}
+                    component={Anchor}
+                    style={{ textDecoration: "none" }}
+                  >
                     <Text size="xlarge" margin="none">
                       Finance
                     </Text>
@@ -175,12 +195,18 @@ const Snackbar = ({ uiTheme }) => {
                     to="/contact-us"
                     onClick={removeLayer}
                     component={Anchor}
+                    style={{ textDecoration: "none" }}
                   >
                     <Text size="xlarge" margin="none">
                       Contact us
                     </Text>
                   </Link>
-                  <Link to="/About-us" onClick={removeLayer} component={Anchor}>
+                  <Link
+                    to="/About-us"
+                    onClick={removeLayer}
+                    component={Anchor}
+                    style={{ textDecoration: "none" }}
+                  >
                     <Text size="xlarge" margin="none">
                       About Us
                     </Text>

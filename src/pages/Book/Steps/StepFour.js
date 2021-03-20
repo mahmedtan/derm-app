@@ -82,6 +82,7 @@ const StepFour = () => {
           name="phoneNumber"
         />
       </FormField>
+
       <FormField
         required
         label="Email address"

@@ -1,11 +1,13 @@
-import { Heading } from "grommet";
+import { Heading, ResponsiveContext } from "grommet";
 import React, { useEffect, useState } from "react";
 import { Box } from "grommet";
 import RecentBlogCard from "./RecentBlogCard";
 import Loading from "../../pages/Extras/Loading";
+import { useContext } from "react";
 
 const RecentBlogs = ({ blogs }) => {
   const [recentBlogs, setRecentBlogs] = useState(null);
+  const size = useContext(ResponsiveContext);
 
   useEffect(() => {
     blogs && setRecentBlogs(blogs.slice(0, 3));
@@ -22,7 +24,7 @@ const RecentBlogs = ({ blogs }) => {
       height="full"
       background="brand-secondary"
       pad="medium"
-      gap="medium"
+      gap={size === "small" ? "2rem" : "large"}
     >
       <Heading color="#131600" level="2" margin="none">
         Recent Blogs

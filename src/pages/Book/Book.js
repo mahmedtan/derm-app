@@ -68,7 +68,11 @@ const Book = () => {
     );
 
   return (
-    <Box align="center" pad={{ bottom: "xlarge" }}>
+    <Box
+      align="center"
+      pad={{ bottom: "xlarge" }}
+      background="background-contrast"
+    >
       <Box
         align="center"
         width="large"

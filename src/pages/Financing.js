@@ -23,7 +23,7 @@ const Finance = () => {
         gap="small"
         border="horizontal"
       >
-        <Heading margin="none" level="3">
+        <Heading margin="none" level="2">
           {financing.title}
         </Heading>
         <Text>{financing.description}</Text>

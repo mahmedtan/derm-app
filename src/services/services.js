@@ -13,7 +13,7 @@ export const getAllServiceTypes = async () => {
 };
 export const getAllServices = async () => {
   const services = await client.fetch(
-    '*[_type=="service"]{showOnSlider,body,"image":image.asset->url,name,"slug":slug.current, serviceType->{name,"slug":slug.current},order}'
+    '*[_type=="service"]{showOnSlider,body,"image":image.asset->url,name,"slug":slug.current, serviceType->{name,"slug":slug.current},order,"sliderImages": sliderImages[].asset->url, showSlider }'
   );
   return services;
 };

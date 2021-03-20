@@ -41,7 +41,12 @@ const Item = ({ servType }) => {
         }}
       >
         {shown ? (
-          <Box gap="medium" animation="zoomIn" overflow="hidden" align="center">
+          <Box
+            gap="medium"
+            animation={{ type: "fadeIn", size: "xlarge", duration: "2000" }}
+            overflow="hidden"
+            align="center"
+          >
             {servType.services
               .sort((a, b) => a.orderAccordian - b.orderAccordian)
               .map((service) => (

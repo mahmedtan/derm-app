@@ -31,19 +31,21 @@ const Home = () => {
   const dispatch = useDispatch();
 
   const [popup, setPopup] = useState(null);
+
   useEffect(() => {
     getPopup().then((res) => {
-      setPopup(res);
+      setInterval(() => setPopup(res), 3000);
     });
   }, []);
 
   return (
     <Box>
-      <Box>
+      <Box background="red">
         {banner && popup && (
           <Layer
             responsive={false}
             margin="small"
+            animation={"fadeIn"}
             onEsc={() => dispatch(toggleBanner())}
             onClickOutside={() => dispatch(toggleBanner())}
           >

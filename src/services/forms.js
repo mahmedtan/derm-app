@@ -47,7 +47,7 @@ export const submitForm = async (
     images: images,
     phoneNumber,
     remarks,
-    appointmentId: uuidv4().substring(0, 8),
+    appointmentId: uuidv4().substring(0, 6).toUpperCase(),
     procedures: getProcedures(ids, procedures),
     consultations: getConsultations(ids, consultations),
     submitted: new Date(),

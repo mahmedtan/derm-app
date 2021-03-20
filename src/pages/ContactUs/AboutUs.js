@@ -1,4 +1,4 @@
-import { Box } from "grommet";
+import { Box, Image } from "grommet";
 import React, { useEffect, useState } from "react";
 import { getAboutUs } from "../../services/extras";
 import AboutUsPart from "./AboutUsPart";
@@ -11,6 +11,7 @@ const AboutUs = () => {
   }, []);
 
   if (!aboutUs) return <Loading />;
+
   return (
     <Box fill>
       <Box

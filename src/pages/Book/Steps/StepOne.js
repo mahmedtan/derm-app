@@ -49,7 +49,11 @@ const StepOne = () => {
           ))}
         </Box>
       </Box>
-      <Text size="xlarge" margin={{ top: "medium" }} id="procedurejs">
+      <Text
+        size="xxlarge"
+        margin={{ top: "small", bottom: "small" }}
+        id="procedurejs"
+      >
         Procedures
       </Text>
       <Box gap="large" direction="row-responsive">

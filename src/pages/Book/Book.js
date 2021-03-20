@@ -17,6 +17,7 @@ import { changeValues } from "../../reducers/formValuesReducer";
 import { uploadImages } from "../../services/forms";
 import { useState } from "react";
 import Spinner from "../../components/Utils/Spinner";
+import { min } from "moment";
 
 const Book = () => {
   const size = useContext(ResponsiveContext);
@@ -72,6 +73,7 @@ const Book = () => {
       align="center"
       pad={{ bottom: "xlarge" }}
       background="background-contrast"
+      height={{ min: "100vh" }}
     >
       <Box
         align="center"

@@ -43,7 +43,7 @@ const Item = ({ servType }) => {
         {shown ? (
           <Box
             gap="medium"
-            animation={{ type: "fadeIn", size: "xlarge", duration: "2000" }}
+            animation={{ type: "fadeIn", duration: "3000" }}
             overflow="hidden"
             align="center"
           >
@@ -61,12 +61,11 @@ const Item = ({ servType }) => {
               ))}
           </Box>
         ) : (
-          <Box animation="zoomOut">
+          <Box animation="zoomIn">
             <Text
               size="xxlarge"
               color={uiTheme === "light" ? "text" : "dark-1"}
             >
-              {" "}
               {servType.name}
             </Text>
           </Box>

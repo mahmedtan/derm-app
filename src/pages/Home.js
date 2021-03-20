@@ -40,8 +40,8 @@ const Home = () => {
 
   return (
     <Box>
-      <Box background="red">
-        {banner && popup && (
+      <Box>
+        {banner && popup && Object.keys(popup).length && (
           <Layer
             responsive={false}
             margin="small"

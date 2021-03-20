@@ -2,7 +2,6 @@ import { useState } from "react";
 import {
   Layer,
   Button,
-  Heading,
   Box,
   Image,
   AccordionPanel,

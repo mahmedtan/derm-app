@@ -31,7 +31,7 @@ module.exports = async (req, res) => {
         procedures: getProcedures(ids, procedures),
         consultations: getConsultations(ids, consultations),
         subject: "Appointment Confirmation",
-        fullName: `${firstName} ${lastName}`,
+        fullName: `${firstName} ${lastName},`,
         date: date,
       },
     };

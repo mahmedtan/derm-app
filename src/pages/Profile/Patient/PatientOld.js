@@ -35,7 +35,7 @@ const PatientOld = ({ details, sub, setChange }) => {
         setMessage={(message) => setMessage(message)}
       />
       {message && (
-        <Text size="large" weight="bold">
+        <Text size="large" weight="bold" textAlign="center">
           {message}
         </Text>
       )}

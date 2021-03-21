@@ -1,5 +1,4 @@
 const sg = require("@sendgrid/mail");
-const moment = require("moment");
 
 sg.setApiKey(process.env.REACT_APP_SENDGRID_API_KEY);
 
@@ -14,7 +13,7 @@ module.exports = async (req, res) => {
       templateId: "d-8e49bec36dcf4d5bbfe67b4339ea8ea7",
       dynamicTemplateData: {
         subject: "Appointment Cancellation",
-        fullName,
+        fullName: `${fullName},`,
 
         date: date,
       },

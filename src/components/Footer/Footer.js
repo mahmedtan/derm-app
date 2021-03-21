@@ -91,8 +91,9 @@ const NavFooter = () => {
               </Text>
             </Box>
 
-            <Text>5717 Legacy Drive, Suite 250</Text>
-            <Text>Plano, Texas 75024</Text>
+            <Text>8668 John Hickman Pkwy,</Text>
+            <Text> Building 10, Suite 1003,</Text>
+            <Text>Frisco, TX 75034</Text>
             <Box align="center" gap={size === "small" ? "large" : "medium"}>
               <Box>
                 <Text textAlign="center">
@@ -124,7 +125,7 @@ const NavFooter = () => {
           </Box>
           <Box width="medium" align="center">
             <Anchor
-              href="https://goo.gl/maps/dRm6nvWnxMp8s2GG6"
+              href="https://goo.gl/maps/cMuqBrgD2tNc3MyQ9"
               target="_blank"
             >
               <Box

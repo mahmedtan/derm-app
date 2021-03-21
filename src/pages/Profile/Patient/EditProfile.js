@@ -121,7 +121,7 @@ export const EditProfile = ({
       id: _id || uuidv4(),
       patientId: patientId || `C${uuidv4().substring(0, 6).toUpperCase()}`,
     }).then((res, error) => {
-      setMessage("Your Profile has been updated");
+      setMessage("Your profile has been updated");
       console.log(res);
       setChange();
     });

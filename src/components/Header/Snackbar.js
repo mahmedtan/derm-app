@@ -73,7 +73,12 @@ const Snackbar = ({ uiTheme }) => {
               <Button icon={<Close />} alignSelf="end" onClick={removeLayer} />
               <Box pad="small" align="center" animation="fadeIn" gap="large">
                 <Box align="center" gap="large">
-                  <Link to="/book-now" onClick={removeLayer} component={Anchor}>
+                  <Link
+                    to="/book-now"
+                    onClick={removeLayer}
+                    component={Anchor}
+                    style={{ textDecoration: "none" }}
+                  >
                     <Text size="xlarge" margin="none">
                       Book Online
                     </Text>

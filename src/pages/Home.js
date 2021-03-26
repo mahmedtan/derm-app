@@ -34,7 +34,7 @@ const Home = () => {
 
   useEffect(() => {
     getPopup().then((res) => {
-      setInterval(() => setPopup(res), 3000);
+      setInterval(() => setPopup(res), 2000);
     });
   }, []);
 
@@ -45,7 +45,8 @@ const Home = () => {
           <Layer
             responsive={false}
             margin="small"
-            animation={"fadeIn"}
+            animate={false}
+            className={"fade-in"}
             onEsc={() => dispatch(toggleBanner())}
             onClickOutside={() => dispatch(toggleBanner())}
           >
@@ -65,7 +66,7 @@ const Home = () => {
           </Layer>
         )}
       </Box>
-      <Main animation="fadeIn" overflow="hidden" align="center" fill>
+      <Main overflow="hidden" align="center" fill>
         <Box
           align="center"
           justify="start"

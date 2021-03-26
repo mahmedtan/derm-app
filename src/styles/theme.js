@@ -282,10 +282,10 @@ export var theme = deepFreeze({
   },
   anchor: {
     color: "text",
-    textDecoration: "none",
+
     fontWeight: 500,
     hover: {
-      textDecoration: "underline",
+      textDecoration: "none",
     },
   },
   button: {

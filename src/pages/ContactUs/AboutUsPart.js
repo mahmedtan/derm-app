@@ -38,7 +38,7 @@ const AboutUs = ({ aboutUs }) => {
         <BlockContentMain body={aboutUs.body} />
 
         {aboutUs.showSlider && (
-          <Box width="medium">
+          <Box width="35rem">
             <Slider {...settings}>
               {aboutUs.sliderImages.map((source) => (
                 <Image src={source} key={source} />

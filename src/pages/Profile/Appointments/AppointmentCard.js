@@ -13,7 +13,7 @@ const AppointmentCard = ({ form, deleteForm, deleteAndReschedule, first }) => {
       margin={{ horizontal: "large", bottom: "large" }}
       gap="medium"
       pad="medium"
-      elevation={open ? "large" : "small"}
+      elevation="large"
     >
       {open ? (
         <Appointment

@@ -40,6 +40,7 @@ const PatientDetails = ({ setFullName }) => {
               }
             : "background-front"
         }
+        elevation="large"
       >
         {Object.keys(details).length === 0 && details.constructor === Object ? (
           <PatientNew

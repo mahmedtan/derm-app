@@ -35,21 +35,25 @@ const Finance = () => {
           <BlockContentMain body={financing.body} />
         </Box>
 
-        <Box direction="row" gap="small">
-          <Button
-            href="https://www.carecredit.com/apply/"
-            primary
-            label="Apply Now"
-            target="_blank"
-            size="large"
-          />
-          <Button
-            href="https://www.carecredit.com/apply/"
-            secondary
-            label="Pay now"
-            target="_blank"
-            size="large"
-          />
+        <Box direction="row" gap="small" width="medium">
+          <Box basis="1/2">
+            <Button
+              href="https://www.carecredit.com/apply/"
+              primary
+              label="Apply Now"
+              target="_blank"
+              size="large"
+            />
+          </Box>
+          <Box basis="1/2">
+            <Button
+              href="https://www.carecredit.com/apply/"
+              secondary
+              label="Pay now"
+              target="_blank"
+              size="large"
+            />
+          </Box>
         </Box>
       </Box>
     </Main>

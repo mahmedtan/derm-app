@@ -149,6 +149,7 @@ const Service = ({ service, serviceTypes, size }) => {
             </Box>
             <Card
               pad="medium"
+              elevation="large"
               margin={{ vertical: "large", horizontal: "small" }}
             >
               <SidebarAccordian serviceTypes={serviceTypes} />

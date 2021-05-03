@@ -30,20 +30,25 @@ const OfferCard = ({ title, price, time, description, _id, type, item }) => {
       round={size === "small" ? "medium" : "small"}
     >
       <Box direction="row" justify="between">
-        <Text size="large">{title}</Text>
+        <Box basis="3/4">
+          <Text size="large" truncate>
+            {title}
+          </Text>
+        </Box>
+
         <Text>
           <em>{`${time} min`}</em>
         </Text>
       </Box>
 
-      <Box height="xsmall" overflow="hidden">
+      <Box height="8rem" overflow="hidden">
         <Paragraph>{description}</Paragraph>
       </Box>
 
       <Box direction="row" align="center" justify="between">
         <Text weight="bold">{`$${price}`}</Text>
 
-        <CheckBox id={_id} name={_id} type={type} color="#8E677A" />
+        <CheckBox id={_id} name={_id} type={type} />
       </Box>
     </Card>
   );

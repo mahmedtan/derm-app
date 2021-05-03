@@ -31,9 +31,11 @@ const Product = ({ name, image, price }) => {
             <Text size="small">{name}</Text>
           </Box>
 
-          <Text alignSelf="start" weight="bold">
-            ${price}
-          </Text>
+          {price && (
+            <Text alignSelf="start" weight="bold">
+              ${price}
+            </Text>
+          )}
         </Box>
       </Box>
     </Box>

@@ -17,7 +17,7 @@ import StoryCards from "../components/StoryCards/StoryCards";
 import RecentBlogs from "../components/RecentBlogs/RecentBlogs";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
-import { Close, LinkNext } from "grommet-icons";
+import { Close, LinkNext, Shop } from "grommet-icons";
 import Comments from "../components/Comments/Comments";
 import { useContext } from "react";
 import { useState, useEffect } from "react";
@@ -74,17 +74,38 @@ const Home = () => {
           margin={{ bottom: "large", top: size === "small" ? "large" : "none" }}
         >
           <Slider />
-          <Link to="/services">
-            <Button
-              label="Schedule Your Visit"
-              icon={<LinkNext />}
-              reverse
-              margin={{ vertical: size === "small" ? "medium" : "none" }}
-              primary
-              size="large"
-              style={{ borderRadius: "25px" }}
-            />
-          </Link>
+          <Box
+            direction="row-responsive"
+            gap={size === "small" ? "medium" : "small"}
+            align="center"
+            justify="center"
+            margin={{ vertical: size === "small" ? "medium" : "none" }}
+          >
+            <Box alignSelf="center">
+              <Link to="/services">
+                <Button
+                  label="Schedule Your Visit"
+                  icon={<LinkNext />}
+                  reverse
+                  primary
+                  size="large"
+                  style={{ borderRadius: "25px" }}
+                />
+              </Link>
+            </Box>
+            <Box alignSelf="center">
+              <Link to="/services/skincare-products">
+                <Button
+                  icon={<Shop />}
+                  reverse
+                  label="Shop Skincare Products"
+                  secondary
+                  size="large"
+                  style={{ borderRadius: "25px" }}
+                />
+              </Link>
+            </Box>
+          </Box>
         </Box>
         <Pamphlet />
 

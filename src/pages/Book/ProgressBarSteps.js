@@ -9,7 +9,7 @@ function ProgressBarSteps({ total, active }) {
           key={item.description}
           width="10px"
           height="10px"
-          background={index < active ? "#694F5D" : "#eee"}
+          background={index < active ? "#694F5D" : "#fff"}
           round
         ></Box>
       ))}

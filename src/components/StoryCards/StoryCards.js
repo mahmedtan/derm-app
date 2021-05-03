@@ -16,7 +16,7 @@ const StoryCards = () => {
       fill="horizontal"
       gap="large"
       pad="large"
-      align={size === "small" ? "center" : "start"}
+      align={size === "small" || size === "medium" ? "center" : "start"}
       background="background-contrast"
     >
       {serviceTypes

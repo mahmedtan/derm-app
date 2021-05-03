@@ -39,12 +39,12 @@ const StepOne = () => {
 
       <Box gap="large" direction="row-responsive" id="consultjs">
         <Box gap="large">
-          {consultations.slice(0, consultations.length / 2 + 1).map((item) => (
+          {consultations.slice(0, consultations.length / 2).map((item) => (
             <OfferCard {...item} key={item._id} item={item} />
           ))}
         </Box>
         <Box gap="large">
-          {consultations.slice(consultations.length / 2 + 1).map((item) => (
+          {consultations.slice(consultations.length / 2).map((item) => (
             <OfferCard {...item} key={item._id} item={item} />
           ))}
         </Box>

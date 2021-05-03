@@ -16,7 +16,7 @@ const ResponsiveSlider = () => {
   services = services.filter((service) => service.showOnSlider);
 
   const getNumOfItemsToShow = (size) => {
-    return size === "small" ? 1 : 3;
+    return size === "small" ? 1 : size === "medium" ? 2 : 3;
   };
   const PrevArrow = (props) => (
     <LinkPrevious className={props.className} onClick={props.onClick} />
@@ -55,7 +55,10 @@ const ResponsiveSlider = () => {
         };
 
   return (
-    <Box width="xlarge" pad={{ horizontal: "medium" }}>
+    <Box
+      width="xlarge"
+      pad={{ horizontal: size === "medium" ? "xlarge" : "medium" }}
+    >
       <Slider slidesToShow={getNumOfItemsToShow(size)} {...settings}>
         {services
           .sort((a, b) => a.order - b.order)

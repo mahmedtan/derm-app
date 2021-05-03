@@ -52,7 +52,9 @@ const Blog = () => {
               <Text color="brand">{blog.author.bio}</Text>
             </Box>
           </Box>
-          <BlockContentMain body={blog.body} />
+          <Box style={{ textAlign: "justify" }}>
+            <BlockContentMain body={blog.body} />
+          </Box>
         </Box>
       </Box>
     </Layout>

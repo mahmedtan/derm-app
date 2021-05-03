@@ -56,6 +56,7 @@ const Profile = () => {
           fill
           gap="large"
           pad={{ bottom: "large" }}
+          background="background-contrast"
         >
           <Box align="center">
             <Heading

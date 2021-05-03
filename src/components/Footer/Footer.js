@@ -23,9 +23,12 @@ const NavFooter = () => {
       pad={size === "small" ? "xlarge" : "medium"}
       background={{ color: "background-front" }}
     >
-      <Box align="center" gap={size === "small" ? "large" : "small"}>
+      <Box
+        align="center"
+        gap={size === "small" || size === "medium" ? "large" : "small"}
+      >
         <Box
-          direction="row-responsive"
+          direction={size === "small" || size === "medium" ? "column" : "row"}
           gap="large"
           align="center"
           fill="horizontal"
@@ -36,7 +39,9 @@ const NavFooter = () => {
               align="center"
               border="between"
               width={{ min: "6rem" }}
-              direction={size === "small" ? "row" : "column"}
+              direction={
+                size === "small" || size === "medium" ? "row" : "column"
+              }
               gap={size === "small" ? "medium" : "small"}
             >
               <Link to="/" component={Anchor}>

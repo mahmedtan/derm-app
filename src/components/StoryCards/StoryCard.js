@@ -10,23 +10,27 @@ const StoryCard = ({ image, name, description, services }) => {
       direction="row-responsive"
       align="center"
       margin={{
-        horizontal: size === "small" ? "none" : "16vw",
+        horizontal: size === "small" || size === "medium" ? "none" : "16vw",
       }}
     >
       <Box
         round="full"
         overflow="hidden"
-        width={size === "small" ? "small" : "15rem"}
-        height={size === "small" ? "small" : "15rem"}
-        margin="large"
+        width={size === "small" || size === "medium" ? "small" : "15rem"}
+        height={size === "small" || size === "medium" ? "small" : "15rem"}
+        margin={{
+          horizontal: "large",
+          left: size === "medium" ? "none" : "large",
+        }}
         elevation="large"
         alignSelf="center"
       >
         <Image src={image} fit="cover" />
       </Box>
+
       <Box
         width="medium"
-        gap={size === "small" ? "medium" : "small"}
+        gap={size === "small" || size === "medium" ? "medium" : "small"}
         align={size === "small" ? "center" : "start"}
       >
         <Box style={{ fontFamily: "nunito", fontSize: "1.5rem" }}>

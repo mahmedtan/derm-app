@@ -5,7 +5,7 @@ import YouTube from "react-youtube";
 import { ResponsiveContext } from "grommet";
 import { useSelector } from "react-redux";
 
-const BlockContentMain = ({ body, ...extras }) => {
+const BlockContentMain = ({ body, className, ...extras }) => {
   const size = useContext(ResponsiveContext);
   const uiTheme = useSelector(({ uiTheme }) => uiTheme);
 

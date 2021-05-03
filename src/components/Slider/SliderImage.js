@@ -13,8 +13,7 @@ const SliderImage = ({ image, name, size, slug }) => {
           round={size === "small" ? "medium" : "small"}
           margin={{
             vertical: "large",
-            horizontal:
-              size === "small" || size === "xsmall" ? "medium" : "small",
+            horizontal: size === "small" ? "medium" : "small",
           }}
           elevation="medium"
         >

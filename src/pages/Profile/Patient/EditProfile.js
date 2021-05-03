@@ -128,13 +128,25 @@ export const EditProfile = ({
   };
   if (!open)
     return (
-      <Button
-        label="Edit Profile"
-        primary
-        onClick={() => {
-          setOpen(true);
-        }}
-      />
+      <Box direction="row" justify="center" align="center" gap="medium">
+        <Box width="full">
+          <Button
+            label="Edit Profile"
+            primary
+            onClick={() => {
+              setOpen(true);
+            }}
+          />
+        </Box>
+        <Box width="full">
+          <Button
+            label="Pay now"
+            secondary
+            href="https://lol.xyz"
+            target="_blank"
+          />
+        </Box>
+      </Box>
     );
   return (
     <Box gap="medium" align="center" animation="slideDown">

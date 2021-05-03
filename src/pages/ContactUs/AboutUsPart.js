@@ -30,7 +30,7 @@ const AboutUs = ({ aboutUs }) => {
         <Image src={aboutUs.avatar} fit="cover" />
       </Box>
 
-      <Box align="center" gap="small">
+      <Box align="center" gap="small" style={{ textAlign: "justify" }}>
         <Heading margin="none" level="2">
           {aboutUs.title}
         </Heading>

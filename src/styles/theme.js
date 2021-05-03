@@ -51,7 +51,7 @@ export var theme = deepFreeze({
   defaultMode: "light",
   global: {
     breakpoints: {
-      small: {
+      medium: {
         value: 1300,
       },
     },
@@ -98,6 +98,10 @@ export var theme = deepFreeze({
       "background-contrast": {
         dark: "#FFFFFF14",
         light: "#0000000A",
+      },
+      "background-gray": {
+        dark: "#FFFFFF14",
+        light: "#f0f0f0",
       },
       icon: "text",
       text: {

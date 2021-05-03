@@ -12,12 +12,11 @@ const NavHeader = () => {
       justify="between"
       elevation="small"
       fill="horizontal"
-      height="6rem"
       as="header"
     >
       <ResponsiveContext.Consumer>
         {(size) =>
-          size === "small" ? (
+          size === "small" || size === "medium" ? (
             <SnackBar uiTheme={uiTheme} />
           ) : (
             <Navbar uiTheme={uiTheme} />

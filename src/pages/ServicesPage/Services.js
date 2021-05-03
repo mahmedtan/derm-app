@@ -49,7 +49,7 @@ const Services = () => {
             </Route>
           </Switch>
         </Box>
-        {size !== "small" && size !== "xsmall" ? (
+        {size !== "small" && size !== "medium" ? (
           <SidebarServices serviceTypes={serviceTypes} />
         ) : null}
       </Box>

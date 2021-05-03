@@ -19,12 +19,12 @@ const ContactUs = () => {
   if (!contactUs) return <Loading />;
 
   const data = [
-    { day: "Monday", timings: "9 AM to 7 PM" },
-    { day: "Tuesday", timings: "9 AM to 7 PM" },
-    { day: "Wednesday", timings: "9 AM to 7 PM" },
-    { day: "Thursday", timings: "9 AM to 7 PM" },
-    { day: "Friday", timings: "9 AM to 7 PM" },
-    { day: "Saturday", timings: "12 PM to 6 PM" },
+    { day: "Monday", timings: "10 AM to 6 PM" },
+    { day: "Tuesday", timings: "10 AM to 6 PM" },
+    { day: "Wednesday", timings: "10 AM to 6 PM" },
+    { day: "Thursday", timings: "10 AM to 6 PM" },
+    { day: "Friday", timings: "10 AM to 6 PM" },
+    { day: "Saturday", timings: "12 PM to 5 PM" },
   ];
 
   return (
@@ -41,8 +41,7 @@ const ContactUs = () => {
         <Box
           style={{
             fontSize: "1.2rem",
-            textAlignLast: "center",
-            textAlign: "end",
+            textAlign: "center",
           }}
         >
           <BlockContentMain body={contactUs.body} />

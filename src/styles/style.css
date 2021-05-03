@@ -20,10 +20,6 @@ div:focus {
   display: none;
 }
 
-p {
-  text-align: justify;
-}
-
 .is-scrollLocked {
   overflow: hidden;
 }

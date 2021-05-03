@@ -14,11 +14,12 @@ import { useDispatch } from "react-redux";
 import { selectItem } from "../../reducers/selectedItemReducer";
 import Footer from "../../components/Footer/Footer";
 import SidebarAccordian from "../../components/Sidebars/SidebarAccordian";
-import { LinkNext, LinkPrevious } from "grommet-icons";
+import { LinkNext, LinkPrevious, Phone } from "grommet-icons";
 import { Link } from "react-router-dom";
 import FaceVisual from "../../components/FaceVisual/FaceVisual";
 import Slider from "react-slick";
 import { useContext } from "react";
+import Product from "./Product";
 
 const Service = ({ service, serviceTypes, size }) => {
   const dispatch = useDispatch();
@@ -48,6 +49,9 @@ const Service = ({ service, serviceTypes, size }) => {
 
   if (service === undefined) return <Loading />;
 
+  const { brands } = service;
+  console.log(brands);
+
   return (
     <Box align="center" margin={{ vertical: "small" }} fill>
       <Box
@@ -62,7 +66,6 @@ const Service = ({ service, serviceTypes, size }) => {
         <Heading level="2" margin="none" textAlign="center">
           {service.name}
         </Heading>
-
         {service.slug === "injectables" && (
           <Box gap={size === "small" ? "large" : "large"}>
             <Text size="large" textAlign="center" margin="none">
@@ -71,7 +74,6 @@ const Service = ({ service, serviceTypes, size }) => {
             <FaceVisual />
           </Box>
         )}
-
         {service.showSlider && (
           <Box width="35rem" alignSelf="center" pad="small">
             <Slider {...settings}>
@@ -83,10 +85,45 @@ const Service = ({ service, serviceTypes, size }) => {
             </Slider>
           </Box>
         )}
+        <Box style={{ textAlign: "justify" }}>
+          <BlockContentMain body={service.body} />
+        </Box>
+        <Box margin={{ vertical: "small" }}>
+          {brands &&
+            brands.map(({ brand, image, products }) => (
+              <Box
+                key={brand}
+                gap="large"
+                margin={{ bottom: "large" }}
+                align="center"
+              >
+                <Box width="xsmall" alignSelf="center">
+                  <Image src={image} fit="contain" />
+                </Box>
+                <Box direction="row" flex wrap>
+                  {products.map(({ image, productName, productPrice }) => (
+                    <Product
+                      key={productName}
+                      basis=""
+                      image={image}
+                      name={productName}
+                      price={productPrice}
+                    />
+                  ))}
+                </Box>
+                <Button
+                  size="large"
+                  label="Call to order"
+                  reverse
+                  href="tel:(469) 466-2727"
+                  secondary
+                  icon={<Phone />}
+                />
+              </Box>
+            ))}
+        </Box>
 
-        <BlockContentMain body={service.body} />
-
-        {(size === "small" || size === "xsmall") && (
+        {(size === "small" || size === "medium") && (
           <Box>
             <Box align="center" gap="small">
               <Link to="/book-now">

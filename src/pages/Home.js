@@ -118,7 +118,7 @@ const Home = () => {
         <Pamphlet />
         <Newsletter />
 
-        <div className="AuthorizeNetSeal"></div>
+        <div className="AuthorizeNetSeal"> heyyy</div>
         <StoryCards />
         <Comments />
         <RecentBlogs blogs={blogs} />

@@ -23,6 +23,7 @@ import { useContext } from "react";
 import { useState, useEffect } from "react";
 import { getPopup } from "../services/extras";
 import { toggleBanner } from "../reducers/bannerReducer";
+import useScript from "../hooks/useScript";
 
 const Home = () => {
   const blogs = useSelector((state) => state.blogs);
@@ -30,7 +31,6 @@ const Home = () => {
   const banner = useSelector(({ banner }) => banner);
   const uiTheme = useSelector(({ uiTheme }) => uiTheme);
   const dispatch = useDispatch();
-
   const [popup, setPopup] = useState(null);
 
   useEffect(() => {
@@ -118,7 +118,6 @@ const Home = () => {
         <Pamphlet />
         <Newsletter />
 
-        <div className="AuthorizeNetSeal"> heyyy</div>
         <StoryCards />
         <Comments />
         <RecentBlogs blogs={blogs} />

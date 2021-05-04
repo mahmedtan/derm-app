@@ -147,6 +147,15 @@ const NavFooter = () => {
           </Box>
         </Box>
 
+        <Box>
+          <a
+            href="https://verify.authorize.net/anetseal/?pid=aaed11ff-5256-4463-bc91-798bcd2cb8c0&rurl=https://www.mydermpa.com"
+            target="_blank"
+          >
+            <Image src="https://verify.authorize.net/anetseal/images/secure90x72.gif" />
+          </a>
+        </Box>
+
         <Box align="center" gap="small">
           <Text size={size === "small" ? "small" : "medium"}>
             <Link to="/privacy-policy" component={Anchor}>

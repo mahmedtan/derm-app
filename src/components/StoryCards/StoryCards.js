@@ -14,7 +14,7 @@ const StoryCards = () => {
   return (
     <Box
       fill="horizontal"
-      gap="large"
+      gap={size === "small" ? "xlarge" : "large"}
       pad="large"
       align={size === "small" || size === "medium" ? "center" : "start"}
       background="background-contrast"

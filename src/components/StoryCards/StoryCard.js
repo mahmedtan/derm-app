@@ -9,6 +9,7 @@ const StoryCard = ({ image, name, description, services }) => {
     <Box
       direction="row-responsive"
       align="center"
+      gap={size === "small" ? "medium" : "none"}
       margin={{
         horizontal: size === "small" || size === "medium" ? "none" : "16vw",
       }}

@@ -28,6 +28,7 @@ const Home = () => {
   const blogs = useSelector((state) => state.blogs);
   const size = useContext(ResponsiveContext);
   const banner = useSelector(({ banner }) => banner);
+  const uiTheme = useSelector(({ uiTheme }) => uiTheme);
   const dispatch = useDispatch();
 
   const [popup, setPopup] = useState(null);
@@ -78,12 +79,14 @@ const Home = () => {
             direction="row-responsive"
             gap={size === "small" ? "medium" : "small"}
             align="center"
+            width="30rem"
             justify="center"
             margin={{ vertical: size === "small" ? "medium" : "none" }}
           >
-            <Box alignSelf="center">
+            <Box alignSelf="center" flex>
               <Link to="/services">
                 <Button
+                  fill
                   label="Schedule Your Visit"
                   icon={<LinkNext />}
                   reverse
@@ -93,22 +96,27 @@ const Home = () => {
                 />
               </Link>
             </Box>
-            <Box alignSelf="center">
+
+            <Box alignSelf="center" flex>
               <Link to="/services/skincare-products">
                 <Button
-                  icon={<Shop />}
+                  fill
+                  icon={
+                    <Shop color={uiTheme === "light" ? "brand" : "#263040"} />
+                  }
+                  primary
+                  color="brand-secondary"
                   reverse
-                  label="Shop Skincare Products"
-                  secondary
+                  style={{ color: uiTheme === "light" ? "#694F5D" : "#263040" }}
+                  label="Skincare Products"
                   size="large"
-                  style={{ borderRadius: "25px" }}
                 />
               </Link>
             </Box>
           </Box>
         </Box>
         <Pamphlet />
-
+        <div className="AuthorizeNetSeal"></div>
         <Newsletter />
         <StoryCards />
         <Comments />

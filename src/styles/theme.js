@@ -318,6 +318,20 @@ export var theme = deepFreeze({
         vertical: "6px",
       },
     },
+    tertiary: {
+      background: {
+        color: "brand-secondary",
+      },
+      border: undefined,
+      color: "background",
+      font: {
+        weight: 600,
+      },
+      padding: {
+        horizontal: "12px",
+        vertical: "6px",
+      },
+    },
     secondary: {
       border: {
         color: "brand",

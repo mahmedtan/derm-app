@@ -41,7 +41,17 @@ const MenuBar = ({ uiTheme }) => {
         </Link>
       </Box>
       <Box direction="row" margin={{ horizontal: "small" }}>
-        <Button href="https://lol.lol" icon={<Money />} target="_blank" />
+        <Button
+          href="https://lol.lol"
+          margin={{ horizontal: "xsmall" }}
+          label="$"
+          style={{
+            fontSize: "1.6rem",
+            fontWeight: "400",
+            fontFamily: "sans-serif",
+          }}
+          target="_blank"
+        />
         <Button href="tel:(469) 466-2727" icon={<Phone />} />
         <Button
           icon={uiTheme === "light" ? <Moon /> : <Sun />}

@@ -140,7 +140,7 @@ export const EditProfile = ({
         </Box>
         <Box width="full">
           <Button
-            label="Pay now"
+            label="Pay Now"
             secondary
             href="https://lol.xyz"
             target="_blank"

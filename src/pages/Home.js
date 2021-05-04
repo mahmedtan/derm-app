@@ -116,8 +116,9 @@ const Home = () => {
           </Box>
         </Box>
         <Pamphlet />
-        <div className="AuthorizeNetSeal"></div>
         <Newsletter />
+
+        <div className="AuthorizeNetSeal"></div>
         <StoryCards />
         <Comments />
         <RecentBlogs blogs={blogs} />

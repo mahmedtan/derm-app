@@ -23,7 +23,7 @@ const Specials = () => {
         fill="horizontal"
         gap="small"
         pad={{ horizontal: "large", vertical: "medium" }}
-        background={{ color: "background-front", opacity: "strong" }}
+        background={{ color: "background-contrast" }}
         border="horizontal"
       >
         <Heading style={{ fontFamily: "Dancing Script" }} margin="none">

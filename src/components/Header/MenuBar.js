@@ -41,17 +41,31 @@ const MenuBar = ({ uiTheme }) => {
         </Link>
       </Box>
       <Box direction="row" margin={{ horizontal: "small" }}>
-        <Button
-          href="https://lol.lol"
-          margin={{ horizontal: "xsmall" }}
-          label="$"
-          style={{
-            fontSize: "1.6rem",
-            fontWeight: "400",
-            fontFamily: "sans-serif",
-          }}
+        <form
+          name="PrePage"
           target="_blank"
-        />
+          method="post"
+          action="https://Simplecheckout.authorize.net/payment/CatalogPayment.aspx"
+        >
+          <input
+            type="hidden"
+            name="LinkId"
+            value="8804e2eb-087b-4bd0-b240-2f9a99475849"
+          />
+
+          <Button
+            type="submit"
+            margin={{ horizontal: "xsmall" }}
+            label="$"
+            style={{
+              fontSize: "1.6rem",
+              fontWeight: "400",
+              fontFamily: "sans-serif",
+            }}
+            target="_blank"
+          />
+        </form>
+
         <Button href="tel:(469) 466-2727" icon={<Phone />} />
         <Button
           icon={uiTheme === "light" ? <Moon /> : <Sun />}

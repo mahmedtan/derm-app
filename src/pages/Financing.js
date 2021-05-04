@@ -9,6 +9,7 @@ import {
   ResponsiveContext,
 } from "grommet";
 import React, { useContext, useEffect, useState } from "react";
+import { useSelector } from "react-redux";
 import BlockContentMain from "../components/Utils/BlockContentMain";
 import { getFinancing } from "../services/extras";
 import Loading from "./Extras/Loading";
@@ -16,6 +17,7 @@ import Loading from "./Extras/Loading";
 const Finance = () => {
   const [financing, setFinancing] = useState(null);
   const size = useContext(ResponsiveContext);
+  const uiTheme = useSelector(({ uiTheme }) => uiTheme);
 
   useEffect(() => {
     getFinancing().then((res) => setFinancing(res));
@@ -77,6 +79,7 @@ const Finance = () => {
           <Box basis="1/2">
             <form
               name="PrePage"
+              target="_blank"
               method="post"
               action="https://Simplecheckout.authorize.net/payment/CatalogPayment.aspx"
             >
@@ -86,15 +89,13 @@ const Finance = () => {
                 value="8804e2eb-087b-4bd0-b240-2f9a99475849"
               />
 
-              <input
+              <Button
                 type="submit"
-                value="Pay Now"
-                style={{
-                  background: "white",
-                  borderRadius: "25px",
-                  fontFamily: "sans-serif",
-                  fontWeight: "bold",
-                }}
+                secondary
+                style={{ color: uiTheme === "light" ? "#694F5D" : "#B9A2AE" }}
+                label="Pay now"
+                size="large"
+                fill
               />
             </form>
           </Box>

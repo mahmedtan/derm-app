@@ -50,7 +50,7 @@ const Service = ({ service, serviceTypes, size }) => {
   if (service === undefined) return <Loading />;
 
   const { brands } = service;
-  console.log(brands);
+  console.log(service.slug);
 
   return (
     <Box align="center" margin={{ vertical: "small" }} fill>
@@ -85,7 +85,12 @@ const Service = ({ service, serviceTypes, size }) => {
             </Slider>
           </Box>
         )}
-        <Box style={{ textAlign: "justify" }}>
+        <Box
+          style={{
+            textAlign:
+              service.slug === "skincare-products" ? "center" : "justify",
+          }}
+        >
           <BlockContentMain body={service.body} />
         </Box>
         <Box margin={{ vertical: "small" }}>
@@ -97,7 +102,7 @@ const Service = ({ service, serviceTypes, size }) => {
                 margin={{ bottom: "large" }}
                 align="center"
               >
-                <Box width="xsmall" alignSelf="center">
+                <Box width="small" alignSelf="center">
                   <Image src={image} fit="contain" />
                 </Box>
                 <Box direction="row" flex wrap>
@@ -111,14 +116,12 @@ const Service = ({ service, serviceTypes, size }) => {
                     />
                   ))}
                 </Box>
-                <Button
-                  size="large"
-                  label="Call to order"
-                  reverse
-                  href="tel:(469) 466-2727"
-                  secondary
-                  icon={<Phone />}
-                />
+                <Button size="large" href="tel:(469) 466-2727" secondary>
+                  <Box align="center" direction="row" gap="xsmall">
+                    <Phone color="brand" />
+                    Call to order
+                  </Box>
+                </Button>
               </Box>
             ))}
         </Box>

@@ -128,28 +128,6 @@ const Service = ({ service, serviceTypes, size }) => {
 
         {(size === "small" || size === "medium") && (
           <Box>
-            <Box align="center" gap="small">
-              <Link to="/book-now">
-                <Button
-                  label="Book Now"
-                  icon={<LinkNext />}
-                  reverse
-                  primary
-                  size="medium"
-                  style={{ borderRadius: "25px" }}
-                />
-              </Link>
-
-              <Button
-                label=" Call Now "
-                icon={<LinkNext />}
-                reverse
-                secondary
-                size="medium"
-                href="tel:214-625-2777"
-                style={{ borderRadius: "25px" }}
-              />
-            </Box>
             <Card
               pad="medium"
               elevation="large"

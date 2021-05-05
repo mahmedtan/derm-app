@@ -67,7 +67,12 @@ const Snackbar = ({ uiTheme }) => {
             onClickOutside={() => removeLayer()}
             position="center"
           >
-            <Box pad={{ horizontal: "xlarge", vertical: "medium" }} gap="large">
+            <Box
+              alignSelf="center"
+              pad={{ horizontal: "medium", vertical: "medium" }}
+              width="medium"
+              gap="large"
+            >
               <Button icon={<Close />} alignSelf="end" onClick={removeLayer} />
               <Box pad="small" align="center" animation="fadeIn">
                 <Box align="center" gap={size === "small" ? "large" : "medium"}>

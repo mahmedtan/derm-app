@@ -139,12 +139,20 @@ export const EditProfile = ({
           />
         </Box>
         <Box width="full">
-          <Button
-            label="Pay Now"
-            secondary
-            href="https://lol.xyz"
+          <form
+            name="PrePage"
             target="_blank"
-          />
+            method="post"
+            action="https://Simplecheckout.authorize.net/payment/CatalogPayment.aspx"
+          >
+            <input
+              type="hidden"
+              name="LinkId"
+              value="8804e2eb-087b-4bd0-b240-2f9a99475849"
+            />
+
+            <Button label="Pay Now" secondary type="submit" fill />
+          </form>
         </Box>
       </Box>
     );

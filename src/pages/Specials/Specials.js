@@ -29,7 +29,7 @@ const Specials = () => {
         <Heading style={{ fontFamily: "Dancing Script" }} margin="none">
           {specials.title}
         </Heading>
-        <Text textAlign="center">{specials.description}</Text>
+        <Text textAlign="center ">{specials.description}</Text>
       </Box>
 
       <Special

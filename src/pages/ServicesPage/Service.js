@@ -119,7 +119,7 @@ const Service = ({ service, serviceTypes, size }) => {
                 <Button size="large" href="tel:(469) 466-2727" secondary>
                   <Box align="center" direction="row" gap="xsmall">
                     <Phone color="brand" />
-                    Call to order
+                    Place Order
                   </Box>
                 </Button>
               </Box>

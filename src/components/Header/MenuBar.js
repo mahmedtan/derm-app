@@ -1,13 +1,15 @@
 import React from "react";
-import { Box, Button } from "grommet";
+import { Box, Button, ResponsiveContext } from "grommet";
 import { Link } from "react-router-dom";
 import { Article, Facebook, Instagram, Money, Phone } from "grommet-icons";
 import { Moon, Sun } from "grommet-icons";
 import { toggleUI } from "../../reducers/uiThemeReducer";
 import { useDispatch } from "react-redux";
+import { useContext } from "react";
 
 const MenuBar = ({ uiTheme }) => {
   const dispatch = useDispatch();
+  const size = useContext(ResponsiveContext);
   return (
     <Box
       direction="row"
@@ -40,7 +42,10 @@ const MenuBar = ({ uiTheme }) => {
           <Button icon={<Article />} />
         </Link>
       </Box>
-      <Box direction="row" margin={{ horizontal: "small" }}>
+      <Box
+        direction="row"
+        margin={{ horizontal: size === "small" ? "none" : "small" }}
+      >
         <form
           name="PrePage"
           target="_blank"

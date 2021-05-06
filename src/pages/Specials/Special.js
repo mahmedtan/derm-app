@@ -21,9 +21,11 @@ const Special = ({
         {bannerVideo && (
           <Box width="51rem">
             <SanityMuxPlayer
+              autoload
               assetDocument={bannerVideo}
               autoplay
               loop
+              playsInline
               showControls={false}
             />
           </Box>

@@ -23,7 +23,6 @@ const Finance = () => {
     getFinancing().then((res) => setFinancing(res));
   }, []);
   if (!financing) return <Loading />;
-  console.log(financing);
   return (
     <Main height={{ min: "90vh" }} align="center" pad={{ top: "large" }}>
       <Box
@@ -93,7 +92,7 @@ const Finance = () => {
                 type="submit"
                 secondary
                 style={{ color: uiTheme === "light" ? "#694F5D" : "#B9A2AE" }}
-                label="Pay now"
+                label="Pay Now"
                 size="large"
                 fill
               />

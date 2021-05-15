@@ -4,6 +4,10 @@ import DisplayCard from "../../../components/Utils/DisplayCard";
 
 const Consultations = ({ consultations, title }) => {
   if (!consultations.length) return null;
+  const midConsults =
+    (consultations.length / 2) % 2 === 0
+      ? consultations.length / 2
+      : consultations.length / 2 + 1;
 
   return (
     <Box gap="large" align="center">
@@ -12,13 +16,13 @@ const Consultations = ({ consultations, title }) => {
       </Text>
       <Box gap="large" direction="row-responsive" justify="center">
         <Box gap="large">
-          {consultations.slice(0, consultations.length / 2 + 1).map((item) => (
+          {consultations.slice(0, midConsults).map((item) => (
             <DisplayCard {...item} key={item._id} item={item} />
           ))}
         </Box>
-        {consultations.slice(consultations.length / 2 + 1).length > 0 && (
+        {consultations.slice(midConsults).length > 0 && (
           <Box gap="large">
-            {consultations.slice(consultations.length / 2 + 1).map((item) => (
+            {consultations.slice(midConsults).map((item) => (
               <DisplayCard {...item} key={item._id} item={item} />
             ))}
           </Box>

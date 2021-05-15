@@ -9,7 +9,16 @@ import {
 import React, { useContext, useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 
-const OfferCard = ({ title, price, time, description, _id, type, item }) => {
+const OfferCard = ({
+  title,
+  startingPrice,
+  endingPrice,
+  time,
+  description,
+  _id,
+  type,
+  item,
+}) => {
   const formValues = useSelector(({ formValues }) => formValues);
   const [selected, setSelected] = useState(false);
   const size = useContext(ResponsiveContext);
@@ -46,7 +55,9 @@ const OfferCard = ({ title, price, time, description, _id, type, item }) => {
       </Box>
 
       <Box direction="row" align="center" justify="between">
-        <Text weight="bold">{`$${price}`}</Text>
+        <Text weight="bold">{`$${startingPrice} ${
+          endingPrice ? `- $${endingPrice}` : ""
+        }`}</Text>
 
         <CheckBox id={_id} name={_id} type={type} />
       </Box>

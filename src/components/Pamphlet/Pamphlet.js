@@ -31,7 +31,7 @@ const Pamphlet = () => {
           </Text>
           <Box gap="small" direction="row" align="center" justify="center">
             <Button
-              label="Book now"
+              label="Book Now"
               primary
               color="#0f1f25"
               size="large"
@@ -40,7 +40,7 @@ const Pamphlet = () => {
             />
 
             <Button
-              label="Call now"
+              label="Call Now"
               secondary
               size="large"
               color="#0f1f25"

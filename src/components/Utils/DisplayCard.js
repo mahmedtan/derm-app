@@ -1,6 +1,12 @@
 import React, { useContext } from "react";
 import { Card, Box, Text, Paragraph, ResponsiveContext } from "grommet";
-const DisplayCard = ({ title, price, time, description }) => {
+const DisplayCard = ({
+  title,
+  startingPrice,
+  endingPrice,
+  time,
+  description,
+}) => {
   const size = useContext(ResponsiveContext);
   return (
     <Card
@@ -19,7 +25,9 @@ const DisplayCard = ({ title, price, time, description }) => {
 
       <Paragraph>{description}</Paragraph>
       <Box direction="row" align="center" justify="between">
-        <Text weight="bold">{`$${price}`}</Text>
+        <Text weight="bold">{`$${startingPrice} ${
+          endingPrice ? `- $${endingPrice}` : ""
+        }`}</Text>
       </Box>
     </Card>
   );

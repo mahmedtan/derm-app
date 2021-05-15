@@ -8,7 +8,7 @@ const client = sanityClient({
 export const getAllConsultations = async () => {
   try {
     const consultations = await client.fetch(
-      '*[_type=="consultation"] | order(name) {_id,title,price,time, description}'
+      '*[_type=="consultation"] | order(name) {_id,title,startingPrice, endingPrice,time, description}'
     );
     return consultations;
   } catch (error) {

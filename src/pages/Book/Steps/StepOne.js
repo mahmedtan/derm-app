@@ -5,17 +5,21 @@ import Loading from "../../Extras/Loading";
 import OfferCard from "../../../components/Utils/OfferCard";
 
 const StepOne = () => {
-  const [
-    procedures,
-    consultations,
-  ] = useSelector(({ procedures, consultations }) => [
-    procedures,
-    consultations,
-  ]);
+  const [procedures, consultations] = useSelector(
+    ({ procedures, consultations }) => [procedures, consultations]
+  );
 
   if (!(procedures && consultations)) {
     return <Loading />;
   }
+  const midConsults =
+    (consultations.length / 2) % 2 === 0
+      ? consultations.length / 2
+      : consultations.length / 2 + 1;
+  const midProcedures =
+    (procedures.length / 2) % 2 === 0
+      ? procedures.length / 2
+      : procedures.length / 2 + 1;
 
   return (
     <Box
@@ -39,12 +43,12 @@ const StepOne = () => {
 
       <Box gap="large" direction="row-responsive" id="consultjs">
         <Box gap="large">
-          {consultations.slice(0, consultations.length / 2).map((item) => (
+          {consultations.slice(0, midConsults).map((item) => (
             <OfferCard {...item} key={item._id} item={item} />
           ))}
         </Box>
         <Box gap="large">
-          {consultations.slice(consultations.length / 2).map((item) => (
+          {consultations.slice(midConsults).map((item) => (
             <OfferCard {...item} key={item._id} item={item} />
           ))}
         </Box>
@@ -58,12 +62,12 @@ const StepOne = () => {
       </Text>
       <Box gap="large" direction="row-responsive">
         <Box gap="large">
-          {procedures.slice(0, procedures.length / 2).map((item) => (
+          {procedures.slice(0, midProcedures).map((item) => (
             <OfferCard {...item} key={item._id} item={item} />
           ))}
         </Box>
         <Box gap="large">
-          {procedures.slice(procedures.length / 2).map((item) => (
+          {procedures.slice(midProcedures).map((item) => (
             <OfferCard {...item} key={item._id} item={item} />
           ))}
         </Box>

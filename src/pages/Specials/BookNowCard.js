@@ -16,7 +16,7 @@ const BookNowCard = () => {
       </Heading>
       <Box direction="row" align="center" gap="small" alignSelf="center">
         <Button
-          label="Book now"
+          label="Book Now"
           primary
           size="large"
           color="dark-1"
@@ -25,7 +25,7 @@ const BookNowCard = () => {
         />
 
         <Button
-          label="Call now"
+          label="Call Now"
           secondary
           size="large"
           color="dark-1"

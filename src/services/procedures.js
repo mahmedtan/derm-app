@@ -7,7 +7,7 @@ const client = sanityClient({
 
 export const getAllProceedures = async () => {
   const procedures = await client.fetch(
-    '*[_type=="procedure"] | order(name) {_id,title,price,time, description}'
+    '*[_type=="procedure"] | order(name) {_id,title,startingPrice, endingPrice,time, description}'
   );
   return procedures;
 };

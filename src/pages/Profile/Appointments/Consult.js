@@ -5,9 +5,11 @@ import DisplayCard from "../../../components/Utils/DisplayCard";
 const Consultations = ({ consultations, title }) => {
   if (!consultations.length) return null;
   const midConsults =
-    (consultations.length / 2) % 2 === 0
-      ? consultations.length / 2
+    consultations.length % 2 === 0
+      ? consultations.length
       : consultations.length / 2 + 1;
+
+  console.log(midConsults);
 
   return (
     <Box gap="large" align="center">

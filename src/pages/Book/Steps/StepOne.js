@@ -1,4 +1,4 @@
-import { Anchor, Box, Heading, Text } from "grommet";
+import { Anchor, Box, Text } from "grommet";
 import React from "react";
 import { useSelector } from "react-redux";
 import Loading from "../../Extras/Loading";
@@ -13,11 +13,11 @@ const StepOne = () => {
     return <Loading />;
   }
   const midConsults =
-    (consultations.length / 2) % 2 === 0
+    consultations.length % 2 === 0
       ? consultations.length / 2
       : consultations.length / 2 + 1;
   const midProcedures =
-    (procedures.length / 2) % 2 === 0
+    procedures.length % 2 === 0
       ? procedures.length / 2
       : procedures.length / 2 + 1;
 

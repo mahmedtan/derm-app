@@ -7,7 +7,7 @@ const client = sanityClient({
 
 export const getAboutUs = async () => {
   const res = await client.fetch(
-    `*[_type=="extra"  && pageType=="about-us"]{body,title, "avatar":avatar.asset->url ,"sliderImages": sliderImages[].asset->url, showSlider }[0]`
+    `*[_type=="extra"  && pageType=="about-us"]{body, bodySecondary,title,titleSecondary,"sliderImages": sliderImages[].asset->url, showSlider, "posters": posters[].asset->url }[0]`
   );
   return res;
 };

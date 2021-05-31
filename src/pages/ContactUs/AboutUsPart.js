@@ -27,7 +27,7 @@ const AboutUs = ({ aboutUs }) => {
         style={{ borderRadius: 100 }}
         elevation="medium"
       >
-        <Image src={aboutUs.avatar} fit="cover" />
+        <Image src={aboutUs.posters[0]} fit="cover" />
       </Box>
 
       <Box align="center" gap="small" style={{ textAlign: "justify" }}>
@@ -36,6 +36,21 @@ const AboutUs = ({ aboutUs }) => {
         </Heading>
 
         <BlockContentMain body={aboutUs.body} />
+
+        <Box
+          overflow="hidden"
+          width="small"
+          height="small"
+          style={{ borderRadius: 100, marginTop: "10px" }}
+          elevation="medium"
+        >
+          <Image src={aboutUs.posters[1]} fit="cover" />
+        </Box>
+
+        <Heading margin="none" level="2">
+          {aboutUs.titleSecondary}
+        </Heading>
+        <BlockContentMain body={aboutUs.bodySecondary} />
 
         {aboutUs.showSlider && (
           <Box width="35rem">

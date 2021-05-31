@@ -95,16 +95,18 @@ const Service = ({ service, serviceTypes, size }) => {
         </Box>
         <Box margin={{ vertical: "small" }}>
           {brands &&
-            brands.map(({ brand, image, products }) => (
+            brands.map(({ brand, brandLink, image, products }) => (
               <Box
                 key={brand}
                 gap="large"
                 margin={{ bottom: "large" }}
                 align="center"
               >
-                <Box width="small" alignSelf="center">
-                  <Image src={image} fit="contain" />
-                </Box>
+                <a href={brandLink} target="_blank">
+                  <Box width="small" alignSelf="center">
+                    <Image src={image} fit="contain" />
+                  </Box>
+                </a>
                 <Box direction="row" flex wrap>
                   {products.map(({ image, productName, productPrice }) => (
                     <Product
@@ -116,10 +118,20 @@ const Service = ({ service, serviceTypes, size }) => {
                     />
                   ))}
                 </Box>
-                <Button size="large" href="tel:(469) 466-2727" secondary>
+                <Button
+                  size="large"
+                  href={brandLink}
+                  target="_blank"
+                  primary
+                  style={{
+                    background: "rgb(176,170,191)",
+                    borderRadius: "8px",
+                    textTransform: "capitalize",
+                    padding: "10px 20px",
+                  }}
+                >
                   <Box align="center" direction="row" gap="xsmall">
-                    <Phone color="brand" />
-                    Place Order
+                    SHOP NOW
                   </Box>
                 </Button>
               </Box>

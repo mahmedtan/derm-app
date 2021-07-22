@@ -57,9 +57,11 @@ const StepHeader = () => {
               onClick={() => dispatch(decrementIndex())}
             />
           ) : (
-            <Link onClick={() => history.goBack()}>
-              <Button icon={<FormPrevious />} label="Exit" />
-            </Link>
+            <Button
+              icon={<FormPrevious />}
+              label="Exit"
+              onClick={() => history.goBack()}
+            />
           ))}
 
         <ProgressBarSteps total={Steps} active={activeIndex + 1} />

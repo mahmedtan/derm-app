@@ -96,7 +96,7 @@ const NavFooter = () => {
             </Box>
 
             <Text>1312 West Exchange Pkwy,</Text>
-            <Text> Building B, Suite 2130,</Text>
+            <Text> Suite 2130,</Text>
             <Text>Allen, Texas 75013</Text>
             <Box align="center" gap={size === "small" ? "large" : "medium"}>
               <Box>
@@ -129,7 +129,7 @@ const NavFooter = () => {
           </Box>
           <Box width="medium" align="center">
             <Anchor
-              href="https://goo.gl/maps/cMuqBrgD2tNc3MyQ9"
+              href="https://goo.gl/maps/PT6KXsp4qp3L8HvX8"
               target="_blank"
             >
               <Box

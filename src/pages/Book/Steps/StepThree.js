@@ -31,12 +31,19 @@ const StepThree = () => {
   const filterDate = (current) => {
     const day = new Date(current).getDay();
 
-    return times.find(
-      (item) =>
+    return times.find((item) => {
+      const blockedDay =
+        !item.blockAppointments ||
+        new Date(item.blockAppointments).getTime() <=
+          new Date(current).getTime();
+
+      return (
         item.dayOfTheWeek === day &&
         item.available &&
+        blockedDay &&
         new Date(current).getTime() >= new Date().getTime()
-    );
+      );
+    });
   };
   const filterTime = (time) => {
     if (availableTimes)

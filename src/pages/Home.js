@@ -23,7 +23,6 @@ import { useContext } from "react";
 import { useState, useEffect } from "react";
 import { getPopup } from "../services/extras";
 import { toggleBanner } from "../reducers/bannerReducer";
-import useScript from "../hooks/useScript";
 
 const Home = () => {
   const blogs = useSelector((state) => state.blogs);
@@ -32,41 +31,39 @@ const Home = () => {
   const uiTheme = useSelector(({ uiTheme }) => uiTheme);
   const dispatch = useDispatch();
   const [popup, setPopup] = useState(null);
+  const [load, setLoad] = useState(false);
 
   useEffect(() => {
-    getPopup().then((res) => {
-      setInterval(() => setPopup(res), 2000);
-    });
+    getPopup().then((res) => setPopup(res));
   }, []);
 
   return (
     <Box>
-      <Box>
-        {banner && popup && Object.keys(popup).length && (
-          <Layer
-            responsive={false}
-            margin="small"
-            animate={false}
-            className={"fade-in"}
-            onEsc={() => dispatch(toggleBanner())}
-            onClickOutside={() => dispatch(toggleBanner())}
-          >
-            <Stack anchor="top-right">
-              <Link to="/book-now">
-                <Box width="large">
-                  <Image src={popup.avatar} />
-                </Box>
-              </Link>
+      {banner && popup && Object.keys(popup).length && (
+        <Layer
+          responsive={false}
+          margin="small"
+          animate={false}
+          className={"fade-in"}
+          onEsc={() => dispatch(toggleBanner())}
+          style={load ? {} : { display: "none" }}
+          onClickOutside={() => dispatch(toggleBanner())}
+        >
+          <Stack anchor="top-right">
+            <Link to="/book-now">
+              <Box width="large">
+                <Image src={popup.avatar} onLoad={() => setLoad(true)} />
+              </Box>
+            </Link>
 
-              <Button
-                label={<Close color="light-1" elevation="medium" />}
-                onClick={() => dispatch(toggleBanner())}
-                margin="small"
-              />
-            </Stack>
-          </Layer>
-        )}
-      </Box>
+            <Button
+              label={<Close color="light-1" elevation="medium" />}
+              onClick={() => dispatch(toggleBanner())}
+              margin="small"
+            />
+          </Stack>
+        </Layer>
+      )}
       <Main overflow="hidden" align="center" fill>
         <Box
           align="center"

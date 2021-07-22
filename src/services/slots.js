@@ -9,7 +9,6 @@ export const getAvailableTimes = async () => {
   const availableTimes = await client.fetch(
     '*[_type=="timeAvailable"] | order(dayOfTheWeek)'
   );
-  // console.log(availableTimes);
 
   return availableTimes;
 };

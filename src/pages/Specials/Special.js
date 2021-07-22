@@ -44,7 +44,9 @@ const Special = ({
                 <SanityMuxPlayer
                   assetDocument={posterVideo1}
                   autoplay
+                  autoload
                   loop
+                  playsInline
                   showControls={false}
                 />
               </Box>

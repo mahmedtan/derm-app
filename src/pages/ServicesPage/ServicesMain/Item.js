@@ -14,6 +14,8 @@ const Item = ({ servType }) => {
     size === "small" && setShown(visibility);
   }, [visibility]);
 
+  console.log(servType);
+
   return (
     <VisibilitySensor onChange={(isVisible) => setVisibility(isVisible)}>
       <Box
@@ -22,11 +24,11 @@ const Item = ({ servType }) => {
         background={
           uiTheme === "light"
             ? shown
-              ? { color: servType.backgroundColor, opacity: "strong" }
-              : servType.backgroundColor
+              ? { color: servType.backgroundColor.hex, opacity: "strong" }
+              : servType.backgroundColor.hex
             : shown
-            ? { color: servType.backgroundColor, opacity: "strong" }
-            : { color: servType.backgroundColor, opacity: "70%" }
+            ? { color: servType.backgroundColor.hex, opacity: "strong" }
+            : { color: servType.backgroundColor.hex, opacity: "70%" }
         }
         align="center"
         round="small"

@@ -14,7 +14,7 @@ export const getAllBlogs = async () => {
 
 export const getFullBlog = async (slug) => {
   const blog = await client.fetch(
-    `*[_type=="post" && slug.current == $slug] {title,"mainImage":mainImage.asset->url,author->{name, "image":image.asset->url, bio},body}`,
+    `*[_type=="post" && slug.current == $slug] {title,"mainImage":mainImage.asset->url,author->{name, "image":image.asset->url, bio},body, metaTags}`,
     {
       slug,
     }

@@ -4,7 +4,7 @@ import Dropzone from "../../../components/Utils/Dropzone";
 
 const StepTwo = () => {
   return (
-    <Box gap="medium">
+    <Box gap="medium" animation={{ type: "fadeIn", duration: "1500" }}>
       <Box animation="fadeIn" round="xsmall" border="all" width="medium">
         <Dropzone />
       </Box>

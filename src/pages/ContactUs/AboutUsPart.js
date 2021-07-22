@@ -19,7 +19,7 @@ const AboutUs = ({ aboutUs }) => {
   console.log(aboutUs.showSlider);
 
   return (
-    <Box align="center" gap="large" animation="fadeIn" id="aboutusjs">
+    <Box align="center" gap="large" id="aboutusjs">
       <Box
         overflow="hidden"
         width="small"

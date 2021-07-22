@@ -58,7 +58,11 @@ const StepThree = () => {
   };
 
   return (
-    <Box align="center" margin="small">
+    <Box
+      align="center"
+      margin="small"
+      animation={{ type: "fadeIn", duration: "1500" }}
+    >
       <Datepicker
         id="datepicker"
         name="bookedDate"

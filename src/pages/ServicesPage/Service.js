@@ -20,6 +20,7 @@ import FaceVisual from "../../components/FaceVisual/FaceVisual";
 import Slider from "react-slick";
 import { useContext } from "react";
 import Product from "./Product";
+import { Helmet } from "react-helmet";
 
 const Service = ({ service, serviceTypes, size }) => {
   const dispatch = useDispatch();
@@ -50,109 +51,124 @@ const Service = ({ service, serviceTypes, size }) => {
   if (service === undefined) return <Loading />;
 
   const { brands } = service;
-  console.log(service.slug);
+
+  console.log(service.metaTags);
 
   return (
-    <Box align="center" margin={{ vertical: "small" }} fill>
+    <>
+      <Helmet>
+        <title>{service.name}</title>
+        {service.metaTags &&
+          service.metaTags.map(({ _key, _type, ...tag }) => (
+            <meta key={_key} {...tag} />
+          ))}
+      </Helmet>
       <Box
-        width="large"
-        flex="grow"
-        gap="medium"
-        pad={{
-          horizontal: size === "small" ? "large" : "4rem",
-          vertical: "large",
-        }}
+        align="center"
+        margin={{ vertical: "small" }}
+        fill
+        animation={{ type: "fadeIn", duration: "1500" }}
       >
-        <Heading level="2" margin="none" textAlign="center">
-          {service.name}
-        </Heading>
-        {service.slug === "injectables" && (
-          <Box gap={size === "small" ? "large" : "large"}>
-            <Text size="large" textAlign="center" margin="none">
-              Available Treatment Options
-            </Text>
-            <FaceVisual />
-          </Box>
-        )}
-        {service.showSlider && (
-          <Box width="35rem" alignSelf="center" pad="small">
-            <Slider {...settings}>
-              {service.sliderImages.map((source) => (
-                <Box key={source} pad="small">
-                  <Image src={source} />
-                </Box>
-              ))}
-            </Slider>
-          </Box>
-        )}
         <Box
-          style={{
-            textAlign:
-              service.slug === "skincare-products" ? "center" : "justify",
+          width="large"
+          flex="grow"
+          gap="medium"
+          pad={{
+            horizontal: size === "small" ? "large" : "4rem",
+            vertical: "large",
           }}
         >
-          <BlockContentMain body={service.body} />
-        </Box>
-        <Box margin={{ vertical: "small" }}>
-          {brands &&
-            brands.map(({ brand, brandLink, image, products }) => (
-              <Box
-                key={brand}
-                gap="large"
-                margin={{ bottom: "large" }}
-                align="center"
-              >
-                <a href={brandLink} target="_blank">
-                  <Box width="small" alignSelf="center">
-                    <Image src={image} fit="contain" />
+          <Heading level="2" margin="none" textAlign="center">
+            {service.name}
+          </Heading>
+          {service.slug === "injectables" && (
+            <Box gap={size === "small" ? "large" : "large"}>
+              <Text size="large" textAlign="center" margin="none">
+                Available Treatment Options
+              </Text>
+              <FaceVisual />
+            </Box>
+          )}
+          {service.showSlider && (
+            <Box width="35rem" alignSelf="center" pad="small">
+              <Slider {...settings}>
+                {service.sliderImages.map((source) => (
+                  <Box key={source} pad="small">
+                    <Image src={source} />
                   </Box>
-                </a>
-                <Box direction="row" flex wrap>
-                  {products.map(({ image, productName, productPrice }) => (
-                    <Product
-                      key={productName}
-                      basis=""
-                      image={image}
-                      name={productName}
-                      price={productPrice}
-                    />
-                  ))}
-                </Box>
-                <Button
-                  size="large"
-                  href={brandLink}
-                  target="_blank"
-                  primary
-                  style={{
-                    background: "rgb(176,170,191)",
-                    borderRadius: "8px",
-                    textTransform: "capitalize",
-                    padding: "10px 20px",
-                  }}
-                >
-                  <Box align="center" direction="row" gap="xsmall">
-                    SHOP NOW
-                  </Box>
-                </Button>
-              </Box>
-            ))}
-        </Box>
-
-        {(size === "small" || size === "medium") && (
-          <Box>
-            <Card
-              pad="medium"
-              elevation="large"
-              margin={{ vertical: "large", horizontal: "small" }}
-            >
-              <SidebarAccordian serviceTypes={serviceTypes} />
-            </Card>
+                ))}
+              </Slider>
+            </Box>
+          )}
+          <Box
+            style={{
+              textAlign:
+                service.slug === "skincare-products" ? "center" : "justify",
+            }}
+          >
+            <BlockContentMain body={service.body} />
           </Box>
-        )}
-      </Box>
+          <Box margin={{ vertical: "small" }}>
+            {brands &&
+              brands.map(({ brand, brandLink, image, products }) => (
+                <Box
+                  key={brand}
+                  gap="large"
+                  margin={{ bottom: "large" }}
+                  align="center"
+                >
+                  <a href={brandLink} target="_blank">
+                    <Box width="small" alignSelf="center">
+                      <Image src={image} fit="contain" />
+                    </Box>
+                  </a>
+                  <Box direction="row" flex wrap>
+                    {products.map(({ image, productName, productPrice }) => (
+                      <Product
+                        key={productName}
+                        basis=""
+                        image={image}
+                        name={productName}
+                        price={productPrice}
+                      />
+                    ))}
+                  </Box>
+                  <Button
+                    size="large"
+                    href={brandLink}
+                    target="_blank"
+                    primary
+                    style={{
+                      background: "rgb(176,170,191)",
+                      borderRadius: "8px",
+                      textTransform: "capitalize",
+                      padding: "10px 20px",
+                    }}
+                  >
+                    <Box align="center" direction="row" gap="xsmall">
+                      SHOP NOW
+                    </Box>
+                  </Button>
+                </Box>
+              ))}
+          </Box>
 
-      <Footer />
-    </Box>
+          {(size === "small" || size === "medium") && (
+            <Box>
+              <Card
+                pad="medium"
+                elevation="large"
+                margin={{ vertical: "large", horizontal: "small" }}
+              >
+                <SidebarAccordian serviceTypes={serviceTypes} />
+              </Card>
+            </Box>
+          )}
+        </Box>
+
+        <Footer />
+      </Box>
+    </>
   );
 };
 

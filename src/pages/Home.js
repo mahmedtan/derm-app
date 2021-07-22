@@ -23,6 +23,7 @@ import { useContext } from "react";
 import { useState, useEffect } from "react";
 import { getPopup } from "../services/extras";
 import { toggleBanner } from "../reducers/bannerReducer";
+import { Helmet } from "react-helmet";
 
 const Home = () => {
   const blogs = useSelector((state) => state.blogs);
@@ -38,88 +39,99 @@ const Home = () => {
   }, []);
 
   return (
-    <Box>
-      {banner && popup && Object.keys(popup).length && (
-        <Layer
-          responsive={false}
-          margin="small"
-          animate={false}
-          className={"fade-in"}
-          onEsc={() => dispatch(toggleBanner())}
-          style={load ? {} : { display: "none" }}
-          onClickOutside={() => dispatch(toggleBanner())}
-        >
-          <Stack anchor="top-right">
-            <Link to="/book-now">
-              <Box width="large">
-                <Image src={popup.avatar} onLoad={() => setLoad(true)} />
-              </Box>
-            </Link>
+    <>
+      <Helmet>
+        <title>Chic Derm & Aesthetics</title>
+      </Helmet>
 
-            <Button
-              label={<Close color="light-1" elevation="medium" />}
-              onClick={() => dispatch(toggleBanner())}
-              margin="small"
-            />
-          </Stack>
-        </Layer>
-      )}
-      <Main overflow="hidden" align="center" fill>
-        <Box
-          align="center"
-          justify="start"
-          gap={size === "small" ? "xlarge" : "large"}
-          margin={{ bottom: "large", top: size === "small" ? "large" : "none" }}
-        >
-          <Slider />
-          <Box
-            direction="row-responsive"
-            gap={size === "small" ? "medium" : "small"}
-            align="center"
-            width="30rem"
-            justify="center"
-            margin={{ vertical: size === "small" ? "medium" : "none" }}
+      <Box animation={{ type: "fadeIn", duration: "1500" }}>
+        {banner && popup && Object.keys(popup).length && (
+          <Layer
+            responsive={false}
+            margin="small"
+            animate={false}
+            className={"fade-in"}
+            onEsc={() => dispatch(toggleBanner())}
+            style={load ? {} : { display: "none" }}
+            onClickOutside={() => dispatch(toggleBanner())}
           >
-            <Box alignSelf="center" flex>
-              <Link to="/services">
-                <Button
-                  fill
-                  label="Schedule Your Visit"
-                  icon={<LinkNext />}
-                  reverse
-                  primary
-                  size="large"
-                  style={{ borderRadius: "25px" }}
-                />
+            <Stack anchor="top-right">
+              <Link to="/book-now">
+                <Box width="large">
+                  <Image src={popup.avatar} onLoad={() => setLoad(true)} />
+                </Box>
               </Link>
-            </Box>
 
-            <Box alignSelf="center" flex>
-              <Link to="/services/skincare-products">
-                <Button
-                  fill
-                  icon={
-                    <Shop color={uiTheme === "light" ? "brand" : "#263040"} />
-                  }
-                  primary
-                  color="brand-secondary"
-                  reverse
-                  style={{ color: uiTheme === "light" ? "#694F5D" : "#263040" }}
-                  label="Skincare Products"
-                  size="large"
-                />
-              </Link>
+              <Button
+                label={<Close color="light-1" elevation="medium" />}
+                onClick={() => dispatch(toggleBanner())}
+                margin="small"
+              />
+            </Stack>
+          </Layer>
+        )}
+        <Main overflow="hidden" align="center" fill>
+          <Box
+            align="center"
+            justify="start"
+            gap={size === "small" ? "xlarge" : "large"}
+            margin={{
+              bottom: "large",
+              top: size === "small" ? "large" : "none",
+            }}
+          >
+            <Slider />
+            <Box
+              direction="row-responsive"
+              gap={size === "small" ? "medium" : "small"}
+              align="center"
+              width="30rem"
+              justify="center"
+              margin={{ vertical: size === "small" ? "medium" : "none" }}
+            >
+              <Box alignSelf="center" flex>
+                <Link to="/services">
+                  <Button
+                    fill
+                    label="Schedule Your Visit"
+                    icon={<LinkNext />}
+                    reverse
+                    primary
+                    size="large"
+                    style={{ borderRadius: "25px" }}
+                  />
+                </Link>
+              </Box>
+
+              <Box alignSelf="center" flex>
+                <Link to="/services/skincare-products">
+                  <Button
+                    fill
+                    icon={
+                      <Shop color={uiTheme === "light" ? "brand" : "#263040"} />
+                    }
+                    primary
+                    color="brand-secondary"
+                    reverse
+                    style={{
+                      color: uiTheme === "light" ? "#694F5D" : "#263040",
+                    }}
+                    label="Skincare Products"
+                    size="large"
+                  />
+                </Link>
+              </Box>
             </Box>
           </Box>
-        </Box>
-        <Pamphlet />
-        <Newsletter />
+          <Pamphlet />
+          <Newsletter />
 
-        <StoryCards />
-        <Comments />
-        <RecentBlogs blogs={blogs} />
-      </Main>
-    </Box>
+          <StoryCards />
+          <Comments />
+          <RecentBlogs blogs={blogs} />
+        </Main>
+      </Box>
+    </>
   );
 };
 

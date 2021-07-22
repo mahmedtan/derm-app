@@ -25,7 +25,7 @@ const StepOne = () => {
     <Box
       align="center"
       gap="medium"
-      animation="fadeIn"
+      animation={{ type: "fadeIn", duration: "1500" }}
       margin={{ bottom: "medium" }}
     >
       <Box direction="row" gap="small" border="between">

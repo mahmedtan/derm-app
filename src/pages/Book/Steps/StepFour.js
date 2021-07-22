@@ -48,7 +48,7 @@ const phoneMask = [
 ];
 const StepFour = () => {
   return (
-    <Box animation="fadeIn">
+    <Box animation={{ type: "fadeIn", duration: "1500" }}>
       <Box direction="row-responsive" gap="small" width="medium">
         <FormField
           required

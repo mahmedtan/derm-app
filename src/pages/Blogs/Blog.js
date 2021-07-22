@@ -7,6 +7,7 @@ import BlockContentMain from "../../components/Utils/BlockContentMain";
 
 import Loading from "../Extras/Loading";
 import Layout from "../../components/Utils/Layout";
+import { Helmet } from "react-helmet";
 
 const Blog = () => {
   const { slug } = useParams();
@@ -21,43 +22,58 @@ const Blog = () => {
     return <Loading />;
   }
 
+  console.log(blog);
+
   return (
-    <Layout>
-      <Box align="center" margin={{ horizontal: "large", bottom: "large" }}>
-        <Box width="large" gap="medium">
-          <Heading level="3" textAlign="center">
-            {blog.title}
-          </Heading>
-          <Box
-            width={{ max: "550px" }}
-            height={{ max: "400px" }}
-            align="center"
-            alignSelf="center"
-          >
-            <Image src={blog.mainImage} fit="contain" />
-          </Box>
-          <Box
-            direction="row"
-            flex
-            align="center"
-            margin="small"
-            justify="start"
-            gap="medium"
-          >
-            <Avatar src={blog.author.image} elevation="medium" />
-            <Box>
-              <Text>
-                <strong>{blog.author.name}</strong>
-              </Text>
-              <Text color="brand">{blog.author.bio}</Text>
+    <>
+      <Helmet>
+        <title>{blog.title}</title>
+        {blog.metaTags &&
+          blog.metaTags.map(({ _key, _type, ...tag }) => (
+            <meta key={_key} {...tag} />
+          ))}
+      </Helmet>
+      <Layout>
+        <Box
+          align="center"
+          margin={{ horizontal: "large", bottom: "large" }}
+          animation={{ type: "fadeIn", duration: "1500" }}
+        >
+          <Box width="large" gap="medium">
+            <Heading level="3" textAlign="center">
+              {blog.title}
+            </Heading>
+            <Box
+              width={{ max: "550px" }}
+              height={{ max: "400px" }}
+              align="center"
+              alignSelf="center"
+            >
+              <Image src={blog.mainImage} fit="contain" />
+            </Box>
+            <Box
+              direction="row"
+              flex
+              align="center"
+              margin="small"
+              justify="start"
+              gap="medium"
+            >
+              <Avatar src={blog.author.image} elevation="medium" />
+              <Box>
+                <Text>
+                  <strong>{blog.author.name}</strong>
+                </Text>
+                <Text color="brand">{blog.author.bio}</Text>
+              </Box>
+            </Box>
+            <Box style={{ textAlign: "justify" }}>
+              <BlockContentMain body={blog.body} />
             </Box>
           </Box>
-          <Box style={{ textAlign: "justify" }}>
-            <BlockContentMain body={blog.body} />
-          </Box>
         </Box>
-      </Box>
-    </Layout>
+      </Layout>
+    </>
   );
 };
 

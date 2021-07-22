@@ -6,7 +6,6 @@ import {
   Anchor,
   ResponsiveContext,
   Button,
-  List,
 } from "grommet";
 import { Article, Facebook, Instagram } from "grommet-icons";
 import { useContext } from "react";
@@ -96,9 +95,9 @@ const NavFooter = () => {
               </Text>
             </Box>
 
-            <Text>8668 John Hickman Pkwy,</Text>
-            <Text> Building 10, Suite 1003,</Text>
-            <Text>Frisco, TX 75034</Text>
+            <Text>1312 West Exchange Pkwy,</Text>
+            <Text> Building B, Suite 2130,</Text>
+            <Text>Allen, Texas 75013</Text>
             <Box align="center" gap={size === "small" ? "large" : "medium"}>
               <Box>
                 <Text textAlign="center">

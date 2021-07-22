@@ -18,6 +18,7 @@ import { uploadImages } from "../../services/forms";
 import { useState } from "react";
 import Spinner from "../../components/Utils/Spinner";
 import { min } from "moment";
+import { Helmet } from "react-helmet";
 
 const Book = () => {
   const size = useContext(ResponsiveContext);
@@ -25,21 +26,16 @@ const Book = () => {
   const history = useHistory();
   const [loading, setLoading] = useState(false);
 
-  const {
-    activeIndex,
-    procedures,
-    consultations,
-    formValues,
-    images,
-  } = useSelector(
-    ({ procedures, consultations, activeIndex, formValues, images }) => ({
-      activeIndex,
-      formValues,
-      procedures,
-      consultations,
-      images,
-    })
-  );
+  const { activeIndex, procedures, consultations, formValues, images } =
+    useSelector(
+      ({ procedures, consultations, activeIndex, formValues, images }) => ({
+        activeIndex,
+        formValues,
+        procedures,
+        consultations,
+        images,
+      })
+    );
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -69,57 +65,62 @@ const Book = () => {
     );
 
   return (
-    <Box
-      align="center"
-      pad={{ bottom: "xlarge" }}
-      background="background-gray"
-      height={{ min: "100vh" }}
-    >
+    <>
+      <Helmet>
+        <title>Book Online</title>
+      </Helmet>
       <Box
         align="center"
-        width="large"
-        pad={size === "small" ? "large" : "medium"}
-        gap="medium"
+        pad={{ bottom: "xlarge" }}
+        background="background-gray"
+        height={{ min: "100vh" }}
       >
-        <Box gap="small" fill>
-          <StepHeader />
-          <Heading margin={{ vertical: "none" }} level="2" textAlign="center">
-            {Steps[activeIndex].title}
-          </Heading>
-          <Text textAlign="center">{Steps[activeIndex].description}</Text>
-        </Box>
+        <Box
+          align="center"
+          width="large"
+          pad={size === "small" ? "large" : "medium"}
+          gap="medium"
+        >
+          <Box gap="small" fill>
+            <StepHeader />
+            <Heading margin={{ vertical: "none" }} level="2" textAlign="center">
+              {Steps[activeIndex].title}
+            </Heading>
+            <Text textAlign="center">{Steps[activeIndex].description}</Text>
+          </Box>
 
-        <Box>
-          <Form
-            validate="blur"
-            value={formValues}
-            onChange={(nextValue) => dispatch(changeValues(nextValue))}
-            onSubmit={({ value }) => {
-              setLoading(true);
-              images
-                ? uploadImages(images).then((res) => {
-                    window.sessionStorage.setItem(
-                      "images",
-                      JSON.stringify(res)
-                    );
-                    history.push("/processing");
-                  })
-                : history.push("/processing");
-            }}
-          >
-            <Box
-              gap="small"
-              margin={{
-                bottom: "xlarge",
+          <Box>
+            <Form
+              validate="blur"
+              value={formValues}
+              onChange={(nextValue) => dispatch(changeValues(nextValue))}
+              onSubmit={({ value }) => {
+                setLoading(true);
+                images
+                  ? uploadImages(images).then((res) => {
+                      window.sessionStorage.setItem(
+                        "images",
+                        JSON.stringify(res)
+                      );
+                      history.push("/processing");
+                    })
+                  : history.push("/processing");
               }}
             >
-              {Steps[activeIndex].item}
-              <StepFooter />
-            </Box>
-          </Form>
+              <Box
+                gap="small"
+                margin={{
+                  bottom: "xlarge",
+                }}
+              >
+                {Steps[activeIndex].item}
+                <StepFooter />
+              </Box>
+            </Form>
+          </Box>
         </Box>
       </Box>
-    </Box>
+    </>
   );
 };
 

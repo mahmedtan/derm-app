@@ -54,10 +54,29 @@ const Service = ({ service, serviceTypes, size }) => {
 
   console.log(service.metaTags);
 
+  const serviceName = (name) => {
+    switch (name) {
+      case "Skin Rejuvenation":
+        return "Facial Skin Rejuvenation Treatments | Dermatologists Allen";
+
+      case "Fillers":
+        return "FDA Approved Dermal Filler | Skin Treatment | Dermatologists";
+
+      case "Botox® Xeomin®":
+        return "Botox®️ | Skin Ageing & Wrinkle Treatment | Cosmetic Services";
+
+      case "Microneedling":
+        return "Microneedling | Skin Treatment | Collagen Induction Therapy";
+
+      default:
+        return name;
+    }
+  };
+
   return (
     <>
       <Helmet>
-        <title>{service.name}</title>
+        <title>{serviceName(service.name)}</title>
         {service.metaTags &&
           service.metaTags.map(({ _key, _type, ...tag }) => (
             <meta key={_key} {...tag} />

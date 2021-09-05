@@ -41,7 +41,11 @@ const Home = () => {
   return (
     <>
       <Helmet>
-        <title>Chic Derm & Aesthetics</title>
+        <title>Skin Doctors Allen | Hair Loss | Skin Care</title>
+        <meta
+          name="description"
+          content="Best Treatment for all Skin problem by the board certified skin care experts in Allen, Texas. Find a skin doctor near you in Allen at Chic Derm & Asthetics."
+        />
       </Helmet>
 
       <Box animation={{ type: "fadeIn", duration: "1500" }}>

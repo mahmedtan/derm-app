@@ -1,5 +1,4 @@
 const sg = require("@sendgrid/mail");
-const moment = require("moment");
 
 sg.setApiKey(process.env.REACT_APP_SENDGRID_API_KEY);
 
@@ -17,11 +16,15 @@ module.exports = async (req, res) => {
       procedures,
       consultations,
     } = req.body;
-    console.log(date);
 
     const ids = Object.keys(procsNConsults).filter((x) => procsNConsults[x]);
+    const calendarLink = `https://www.google.com/calendar/render?action=TEMPLATE&text=Appointment+For+${new Date()
+      .toLocaleString()
+      .split(" ")
+      .join(
+        "+"
+      )}&location=${`1312+West+Exchange+Pkwy,+%0ASuite+2130,+%0AAllen,+Texas+75013`}&dates=${new Date().toISOString()}`;
 
-    console.log(getProcedures(ids, procedures));
     const message = {
       to: emailAddress,
       bcc: ["contact@mydermpa.com", "faseeha@mydermpa.com"],
@@ -32,6 +35,8 @@ module.exports = async (req, res) => {
         consultations: getConsultations(ids, consultations),
         subject: "Appointment Confirmation",
         fullName: `${firstName} ${lastName},`,
+        calendarLink,
+
         date: date,
       },
     };

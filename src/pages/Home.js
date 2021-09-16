@@ -41,10 +41,10 @@ const Home = () => {
   return (
     <>
       <Helmet>
-        <title>Skin Doctors Allen | Hair Loss | Skin Care</title>
+        <title>Non-invasive cosmetic procedures Allen | Anti-aging treatments | Skin Care</title>
         <meta
           name="description"
-          content="Best Treatment for all Skin problem by the board certified skin care experts in Allen, Texas. Find a skin doctor near you in Allen at Chic Derm & Asthetics."
+          content="Chic Derm & Aesthetics serving Allen area specializes in non-invasive cosmetic procedures such as Injectables, Dermal Fillers, RF+Microneedling and HIFU. Consult with our skin care specialists today."
         />
       </Helmet>
 

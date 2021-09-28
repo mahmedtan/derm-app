@@ -41,7 +41,7 @@ const Home = () => {
   return (
     <>
       <Helmet>
-        <title>Non-invasive cosmetic procedures Allen | Anti-aging treatments | Skin Care</title>
+        <title>Dermatology | Aesthetics | Anti-aging Skin Care </title>
         <meta
           name="description"
           content="Chic Derm & Aesthetics serving Allen area specializes in non-invasive cosmetic procedures such as Injectables, Dermal Fillers, RF+Microneedling and HIFU. Consult with our skin care specialists today."

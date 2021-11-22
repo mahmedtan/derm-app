@@ -108,7 +108,18 @@ const Home = () => {
               </Box>
 
               <Box alignSelf="center" flex>
-                <Link to="/services/skincare-products">
+                  <form
+                    name="PrePage"
+                    target="_blank"
+                    method="post"
+                    action="https://Simplecheckout.authorize.net/payment/CatalogPayment.aspx"
+                  >
+                    <input
+                      type="hidden"
+                      name="LinkId"
+                      value="82a31245-4741-4beb-acae-494acb67df98"
+                    />
+                        
                   <Button
                     fill
                     icon={
@@ -120,10 +131,10 @@ const Home = () => {
                     style={{
                       color: uiTheme === "light" ? "#694F5D" : "#263040",
                     }}
-                    label="Skincare Products"
+                    label="Buy a Gift Card"
                     size="large"
                   />
-                </Link>
+                  </form>
               </Box>
             </Box>
           </Box>

@@ -133,6 +133,7 @@ const Home = () => {
                     }}
                     label="Buy a Gift Card"
                     size="large"
+                    type="submit"
                   />
                   </form>
               </Box>

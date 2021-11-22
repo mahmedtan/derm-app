@@ -60,7 +60,7 @@ const Home = () => {
             onClickOutside={() => dispatch(toggleBanner())}
           >
             <Stack anchor="top-right">
-              <Link to={{ pathname: "https://www.eventbrite.com/e/grand-opening-chic-derm-aesthetics-come-join-us-and-enjoy-food-gifts-registration-200913897877" }} target="_blank">
+              <Link to="/book-now">
                 <Box width="large">
                   <Image src={popup.avatar} onLoad={() => setLoad(true)} />
                 </Box>

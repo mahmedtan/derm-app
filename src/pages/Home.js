@@ -41,10 +41,10 @@ const Home = () => {
   return (
     <>
       <Helmet>
-        <title>Dermatology | Aesthetics | Anti-aging Skin Care </title>
+        <title>Chic Dermatology & Aesthetics Med Spa in Allen | Hydrafacials, Microneedling, and More</title>
         <meta
           name="description"
-          content="Chic Derm & Aesthetics serving Allen area specializes in non-invasive cosmetic procedures such as Injectables, Dermal Fillers, RF+Microneedling and HIFU. Consult with our skin care specialists today."
+          content="MED SPA - Dermatology, microneedling, Hydrafacials, and more at the premier MedSpa and  Aesthetics Center in Allen, TX"
         />
       </Helmet>
 
